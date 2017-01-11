@@ -1,0 +1,36 @@
+{
+  "name": "bwg-shoplink",
+  "version": "2.0.0",
+  "description": "BWG - Shoplink, developed by Andrei Gheorghiu",
+  "main": "GruntFile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "cssnano": "^3.8.0",
+    "flexbox": "^0.0.3",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "pixrem": "^3.0.2",
+    "postcss-flexboxfixer": "^0.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.cartu.ro:developers/carturestiro"
+  },
+  "keywords": [
+    "e-commerce",
+    "html",
+    "css"
+  ],
+  "author": "websiter.ro",
+  "license": "ISC"
+}

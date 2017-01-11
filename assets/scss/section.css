@@ -1,0 +1,22 @@
+.tdWrapper {
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  display: flex; }
+  .tdWrapper .imageWrap {
+    flex: 0 0 170px; }
+    .tdWrapper .imageWrap img {
+      object-fit: contain; }
+  .tdWrapper .main-col {
+    flex: 0 0 40%; }
+  .tdWrapper .p-Details {
+    column-count: 2; }
+    .tdWrapper .p-Details .key {
+      font-weight: 600; }
+      .tdWrapper .p-Details .key::after {
+        content: ":"; }
+    .tdWrapper .p-Details .btn {
+      margin-top: 15px;
+      box-shadow: none; }
+
+/*# sourceMappingURL=section.css.map */

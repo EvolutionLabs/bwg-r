@@ -1,0 +1,28 @@
+.tdWrapper {
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  .imageWrap {
+    flex: 0 0 170px;
+    img {
+      object-fit: contain;
+    }
+  }
+  .main-col {
+    flex: 0 0 40%;
+  }
+  .p-Details {
+    column-count: 2;
+    .key {
+      font-weight: 600;
+      &::after {
+        content: ':'
+      }
+    }
+    .btn {
+      margin-top: 15px;
+      box-shadow: none;
+    }
+  }
+}
