@@ -95,10 +95,10 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 					<span class="pull-right filters">
 						View as:
 						<a class="btn btn-clear active" href="#"><i class="fa fa-list"></i></a>
-						<a class="btn btn-clear" href="#"><i class="fa fa-list"></i></a>
+						<a class="btn btn-clear" href="#"><i class="fa fa-th"></i></a>
 					</span>
 				</div>
-				<table class="table">
+				<table class="table products">
 					<thead>
 					<tr>
 						<?php
@@ -124,7 +124,10 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 							<td class="price">
 								<span class="old"><?= $dd['Price']['old'];?></span> <?= $dd['Price']['new'];?>
 							<td >
-								<i class="fa fa-heart-o"></i></a></td>
+								<span class="placer">
+									<i class="fa fa-heart-o fa-2x"></i>
+									<i class="fa fa-heart fa-2x"></i>
+								</span></td>
 						</tr>
 						<tr class="hiddenRow">
 							<td colspan="8">
