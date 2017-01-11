@@ -2,7 +2,7 @@
 include "parts/init.php";
 
 $path = substr($_SERVER["REQUEST_URI"], 1);
-$template = strlen($path) < 1 ? 'landing' : substr($path, 0, strpos($path,'?'));
+$template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($path, 0, strpos($path,'?')) : $path);
 
 $css = [];
 $js = [];
@@ -14,6 +14,7 @@ switch ($template) {
 		break;
 	case "section" :
 		$css = ['section.css'];
+		$js = ['section.js'];
 		break;
 	default:
 }

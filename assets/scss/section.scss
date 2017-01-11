@@ -1,3 +1,5 @@
+@import "variables";
+
 .tdWrapper {
   font-size: 14px;
   font-weight: 400;
@@ -24,5 +26,59 @@
       margin-top: 15px;
       box-shadow: none;
     }
+  }
+}
+.submenu {
+  .flexWrap & .container {
+    margin-top: 0;
+  }
+  .container {
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+  .navbar {
+    margin: 10px 0;
+    @media (min-width: 768px) {
+      .container-fluid {
+        padding-right: 0;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        .navbar-collapse {
+          flex-grow: 1;
+        }
+      }
+    }
+    li:last-child .btn {
+      margin-right: 0;
+    }
+  }
+
+  @each $l in $links {
+    &.#{$l} {
+      background-color: map_get($colors, $l);
+    }
+  }
+  .navbar-brand {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .navbar-toggle {
+    color: white;
+    border-color: white;
+  }
+  .navbar .btn {
+    margin: 0 8px;
+    padding: 10px;
+    text-transform: initial;
+    font-size: 17px;
+    letter-spacing: -.5px;
+  }
+  .navbar-right .btn {
+    text-transform: uppercase ;
+    i {margin-right: 8px;}
   }
 }

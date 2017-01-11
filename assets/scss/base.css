@@ -64,6 +64,14 @@ body {
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus {
     background-color: #202076; }
 
+.navbar-toggle {
+  border-radius: 0;
+  color: white; }
+  .navbar-default .navbar-toggle .icon-bar, .navbar-toggle .icon-bar {
+    background-color: white; }
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-toggle:focus, .navbar-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.27); }
+
 .navbar-default {
   min-height: 95px;
   background-color: #29b766;
@@ -180,10 +188,11 @@ body {
   .flexWrap .cardTitle {
     background-color: #303030;
     padding: 1.5rem; }
-    .flexWrap .cardTitle h1 {
+    .flexWrap .cardTitle h1, .flexWrap .cardTitle .filters {
       text-transform: uppercase;
       font-size: 1.8rem;
       line-height: 4rem;
+      font-weight: 600;
       margin: 0;
       color: white; }
 

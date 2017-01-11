@@ -22,16 +22,76 @@ $dd = [
         'VAT' => '13.5%',
         'Supplier' => '14/11/2016',
     ]
-]
+];
+$category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 ?>
+<div class="submenu <?= $_GET['category']; ?>">
+	<div class="container">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-secondary" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span class="navbar-brand"><?= $category;?></span>
+				</div>
+				<div id="navbar-secondary" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#promotions" class="btn btn-default btn-sm">Promotions</a></li>
+						<li><a href="#favorites" class="btn btn-default btn-sm active">Favorites</a></li>
+						<li><a href="#program" class="btn btn-default btn-sm">Program</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#program" class="btn btn-default btn-sm"><i class="fa fa-info-circle"></i>Icon guide</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</nav>
+	</div>
+</div>
 
 <div class="container dull">
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
 			<div class="card transparent">
 				<div class="cardTitle">
-					<span class="pull-right"><a href="#" class="btn btn-default">Return to products</a></span>
-					<h1>HHT Orders</h1>
+					<span class="filters">Filter by:</span>
+					<div class="btn-group">
+						<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ddDepartment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Department
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="ddDepartment">
+							<li><a class="dropdown-item" href="#">Department 1</a></li>
+							<li><a class="dropdown-item" href="#">Department 2</a></li>
+							<li><a class="dropdown-item" href="#">Department 3</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ddGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Group
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="ddGroup">
+							<li><a class="dropdown-item" href="#">Group 1</a></li>
+							<li><a class="dropdown-item" href="#">Group 2</a></li>
+							<li><a class="dropdown-item" href="#">Group 3</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Department
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="ddCategory">
+							<li><a class="dropdown-item" href="#">Category 1</a></li>
+							<li><a class="dropdown-item" href="#">Category 2</a></li>
+							<li><a class="dropdown-item" href="#">Category 3</a></li>
+						</ul>
+					</div>
 				</div>
 				<table class="table">
 					<thead>
