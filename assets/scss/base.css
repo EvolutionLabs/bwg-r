@@ -27,6 +27,13 @@ body {
 .rltv {
   position: relative; }
 
+.btn-success {
+  background-color: #29b766;
+  border-color: #208d4f; }
+  .btn-success:focus, .btn-success:active, .btn-success:hover, .btn-success.active {
+    background-color: #30d376;
+    border-color: #24ac5e; }
+
 .btn {
   border-radius: 0;
   text-transform: uppercase;
@@ -168,20 +175,20 @@ body {
       align-items: center; }
     body > .flexWrap.clear {
       background: #cfcfcf; }
-  .flexWrap .container:first-child {
+  .flexWrap > .container:first-child {
     margin-top: 20px;
     flex-grow: 1;
     position: relative; }
-    .flexWrap .container:first-child.push {
+    .flexWrap > .container:first-child.push {
       display: flex; }
-      .flexWrap .container:first-child.push > .row {
+      .flexWrap > .container:first-child.push > .row {
         display: flex;
         flex-wrap: wrap;
         flex: 1 0 100%; }
-        .flexWrap .container:first-child.push > .row > * {
+        .flexWrap > .container:first-child.push > .row > * {
           display: flex;
           flex-direction: column; }
-          .flexWrap .container:first-child.push > .row > * > * {
+          .flexWrap > .container:first-child.push > .row > * > * {
             flex-grow: 1; }
   .flexWrap .aside {
     padding-left: .5rem; }

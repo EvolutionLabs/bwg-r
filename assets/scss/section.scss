@@ -34,7 +34,10 @@
     font-size: 1.6rem;
   }
 }
-
+.sliderContainer {
+  height: 500px;
+  img {opacity: 0;}
+}
 .products {
   .btn-cart {
     margin: 20px 0;
@@ -191,5 +194,29 @@
   min-width: unset;
   &.active {
     color: white;
+  }
+}
+
+/* toDo: implement pure CSS parallax */
+
+.parallax-scroller {
+  height: 500px;
+  position: relative;
+  .scene {
+    color: white;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    h3,& div  {
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 4.5rem;
+      font-weight: 900;
+    }
+    div {font-size: 3.5rem; font-weight: 200;}
+    .btn {margin-top: 6rem; padding: 6px 6rem;}
   }
 }

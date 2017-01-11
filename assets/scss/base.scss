@@ -34,6 +34,14 @@ body {
 .rltv {
   position: relative;
 }
+.btn-success {
+  background-color: #29b766;
+  border-color: darken(#29b766, 10);
+  &:focus,&:active,&:hover,&.active {
+    background-color: #30d376;
+    border-color: darken(#30d376, 10);
+  }
+}
 .btn {
   border-radius: 0;
   text-transform: uppercase;
@@ -216,7 +224,7 @@ body {
       background: #cfcfcf;
     }
   }
-  .container:first-child {
+  >.container:first-child {
     margin-top: 20px;
     flex-grow: 1;
     position: relative;

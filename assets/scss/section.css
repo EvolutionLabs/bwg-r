@@ -24,6 +24,11 @@
     font-weight: 600;
     font-size: 1.6rem; }
 
+.sliderContainer {
+  height: 500px; }
+  .sliderContainer img {
+    opacity: 0; }
+
 .products .btn-cart {
   margin: 20px 0;
   letter-spacing: -1px;
@@ -147,5 +152,28 @@
   min-width: unset; }
   .btn.btn-clear.active {
     color: white; }
+
+/* toDo: implement pure CSS parallax */
+.parallax-scroller {
+  height: 500px;
+  position: relative; }
+  .parallax-scroller .scene {
+    color: white;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; }
+    .parallax-scroller .scene h3, .parallax-scroller .scene div {
+      text-transform: uppercase; }
+    .parallax-scroller .scene h3 {
+      font-size: 4.5rem;
+      font-weight: 900; }
+    .parallax-scroller .scene div {
+      font-size: 3.5rem;
+      font-weight: 200; }
+    .parallax-scroller .scene .btn {
+      margin-top: 6rem;
+      padding: 6px 6rem; }
 
 /*# sourceMappingURL=section.css.map */
