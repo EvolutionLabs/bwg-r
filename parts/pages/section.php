@@ -92,6 +92,11 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 							<li><a class="dropdown-item" href="#">Category 3</a></li>
 						</ul>
 					</div>
+					<span class="pull-right filters">
+						View as:
+						<a class="btn btn-clear active" href="#"><i class="fa fa-list"></i></a>
+						<a class="btn btn-clear" href="#"><i class="fa fa-list"></i></a>
+					</span>
 				</div>
 				<table class="table">
 					<thead>
@@ -100,7 +105,6 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 						foreach ( $dd as $k => $v ) {
 							if (in_array($k, ['id','Price','Details']))
 								continue;
-
 							echo '<th>'.$k.'<a href="#"><i class="fa fa-sort"></i></a></th>';
 						}
 						echo '<th>Price</th><th></th>'

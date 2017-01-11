@@ -37,6 +37,11 @@ body {
     line-height: 1.42857143; }
   .btn.btn-sm {
     font-size: 14px; }
+  .btn.btn-clear {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+    color: white; }
   .btn-group .btn {
     box-shadow: none;
     min-width: 50px; }

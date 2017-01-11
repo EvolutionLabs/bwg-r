@@ -32,6 +32,7 @@
   .flexWrap & .container {
     margin-top: 0;
   }
+  margin-bottom: 20px;
   .container {
     @media (max-width: 767px) {
       padding: 0;
@@ -80,5 +81,14 @@
   .navbar-right .btn {
     text-transform: uppercase ;
     i {margin-right: 8px;}
+  }
+}
+.btn.btn-clear {
+  color: rgba(255,255,255,.65);
+  padding-right: 8px;
+  padding-left: 8px;
+  min-width: unset;
+  &.active {
+    color: white;
   }
 }
