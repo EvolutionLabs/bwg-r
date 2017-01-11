@@ -154,8 +154,26 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 											</div>
 										</div>
 										<div class="right-col">
-											right column
+											<div class="iconBar">
+												<i class="fa fa-2x fa-star"></i>
+												<i class="fa fa-2x fa-exclamation-circle"></i>
+												<i class="fa fa-2x fa-file"></i>
+												<i class="fa fa-2x fa-tag"></i>
+											</div>
+											<div class="rltv">
 
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="fa fa-plus"></i>
+													</span>
+													<input type="text" class="form-control" name="qty-<?= $dd['id'] ;?>" />
+													<span class="input-group-addon">
+														<i class="fa fa-minus"></i>
+													</span>
+												</div>
+												<a href="#add-to-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-success btn-block">Add to cart</a>
+
+											</div>
 										</div>
 									</div>
 								</div>

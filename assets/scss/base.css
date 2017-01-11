@@ -24,6 +24,9 @@ body {
 .card.transparent {
   box-shadow: none; }
 
+.rltv {
+  position: relative; }
+
 .btn {
   border-radius: 0;
   text-transform: uppercase;
