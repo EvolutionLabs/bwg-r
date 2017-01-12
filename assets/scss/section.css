@@ -165,6 +165,21 @@
   .btn.btn-clear.active {
     color: white; }
 
+.iconsDd .dropdown-menu {
+  width: 400px;
+  column-count: 2;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 8px; }
+  .iconsDd .dropdown-menu li {
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .iconsDd .dropdown-menu li:hover {
+      background-color: #212121;
+      color: white; }
+    .iconsDd .dropdown-menu li i {
+      margin: 12px 8px; }
+
 /* toDo: implement pure CSS parallax */
 .parallax-scroller {
   height: 500px;

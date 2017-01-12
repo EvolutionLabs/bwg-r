@@ -52,7 +52,45 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 						<li><a href="#program" class="btn btn-default btn-sm">Program</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#program" class="btn btn-default btn-sm"><i class="fa fa-info-circle"></i>Icon guide</a></li>
+						<li>
+							<div class="dropdown iconsDd">
+								<button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownIcons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<i class="fa fa-info-circle"></i>
+									Icons guide
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownIcons">
+									<li><i class="fa fa-circle-thin"></i>Top Sellers</li>
+									<li><i class="fa fa-circle-thin"></i>Plus Top Sellers</li>
+									<li><i class="fa fa-circle-thin"></i>Group Top</li>
+									<li><i class="fa fa-circle-thin"></i>My Top Sellers</li>
+									<li><i class="fa fa-circle-thin"></i>My Products</li>
+									<li><i class="fa fa-circle-thin"></i>Category Man.</li>
+									<li><i class="fa fa-circle-thin"></i>Trade show</li>
+									<li><i class="fa fa-circle-thin"></i>Back in stock</li>
+									<li><i class="fa fa-tag"></i>Promotions</li>
+									<li><i class="fa fa-circle-thin"></i>Own Brand</li>
+									<li><i class="fa fa-circle-thin"></i>Clearance</li>
+									<li><i class="fa fa-file"></i>Handbill</li>
+									<li><i class="fa fa-circle-thin"></i>Top FoodM/Conv.</li>
+
+									<li><i class="fa fa-circle-thin"></i>New Product</li>
+									<li><i class="fa fa-circle-thin"></i>New Listing</li>
+									<li><i class="fa fa-circle-thin"></i>Core</li>
+									<li><i class="fa fa-circle-thin"></i>Cycle</li>
+									<li><i class="fa fa-circle-thin"></i>Multibuy</li>
+									<li><i class="fa fa-thumbs-up"></i>Recommended</li>
+									<li><i class="fa fa-circle-thin"></i>All Products</li>
+									<li><i class="fa fa-circle-thin"></i>Small Case</li>
+									<li><i class="fa fa-circle-thin"></i>Mixed Case</li>
+									<li><i class="fa fa-circle-thin"></i>Mix and Match</li>
+									<li><i class="fa fa-eur"></i>Value Line</li>
+									<li><i class="fa fa-calendar-o"></i>Monday Madness</li>
+									<li><i class="fa fa-circle-thin"></i>All Products</li>
+
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div><!--/.container-fluid -->

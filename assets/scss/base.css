@@ -43,6 +43,18 @@ body {
   line-height: 36px;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .btn .caret {
+    width: 1.2em;
+    height: inherit;
+    border: none;
+    font: normal normal normal 16px/1 FontAwesome;
+    vertical-align: text-top;
+    margin-left: .4em;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .open > .btn .caret {
+      transform: scaleY(-1), translateY(-2px); }
+    .btn .caret::before {
+      content: "\f078"; }
   .cardTitle .btn, .btn.btn-sm {
     line-height: 1.42857143; }
   .btn.btn-sm {

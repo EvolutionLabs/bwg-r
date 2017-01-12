@@ -49,6 +49,23 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
+  .caret {
+    width: 1.2em;
+    height: inherit;
+    border: none;
+    font: normal normal normal 16px/1 FontAwesome;
+    vertical-align: text-top;
+    margin-left: .4em;
+    transition: transform .2s cubic-bezier(.4,0,.2,1);
+    .open>&{
+      transform: scaleY(-1), translateY(-2px);
+
+
+    }
+    &::before {
+      content: "\f078";
+    }
+  }
   .cardTitle &, &.btn-sm {
     line-height: 1.42857143;
   }

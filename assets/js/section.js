@@ -19,5 +19,8 @@ $(window).on('load', function(){
                 field.val(val + 1);
             }
         }
+    });
+    $('[href^="#"]').on('click',function(e){
+        e.preventDefault();
     })
 });
