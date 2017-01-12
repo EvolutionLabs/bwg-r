@@ -5,20 +5,23 @@ $path = substr($_SERVER["REQUEST_URI"], 1);
 $template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($path, 0, strpos($path,'?')) : $path);
 
 $css = [];
-$js = [];
+$js = ['shoplink.js'];
 
 switch ($template) {
 	case "landing" :
-		$css = ['home.css'];
-		$js = ['home.js'];
+		$page_css = ['home.css'];
+		$page_js = ['home.js'];
 		break;
 	case "section" :
-		$css = ['section.css'];
-		$js = ['section.js'];
+		$page_css = ['section.css'];
+		$page_js = ['section.js'];
 		break;
 	default:
+		$page_css = [];
+		$page_js = [];
 }
-
+$css = array_merge($css, $page_css);
+$js = array_merge($js, $page_js);
 include "parts/header.php";
 include "parts/nav.php";
 

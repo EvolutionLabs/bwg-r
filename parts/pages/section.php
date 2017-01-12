@@ -23,7 +23,104 @@ $dd = [
         'Supplier' => '14/11/2016',
     ]
 ];
-$category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
+$filters = [
+	[
+		'name' => 'Top Sellers',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Plus Top Sellers',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Group Top',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'My Top Sellers',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'My products',
+	    'icon' => 'fa fa-circle-thin',
+	],[
+		'name' => 'Category Man.',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Trade show',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Back in stock',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Promotions',
+	    'icon' => 'fa fa-tag'
+	],[
+		'name' => 'Own Brand',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Clearance',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Handbill',
+	    'icon' => 'fa fa-file'
+	],[
+		'name' => 'Top FoodM/Conv.',
+	    'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'New Product',
+		'icon' => "fa fa-circle-thin"
+	],[
+		'name' => 'New Listing',
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Core',
+		'icon' => 'fa fa-dot-circle-o'
+	],[
+		'name' => 'Cycle',
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Multibuy',
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Recommended',
+		'icon' => 'fa fa-thumbs-up'
+	],[
+		'name' => 'All Products',
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Small Case',
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Mixed Case',
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => "Mix and Match",
+		'icon' => 'fa fa-circle-thin'
+	],[
+		'name' => 'Value Line',
+		'icon' => 'fa fa-eur'
+	],[
+		'name' => 'Monday Madness',
+		'icon' => 'fa fa-calendar-o'
+	],[
+		'name' => 'All Products',
+		'icon' => 'fa fa-circle-thin'
+	]
+];
+$category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
+
+function makeSlug($name) {
+
+	$rule = 'NFD; [:Nonspacing Mark:] Remove; NFC';
+	$myTrans = \Transliterator::create($rule);
+	$name = $myTrans->transliterate($name);
+	$name = strtolower($name);
+
+	preg_match_all('([a-z0-9]+)', $name, $matches);
+	if (is_array($matches) && isset($matches[0]) && count($matches[0])) {
+		return implode('-', $matches[0]);
+	}
+	else
+		return null;
+}
+
 ?>
 <div style="background: #eee url('../../assets/image/banner.jpg') no-repeat 50% 50% /cover;" class="parallax-scroller">
 	<div class="scene container">
@@ -53,6 +150,31 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
+							<div class="dropdown filtersDd">
+								<a href="#" id="dropdownFilters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<span class="sr-only">Filters</span><i class="fa fa-chevron-down fa-2x"></i>
+								</a>
+								<div class="megaMenu dropdown-menu" aria-labelledby="dropdownFilters">
+									<div class="container">
+										<div class="filtersList">
+											<?php
+											foreach ($filters as $f) {
+												$slug = makeSlug($f['name']);
+												?>
+												<span>
+													<input type="checkbox" id="filters[<?= $slug; ?>]" name="filters[<?= $slug; ?>]" />
+													<span class="fake"></span>
+													<label for="filters[<?= $slug; ?>]">
+														<i class="<?= $f['icon']; ?>"></i><?= $f['name']; ?>
+													</label>
+												</span>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
 							<div class="dropdown iconsDd">
 								<button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownIcons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 									<i class="fa fa-info-circle"></i>
@@ -60,34 +182,10 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol'
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownIcons">
-									<li><i class="fa fa-circle-thin"></i>Top Sellers</li>
-									<li><i class="fa fa-circle-thin"></i>Plus Top Sellers</li>
-									<li><i class="fa fa-circle-thin"></i>Group Top</li>
-									<li><i class="fa fa-circle-thin"></i>My Top Sellers</li>
-									<li><i class="fa fa-circle-thin"></i>My Products</li>
-									<li><i class="fa fa-circle-thin"></i>Category Man.</li>
-									<li><i class="fa fa-circle-thin"></i>Trade show</li>
-									<li><i class="fa fa-circle-thin"></i>Back in stock</li>
-									<li><i class="fa fa-tag"></i>Promotions</li>
-									<li><i class="fa fa-circle-thin"></i>Own Brand</li>
-									<li><i class="fa fa-circle-thin"></i>Clearance</li>
-									<li><i class="fa fa-file"></i>Handbill</li>
-									<li><i class="fa fa-circle-thin"></i>Top FoodM/Conv.</li>
-
-									<li><i class="fa fa-circle-thin"></i>New Product</li>
-									<li><i class="fa fa-circle-thin"></i>New Listing</li>
-									<li><i class="fa fa-circle-thin"></i>Core</li>
-									<li><i class="fa fa-circle-thin"></i>Cycle</li>
-									<li><i class="fa fa-circle-thin"></i>Multibuy</li>
-									<li><i class="fa fa-thumbs-up"></i>Recommended</li>
-									<li><i class="fa fa-circle-thin"></i>All Products</li>
-									<li><i class="fa fa-circle-thin"></i>Small Case</li>
-									<li><i class="fa fa-circle-thin"></i>Mixed Case</li>
-									<li><i class="fa fa-circle-thin"></i>Mix and Match</li>
-									<li><i class="fa fa-eur"></i>Value Line</li>
-									<li><i class="fa fa-calendar-o"></i>Monday Madness</li>
-									<li><i class="fa fa-circle-thin"></i>All Products</li>
-
+									<?php
+										foreach ($filters as $f) { ?>
+										<li><i class="<?= $f['icon']; ?>"></i><?= $f["name"]; ?></li>
+									<?php } ?>
 								</ul>
 							</div>
 						</li>

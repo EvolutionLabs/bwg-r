@@ -99,6 +99,7 @@
     }
   }
   .iconBar {
+    flex: 0 0 145px;
     .fa-2x {
       margin: 0 4px;
     }
@@ -225,12 +226,94 @@
     li {
       transition: color .3s cubic-bezier(.4,0,.2,1), background-color .3s cubic-bezier(.4,0,.2,1);
       &:hover {
-        background-color: #212121;
+        background-color: #303030;
         color: white;
       }
       i {
         margin: 12px 8px;
+
       }
+    }
+  }
+}
+.submenu {
+  position: relative;
+  .navbar {
+    position: static;
+  }
+  .navbar-right>li {
+    position: static;
+  }
+  .filtersDd {
+    position: static;
+  }
+}
+.filtersDd {
+  margin-right: 100px;
+  > a {
+    color: white;
+    text-shadow: 0 3px 3px rgba(0,0,0,.21);
+    i {
+      line-height: 4.6rem;
+    }
+  }
+}
+.megaMenu {
+  width: 100%;
+  background-color: #373737;
+  color: #fff;
+  @media (min-width: 768px) {
+    padding: 0;
+    top: calc(100% - 3px);
+  }
+  .filtersList {
+    display: flex;
+    flex-wrap: wrap;
+    > * {
+      flex: 0 0 20%;
+      padding: 10px 10px 0;
+      label {cursor: pointer;}
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      position: relative;
+      input[type=checkbox] {
+        opacity: 0;
+        ~ * {
+          opacity: .6;
+          transition: opacity .3s cubic-bezier(.4,0,.2,1);
+        }
+        &:checked ~ * {
+          opacity: 1;
+        }
+        + .fake {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          border: 2px solid white;
+          width: 15px;
+          height: 15px;
+          transform: translateY(-50%) translateZ(0);
+          transition: all .3s cubic-bezier(.4,0,.2,1);
+          pointer-events: none;
+        }
+        &:checked + .fake {
+          opacity: 1;
+          transform: rotate(35deg) translateX(-5px);
+          transform-origin: 200% 50%;
+          height: 25px;
+          border-color: transparent white white transparent;
+        }
+      }
+      > * {
+        vertical-align: baseline;
+      }
+      i {
+        margin: 10px;
+      }
+    }
+    li {
+
     }
   }
 }
