@@ -193,6 +193,8 @@
 
 .filtersDd {
   margin-right: 100px; }
+  .nav .filtersDd.open > a {
+    background-color: transparent; }
   .filtersDd > a {
     color: white;
     text-shadow: 0 3px 3px rgba(0, 0, 0, 0.21); }
