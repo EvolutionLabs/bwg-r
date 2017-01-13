@@ -271,9 +271,36 @@ function makeSlug($name) {
 									<i class="fa fa-heart-o fa-2x"></i>
 									<i class="fa fa-heart fa-2x"></i>
 								</span></td>
+							<td class="no-grow hide-x">
+								<div class="input-group">
+									<span class="input-group-addon">
+										<i class="fa fa-plus"></i>
+									</span>
+									<input type="text" class="form-control" value="1" name="qty-<?= $dd['id'] ;?>" />
+									<span class="input-group-addon">
+										<i class="fa fa-minus"></i>
+									</span>
+								</div>
+							</td>
+							<td class="no-grow hide-x">
+								<a href="#remove-from-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-sm btn-inverse">
+									<i class="fa fa-2x bwg-i-cart"></i>
+								</a>
+							</td>
 						</tr>
 						<tr class="hiddenRow">
-							<td colspan="8">
+							<td colspan="10">
+								<?php
+								$rand = (float)rand()/(float)getrandmax();
+								if ($rand < 0.3) { ?>
+									<div class="offerWrap">
+										<div class="offerTag">
+											<span class="tagTitle">30% OFF</span>
+											<span class="tagDtail">End date</span>
+											<span class="tagDate">1/2/17</span>
+										</div>
+									</div>
+								<?php } ?>
 								<div class="collapse" id="tr-<?= $dd['id'] ;?>" style="overflow: hidden; clear: both;">
 									<div class="tdWrapper">
 										<div class="imageWrap"><img class="img-responsive" src="<?= $dd['Details']['image'] ;?>" /></div>

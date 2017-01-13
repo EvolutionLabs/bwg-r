@@ -4,7 +4,7 @@ include "parts/init.php";
 $path = substr($_SERVER["REQUEST_URI"], 1);
 $template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($path, 0, strpos($path,'?')) : $path);
 
-$css = [];
+$css = ['bwg-i.css'];
 $js = ['shoplink.js'];
 
 switch ($template) {
@@ -13,6 +13,7 @@ switch ($template) {
 		$page_js = ['home.js'];
 		break;
 	case "section" :
+	case "cart" :
 		$page_css = ['section.css'];
 		$page_js = ['section.js'];
 		break;

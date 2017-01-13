@@ -31,7 +31,17 @@ body {
     background-color: #30d376;
     border-color: #24ac5e; }
 
+a.btn-inverse {
+  background-color: #484848;
+  border-color: #222222;
+  color: white; }
+  a.btn-inverse:focus, a.btn-inverse:active, a.btn-inverse:hover, a.btn-inverse.active {
+    background-color: #373737;
+    border-color: #111111;
+    color: white; }
+
 .btn {
+  border: none;
   border-radius: 0;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
@@ -40,6 +50,8 @@ body {
   line-height: 36px;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .btn.btn-outline {
+    border: 1px solid; }
   .btn .caret {
     width: 1.2em;
     height: inherit;
@@ -197,6 +209,8 @@ body {
   .navbar-default .navbar-nav > li > a {
     color: white;
     transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
+  .navbar-default .btn {
+    max-height: 50px; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li:focus > a, .navbar-default .navbar-nav > li:focus > a:focus, .navbar-default .navbar-nav > li:focus > a:hover, .navbar-default .navbar-nav > li:hover > a, .navbar-default .navbar-nav > li:hover > a:focus, .navbar-default .navbar-nav > li:hover > a:hover {
     color: black; }
   .navbar-default .nav-search {
@@ -216,8 +230,7 @@ body {
       text-align: center;
       font-size: 17px; }
     .navbar-default .nav-search .input-group {
-      max-width: calc(100% - 195px);
-      min-height: 100%; }
+      max-width: calc(100% - 195px); }
       .navbar-default .nav-search .input-group .input-group-addon {
         background: white !important; }
       .navbar-default .nav-search .input-group .form-control {
@@ -246,7 +259,8 @@ body {
     width: 100%; }
   @media (min-width: 768px) {
     .navbar-default #navbar {
-      display: flex !important; }
+      display: flex !important;
+      align-items: center; }
       .navbar-default #navbar .navbar-right {
         flex-shrink: 0;
         padding-left: 40px; } }
@@ -316,9 +330,20 @@ table.flex-table {
     display: flex;
     align-items: stretch;
     justify-content: center;
-    align-content: center; }
+    align-content: center;
+    overflow: hidden; }
+    table.flex-table tr td.no-grow {
+      flex-grow: 0;
+      padding: 8px 0 !important;
+      margin: 0 8px 0 0; }
+    table.flex-table tr td.shrink {
+      flex-shrink: 1; }
     table.flex-table tr.hiddenRow > td:first-child {
       flex-grow: 1; }
+    table.flex-table tr[aria-expanded=true] td.hide-x {
+      max-width: 0;
+      padding: 0;
+      overflow: hidden; }
   table.flex-table th {
     flex-grow: 1;
     display: inline-block; }
@@ -331,17 +356,6 @@ table.flex-table {
       font-size: 16px;
       font-weight: 400;
       text-align: center; }
-      .col-main table.flex-table th:last-child {
-        position: relative; }
-        .col-main table.flex-table th:last-child::after {
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          display: block;
-          background-color: #303030;
-          right: -1px;
-          content: '';
-          top: 0; }
       .col-main table.flex-table th a {
         color: white;
         margin-left: 8px; }
@@ -352,15 +366,16 @@ table.flex-table {
     display: flex;
     flex-direction: column; }
   table.flex-table td {
+    max-width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex: 1 1 auto;
-    display: inline-block;
-    text-align: center; }
+    align-items: center;
+    display: flex;
+    justify-content: center; }
     table.flex-table td:first-child {
       flex: 0 0 150px; }
     table.flex-table td i {
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    table.flex-table td[aria-expanded="true"] i {
-      transform: scale(1, -1); }
     table.flex-table td > * {
       text-align: initial; }
     .col-main table.flex-table td {
@@ -381,7 +396,7 @@ table.flex-table {
     padding: 0 !important;
     border-top: none; }
     table.flex-table > tbody > .hiddenRow > td .tdWrapper {
-      padding: 15px; }
+      padding: 15px 8px; }
   .aside table.flex-table {
     border-bottom: none; }
 
@@ -434,23 +449,29 @@ input::-webkit-input-placeholder, button {
   box-shadow: none;
   background-color: transparent; }
   .card.transparent tr {
+    overflow: hidden;
     background-color: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.4, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer; }
+    .card.transparent tr.hiddenRow {
+      overflow: visible;
+      position: relative; }
+      .card.transparent tr.hiddenRow::after {
+        position: absolute;
+        height: 6px;
+        bottom: calc(100% - 1px);
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        content: ""; }
+    .card.transparent tr td {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     .card.transparent tr[aria-expanded=true] {
+      border-bottom: 2px solid #eee;
       box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
       position: relative;
-      z-index: 2;
+      z-index: 1;
       margin-top: 15px; }
-      .card.transparent tr[aria-expanded=true]::after {
-        position: absolute;
-        top: 100%;
-        display: block;
-        content: "";
-        height: 0;
-        border-bottom: 10px solid white;
-        width: 100%;
-        border-top: 2px solid #dddddd; }
       .card.transparent tr[aria-expanded=true] + .hiddenRow {
         box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
         margin-bottom: 15px;

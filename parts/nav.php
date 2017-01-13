@@ -31,7 +31,7 @@
 				       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 					><i class="fa fa-2x fa-cog"></i><span class="sr-only">Settings</span></a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownSettings">
-						<li><a href="#">Current Order</a></li>
+						<li><a href="/cart">Current Order</a></li>
 						<li><a href="/past-orders">Past Orders</a></li>
 						<li><a href="/hht-orders">HHT Orders</a></li>
 						<li><a href="#">Contact Us</a></li>
@@ -43,7 +43,7 @@
 						<li><div class="info"><?= $_SESSION['username'];?> 1234</div></li>
 					</ul>
 				</li>
-				<li><a href="#" title="Cart"><i class="fa fa-2x fa-shopping-cart"></i><span class="sr-only">Cart</span></a></li>
+				<li><a href="/cart" title="Cart"><i class="fa fa-2x bwg-i-cart"></i><span class="sr-only">Cart</span></a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 		<?php } ?>

@@ -39,13 +39,28 @@ body {
     border-color: darken(#30d376, 10);
   }
 }
+a.btn-inverse {
+  background-color: #484848;
+  border-color: darken(#484848, 15);
+  color: white;
+  &:focus,&:active,&:hover,&.active {
+    background-color: #373737;
+    border-color: darken(#373737, 15);
+    color: white;
+
+  }
+}
 .btn {
+  border:none;
   border-radius: 0;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
+  &.btn-outline {
+    border: 1px solid;
+  }
   .caret {
     width: 1.2em;
     height: inherit;
@@ -248,6 +263,9 @@ body {
       transition: color .15s cubic-bezier(.4,0,.2,1);
     }
   }
+  .btn {
+    max-height:50px;
+  }
   .navbar-nav>.active, .navbar-nav>li:focus,.navbar-nav>li:hover {
     &>a, &>a:focus, &>a:hover {
       color: black;
@@ -274,7 +292,6 @@ body {
     }
     .input-group {
       max-width: calc(100% - 195px);
-      min-height:100%;
 
       .input-group-addon{
         background: white !important;
@@ -319,6 +336,7 @@ body {
   @media (min-width: 768px) {
     #navbar {
       display: flex !important;
+      align-items: center;
       .navbar-right {
         flex-shrink: 0;
         padding-left: 40px;
@@ -408,9 +426,25 @@ table.flex-table {
     align-items: stretch;
     justify-content: center;
     align-content: center;
+    overflow: hidden;
+    td {
+      &.no-grow {
+        flex-grow: 0;
+        padding: 8px 0 !important;
+        margin: 0 8px 0 0;
+      }
+      &.shrink { flex-shrink: 1; }
+    }
     &.hiddenRow {
       >td:first-child {
         flex-grow: 1;
+      }
+    }
+    &[aria-expanded=true] {
+      td.hide-x {
+        max-width: 0;
+        padding: 0;
+        overflow: hidden;
       }
     }
   }
@@ -425,19 +459,7 @@ table.flex-table {
       font-size: 16px;
       font-weight: 400;
       text-align: center;
-      &:last-child {
-        position: relative;
-        &::after {
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          display: block;
-          background-color: #303030;
-          right: -1px;
-          content: '';
-          top: 0;
-        }
-      }
+
       a {
         color: white;
         margin-left: 8px;
@@ -453,19 +475,18 @@ table.flex-table {
     flex-direction: column;
   }
   td {
+    max-width: 100%;
+    transition: all .3s cubic-bezier(.4,0,.2,1);
     flex: 1 1 auto;
     &:first-child {
       flex: 0 0 150px;
     }
-    display: inline-block;
-    text-align: center;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
     i {
       transition: transform .3s cubic-bezier(.4,0,.2,1);
-    }
-    &[aria-expanded="true"] {
-      i {
-        transform: scale(1,-1);
-      }
     }
     > * {
       text-align: initial;
@@ -493,7 +514,7 @@ table.flex-table {
     padding: 0 !important;
     border-top: none;
     .tdWrapper {
-      padding: 15px;
+      padding: 15px 8px;
     }
   }
   .aside & {
@@ -564,35 +585,42 @@ input::-webkit-input-placeholder, button {
   box-shadow: none;
   background-color: transparent;
   tr {
+    overflow: hidden;
     background-color: white;
-    transition: all .3s cubic-bezier(.4,0,.4,1);
-    cursor: pointer;
-
-    &[aria-expanded=true] {
-      box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+    &.hiddenRow{
+      overflow: visible;
       position: relative;
-      z-index: 2;
-      margin-top: 15px;
       &::after {
         position: absolute;
-        top: 100%;
-        display: block;
-        content: "";
-        height: 0;
-        border-bottom: 10px solid white;
+        height: 6px;
+        bottom: calc(100% - 1px);
         width: 100%;
-        border-top: 2px solid #dddddd;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        content: "";
       }
+    }
+    td {
+      transition: all .5s cubic-bezier(.4,0,.2,1);
+    }
+    cursor: pointer;
+    &[aria-expanded=true] {
+      border-bottom:2px solid #eee;
+      box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+      position: relative;
+      z-index: 1;
+      margin-top: 15px;
       + .hiddenRow {
         box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
         margin-bottom: 15px;
         position: relative;
         z-index: 1;
+
         + [aria-expanded=true] {
           margin-top: 0;
         }
       }
     }
-
   }
 }
