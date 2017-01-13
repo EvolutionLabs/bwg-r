@@ -138,7 +138,8 @@ a.btn-inverse {
   min-width: 165px;
   text-align: initial; }
   .btn-secondary.dropdown-toggle .caret {
-    float: right; }
+    position: absolute;
+    right: 6px; }
   .btn-secondary.dropdown-toggle + .dropdown-menu {
     min-width: 165px; }
     .btn-secondary.dropdown-toggle + .dropdown-menu > li {
@@ -214,7 +215,8 @@ a.btn-inverse {
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li:focus > a, .navbar-default .navbar-nav > li:focus > a:focus, .navbar-default .navbar-nav > li:focus > a:hover, .navbar-default .navbar-nav > li:hover > a, .navbar-default .navbar-nav > li:hover > a:focus, .navbar-default .navbar-nav > li:hover > a:hover {
     color: black; }
   .navbar-default .nav-search {
-    display: flex; }
+    display: flex;
+    flex-grow: 1; }
     .navbar-default .nav-search .input-group, .navbar-default .nav-search .btn-search {
       transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12); }
@@ -273,7 +275,7 @@ a.btn-inverse {
   padding-bottom: 20px; }
   body > .flexWrap {
     min-height: calc(100vh - 95px);
-    background: url("../image/retail.jpg") no-repeat 50% 50% fixed/cover;
+    background: url("../image/retail.jpg") no-repeat 50% 50%/cover;
     position: relative; }
     body > .flexWrap.v-center {
       justify-content: center;
@@ -322,6 +324,7 @@ a.btn-inverse {
 table.flex-table {
   display: flex;
   flex-direction: column;
+  margin: 0;
   border-spacing: 1px; }
   table.flex-table thead {
     display: flex !important;
@@ -339,7 +342,14 @@ table.flex-table {
     table.flex-table tr td.shrink {
       flex-shrink: 1; }
     table.flex-table tr.hiddenRow > td:first-child {
-      flex-grow: 1; }
+      flex-grow: 1;
+      flex-wrap: wrap; }
+      table.flex-table tr.hiddenRow > td:first-child > * + div {
+        padding: 0;
+        border-top: 1px solid #ddd;
+        flex-grow: 1; }
+        table.flex-table tr.hiddenRow > td:first-child > * + div > div {
+          padding: 15px 8px; }
     table.flex-table tr[aria-expanded=true] td.hide-x {
       max-width: 0;
       padding: 0;
@@ -460,6 +470,7 @@ input::-webkit-input-placeholder, button {
         position: absolute;
         height: 6px;
         bottom: calc(100% - 1px);
+        left: 0;
         width: 100%;
         background-color: #fff;
         border-bottom: 1px solid #ddd;
@@ -479,5 +490,16 @@ input::-webkit-input-placeholder, button {
         z-index: 1; }
         .card.transparent tr[aria-expanded=true] + .hiddenRow + [aria-expanded=true] {
           margin-top: 0; }
+
+.afterFlexTable {
+  background-color: white;
+  border-top: 1px solid #ddd;
+  padding: 12px 8px; }
+
+.flexRow {
+  display: flex; }
+  .flexRow .flexCol {
+    display: flex;
+    flex-direction: column; }
 
 /*# sourceMappingURL=base.css.map */

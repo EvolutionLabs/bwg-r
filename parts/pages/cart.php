@@ -140,7 +140,7 @@ function makeSlug($name) {
 					</tr>
 					</thead>
 					<?php
-					for ($i = 0; $i < 3; $i++) { ?>
+					for ($i = 0; $i < 7; $i++) { ?>
 						<tr data-toggle="collapse" data-target="#tr-<?=$dd['id'] ;?>" class="accordion-toggle">
 							<?php
 							foreach ($dd as $k => $v) {
@@ -226,9 +226,14 @@ function makeSlug($name) {
 													</span>
 												</div>
 												<a href="#remove-from-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-inverse btn-block">Remove</a>
-												<a href="#" class="btn btn-default btn-stock btn-block">View Stock Card</a>
+												<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle" data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
 											</div>
 										</div>
+									</div>
+								</div>
+								<div class="collapse" id="stock-<?= $dd['id'] ;?>">
+									<div><!--Don't remove this wrapper, it's needed for smooth animation !-->
+										Stock card here
 									</div>
 								</div>
 							</td>
@@ -239,7 +244,43 @@ function makeSlug($name) {
 						$dd['id'] = $string;
 					} ?>
 				</table>
+				<div class="afterFlexTable">
+					<div class="flexRow">
+						<div class="flexCol">
+							<h4>Promotions</h4>
+							<dl class="dl-horizontal">
+								<dt>Percentage Saving</dt>
+								<dd>14%</dd>
+								<dt>Cash Saving</dt>
+								<dd>€2.56</dd>
+							</dl>
+
+							<div class="btn-group">
+								<a href="#" class="btn btn-success">Continue Shopping</a>
+								<a href="#" class="btn btn-default">Erase Cart</a>
+							</div>
+						</div>
+						<div class="flexCol well">
+							<h4>Total <span class="pull-right">€45.50</span></h4>
+							<dl class="dl-horizontal">
+								<dt>Order reference</dt>
+								<dd>09876</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>Estimated delivery</dt>
+								<dd>26/04/17</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>Estimated delivery</dt>
+								<dd>26/04/17</dd>
+							</dl>
+							<a href="#checkout" class="btn btn-primary">Send order</a>
+						</div>
+					</div>
+
+				</div>
 			</div>
+
 
 		</div>
 		<div class="col-md-3 col-sm-12 aside">

@@ -347,6 +347,12 @@ function makeSlug($name) {
 										</div>
 									</div>
 								</div>
+								<div class="collapse" id="stock-<?= $dd['id'] ;?>">
+									<div><!--Don't remove this wrapper, it's needed for smooth animation !-->
+										Stock card here
+									</div>
+								</div>
+
 							</td>
 						</tr>
 

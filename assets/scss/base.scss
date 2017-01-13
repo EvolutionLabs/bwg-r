@@ -168,7 +168,8 @@ a.btn-inverse {
   min-width: 165px;
   text-align: initial;
   .caret {
-    float: right;
+    position: absolute;
+    right: 6px;
   }
   + .dropdown-menu {
     min-width: 165px;
@@ -273,6 +274,7 @@ a.btn-inverse {
   }
   .nav-search {
     display: flex;
+    flex-grow: 1;
     .input-group, & .btn-search {
       transition: box-shadow .4s cubic-bezier(.4,0,.2,1);
       box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
@@ -352,7 +354,7 @@ a.btn-inverse {
   padding-bottom: 20px;
   body > & {
     min-height: calc(100vh - 95px);
-    background: url('../image/retail.jpg') no-repeat 50% 50% fixed /cover;
+    background: url('../image/retail.jpg') no-repeat 50% 50% /cover;
     position: relative;
     &.v-center {
       justify-content: center;
@@ -417,6 +419,7 @@ a.btn-inverse {
 table.flex-table {
   display: flex;
   flex-direction: column;
+  margin: 0;
   thead{
     display: flex !important;
     flex-direction: column;
@@ -438,6 +441,16 @@ table.flex-table {
     &.hiddenRow {
       >td:first-child {
         flex-grow: 1;
+        flex-wrap: wrap;
+        >*+div {
+          padding: 0;
+          border-top: 1px solid #ddd;
+          flex-grow: 1;
+          >div {
+            padding: 15px 8px;
+
+          }
+        }
       }
     }
     &[aria-expanded=true] {
@@ -595,6 +608,7 @@ input::-webkit-input-placeholder, button {
         position: absolute;
         height: 6px;
         bottom: calc(100% - 1px);
+        left: 0;
         width: 100%;
         background-color: #fff;
         border-bottom: 1px solid #ddd;
@@ -622,5 +636,17 @@ input::-webkit-input-placeholder, button {
         }
       }
     }
+  }
+}
+.afterFlexTable {
+  background-color: white;
+  border-top: 1px solid #ddd;
+  padding: 12px 8px;
+}
+.flexRow {
+  display: flex;
+  .flexCol {
+    display: flex;
+    flex-direction: column;
   }
 }

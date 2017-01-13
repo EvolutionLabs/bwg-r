@@ -41,6 +41,6 @@
 		</tr>
 		</tfoot>
 	</table>
-	<a href="#" class="btn btn-block btn-primary">Checkout</a>
+	<a href="#" class="btn btn-block btn-primary">View cart</a>
 
 </div>
