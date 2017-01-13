@@ -7,6 +7,7 @@ $(window).on('load', function(){
         e.stopPropagation();
         $(this).closest('td').toggleClass('active');
     }).on('click', '.input-group-addon', function(e){
+        e.stopPropagation();
         var field = $(this).closest('.input-group').find('.form-control'),
             val = field.val() ? field.val() * 1 : 0;
         if (val < 1 ) {
