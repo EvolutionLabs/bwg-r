@@ -20,6 +20,13 @@ body {
 
 .btn-group, .card {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
+  .btn-group.clear, .card.clear {
+    box-shadow: none; }
+
+.btn-group.separate .btn {
+  margin-left: 15px; }
+  .btn-group.separate .btn:first-child {
+    margin-left: 0; }
 
 .rltv {
   position: relative; }
@@ -27,9 +34,16 @@ body {
 .btn-success {
   background-color: #29b766;
   border-color: #208d4f; }
-  .btn-success:focus, .btn-success:active, .btn-success:hover, .btn-success.active {
-    background-color: #30d376;
-    border-color: #24ac5e; }
+  .btn-success:focus, .btn-success:active, .btn-success:hover, .btn-success.active, .btn-success:active:focus, .btn-success:active:hover {
+    background-color: #208d4f;
+    border-color: #166438; }
+
+.btn-danger {
+  background-color: #ff0048;
+  border-color: #cc003a; }
+  .btn-danger:focus, .btn-danger:active, .btn-danger:hover, .btn-danger.active, .btn-danger:active:focus, .btn-danger:active:hover {
+    background-color: #cc003a;
+    border-color: #99002b; }
 
 a.btn-inverse {
   background-color: #484848;
@@ -73,12 +87,12 @@ a.btn-inverse {
     background-color: transparent;
     border-color: transparent;
     color: white; }
-  .btn-group .btn {
+  .btn-group:not(.separate) .btn {
     box-shadow: none;
     min-width: 50px; }
-    .btn-group .btn + .btn {
+    .btn-group:not(.separate) .btn + .btn {
       border-left: 1px solid rgba(128, 128, 128, 0.21); }
-      .btn-group .btn + .btn:hover, .btn-group .btn + .btn:focus, .btn-group .btn + .btn:active {
+      .btn-group:not(.separate) .btn + .btn:hover, .btn-group:not(.separate) .btn + .btn:focus, .btn-group:not(.separate) .btn + .btn:active {
         border-color: rgba(0, 0, 0, 0.03); }
 
 .btn-white {
@@ -337,8 +351,8 @@ table.flex-table {
     overflow: hidden; }
     table.flex-table tr td.no-grow {
       flex-grow: 0;
-      padding: 8px 0 !important;
-      margin: 0 8px 0 0; }
+      padding: 8px 8px 8px 0;
+      margin: 0; }
     table.flex-table tr td.shrink {
       flex-shrink: 1; }
     table.flex-table tr.hiddenRow > td:first-child {
@@ -350,10 +364,13 @@ table.flex-table {
         flex-grow: 1; }
         table.flex-table tr.hiddenRow > td:first-child > * + div > div {
           padding: 15px 8px; }
+    table.flex-table tr[data-toggle] {
+      z-index: 1; }
     table.flex-table tr[aria-expanded=true] td.hide-x {
       max-width: 0;
       padding: 0;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
   table.flex-table th {
     flex-grow: 1;
     display: inline-block; }
@@ -468,7 +485,7 @@ input::-webkit-input-placeholder, button {
       position: relative; }
       .card.transparent tr.hiddenRow::after {
         position: absolute;
-        height: 6px;
+        height: 58px;
         bottom: calc(100% - 1px);
         left: 0;
         width: 100%;
@@ -477,17 +494,18 @@ input::-webkit-input-placeholder, button {
         content: ""; }
     .card.transparent tr td {
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card.transparent tr[data-target] > td {
+      z-index: 1; }
     .card.transparent tr[aria-expanded=true] {
       border-bottom: 2px solid #eee;
       box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
       position: relative;
-      z-index: 1;
+      z-index: unset;
       margin-top: 15px; }
       .card.transparent tr[aria-expanded=true] + .hiddenRow {
         box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
         margin-bottom: 15px;
-        position: relative;
-        z-index: 1; }
+        position: relative; }
         .card.transparent tr[aria-expanded=true] + .hiddenRow + [aria-expanded=true] {
           margin-top: 0; }
 
@@ -500,6 +518,11 @@ input::-webkit-input-placeholder, button {
   display: flex; }
   .flexRow .flexCol {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    flex-grow: 1; }
+    .flexRow .flexCol:last-child {
+      flex-grow: 0; }
+    .flexRow .flexCol .btn-group.clear {
+      display: inline-flex; }
 
 /*# sourceMappingURL=base.css.map */

@@ -43,6 +43,25 @@
     font-size: 1.6rem;
   }
 }
+dl, .dl-horizontal {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  dt {
+    text-align: left;
+  }
+}
+.afterFlexTable h4 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+.well {
+  border-radius: 0;
+  margin-bottom: 0;
+
+  & h4 {
+    font-size: 21px;
+  }
+}
 .sliderContainer {
   height: 500px;
   img {opacity: 0;}
@@ -67,7 +86,7 @@
     }
   }
   .input-group {
-    max-width: 140px;
+    max-width: 150px;
     height: 47px;
     margin: -3px 0;
     border-radius: 0;
@@ -100,7 +119,6 @@
       justify-content: space-between;
       .btn-stock {
         align-self: flex-end;
-        border: 1px solid;
       }
     }
     >* {

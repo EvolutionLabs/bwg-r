@@ -169,7 +169,7 @@ function makeSlug($name) {
 								</div>
 							</td>
 							<td class="no-grow hide-x">
-								<a href="#remove-from-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-sm btn-inverse">
+								<a href="#remove-from-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-sm btn-danger">
 									<i class="fa fa-2x bwg-i-cart"></i>
 								</a>
 							</td>
@@ -226,7 +226,7 @@ function makeSlug($name) {
 													</span>
 												</div>
 												<a href="#remove-from-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-inverse btn-block">Remove</a>
-												<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle" data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
+												<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle btn-outline" data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
 											</div>
 										</div>
 									</div>
@@ -255,9 +255,10 @@ function makeSlug($name) {
 								<dd>€2.56</dd>
 							</dl>
 
-							<div class="btn-group">
-								<a href="#" class="btn btn-success">Continue Shopping</a>
-								<a href="#" class="btn btn-default">Erase Cart</a>
+							<div class="btn-group clear separate">
+								<a href="#" class="btn btn-sm btn-success">Continue Shopping</a>
+								<a href="#" class="btn btn-sm btn-danger">Erase Cart</a>
+								<a href="#" class="btn btn-sm btn-default btn-outline">Update Cart</a>
 							</div>
 						</div>
 						<div class="flexCol well">

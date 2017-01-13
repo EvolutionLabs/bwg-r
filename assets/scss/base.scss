@@ -27,6 +27,18 @@ body {
 }
 .btn-group, .card{
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  &.clear {
+    box-shadow: none;
+  }
+}
+.btn-group.separate {
+  .btn {
+    margin-left: 15px;
+    &:first-child {
+
+      margin-left: 0;
+    }
+  }
 }
 .rltv {
   position: relative;
@@ -34,9 +46,17 @@ body {
 .btn-success {
   background-color: #29b766;
   border-color: darken(#29b766, 10);
-  &:focus,&:active,&:hover,&.active {
-    background-color: #30d376;
-    border-color: darken(#30d376, 10);
+  &:focus,&:active,&:hover,&.active, &:active:focus, &:active:hover {
+    background-color: darken(#29b766, 10);
+    border-color: darken(#29b766, 20);
+  }
+}
+.btn-danger {
+  background-color: #ff0048;
+  border-color: darken(#ff0048, 10);
+  &:focus,&:active,&:hover,&.active, &:active:focus, &:active:hover {
+    background-color: darken(#ff0048, 10);
+    border-color: darken(#ff0048, 20);
   }
 }
 a.btn-inverse {
@@ -91,7 +111,7 @@ a.btn-inverse {
     border-color: transparent;
     color: white;
   }
-  .btn-group & {
+  .btn-group:not(.separate) & {
     box-shadow: none;
     min-width: 50px;
     & + .btn {
@@ -433,8 +453,8 @@ table.flex-table {
     td {
       &.no-grow {
         flex-grow: 0;
-        padding: 8px 0 !important;
-        margin: 0 8px 0 0;
+        padding: 8px 8px 8px 0;
+        margin: 0;
       }
       &.shrink { flex-shrink: 1; }
     }
@@ -453,11 +473,15 @@ table.flex-table {
         }
       }
     }
+    &[data-toggle] {
+      z-index: 1;
+    }
     &[aria-expanded=true] {
       td.hide-x {
         max-width: 0;
         padding: 0;
         overflow: hidden;
+        position: relative;
       }
     }
   }
@@ -606,7 +630,7 @@ input::-webkit-input-placeholder, button {
       position: relative;
       &::after {
         position: absolute;
-        height: 6px;
+        height: 58px;
         bottom: calc(100% - 1px);
         left: 0;
         width: 100%;
@@ -619,18 +643,21 @@ input::-webkit-input-placeholder, button {
       transition: all .5s cubic-bezier(.4,0,.2,1);
     }
     cursor: pointer;
+    &[data-target] {
+      >td {
+        z-index:1;
+      }
+    }
     &[aria-expanded=true] {
       border-bottom:2px solid #eee;
       box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
       position: relative;
-      z-index: 1;
+      z-index:unset;
       margin-top: 15px;
       + .hiddenRow {
         box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
         margin-bottom: 15px;
         position: relative;
-        z-index: 1;
-
         + [aria-expanded=true] {
           margin-top: 0;
         }
@@ -648,5 +675,12 @@ input::-webkit-input-placeholder, button {
   .flexCol {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    &:last-child {
+      flex-grow: 0;
+    }
+    .btn-group.clear {
+      display: inline-flex;
+    }
   }
 }
