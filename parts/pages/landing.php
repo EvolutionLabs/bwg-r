@@ -1,10 +1,12 @@
 <?php if ($loggedIn) { ?>
 	<div class="shop-links">
 		<div class="loader"></div>
-		<span><a href="/section?category=ambient" class="ambient">Ambient</a></span>
-		<span><a href="/section?category=chill" class="chill">Chill</a></span>
-		<span><a href="/section?category=alcohol" class="alcohol">Alcohol</a></span>
-		<span><a href="#" class="centre">Value Centre</a></span>
+		<div>
+			<span><a href="/section?category=ambient" class="ambient">Ambient</a></span>
+			<span><a href="/section?category=chill" class="chill">Chill</a></span>
+			<span><a href="/section?category=alcohol" class="alcohol">Alcohol</a></span>
+			<span><a href="#" class="centre">Value Centre</a></span>
+		</div>
 	</div>
 <?php } else { ?>
 	<div class="card login">

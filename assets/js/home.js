@@ -16,7 +16,7 @@ $(window).on('load', function(){
                 'margin-top':(i < 2 ?'0':'10px'),
                 'margin-bottom':(i < 2 ?'10px':'0')
             }, 120, function(){
-                $('.shop-links>span').each(
+                $('.shop-links>div:last-child>span').each(
                     function(){
                         $(this).velocity({opacity: 1},500, function(){
                             loader.remove();
