@@ -28,6 +28,9 @@ body {
   .btn-group.separate .btn:first-child {
     margin-left: 0; }
 
+.dropdown-toggle.btn-secondary {
+  padding-right: 30px; }
+
 .rltv {
   position: relative; }
 
@@ -366,6 +369,8 @@ table.flex-table {
           padding: 15px 8px; }
     table.flex-table tr[data-toggle] {
       z-index: 1; }
+      table.flex-table tr[data-toggle] > td {
+        height: 58px; }
     table.flex-table tr[aria-expanded=true] td.hide-x {
       max-width: 0;
       padding: 0;
@@ -375,7 +380,7 @@ table.flex-table {
     flex-grow: 1;
     display: inline-block; }
     table.flex-table th:first-child {
-      flex-basis: 150px; }
+      flex: 0 0 150px; }
     .col-main table.flex-table th {
       background-color: #3d3d3d;
       color: white;
@@ -506,6 +511,8 @@ input::-webkit-input-placeholder, button {
         box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
         margin-bottom: 15px;
         position: relative; }
+        .card.transparent tr[aria-expanded=true] + .hiddenRow::after {
+          height: 54px; }
         .card.transparent tr[aria-expanded=true] + .hiddenRow + [aria-expanded=true] {
           margin-top: 0; }
 

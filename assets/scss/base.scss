@@ -35,10 +35,12 @@ body {
   .btn {
     margin-left: 15px;
     &:first-child {
-
       margin-left: 0;
     }
   }
+}
+.dropdown-toggle.btn-secondary {
+  padding-right:30px;
 }
 .rltv {
   position: relative;
@@ -475,6 +477,9 @@ table.flex-table {
     }
     &[data-toggle] {
       z-index: 1;
+      >td {
+        height: 58px;
+      }
     }
     &[aria-expanded=true] {
       td.hide-x {
@@ -486,7 +491,9 @@ table.flex-table {
     }
   }
   th {
-    &:first-child {flex-basis: 150px;}
+    &:first-child {
+      flex: 0 0 150px;
+    }
     flex-grow: 1;
     display: inline-block;
     .col-main & {
@@ -655,6 +662,9 @@ input::-webkit-input-placeholder, button {
       z-index:unset;
       margin-top: 15px;
       + .hiddenRow {
+        &::after {
+          height: 54px;
+        }
         box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
         margin-bottom: 15px;
         position: relative;
