@@ -341,7 +341,7 @@ function makeSlug($name) {
 													</span>
 												</div>
 												<a href="#add-to-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-success btn-block">Add to cart</a>
-												<a href="#" class="btn btn-default btn-stock btn-block btn-outline">View Stock Card</a>
+												<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle btn-outline" data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
 
 											</div>
 										</div>
