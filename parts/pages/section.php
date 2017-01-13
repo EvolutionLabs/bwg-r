@@ -202,33 +202,33 @@ function makeSlug($name) {
 			<div class="card transparent">
 				<div class="cardTitle">
 					<span class="filters">Filter by:</span>
-					<div class="btn-group">
-						<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ddDepartment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<div class="btn-group dropdown">
+						<a href="#" onclick="javascript:void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddDepartment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Department
 							<span class="caret"></span>
-						</button>
+						</a>
 						<ul class="dropdown-menu" aria-labelledby="ddDepartment">
 							<li><a class="dropdown-item" href="#">Department 1</a></li>
 							<li><a class="dropdown-item" href="#">Department 2</a></li>
 							<li><a class="dropdown-item" href="#">Department 3</a></li>
 						</ul>
 					</div>
-					<div class="btn-group">
-						<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ddGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<div class="btn-group dropdown">
+						<a href="#" onclick="javascript:void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Group
 							<span class="caret"></span>
-						</button>
+						</a>
 						<ul class="dropdown-menu" aria-labelledby="ddGroup">
 							<li><a class="dropdown-item" href="#">Group 1</a></li>
 							<li><a class="dropdown-item" href="#">Group 2</a></li>
 							<li><a class="dropdown-item" href="#">Group 3</a></li>
 						</ul>
 					</div>
-					<div class="btn-group">
-						<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="ddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Department
+					<div class="btn-group dropdown">
+						<a href="#" onclick="javascript:void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Category
 							<span class="caret"></span>
-						</button>
+						</a>
 						<ul class="dropdown-menu" aria-labelledby="ddCategory">
 							<li><a class="dropdown-item" href="#">Category 1</a></li>
 							<li><a class="dropdown-item" href="#">Category 2</a></li>
@@ -241,7 +241,7 @@ function makeSlug($name) {
 						<a class="btn btn-clear" href="#"><i class="fa fa-th"></i></a>
 					</span>
 				</div>
-				<table class="table products">
+				<table class="table products flex-table">
 					<thead>
 					<tr>
 						<?php
@@ -293,7 +293,6 @@ function makeSlug($name) {
 														<span class="value"><?= $value ;?></span>
 													</div>
 												<?php } ?>
-												<a href="#" class="btn btn-default btn-sm">View Stock Card</a>
 											</div>
 										</div>
 										<div class="right-col">
@@ -309,12 +308,13 @@ function makeSlug($name) {
 													<span class="input-group-addon">
 														<i class="fa fa-plus"></i>
 													</span>
-													<input type="text" class="form-control" name="qty-<?= $dd['id'] ;?>" />
+													<input type="text" class="form-control" value="1" name="qty-<?= $dd['id'] ;?>" />
 													<span class="input-group-addon">
 														<i class="fa fa-minus"></i>
 													</span>
 												</div>
 												<a href="#add-to-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-success btn-block">Add to cart</a>
+												<a href="#" class="btn btn-default btn-stock">View Stock Card</a>
 
 											</div>
 										</div>

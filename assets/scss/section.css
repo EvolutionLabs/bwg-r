@@ -24,9 +24,6 @@
     font-weight: 600; }
     .tdWrapper .p-Details .key::after {
       content: ":"; }
-  .tdWrapper .p-Details .btn {
-    margin-top: 15px;
-    box-shadow: none; }
   .tdWrapper .p-Title {
     text-transform: uppercase;
     font-weight: 600;
@@ -52,6 +49,9 @@
       flex-direction: column; } }
   .products .right-col > * {
     flex: 1 1 40%; }
+  .products .right-col .btn-stock {
+    margin-top: 15px;
+    box-shadow: none; }
   .products .right-col .input-group {
     height: 50px;
     border-radius: 0; }
@@ -71,8 +71,9 @@
       border: 1px solid #dcdada;
       outline: none !important;
       box-shadow: none !important;
-      font-size: 30px;
+      font-size: 24px;
       line-height: 30px;
+      text-align: center;
       font-family: 'Montserrat', sans-serif; }
 .products .iconBar {
   flex: 0 0 145px; }
@@ -173,14 +174,29 @@
   font-size: 16px;
   font-weight: 600;
   border-radius: 0;
-  padding: 8px; }
+  padding: 0; }
+  .open .iconsDd .dropdown-menu {
+    padding: 8px; }
   .iconsDd .dropdown-menu li {
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .iconsDd .dropdown-menu li:hover {
       background-color: #303030;
       color: white; }
     .iconsDd .dropdown-menu li i {
       margin: 12px 8px; }
+
+#dropdownFilters {
+  box-shadow: none;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .open #dropdownFilters {
+    box-shadow: 0 -5px 5px -3px rgba(0, 0, 0, 0.2), 0 -8px 10px 1px rgba(0, 0, 0, 0.14), 0 -3px 14px 2px rgba(0, 0, 0, 0.12);
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12);
+    background-color: #373737;
+    transform: scaleY(-1); }
 
 .submenu {
   position: relative; }
@@ -208,7 +224,7 @@
   @media (min-width: 768px) {
     .megaMenu {
       padding: 0;
-      top: calc(100% - 3px); } }
+      top: calc(100% - 11px); } }
   .megaMenu .filtersList {
     display: flex;
     flex-wrap: wrap; }

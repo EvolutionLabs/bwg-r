@@ -26,11 +26,24 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" title="Layout"><i class="fa fa-2x fa-th-large"></i><span class="sr-only">Layout</span></a></li>
 				<li><a href="#" title="Favorites"><i class="fa fa-2x fa-heart"></i><span class="sr-only">Favorites</span></a></li>
-				<li><a href="#" title="Settings"><i class="fa fa-2x fa-cog"></i><span class="sr-only">Settings</span></a></li>
+				<li><a href="#" title="Settings"
+				       class="dropdown-toggle" id="dropdownSettings"
+				       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+					><i class="fa fa-2x fa-cog"></i><span class="sr-only">Settings</span></a>
+					<ul class="dropdown-menu" aria-labelledby="dropdownSettings">
+						<li><a href="#">Current Order</a></li>
+						<li><a href="/past-orders">Past Orders</a></li>
+						<li><a href="/hht-orders">HHT Orders</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Help</a></li>
+						<li role="separator" class="divider"></li>
+						<form action="/" method="post">
+							<button name="logout" value="true" title="Sign out"><i class="fa fa-sign-out"></i>Sign Out</button>
+						</form>
+						<li><div class="info"><?= $_SESSION['username'];?> 1234</div></li>
+					</ul>
+				</li>
 				<li><a href="#" title="Cart"><i class="fa fa-2x fa-shopping-cart"></i><span class="sr-only">Cart</span></a></li>
-				<li><form action="/" method="post">
-						<button name="logout" value="true" title="Sign out"><i class="fa fa-2x fa-sign-out"></i><span class="sr-only">Sign Out</span></button>
-					</form></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 		<?php } ?>

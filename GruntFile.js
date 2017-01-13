@@ -6,7 +6,7 @@ module.exports = function(grunt) {
                     require('pixrem')(),
                     require('autoprefixer')({browsers: ['> 0%']}),
                     require('postcss-flexboxfixer'),
-                    require('cssnano')()
+                    require('cssnano')({zindex: false})
                 ]
             },
             bwg: {

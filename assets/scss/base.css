@@ -21,9 +21,6 @@ body {
 .btn-group, .card {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
 
-.card.transparent {
-  box-shadow: none; }
-
 .rltv {
   position: relative; }
 
@@ -99,8 +96,76 @@ body {
   .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-toggle:focus, .navbar-toggle:hover {
     background-color: rgba(0, 0, 0, 0.27); }
 
+#dropdownSettings::after {
+  top: 100%; }
+
+#dropdownIcons {
+  right: -1px;
+  position: relative; }
+
 .dropdown-menu {
-  border-radius: 0; }
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  border: none;
+  margin-top: 1px;
+  right: -1px;
+  overflow: hidden;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .dropdown-menu > * {
+    margin-top: -100%;
+    transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .open .dropdown-menu > * {
+      margin-top: 0; }
+  .open .dropdown-menu {
+    opacity: 1;
+    pointer-events: initial; }
+
+.btn-secondary.dropdown-toggle {
+  min-width: 165px;
+  text-align: initial; }
+  .btn-secondary.dropdown-toggle .caret {
+    float: right; }
+  .btn-secondary.dropdown-toggle + .dropdown-menu {
+    min-width: 165px; }
+    .btn-secondary.dropdown-toggle + .dropdown-menu > li {
+      padding: 0; }
+      .btn-secondary.dropdown-toggle + .dropdown-menu > li > * {
+        padding: 8px 20px; }
+
+.open {
+  /*.dropdown-toggle[aria-haspopup=true]::after{
+    height: 13px;
+
+    position: absolute;
+    top: calc(100% + 1px);
+    left: -1px;
+    background-color: #fff;
+    border-top: 1px solid #bbb;
+    width: calc(100% + 2px);
+  }*/ }
+  .open > a, .open > a:focus, .open > a:hover, .open > .dropdown-toggle.active, .open > .dropdown-toggle.active:focus, .open * > .dropdown-toggle.active:hover {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12); }
+  .open.btn-group .dropdown-menu {
+    margin-top: 1px;
+    border-top: 1px solid #eee; }
+  .open .dropdown-menu {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    border-radius: 0;
+    padding: 14px 0 0 0;
+    border: none;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.1), 0 8px 10px 1px rgba(0, 0, 0, 0.07), 0 3px 14px 2px rgba(0, 0, 0, 0.06); }
+    .navbar-nav > .open .dropdown-menu {
+      margin-top: 1px; }
+    .open .dropdown-menu form {
+      margin-top: -10px; }
+      .open .dropdown-menu form button:hover {
+        background-color: #373737;
+        color: white; }
 
 .navbar-default {
   min-height: 95px;
@@ -118,11 +183,22 @@ body {
   @media (max-width: 991px) {
     .navbar-default > .container {
       width: 100%; } }
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    background-color: white;
+    border: none;
+    border-bottom-color: white; }
+  .navbar-default .navbar-nav > .open .dropdown-menu li:last-child {
+    background-color: #29b766; }
+    .navbar-default .navbar-nav > .open .dropdown-menu li:last-child > a {
+      color: white; }
+  .navbar-default .navbar-nav > .open .dropdown-menu .info {
+    padding: 20px 12px;
+    color: white; }
   .navbar-default .navbar-nav > li > a {
-    color: white; }
+    color: white;
+    transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li:focus > a, .navbar-default .navbar-nav > li:focus > a:focus, .navbar-default .navbar-nav > li:focus > a:hover, .navbar-default .navbar-nav > li:hover > a, .navbar-default .navbar-nav > li:hover > a:focus, .navbar-default .navbar-nav > li:hover > a:hover {
-    background-color: #26ab5f;
-    color: white; }
+    color: black; }
   .navbar-default .nav-search {
     display: flex; }
     .navbar-default .nav-search .input-group, .navbar-default .nav-search .btn-search {
@@ -157,8 +233,7 @@ body {
           font-size: 28px;
           width: 50px;
           height: 50px;
-          margin: -1px;
-          color: white; }
+          margin: -1px; }
           .navbar-default .nav-search .input-group .input-group-addon button:hover, .navbar-default .nav-search .input-group .input-group-addon button:active, .navbar-default .nav-search .input-group .input-group-addon button:focus {
             background-color: #202076; }
   .navbar-default .navbar-right li > a, .navbar-default .navbar-right li button {
@@ -166,9 +241,8 @@ body {
   .navbar-default .navbar-right li button {
     background: none;
     border: none;
-    color: white;
-    width: 50px;
-    height: 50px; }
+    display: block;
+    width: 100%; }
   @media (min-width: 768px) {
     .navbar-default #navbar {
       display: flex !important; }
@@ -225,61 +299,88 @@ body {
       font-weight: 600;
       margin: 0;
       color: white; }
+    .flexWrap .cardTitle a.btn-secondary {
+      background-color: white;
+      color: black; }
 
-table.table {
+table.flex-table {
+  display: flex;
+  flex-direction: column;
   border-spacing: 1px; }
-  .col-main table.table > thead > tr > th {
-    background-color: #3d3d3d;
-    color: white;
-    padding: 18px 8px;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center; }
-    .col-main table.table > thead > tr > th:last-child {
-      position: relative; }
-      .col-main table.table > thead > tr > th:last-child::after {
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        display: block;
-        background-color: #303030;
-        right: -1px;
-        content: '';
-        top: 0; }
-    .col-main table.table > thead > tr > th a {
+  table.flex-table thead {
+    display: flex !important;
+    flex-direction: column; }
+  table.flex-table tr {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center; }
+    table.flex-table tr.hiddenRow > td:first-child {
+      flex-grow: 1; }
+  table.flex-table th {
+    flex-grow: 1;
+    display: inline-block; }
+    table.flex-table th:first-child {
+      flex-basis: 150px; }
+    .col-main table.flex-table th {
+      background-color: #3d3d3d;
       color: white;
-      margin-left: 8px; }
-  .aside table.table > thead > tr > th {
-    border-top: none;
-    border-bottom-width: 0; }
-  table.table > tbody > tr > td {
+      padding: 18px 8px;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center; }
+      .col-main table.flex-table th:last-child {
+        position: relative; }
+        .col-main table.flex-table th:last-child::after {
+          position: absolute;
+          width: 1px;
+          height: 100%;
+          display: block;
+          background-color: #303030;
+          right: -1px;
+          content: '';
+          top: 0; }
+      .col-main table.flex-table th a {
+        color: white;
+        margin-left: 8px; }
+    .aside table.flex-table th {
+      border-top: none;
+      border-bottom-width: 0; }
+  table.flex-table tbody {
+    display: flex;
+    flex-direction: column; }
+  table.flex-table td {
+    flex: 1 1 auto;
+    display: inline-block;
     text-align: center; }
-    table.table > tbody > tr > td i {
+    table.flex-table td:first-child {
+      flex: 0 0 150px; }
+    table.flex-table td i {
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    table.table > tbody > tr > td[aria-expanded="true"] i {
+    table.flex-table td[aria-expanded="true"] i {
       transform: scale(1, -1); }
-    table.table > tbody > tr > td > * {
+    table.flex-table td > * {
       text-align: initial; }
-    .col-main table.table > tbody > tr > td {
+    .col-main table.flex-table td {
       padding: 12px 8px;
       font-weight: 600;
       font-size: 15px; }
-    .aside table.table > tbody > tr > td {
+    .aside table.flex-table td {
       border-top: none;
       text-align: initial; }
-    .cart table.table > tbody > tr > td:last-child {
+    .cart table.flex-table td:last-child {
       text-align: right; }
-  table.table > tfoot > tr > td {
+  table.flex-table > tfoot > tr > td {
     font-style: italic;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: -.8px; }
-  table.table > tbody > .hiddenRow > td {
+  table.flex-table > tbody > .hiddenRow > td {
     padding: 0 !important;
     border-top: none; }
-    table.table > tbody > .hiddenRow > td .tdWrapper {
+    table.flex-table > tbody > .hiddenRow > td .tdWrapper {
       padding: 15px; }
-  .aside table.table {
+  .aside table.flex-table {
     border-bottom: none; }
 
 @media (max-width: 767px) {
@@ -326,5 +427,34 @@ input::-webkit-input-placeholder, button {
           font-size: 11px;
           transform: translateY(-20px);
           visibility: visible !important; }
+
+.card.transparent {
+  box-shadow: none;
+  background-color: transparent; }
+  .card.transparent tr {
+    background-color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.4, 1);
+    cursor: pointer; }
+    .card.transparent tr[aria-expanded=true] {
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+      position: relative;
+      z-index: 2;
+      margin-top: 15px; }
+      .card.transparent tr[aria-expanded=true]::after {
+        position: absolute;
+        top: 100%;
+        display: block;
+        content: "";
+        height: 0;
+        border-bottom: 10px solid white;
+        width: 100%;
+        border-top: 2px solid #dddddd; }
+      .card.transparent tr[aria-expanded=true] + .hiddenRow {
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1; }
+        .card.transparent tr[aria-expanded=true] + .hiddenRow + [aria-expanded=true] {
+          margin-top: 0; }
 
 /*# sourceMappingURL=base.css.map */
