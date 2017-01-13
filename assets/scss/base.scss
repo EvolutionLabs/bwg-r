@@ -290,6 +290,8 @@ body {
           border:0;
           padding: 8px 9px 8px 10px;
           background-color: map_get($colors, 'primary');
+          color: white;
+
           font-size: 28px;
           width: 50px;
           height: 50px;
@@ -319,7 +321,7 @@ body {
       display: flex !important;
       .navbar-right {
         flex-shrink: 0;
-
+        padding-left: 40px;
       }
     }
   }

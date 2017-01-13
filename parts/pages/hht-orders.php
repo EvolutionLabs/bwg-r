@@ -12,12 +12,12 @@ $dd = [
 <div class="container dull">
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
-			<div class="card">
+			<div class="card transparent">
 				<div class="cardTitle">
 					<span class="pull-right"><a href="#" class="btn btn-default btn-sm">Return to products</a></span>
 					<h1>HHT Orders</h1>
 				</div>
-				<table class="table">
+				<table class="table flex-table">
 					<thead>
 						<tr>
 						<?php
@@ -30,7 +30,7 @@ $dd = [
 					</thead>
 				<?php
 				for ($i = 0; $i < 12; $i++) { ?>
-					<tr>
+					<tr data-toggle="collapse" data-target="#tr-<?=$dd['Order #'] ;?>" class="accordion-toggle">
 						<?php
 						foreach ($dd as $v) {
 							echo '<td>'.$v.'</td>';
@@ -38,7 +38,7 @@ $dd = [
 						?>
 						<td>
 							<a href="#add-to-cart"><i class="fa fa-plus"></i></a></td>
-						<td data-toggle="collapse" data-target="#tr-<?=$dd['Order #'] ;?>" class="accordion-toggle">
+						<td>
 							<a href="#open" onclick="javascript:void(0)">
 								<i class="fa fa-chevron-down"></i></a></td>
 					</tr>

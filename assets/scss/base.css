@@ -230,6 +230,7 @@ body {
           border: 0;
           padding: 8px 9px 8px 10px;
           background-color: #131346;
+          color: white;
           font-size: 28px;
           width: 50px;
           height: 50px;
@@ -247,7 +248,8 @@ body {
     .navbar-default #navbar {
       display: flex !important; }
       .navbar-default #navbar .navbar-right {
-        flex-shrink: 0; } }
+        flex-shrink: 0;
+        padding-left: 40px; } }
 
 .flexWrap {
   display: flex;
