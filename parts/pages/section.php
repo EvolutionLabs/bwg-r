@@ -283,7 +283,7 @@ function makeSlug($name) {
 								</div>
 							</td>
 							<td class="no-grow hide-x">
-								<a href="#remove-from-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-sm btn-inverse">
+								<a href="#add-to-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-sm btn-success">
 									<i class="fa fa-2x bwg-i-cart"></i>
 								</a>
 							</td>
@@ -341,7 +341,7 @@ function makeSlug($name) {
 													</span>
 												</div>
 												<a href="#add-to-cart?id=<?= $dd['id'] ;?>" onclick="javascript:void(0)" class="btn btn-cart btn-success btn-block">Add to cart</a>
-												<a href="#" class="btn btn-default btn-stock">View Stock Card</a>
+												<a href="#" class="btn btn-default btn-stock btn-block">View Stock Card</a>
 
 											</div>
 										</div>
