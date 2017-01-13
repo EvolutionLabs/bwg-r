@@ -292,7 +292,7 @@ function makeSlug($name) {
 							<td colspan="10">
 								<?php
 								$rand = (float)rand()/(float)getrandmax();
-								if ($rand < 0.3) { ?>
+								if ($rand < 0.33) { ?>
 									<div class="offerWrap">
 										<div class="offerTag">
 											<span class="tagTitle">30% OFF</span>
