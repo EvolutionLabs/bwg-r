@@ -7,17 +7,18 @@ $(window).on('load', function(){
         width:'100%'
     }, 200, function(){
         loader.css({'background-color':'transparent'});
-        loader.find('div').each(function(){
+        loader.find('div').each(function(i){
+            console.log(i < 2);
             $(this).velocity({
-                'margin-top':'10px',
-                'margin-bottom':'10px'
-            }, 100).velocity({
-                    'margin-right':'10px',
-                    'margin-left':'10px'
-            }, 100, function(){
+                'margin-left':(i % 2 == 0 ? '0': '10px'),
+                'margin-right':(i % 2 == 0 ? '10px': '0')
+            }, 120).velocity({
+                'margin-top':(i < 2 ?'0':'10px'),
+                'margin-bottom':(i < 2 ?'10px':'0')
+            }, 120, function(){
                 $('.shop-links>span').each(
                     function(){
-                        $(this).velocity({opacity: 1}, function(){
+                        $(this).velocity({opacity: 1},500, function(){
                             loader.remove();
                         })
                     }
