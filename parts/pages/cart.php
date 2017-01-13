@@ -126,17 +126,6 @@ function makeSlug($name) {
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
 			<div class="card transparent">
-				<?php
-				$rand = (float)rand()/(float)getrandmax();
-				if ($rand < 0.33) { ?>
-					<div class="offerWrap">
-						<div class="offerTag">
-							<span class="tagTitle">30% OFF</span>
-							<span class="tagDtail">End date</span>
-							<span class="tagDate">1/2/17</span>
-						</div>
-					</div>
-				<?php } ?>
 				<table class="table products flex-table">
 					<thead>
 					<tr>
@@ -187,13 +176,17 @@ function makeSlug($name) {
 						</tr>
 						<tr class="hiddenRow">
 							<td colspan="10">
-								<div class="offerWrap">
-									<div class="offerTag">
-										<span class="tagTitle">30% OFF</span>
-										<span class="tagDtail">End date</span>
-										<span class="tagDate">1/2/17</span>
+								<?php
+								$rand = (float)rand()/(float)getrandmax();
+								if ($rand < 0.33) { ?>
+									<div class="offerWrap">
+										<div class="offerTag">
+											<span class="tagTitle">30% OFF</span>
+											<span class="tagDtail">End date</span>
+											<span class="tagDate">1/2/17</span>
+										</div>
 									</div>
-								</div>
+								<?php } ?>
 								<div class="collapse" id="tr-<?= $dd['id'] ;?>" style="overflow: hidden; clear: both;">
 									<div class="tdWrapper">
 										<div class="imageWrap"><img class="img-responsive" src="<?= $dd['Details']['image'] ;?>" /></div>
