@@ -4,7 +4,9 @@ include "parts/init.php";
 $path = substr($_SERVER["REQUEST_URI"], 1);
 $template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($path, 0, strpos($path,'?')) : $path);
 
-$css = ['bwg-i.css'];
+if (strlen($template) > 1) :
+
+	$css = ['bwg-i.css'];
 $js = ['shoplink.js'];
 
 switch ($template) {
@@ -32,3 +34,5 @@ include "parts/pages/{$template}.php";
 
 echo '</div>';
 include "parts/footer.php";
+
+endif;
