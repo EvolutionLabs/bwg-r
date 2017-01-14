@@ -4,11 +4,11 @@ function getR($val) {
 }
 $dd = [
 	'id' => '5027952011316',
-	'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey'],
+	'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
 	'Rank' => '12',
 	'RSP' => '12.99',
 	'Margin' => '21%',
-	'Pack/Case' => '280g/12',
+	'Pack<br />/Case' => '280g/12',
 	'Price' => [
 		'old' => '€20.50',
 	    'new' => '16.50'
@@ -253,7 +253,7 @@ function makeSlug($name) {
 								continue;
 							echo '<th>'.$k.'<a href="#"><i class="fa fa-sort"></i></a></th>';
 						}
-						echo '<th>Price</th><th colspan="3">'
+						echo '<th>Price</th><th colspan="3" class="pusher"></th>'
 						?>
 					</tr>
 					</thead>
