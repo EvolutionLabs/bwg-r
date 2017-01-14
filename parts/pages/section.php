@@ -1,11 +1,14 @@
 <?php
+function getR($val) {
+	return is_array($val) ? $val[rand(1, count($val)  - 1)] : $val;
+}
 $dd = [
 	'id' => '5027952011316',
-	'Name' => 'Glenn\'s Vodka',
+	'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
 	'Rank' => '12',
 	'RSP' => '12.99',
 	'Margin' => '21%',
-	'Pack/Case' => '280g/12',
+	'Pack<br />/Case' => '280g/12',
 	'Price' => [
 		'old' => '€20.50',
 	    'new' => '16.50'
@@ -250,7 +253,7 @@ function makeSlug($name) {
 								continue;
 							echo '<th>'.$k.'<a href="#"><i class="fa fa-sort"></i></a></th>';
 						}
-						echo '<th>Price</th><th></th>'
+						echo '<th>Price</th><th colspan="3" class="pusher"></th>'
 						?>
 					</tr>
 					</thead>
@@ -261,7 +264,8 @@ function makeSlug($name) {
 							foreach ($dd as $k => $v) {
 								if (in_array($k, ['id','Price','Details']))
 									continue;
-								echo '<td>'.$v.'</td>';
+								$val = is_array($v)? $v[rand(1,count($v) - 1)] : $v;
+								echo '<td>'.$val.'</td>';
 							}
 							?>
 							<td class="price">
@@ -306,7 +310,7 @@ function makeSlug($name) {
 										<div class="imageWrap"><img class="img-responsive" src="<?= $dd['Details']['image'] ;?>" /></div>
 										<div class="main-col">
 											<div>
-												<div class="p-Title"><?= $dd['Name'] ;?></div>
+												<div class="p-Title"><?= getR($dd['Name']) ;?></div>
 												<p class="p-Description"><?= $dd['Details']['Description'] ;?></p>
 											</div>
 											<div class="p-Details">

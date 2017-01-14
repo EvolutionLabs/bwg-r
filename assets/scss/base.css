@@ -367,20 +367,35 @@ table.flex-table {
         flex-grow: 1; }
         table.flex-table tr.hiddenRow > td:first-child > * + div > div {
           padding: 15px 8px; }
-    table.flex-table tr[data-toggle] {
+    table.flex-table tr[data-target] {
       z-index: 1; }
-      table.flex-table tr[data-toggle] > td {
-        height: 58px; }
+      table.flex-table tr[data-target] > td {
+        min-height: 58px; }
+        table.flex-table tr[data-target] > td:first-child {
+          text-align: left;
+          padding-left: 25px;
+          letter-spacing: -.5px;
+          font-size: 14px; }
     table.flex-table tr[aria-expanded=true] td.hide-x {
-      max-width: 0;
-      padding: 0;
+      pointer-events: none;
       overflow: hidden;
-      position: relative; }
+      position: relative;
+      opacity: 0; }
   table.flex-table th {
-    flex-grow: 1;
-    display: inline-block; }
+    max-width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1 1 75px;
+    min-width: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; }
     table.flex-table th:first-child {
-      flex: 0 0 150px; }
+      flex: 0 1 150px;
+      min-width: 120px; }
+    table.flex-table th.price {
+      flex-direction: column; }
+    table.flex-table th.pusher {
+      flex: 1 0 280px; }
     .col-main table.flex-table th {
       background-color: #3d3d3d;
       color: white;
@@ -400,12 +415,17 @@ table.flex-table {
   table.flex-table td {
     max-width: 100%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    flex: 1 1 auto;
+    flex: 1 1 75px;
+    min-width: 60px;
     align-items: center;
-    display: flex;
+    display: inline-flex;
     justify-content: center; }
     table.flex-table td:first-child {
-      flex: 0 0 150px; }
+      flex: 0 1 150px;
+      min-width: 120px; }
+    table.flex-table td.price {
+      display: inline-flex;
+      flex-direction: column; }
     table.flex-table td i {
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     table.flex-table td > * {
