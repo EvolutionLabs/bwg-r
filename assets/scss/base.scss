@@ -102,7 +102,6 @@ a.btn-inverse {
     height: inherit;
     border: none;
     font: normal normal normal 16px/1 FontAwesome;
-    vertical-align: text-top;
     margin-left: .4em;
     transition: transform .2s cubic-bezier(.4, 0, .2, 1);
     .open > & {
@@ -141,12 +140,15 @@ a.btn-inverse {
 
 .btn-white {
   background-color: white;
-  border-color: rgba(0, 0, 0, .12);
   &:hover, &:focus, &:active {
-    background-color: rgba(0, 0, 0, .03);
-    border-color: rgba(0, 0, 0, .03);
-    border-right-color: transparent;
+    background-color: rgba(0, 0, 0, .02);
+    outline:none!important;
+    box-shadow: none;
+
   }
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none!important;
 }
 
 .btn-disabled {
@@ -205,7 +207,30 @@ a.btn-inverse {
     pointer-events: initial;
   }
 }
-
+.card.page {
+  overflow: hidden;
+}
+.form-control-lg {
+  height: 45px;
+  border: 1px solid;
+  border-radius: 0;
+}
+.dropdown-toggle.hasCaret, .bootstrap-select>.dropdown-toggle {
+  padding-right: 30px;
+  position: relative;
+  .caret {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.bootstrap-select {
+  ul.dropdown-menu>li>a {
+    padding: 10px 12px;
+  }
+  box-shadow: none;
+}
 .btn-secondary.dropdown-toggle {
   min-width: 165px;
   text-align: initial;

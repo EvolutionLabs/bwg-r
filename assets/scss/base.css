@@ -77,7 +77,6 @@ a.btn-inverse {
     height: inherit;
     border: none;
     font: normal normal normal 16px/1 FontAwesome;
-    vertical-align: text-top;
     margin-left: .4em;
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
     .open > .btn .caret {
@@ -102,12 +101,14 @@ a.btn-inverse {
         border-color: rgba(0, 0, 0, 0.03); }
 
 .btn-white {
-  background-color: white;
-  border-color: rgba(0, 0, 0, 0.12); }
+  background-color: white; }
   .btn-white:hover, .btn-white:focus, .btn-white:active {
-    background-color: rgba(0, 0, 0, 0.03);
-    border-color: rgba(0, 0, 0, 0.03);
-    border-right-color: transparent; }
+    background-color: rgba(0, 0, 0, 0.02);
+    outline: none !important;
+    box-shadow: none; }
+
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important; }
 
 .btn-disabled {
   background-color: #3d3d3d;
@@ -153,6 +154,28 @@ a.btn-inverse {
   .open .dropdown-menu {
     opacity: 1;
     pointer-events: initial; }
+
+.card.page {
+  overflow: hidden; }
+
+.form-control-lg {
+  height: 45px;
+  border: 1px solid;
+  border-radius: 0; }
+
+.dropdown-toggle.hasCaret, .bootstrap-select > .dropdown-toggle {
+  padding-right: 30px;
+  position: relative; }
+  .dropdown-toggle.hasCaret .caret, .bootstrap-select > .dropdown-toggle .caret {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.bootstrap-select {
+  box-shadow: none; }
+  .bootstrap-select ul.dropdown-menu > li > a {
+    padding: 10px 12px; }
 
 .btn-secondary.dropdown-toggle {
   min-width: 165px;

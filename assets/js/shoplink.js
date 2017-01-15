@@ -36,4 +36,5 @@ $(window).on('load', function(){
         console.log(target);
         $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
     });
+    $('[role="combobox"]').removeClass('open');
 });

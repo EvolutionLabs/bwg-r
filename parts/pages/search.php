@@ -32,41 +32,57 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
 			<div class="card page">
-				<h1>Custom search</h1>
-			</div>
-			<div class="row">
+				<h2>Custom search</h2>
+
 				<div class="col-sm-6">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter search keywords" />
+					<div class="form-group">
+						<input type="text" class="form-control form-control-lg" placeholder="Enter search keywords" />
 					</div>
-					<div class="dropdown">
-						<a href="#" class="btn btn-default btn-outline dropdown-toggle" data-toggle="dropdown" data
+					<div class="form-group">
+						<select class="selectpicker" title="Supplier"
+						        data-style="btn-outline btn-white"
+						        data-container="body"
+						        data-width="300px"
+						>
+							<option>Supplier 1</option>
+							<option>Supplier 2</option>
+							<option>Supplier 3</option>
+							<option>Supplier 4</option>
+							<option>Supplier 5</option>
+							<option>Supplier 6</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="selectpicker" title="Brand"
+						        data-style="btn-outline btn-white"
+						        data-container="body"
+						        data-width="300px"
+						>
+							<option title="Brand 1">A brand</option>
+							<option title="Brand 2">Another brand</option>
+							<option title="Brand 3">Yet another brand</option>
+						</select>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<h4>Search tips</h4>
 					<dl class="dl-horizontal">
-						<dd>Regular:</dd>
-						<dt>Type all the words you want to search</dt>
-						<dd>Phrase match:</dd>
-						<dt>Put exact words in quotes to search for an exact phrase.
+						<dt>Regular:</dt>
+						<dd>Type all the words you want to search</dd>
+						<dt>Phrase match:</dt>
+						<dd>Put exact words in quotes to search for an exact phrase.
 							<code>Diet coke</code>
-						</dt>
-						<dd>Broad match:</dd>
-						<dt>Type OR between all the words you want.
+						</dd>
+						<dt>Broad match:</dt>
+						<dd>Type OR between all the words you want.
 							<code>small OR mini</code>
-						</dt>
-						<dd>Negative match:</dd>
-						<dt>Exclude words by putting a minus in front of them.
+						</dd>
+						<dt>Negative match:</dt>
+						<dd>Exclude words by putting a minus in front of them.
 							<code>-"low fat"</code>
-						</dt>
+						</dd>
 					</dl>
 				</div>
-				<div class="col-sm-6"></div>
-				<div class="col-sm-6"></div>
-				<div class="col-sm-6"></div>
-				<div class="col-sm-6"></div>
-				<div class="col-sm-6"></div>
 			</div>
 			<div class="pagination">
 				<span class="count">
@@ -83,6 +99,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					<a class="btn btn-white" href="#">Next</a>
 				</div>
 			</div>
+
 		</div>
 		<div class="col-md-3 col-sm-12 aside">
 			<?php include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."sidebar.php"; ?>
