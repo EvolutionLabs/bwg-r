@@ -520,11 +520,12 @@ a.btn-inverse {
           flex-direction: column; }
           .flexWrap > .container:first-child.push > .row > * > * {
             flex-grow: 1; }
-  .flexWrap .aside {
-    padding-left: .5rem; }
-    .flexWrap .aside .card {
-      padding: 1rem;
-      flex-grow: 0 !important; }
+  @media (min-width: 992px) {
+    .flexWrap .aside {
+      padding-left: .5rem; } }
+  .flexWrap .aside .card {
+    padding: 1rem;
+    flex-grow: 0 !important; }
   .flexWrap .card {
     background-color: white; }
   .flexWrap h4 {
@@ -562,8 +563,7 @@ a.btn-inverse {
     background-color: white; }
     .flex-table tr td {
       min-height: 60px;
-      padding: 12px 8px;
-      border-top: 1px solid #ddd; }
+      padding: 12px 8px; }
       .flex-table tr td:not(:first-child) {
         text-align: center; }
       .flex-table tr td .hide-x > * {
@@ -573,12 +573,12 @@ a.btn-inverse {
       position: relative; }
       .flex-table tr[data-target] > td {
         min-height: 60px;
-        border-top-width: 0;
+        border-top: 1px solid #ddd;
         vertical-align: middle; }
         .flex-table tr[data-target] > td:not(:first-child) {
           text-align: center; }
         .flex-table tr[data-target] > td:not(.no-grow) {
-          min-width: 60px; }
+          min-width: 50px; }
         .flex-table tr[data-target] > td .input-group {
           min-width: 140px;
           height: 45px; }
@@ -594,10 +594,14 @@ a.btn-inverse {
       .flex-table tr[aria-expanded=true] td.hide-x > * {
         pointer-events: none;
         opacity: 0; }
-    .flex-table tr.hiddenRow td {
-      padding: 0; }
-      .flex-table tr.hiddenRow td .tdWrapper {
-        padding: 12px 8px; }
+    .flex-table tr.hiddenRow {
+      position: relative;
+      z-index: 1; }
+      .flex-table tr.hiddenRow td {
+        padding: 0;
+        border-top: none; }
+        .flex-table tr.hiddenRow td .tdWrapper {
+          padding: 12px 8px; }
     .flex-table tr.clear {
       background-color: transparent; }
       .flex-table tr.clear > td {
@@ -621,7 +625,7 @@ a.btn-inverse {
     max-width: 20px;
     min-height: 57px;
     right: 0;
-    top: 0;
+    top: -1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -636,7 +640,8 @@ a.btn-inverse {
       flex-direction: column;
       line-height: 1.1;
       opacity: 0;
-      width: auto;
+      width: 100%;
+      min-width: 120px;
       padding: 0 8px;
       text-transform: uppercase;
       font-family: 'Montserrat', sans-serif;
@@ -645,9 +650,9 @@ a.btn-inverse {
         font-weight: 700; }
   .flex-table tr[aria-expanded=false] {
     overflow: hidden; }
-  .flex-table tr[aria-expanded=false] .offerWrap:hover, .flex-table tr[aria-expanded=true] .offerWrap {
+  .flex-table tr[aria-expanded=false] td:hover .offerWrap, .flex-table tr[aria-expanded=true] .offerWrap {
     max-width: 100%; }
-    .flex-table tr[aria-expanded=false] .offerWrap:hover .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
+    .flex-table tr[aria-expanded=false] td:hover .offerWrap .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
       opacity: 1; }
 
 @media (max-width: 767px) {
@@ -717,7 +722,8 @@ input::-webkit-input-placeholder, button {
 .afterFlexTable {
   background-color: white;
   border-top: 1px solid #ddd;
-  padding: 12px 8px; }
+  padding: 12px 8px;
+  margin-bottom: 20px; }
 
 .flexRow {
   display: flex; }
@@ -728,22 +734,37 @@ input::-webkit-input-placeholder, button {
     justify-content: flex-start; }
     .flexRow .flexCol:first-child {
       padding: 0 1rem 20px; }
+      @media (max-width: 991px) {
+        .flexRow .flexCol:first-child {
+          padding-bottom: 0; } }
     .flexRow .flexCol > .push {
       flex-grow: 1; }
     .flexRow .flexCol:last-child {
       flex-grow: 0; }
+    @media (max-width: 992px) {
+      .flexRow .flexCol .btn-group {
+        display: flex;
+        flex-direction: column; }
+        .flexRow .flexCol .btn-group > * {
+          margin: 7px 0;
+          max-width: 240px; } }
     .flexRow .flexCol .btn-group.clear {
       display: inline-flex; }
 
 .modal-header .close, .toast-close-button {
-  font-size: 3em;
+  font-size: 2em;
   min-width: 1em;
-  font-family: 'bwg-i',fantasy;
+  padding: 1rem;
+  outline: none;
+  text-shadow: none;
+  font-family: 'bwg-i', fantasy;
   position: relative;
   color: white;
-  opacity: .42; }
-  .modal-header .close:hover, .toast-close-button:hover {
-    opacity: .65; }
+  opacity: .65; }
+  .modal-header .close:active, .modal-header .close:focus, .modal-header .close:hover, .toast-close-button:active, .toast-close-button:focus, .toast-close-button:hover {
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    opacity: .42; }
   .modal-header .close span, .toast-close-button span {
     opacity: 0; }
   .modal-header .close::after, .toast-close-button::after {
@@ -753,9 +774,6 @@ input::-webkit-input-placeholder, button {
     bottom: 0;
     left: 0;
     content: '\0043'; }
-
-.toast-close-button {
-  font-size: 2em; }
 
 .modal-dialog {
   display: flex;

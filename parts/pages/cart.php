@@ -307,15 +307,11 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						</div>
 						<div class="flexCol well">
 							<h4>Total <span class="pull-right">€45.50</span></h4>
-							<dl class="dl-horizontal">
+							<dl class="dl-horizontal push">
 								<dt>Order reference</dt>
 								<dd>09876</dd>
-							</dl>
-							<dl class="dl-horizontal">
 								<dt>Estimated delivery</dt>
 								<dd>26/04/17</dd>
-							</dl>
-							<dl class="dl-horizontal">
 								<dt>Estimated delivery</dt>
 								<dd>26/04/17</dd>
 							</dl>

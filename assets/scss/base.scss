@@ -468,7 +468,9 @@ a.btn-inverse {
     }
   }
   .aside {
-    padding-left: .5rem;
+    @media (min-width: 992px) {
+      padding-left: .5rem;
+    }
     .card {
       padding: 1rem;
       flex-grow: 0 !important;
@@ -523,7 +525,6 @@ a.btn-inverse {
     td {
       min-height: 60px;
       padding: 12px 8px;
-      border-top: 1px solid #ddd;
       &:not(:first-child) {
         text-align: center;
       }
@@ -537,13 +538,13 @@ a.btn-inverse {
       position: relative;
       >td {
         min-height: 60px;
-        border-top-width: 0;
+        border-top: 1px solid #ddd;
         vertical-align: middle;
         &:not(:first-child) {
           text-align: center;
         }
         &:not(.no-grow) {
-          min-width: 60px;
+          min-width: 50px;
         }
         .input-group {
           min-width: 140px;
@@ -571,8 +572,11 @@ a.btn-inverse {
       }
     }
     &.hiddenRow {
+      position: relative;
+      z-index: 1;
      td {
         padding: 0;
+       border-top: none;
        .tdWrapper {
          padding: 12px 8px;
        }
@@ -609,7 +613,7 @@ a.btn-inverse {
     max-width:20px;
     min-height: 57px;
     right: 0;
-    top: 0;
+    top: -1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -625,7 +629,8 @@ a.btn-inverse {
       flex-direction: column;
       line-height: 1.1;
       opacity: 0;
-      width: auto;
+      width: 100%;
+      min-width:120px;
       padding: 0 8px;
       text-transform: uppercase;
       font-family: 'Montserrat', sans-serif;
@@ -638,7 +643,7 @@ a.btn-inverse {
   tr[aria-expanded=false] {
     overflow: hidden;
   }
-  tr[aria-expanded=false] .offerWrap:hover, tr[aria-expanded=true] .offerWrap{
+  tr[aria-expanded=false] td:hover .offerWrap, tr[aria-expanded=true] .offerWrap{
     max-width: 100%;
     .offerTag {
       opacity: 1;
@@ -726,6 +731,7 @@ input::-webkit-input-placeholder, button {
   background-color: white;
   border-top: 1px solid #ddd;
   padding: 12px 8px;
+  margin-bottom: 20px;
 }
 
 .flexRow {
@@ -733,6 +739,9 @@ input::-webkit-input-placeholder, button {
   .flexCol {
     &:first-child {
       padding: 0 1rem 20px;
+      @media (max-width: 991px) {
+        padding-bottom: 0;
+      }
     }
     display: flex;
     flex-direction: column;
@@ -744,33 +753,48 @@ input::-webkit-input-placeholder, button {
     &:last-child {
       flex-grow: 0;
     }
+    @media(max-width: 992px) {
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        > * {
+          margin: 7px 0;
+          max-width: 240px;
+        }
+      }
+    }
     .btn-group.clear {
       display: inline-flex;
     }
   }
 }
 .modal-header .close, .toast-close-button {
-    font-size: 3em;
-    min-width: 1em;
-
-    font-family: 'bwg-i',fantasy;
-    position: relative;
-    color: white;
-    opacity: .42;
-    &:hover {
-      opacity: .65;
-    }
-    span {
-      opacity: 0;
-    }
-    &::after {
-      position: absolute;
-      top: 0;right: 0;bottom: 0;left: 0;
-      content: '\0043';
-    }
-}
-.toast-close-button {
   font-size: 2em;
+  min-width: 1em;
+  padding: 1rem;
+  outline: none;
+  text-shadow: none;
+  &:active,&:focus,&:hover {
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    opacity: .42;
+  }
+
+  font-family: 'bwg-i', fantasy;
+  position: relative;
+  color: white;
+  opacity: .65;
+  span {
+    opacity: 0;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '\0043';
+  }
 }
 .modal-dialog {
   display: flex;
