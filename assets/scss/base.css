@@ -20,7 +20,7 @@ body {
 
 .btn-group, .card {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
-  .btn-group.clear, .card.clear {
+  .btn-group.clear, .btn-group.separate, .card.clear, .card.separate {
     box-shadow: none; }
 
 .card.padding {
@@ -282,6 +282,15 @@ a.btn-inverse {
       border-left: 1px solid rgba(128, 128, 128, 0.21); }
       .btn-group:not(.separate) .btn + .btn:hover, .btn-group:not(.separate) .btn + .btn:focus, .btn-group:not(.separate) .btn + .btn:active {
         border-color: rgba(0, 0, 0, 0.03); }
+
+.productActions .dropdown.dropup {
+  display: inline-block;
+  margin-right: 1.5rem; }
+.productActions .btn-sm {
+  font-size: 2rem; }
+
+.btn-group-sm > .btn, .btn-sm {
+  border-radius: 0; }
 
 .btn-white {
   background-color: white; }

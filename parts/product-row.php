@@ -71,6 +71,36 @@
 							</div>
 						<?php } ?>
 					</div>
+					<div class="btn-group btn-group-sm separate productActions">
+						<div class="dropdown dropup">
+							<a href="#" class="btn btn-sm btn-outline btn-default dropdown-toggle"
+							   title="Add product to favorites"
+							   aria-haspopup="true" aria-expanded="false"
+							   data-toggle="dropdown" id="dropdownFavorites"
+							><i class="fa fa-star"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownFavorites">
+								<li><a href="#">Fav list 1</a></li>
+								<li><a href="#">Fav list 2</a></li>
+								<li><a href="#">Fav list 3</a></li>
+								<li><a href="#">Fav list 4</a></li>
+								<li><a href="#">Fav list 5</a></li>
+							</ul>
+						</div>
+						<div class="dropdown dropup">
+							<a href="#" class="btn btn-sm btn-outline btn-default dropdown-toggle"
+							   title="Promote this product"
+							   aria-haspopup="true" aria-expanded="false"
+							   data-toggle="dropdown" id="dropdownPromote"
+							><i class="fa fa-thumbs-up"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownPromote">
+								<li><a href="#">Fav list 1</a></li>
+								<li><a href="#">Fav list 2</a></li>
+								<li><a href="#">Fav list 3</a></li>
+								<li><a href="#">Fav list 4</a></li>
+								<li><a href="#">Fav list 5</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 				<div class="right-col">
 					<div class="iconBar">

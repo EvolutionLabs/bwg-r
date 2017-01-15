@@ -136,7 +136,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<div class="dropdown filtersDd">
-								<a href="#" id="dropdownFilters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								<a href="#" id="dropdownFilters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span class="sr-only">Filters</span><i class="fa fa-chevron-down fa-2x"></i>
 								</a>
 								<div class="megaMenu dropdown-menu" aria-labelledby="dropdownFilters">

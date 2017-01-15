@@ -30,7 +30,7 @@ body {
 
 .btn-group, .card {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
-  &.clear {
+  &.clear, &.separate {
     box-shadow: none;
   }
 }
@@ -151,6 +151,19 @@ a.btn-inverse {
     }
   }
   transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.productActions {
+  .dropdown.dropup {
+    display: inline-block;
+    margin-right: 1.5rem;
+  }
+  .btn-sm {
+    font-size: 2rem;
+  }
+}
+.btn-group-sm>.btn, .btn-sm {
+  border-radius: 0;
 }
 
 .btn-white {
