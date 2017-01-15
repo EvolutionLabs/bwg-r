@@ -751,7 +751,7 @@ input::-webkit-input-placeholder, button {
 }
 .modal-header .close, .toast-close-button {
     font-size: 3em;
-    min-width: 3em;
+    min-width: 1em;
 
     font-family: 'bwg-i',fantasy;
     position: relative;
@@ -771,7 +771,6 @@ input::-webkit-input-placeholder, button {
 }
 .toast-close-button {
   font-size: 2em;
-  min-width: 1em;
 }
 .modal-dialog {
   display: flex;

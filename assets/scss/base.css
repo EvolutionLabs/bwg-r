@@ -737,7 +737,7 @@ input::-webkit-input-placeholder, button {
 
 .modal-header .close, .toast-close-button {
   font-size: 3em;
-  min-width: 3em;
+  min-width: 1em;
   font-family: 'bwg-i',fantasy;
   position: relative;
   color: white;
@@ -755,8 +755,7 @@ input::-webkit-input-placeholder, button {
     content: '\0043'; }
 
 .toast-close-button {
-  font-size: 2em;
-  min-width: 1em; }
+  font-size: 2em; }
 
 .modal-dialog {
   display: flex;
