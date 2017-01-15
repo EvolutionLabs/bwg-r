@@ -220,7 +220,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 							<li><a class="dropdown-item" href="#">Category 3</a></li>
 						</ul>
 					</div>
-					<span class="pull-right filters">
+					<span class="pull-right layoutSwitch">
 						View as:
 						<a class="btn btn-clear active" href="#view-list" data-target="#productsTable"><i class="fa fa-list"></i></a>
 						<a class="btn btn-clear" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>

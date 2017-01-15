@@ -1,11 +1,11 @@
 <?php
 $dd = [
 	'id' => '5027952011316',
-	'Name' => 'Glenn\'s Vodka',
+	'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
 	'Rank' => '12',
 	'RSP' => '12.99',
 	'Margin' => '21%',
-	'Pack/Case' => '280g/12',
+	'Pack<br />/Case' => '280g/12',
 	'Price' => [
 		'old' => '€20.50',
 		'new' => '16.50'
@@ -106,21 +106,6 @@ $filters = [
 ];
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
-function makeSlug($name) {
-
-	$rule = 'NFD; [:Nonspacing Mark:] Remove; NFC';
-	$myTrans = \Transliterator::create($rule);
-	$name = $myTrans->transliterate($name);
-	$name = strtolower($name);
-
-	preg_match_all('([a-z0-9]+)', $name, $matches);
-	if (is_array($matches) && isset($matches[0]) && count($matches[0])) {
-		return implode('-', $matches[0]);
-	}
-	else
-		return null;
-}
-
 ?>
 <div class="container dull">
 	<div class="row">
@@ -135,7 +120,7 @@ function makeSlug($name) {
 								continue;
 							echo '<th>'.$k.'<a href="#"><i class="fa fa-sort"></i></a></th>';
 						}
-						echo '<th>Price</th><th></th>'
+						echo '<th>Price</th><th colspan="3"></th>'
 						?>
 					</tr>
 					</thead>
@@ -143,11 +128,27 @@ function makeSlug($name) {
 					for ($i = 0; $i < 7; $i++) { ?>
 						<tr data-toggle="collapse" data-target="#tr-<?=$dd['id'] ;?>" class="accordion-toggle">
 							<?php
+							$name = getRand($dd['Name']);
 							foreach ($dd as $k => $v) {
 								if (in_array($k, ['id','Price','Details']))
 									continue;
-								echo '<td>'.$v.'</td>';
+								$val = is_array($v)? $v[rand(1,count($v) - 1)] : $v;
+								$onOffer = '';
+								if ($k == 'Name') {
 
+									$rand = (float)rand()/(float)getrandmax();
+									$onOffer .= ($rand < 0.33 ? '
+										<div class="offerWrap">
+											<i class="fa fa-tag"></i>
+											<div class="offerTag">
+												<span class="tagTitle">30% OFF</span>
+												<span class="tagDtail">End date</span>
+												<span class="tagDate">1/2/17</span>
+											</div>
+										</div>
+									' : '');
+								}
+								echo '<td><div class="rltv">'.$onOffer.($k == 'Name' ? $name : $val).'</div></td>';
 							}
 							?>
 							<td class="price">
@@ -175,24 +176,13 @@ function makeSlug($name) {
 							</td>
 						</tr>
 						<tr class="hiddenRow">
-							<td colspan="10">
-								<?php
-								$rand = (float)rand()/(float)getrandmax();
-								if ($rand < 0.33) { ?>
-									<div class="offerWrap">
-										<div class="offerTag">
-											<span class="tagTitle">30% OFF</span>
-											<span class="tagDtail">End date</span>
-											<span class="tagDate">1/2/17</span>
-										</div>
-									</div>
-								<?php } ?>
+							<td colspan="9">
 								<div class="collapse" id="tr-<?= $dd['id'] ;?>" style="overflow: hidden; clear: both;">
 									<div class="tdWrapper">
 										<div class="imageWrap"><img class="img-responsive" src="<?= $dd['Details']['image'] ;?>" /></div>
 										<div class="main-col">
 											<div>
-												<div class="p-Title"><?= $dd['Name'] ;?></div>
+												<div class="p-Title"><?= $name ;?></div>
 												<p class="p-Description"><?= $dd['Details']['Description'] ;?></p>
 											</div>
 											<div class="p-Details">
@@ -256,9 +246,9 @@ function makeSlug($name) {
 							</dl>
 
 							<div class="btn-group clear separate">
-								<a href="#" class="btn btn-sm btn-success">Continue Shopping</a>
-								<a href="#" class="btn btn-sm btn-danger">Erase Cart</a>
-								<a href="#" class="btn btn-sm btn-default btn-outline">Update Cart</a>
+								<a href="#" class="btn btn-success">Continue Shopping</a>
+								<a href="#" class="btn btn-danger">Erase Cart</a>
+								<a href="#" class="btn btn-default btn-outline">Update Cart</a>
 							</div>
 						</div>
 						<div class="flexCol well">

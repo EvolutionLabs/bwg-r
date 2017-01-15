@@ -23,6 +23,13 @@ $dd = [
 		'Supplier' => '14/11/2016',
 	]
 ];
+$ss = [
+	'Date' => ['25/12/16','28/12/16', '8/1/17', '20/5/15'],
+    'Keyword' => ['Vodka','Biscuits','Bacon'],
+    'Supplier' => ['McDonnagh','-'],
+    'Brand' => ['Smirnoff','-'],
+    'On Promotion' => ['<i class="fa fa-close"></i>', '<i class="fa fa-check"></i>']
+];
 
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
@@ -36,34 +43,41 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					<h2>Custom search</h2>
 				</div>
 				<div class="col-sm-5">
-					<div class="form-group">
-						<input type="text" class="form-control form-control-lg" placeholder="Enter search keywords" />
-					</div>
-					<div class="form-group">
-						<select class="selectpicker" title="Supplier"
-						        data-style="btn-outline btn-white"
-						        data-container="body"
-						        data-width="240px"
-						>
-							<option>Supplier 1</option>
-							<option>Supplier 2</option>
-							<option>Supplier 3</option>
-							<option>Supplier 4</option>
-							<option>Supplier 5</option>
-							<option>Supplier 6</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<select class="selectpicker" title="Brand"
-						        data-style="btn-outline btn-white"
-						        data-container="body"
-						        data-width="240px"
-						>
-							<option title="Brand 1">A brand</option>
-							<option title="Brand 2">Another brand</option>
-							<option title="Brand 3">Yet another brand</option>
-						</select>
-					</div>
+					<form>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Enter search keywords" />
+						</div>
+						<div class="form-group">
+							<select class="selectpicker" title="Supplier"
+							        data-style="btn-outline btn-white"
+							        data-container="body"
+							        data-width="240px"
+							>
+								<option>Supplier 1</option>
+								<option>Supplier 2</option>
+								<option>Supplier 3</option>
+								<option>Supplier 4</option>
+								<option>Supplier 5</option>
+								<option>Supplier 6</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<select class="selectpicker" title="Brand"
+							        data-style="btn-outline btn-white"
+							        data-container="body"
+							        data-width="240px"
+							>
+								<option title="Brand 1">A brand</option>
+								<option title="Brand 2">Another brand</option>
+								<option title="Brand 3">Yet another brand</option>
+							</select>
+						</div>
+						<div class="form-group">On promotion</div>
+						<div class="form-group search-buttons">
+							<button class="btn btn-success btn-block" type="submit">Search</button>
+							<a href="#save-search" class="btn btn-outline btn-white btn-block">Save this search</a>
+						</div>
+					</form>
 				</div>
 				<div class="col-sm-7">
 					<h4>Search tips</h4>
@@ -85,7 +99,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					</dl>
 				</div>
 			</div>
-			<div class="pagination">
+			<!--<div class="pagination">
 				<span class="count">
 					Items 56 of 4694
 				</span>
@@ -99,6 +113,32 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					<a class="btn btn-white" href="#">6</a>
 					<a class="btn btn-white" href="#">Next</a>
 				</div>
+			</div>-->
+			<div class="card transparent">
+				<table class="flex-table">
+					<thead>
+					<tr>
+						<?php
+						foreach ($ss as $k => $s) { ?>
+							<th><?= $k ;?></th>
+						<?php } ?>
+						<th></th>
+					</tr>
+					</thead>
+					<?php
+					for ($i = 0; $i < 5; $i++) {
+					?>
+						<tr>
+							<?php
+							foreach ($ss as $k => $s) { ?>
+							<td><?= getRand($s) ;?></td>
+							<?php } ?>
+							<td class="no-grow">
+								<a class="btn btn-outline btn-sm btn-danger" href="#remove-from-cart" >Remove</a>
+							</td>
+						</tr>
+					<?php } ?>
+				</table>
 			</div>
 
 		</div>

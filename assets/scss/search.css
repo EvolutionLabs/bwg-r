@@ -1,0 +1,10 @@
+.search-buttons .btn {
+  max-width: 240px; }
+  .search-buttons .btn + .btn {
+    margin-top: 20px; }
+.search-buttons .btn-outline {
+  box-shadow: none;
+  color: inherit;
+  border-color: inherit; }
+
+/*# sourceMappingURL=search.css.map */

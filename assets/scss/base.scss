@@ -53,6 +53,9 @@ body {
   td:first-child > & {
     margin: -8px;
     padding: 8px 8px 8px 28px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -96,6 +99,7 @@ a.btn-inverse {
   line-height: 36px;
   &.btn-outline {
     border: 1px solid;
+    box-shadow: none;
   }
   .caret {
     width: 1.2em;
@@ -471,7 +475,7 @@ a.btn-inverse {
   .cardTitle {
     background-color: #303030;
     padding: 1.5rem;
-    h1, .filters {
+    h1, .filters, .layoutSwitch {
       text-transform: uppercase;
       font-size: 1.8rem;
       line-height: 4rem;
@@ -487,6 +491,7 @@ a.btn-inverse {
   }
 }
 .flex-table {
+  width: 100%;
   th {
     .card & {
       background-color: #3d3d3d;
@@ -506,8 +511,16 @@ a.btn-inverse {
   }
   tr {
     background-color: white;
-    td.hide-x > * {
-      transition: opacity .3s cubic-bezier(.4,0,.2,1);
+    td {
+      min-height: 60px;
+      padding: 12px 8px;
+      &:not(:first-child) {
+        text-align: center;
+      }
+
+      .hide-x > * {
+        transition: opacity .3s cubic-bezier(.4,0,.2,1);
+      }
     }
     &[data-target] {
       font-family: 'Montserrat', sans-serif;
@@ -515,9 +528,9 @@ a.btn-inverse {
       >td {
         min-height: 60px;
         border-top: none;
+        vertical-align: middle;
         &:not(:first-child) {
           text-align: center;
-          vertical-align: middle;
         }
         &:not(.no-grow) {
           min-width: 60px;
@@ -541,6 +554,7 @@ a.btn-inverse {
       td.hide-x > *{
         pointer-events: none;
         opacity: 0;
+
       }
     }
     &.hiddenRow {
@@ -627,7 +641,18 @@ a.btn-inverse {
     max-height: calc(100vh - 51px);
   }
 }
-
+.dl-horizontal {
+  dt {
+    width: 130px;
+    font-weight: normal;
+  }
+  dd {margin-left: 140px;  }
+  code {
+    display: inline-block;
+    &::before {content:'(ex: '}
+    &::after {content:')'}
+  }
+}
 h1, h2, h3, h4 {
   font-weight: 600;
   text-transform: uppercase;
@@ -681,7 +706,9 @@ input::-webkit-input-placeholder, button {
   box-shadow: none;
   background-color: transparent;
 }
-
+.card + .card {
+  margin-top: 20px;
+}
 .afterFlexTable {
   background-color: white;
   border-top: 1px solid #ddd;

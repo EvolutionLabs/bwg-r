@@ -19,6 +19,10 @@ switch ($template) {
 		$page_css = ['section.css'];
 		$page_js = ['section.js'];
 		break;
+	case "search" :
+		$page_css = ['search.css'];
+		$page_js = [];
+		break;
 	default:
 		$page_css = [];
 		$page_js = [];

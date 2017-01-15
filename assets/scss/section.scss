@@ -160,20 +160,10 @@ dl, .dl-horizontal {
     opacity: .7;
     transition: opacity .3s cubic-bezier(.4,0,.2,1);
   }
-  [data-toggle="collapse"] .fa-2x.fa-heart {
+  [data-toggle] .fa-2x.fa-heart {
     color: #ff0048;
   }
 
-  [aria-expanded=true] + .hiddenRow .offerWrap{
-    max-width:100%;
-    max-height: 100%;
-    transform: translateY(175%);
-
-    transition: all .3s cubic-bezier(.4,0,.2,1);
-    .offerTag {
-      opacity: 1;
-    }
-  }
   .placer {
     display: inline-block;
     position: relative;

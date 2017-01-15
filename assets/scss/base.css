@@ -35,7 +35,10 @@ body {
   position: relative; }
   td:first-child > .rltv {
     margin: -8px;
-    padding: 8px 8px 8px 28px; }
+    padding: 8px 8px 8px 28px;
+    min-height: 60px;
+    display: flex;
+    align-items: center; }
 
 .btn-success {
   background-color: #29b766;
@@ -71,7 +74,8 @@ a.btn-inverse {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
   .btn.btn-outline {
-    border: 1px solid; }
+    border: 1px solid;
+    box-shadow: none; }
   .btn .caret {
     width: 1.2em;
     height: inherit;
@@ -353,7 +357,7 @@ a.btn-inverse {
   .flexWrap .cardTitle {
     background-color: #303030;
     padding: 1.5rem; }
-    .flexWrap .cardTitle h1, .flexWrap .cardTitle .filters {
+    .flexWrap .cardTitle h1, .flexWrap .cardTitle .filters, .flexWrap .cardTitle .layoutSwitch {
       text-transform: uppercase;
       font-size: 1.8rem;
       line-height: 4rem;
@@ -364,101 +368,108 @@ a.btn-inverse {
       background-color: white;
       color: black; }
 
-.card .flex-table th {
-  background-color: #3d3d3d;
-  color: white;
-  padding: 18px 8px;
-  font-size: 16px;
-  font-weight: 400;
-  vertical-align: middle; }
-  .card .flex-table th:not(:first-child) {
-    text-align: center; }
-  .card .flex-table th a {
+.flex-table {
+  width: 100%; }
+  .card .flex-table th {
+    background-color: #3d3d3d;
     color: white;
-    margin-left: 8px; }
-.flex-table tr {
-  background-color: white; }
-  .flex-table tr td.hide-x > * {
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  .flex-table tr[data-target] {
-    font-family: 'Montserrat', sans-serif;
-    position: relative; }
-    .flex-table tr[data-target] > td {
+    padding: 18px 8px;
+    font-size: 16px;
+    font-weight: 400;
+    vertical-align: middle; }
+    .card .flex-table th:not(:first-child) {
+      text-align: center; }
+    .card .flex-table th a {
+      color: white;
+      margin-left: 8px; }
+  .flex-table tr {
+    background-color: white; }
+    .flex-table tr td {
       min-height: 60px;
-      border-top: none; }
-      .flex-table tr[data-target] > td:not(:first-child) {
-        text-align: center;
-        vertical-align: middle; }
-      .flex-table tr[data-target] > td:not(.no-grow) {
-        min-width: 60px; }
-      .flex-table tr[data-target] > td .input-group {
-        min-width: 140px;
-        height: 45px; }
-      .flex-table tr[data-target] > td.no-grow {
-        padding: 8px 8px 8px 0;
-        margin: 0; }
-  .flex-table tr[aria-expanded=true] {
-    background-color: #eee; }
-    .flex-table tr[aria-expanded=true], .flex-table tr[aria-expanded=true] + .hiddenRow {
-      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
-    .flex-table tr[aria-expanded=true] td.hide-x > * {
-      pointer-events: none;
-      opacity: 0; }
-  .flex-table tr.hiddenRow td {
-    padding: 0; }
-    .flex-table tr.hiddenRow td .tdWrapper {
       padding: 12px 8px; }
-  .flex-table tr.clear {
-    background-color: transparent; }
-    .flex-table tr.clear td {
-      padding: 0;
-      border-top: none; }
-      .flex-table tr.clear td .rowSpacer {
-        height: 0;
-        transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    .flex-table tr.clear.opened .rowSpacer {
-      height: 15px; }
-    .flex-table tr.clear.opened + tr + tr + tr .rowSpacer {
-      height: 15px; }
-.flex-table .offerWrap {
-  background-color: #ff0048;
-  color: #fff;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  padding: 0 10px;
-  max-width: 20px;
-  min-height: 57px;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  .flex-table .offerWrap > .fa {
+      .flex-table tr td:not(:first-child) {
+        text-align: center; }
+      .flex-table tr td .hide-x > * {
+        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .flex-table tr[data-target] {
+      font-family: 'Montserrat', sans-serif;
+      position: relative; }
+      .flex-table tr[data-target] > td {
+        min-height: 60px;
+        border-top: none;
+        vertical-align: middle; }
+        .flex-table tr[data-target] > td:not(:first-child) {
+          text-align: center; }
+        .flex-table tr[data-target] > td:not(.no-grow) {
+          min-width: 60px; }
+        .flex-table tr[data-target] > td .input-group {
+          min-width: 140px;
+          height: 45px; }
+        .flex-table tr[data-target] > td.no-grow {
+          padding: 8px 8px 8px 0;
+          margin: 0; }
+    .flex-table tr[aria-expanded=true] {
+      background-color: #eee; }
+      .flex-table tr[aria-expanded=true], .flex-table tr[aria-expanded=true] + .hiddenRow {
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
+      .flex-table tr[aria-expanded=true] td.hide-x > * {
+        pointer-events: none;
+        opacity: 0; }
+    .flex-table tr.hiddenRow td {
+      padding: 0; }
+      .flex-table tr.hiddenRow td .tdWrapper {
+        padding: 12px 8px; }
+    .flex-table tr.clear {
+      background-color: transparent; }
+      .flex-table tr.clear td {
+        padding: 0;
+        border-top: none; }
+        .flex-table tr.clear td .rowSpacer {
+          height: 0;
+          transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      .flex-table tr.clear.opened .rowSpacer {
+        height: 15px; }
+      .flex-table tr.clear.opened + tr + tr + tr .rowSpacer {
+        height: 15px; }
+  .flex-table .offerWrap {
+    background-color: #ff0048;
+    color: #fff;
     position: absolute;
-    right: .4rem;
-    top: .5rem; }
-  .flex-table .offerWrap .offerTag {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 0 10px;
+    max-width: 20px;
+    min-height: 57px;
+    right: 0;
+    top: 0;
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
-    opacity: 0;
-    width: auto;
-    padding: 0 8px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400; }
-    .flex-table .offerWrap .offerTag .tagTitle {
-      font-weight: 700; }
-.flex-table tr[aria-expanded=false] {
-  overflow: hidden; }
-.flex-table tr[aria-expanded=false] .offerWrap:hover, .flex-table tr[aria-expanded=true] .offerWrap {
-  max-width: 100%; }
-  .flex-table tr[aria-expanded=false] .offerWrap:hover .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
-    opacity: 1; }
+    justify-content: center;
+    transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .flex-table .offerWrap > .fa {
+      position: absolute;
+      right: .4rem;
+      top: .5rem; }
+    .flex-table .offerWrap .offerTag {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      opacity: 0;
+      width: auto;
+      padding: 0 8px;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400; }
+      .flex-table .offerWrap .offerTag .tagTitle {
+        font-weight: 700; }
+  .flex-table tr[aria-expanded=false] {
+    overflow: hidden; }
+  .flex-table tr[aria-expanded=false] .offerWrap:hover, .flex-table tr[aria-expanded=true] .offerWrap {
+    max-width: 100%; }
+    .flex-table tr[aria-expanded=false] .offerWrap:hover .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
+      opacity: 1; }
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -466,6 +477,18 @@ a.btn-inverse {
 
   .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
     max-height: calc(100vh - 51px); } }
+.dl-horizontal dt {
+  width: 130px;
+  font-weight: normal; }
+.dl-horizontal dd {
+  margin-left: 140px; }
+.dl-horizontal code {
+  display: inline-block; }
+  .dl-horizontal code::before {
+    content: '(ex: '; }
+  .dl-horizontal code::after {
+    content: ')'; }
+
 h1, h2, h3, h4 {
   font-weight: 600;
   text-transform: uppercase; }
@@ -508,6 +531,9 @@ input::-webkit-input-placeholder, button {
 .card.transparent {
   box-shadow: none;
   background-color: transparent; }
+
+.card + .card {
+  margin-top: 20px; }
 
 .afterFlexTable {
   background-color: white;
