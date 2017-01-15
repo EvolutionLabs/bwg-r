@@ -23,6 +23,47 @@ $dd = [
 		'Supplier' => '14/11/2016',
 	]
 ];
+
+ob_start();
+?>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="updateCartModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-success">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Modal example</h4>
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+				<p>To change header bckground color, change <code>bg-success</code> to <code>bg-warning</code>,
+					<code>bg-primary</code>, <code>bg-danger</code>, <code>bg-info</code> or remove it (for white background).</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline btn-primary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="deleteCartModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-danger">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Are you sure?</h4>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-outline btn-primary" data-dismiss="modal">No</button>
+				<button type="button" class="btn btn-danger">Yes</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<?php
+$modal = ob_get_clean();
+
 $filters = [
 	[
 		'name' => 'Top Sellers',
@@ -105,6 +146,8 @@ $filters = [
 	]
 ];
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
+
+echo $modal;
 
 ?>
 <div class="container dull">
@@ -247,8 +290,8 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
 							<div class="btn-group clear separate">
 								<a href="#" class="btn btn-success">Continue Shopping</a>
-								<a href="#" class="btn btn-danger">Erase Cart</a>
-								<a href="#" class="btn btn-default btn-outline">Update Cart</a>
+								<a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#deleteCartModal">Erase Cart</a>
+								<a href="#modal-example" class="btn btn-default btn-outline" data-toggle="modal" data-target="#updateCartModal">Update Cart</a>
 							</div>
 						</div>
 						<div class="flexCol well">
