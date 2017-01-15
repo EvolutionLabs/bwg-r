@@ -93,11 +93,11 @@
 							   data-toggle="dropdown" id="dropdownPromote"
 							><i class="fa fa-thumbs-up"></i></a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownPromote">
-								<li><a href="#">Fav list 1</a></li>
-								<li><a href="#">Fav list 2</a></li>
-								<li><a href="#">Fav list 3</a></li>
-								<li><a href="#">Fav list 4</a></li>
-								<li><a href="#">Fav list 5</a></li>
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">First action again</a></li>
+								<li><hr class="divider"></li>
+								<li><a href="#">Never mind</a></li>
 							</ul>
 						</div>
 					</div>

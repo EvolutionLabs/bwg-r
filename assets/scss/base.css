@@ -283,6 +283,12 @@ a.btn-inverse {
       .btn-group:not(.separate) .btn + .btn:hover, .btn-group:not(.separate) .btn + .btn:focus, .btn-group:not(.separate) .btn + .btn:active {
         border-color: rgba(0, 0, 0, 0.03); }
 
+.productActions .open .dropdown-menu {
+  padding-top: 0;
+  transform: translateX(-33%);
+  left: 50%; }
+  .productActions .open .dropdown-menu > li > a {
+    padding: 10px 15px; }
 .productActions .dropdown.dropup {
   display: inline-block;
   margin-right: 1.5rem; }
@@ -608,7 +614,10 @@ a.btn-inverse {
         opacity: 0; }
     .flex-table tr.hiddenRow {
       position: relative;
+      overflow: visible;
       z-index: 1; }
+      .flex-table tr.hiddenRow .collapse.in {
+        overflow: visible !important; }
       .flex-table tr.hiddenRow td {
         padding: 0;
         border-top: none; }

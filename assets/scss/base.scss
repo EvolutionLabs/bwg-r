@@ -154,6 +154,14 @@ a.btn-inverse {
 }
 
 .productActions {
+  .open .dropdown-menu {
+    padding-top: 0;
+    transform: translateX(-33%);
+    left: 50%;
+    >li>a {
+      padding: 10px 15px
+    }
+  }
   .dropdown.dropup {
     display: inline-block;
     margin-right: 1.5rem;
@@ -588,6 +596,10 @@ a.btn-inverse {
     }
     &.hiddenRow {
       position: relative;
+      overflow: visible;
+      .collapse.in {
+        overflow: visible !important;
+      }
       z-index: 1;
      td {
         padding: 0;
