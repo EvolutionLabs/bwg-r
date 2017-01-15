@@ -276,7 +276,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 									</div>
 								</div>
 								<div class="collapse" id="stock-<?= $dd['id'] ;?>">
-									<div><!--Don't remove this wrapper, it's needed for smooth animation !-->
+									<div class="tdWrapper"><!--Don't remove this wrapper, it's needed for smooth animation !-->
 										Stock card here
 									</div>
 								</div>
@@ -318,10 +318,28 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 							<a href="#checkout" class="btn btn-primary">Send order</a>
 						</div>
 					</div>
-
+				</div>
+				<div class="card padding">
+					<h4 class="heading">Options</h4>
+						<p class="select-line">Or
+							<span class="toggle-btn" onclick="toggleCartButton(this)">
+								<input type="hidden" name="cartAction" id="cartAction" value="replace" />
+								<span class="option" data-value="replace">replace</span>
+								<span class="toggle"></span>
+								<span class="option hidden" data-value="addTo">add to</span>
+							</span> cart from a previous order.
+							<select class="selectpicker dropup" data-style="btn-outline btn-white">
+								<option value="" class="default">select order</option>
+								<option value="1">Order 1</option>
+								<option value="2">Order 2</option>
+								<option value="3">Order 3</option>
+								<option value="4">Order 4</option>
+								<option value="5">Order 5</option>
+								<option value="6">Order 6</option>
+							</select>
+						</p>
 				</div>
 			</div>
-
 
 		</div>
 		<div class="col-md-3 col-sm-12 aside">

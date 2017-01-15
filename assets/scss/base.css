@@ -23,6 +23,9 @@ body {
   .btn-group.clear, .card.clear {
     box-shadow: none; }
 
+.card.padding {
+  padding: 20px; }
+
 .btn-group.separate .btn {
   margin-left: 15px; }
   .btn-group.separate .btn:first-child {
@@ -601,7 +604,8 @@ a.btn-inverse {
         padding: 0;
         border-top: none; }
         .flex-table tr.hiddenRow td .tdWrapper {
-          padding: 12px 8px; }
+          padding: 12px 8px;
+          border-top: 1px solid #ddd; }
     .flex-table tr.clear {
       background-color: transparent; }
       .flex-table tr.clear > td {

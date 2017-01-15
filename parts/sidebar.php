@@ -39,8 +39,12 @@
 			<td colspan="2">Total (excluding VAT)</td>
 			<td>€33.50</td>
 		</tr>
+		<tr>
+			<td colspan="2">Total cases</td>
+			<td>6</td>
+		</tr>
 		</tfoot>
 	</table>
-	<a href="#" class="btn btn-block btn-primary">View cart</a>
+	<a href="/cart" class="btn btn-block btn-primary">View cart</a>
 
 </div>

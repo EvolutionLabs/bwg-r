@@ -7,25 +7,25 @@ $template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($p
 if (strlen($template) > 1) :
 
 	$css = ['bwg-i.css'];
-$js = ['shoplink.js'];
-
+	$js = ['shoplink.js'];
+	$page_css = [];
+	$page_js = [];
 switch ($template) {
 	case "landing" :
-		$page_css = ['home.css'];
-		$page_js = ['home.js'];
+		$page_css[] = 'home.css';
+		$page_js[] = 'home.js';
 		break;
-	case "section" :
+	/** @noinspection PhpMissingBreakStatementInspection */
 	case "cart" :
-		$page_css = ['section.css'];
-		$page_js = ['section.js'];
+		$page_css[] = 'cart.css';
+	case "section" :
+		$page_css[] = 'section.css';
+		$page_js []= 'section.js';
 		break;
 	case "search" :
-		$page_css = ['search.css'];
-		$page_js = [];
+		$page_css[] = 'search.css';
 		break;
 	default:
-		$page_css = [];
-		$page_js = [];
 }
 $css = array_merge($css, $page_css);
 $js = array_merge($js, $page_js);

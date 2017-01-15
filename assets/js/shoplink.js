@@ -63,6 +63,7 @@ $(window).on('load', function(){
         "hideMethod": "fadeOut"
     };
     $(document).on('click', '.toggleSwitch', toggleSwitch);
+    $('.selectpicker.dropup').trigger('click');
 });
 
 function toggleSwitch(e) {

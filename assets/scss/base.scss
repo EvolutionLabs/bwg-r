@@ -34,7 +34,9 @@ body {
     box-shadow: none;
   }
 }
-
+.card.padding {
+  padding: 20px;
+}
 .btn-group.separate {
   .btn {
     margin-left: 15px;
@@ -579,6 +581,7 @@ a.btn-inverse {
        border-top: none;
        .tdWrapper {
          padding: 12px 8px;
+         border-top: 1px solid #ddd;
        }
       }
     }
