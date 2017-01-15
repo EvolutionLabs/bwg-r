@@ -32,9 +32,10 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
 			<div class="card page">
-				<h2>Custom search</h2>
-
-				<div class="col-sm-6">
+				<div class="col-sm-12">
+					<h2>Custom search</h2>
+				</div>
+				<div class="col-sm-5">
 					<div class="form-group">
 						<input type="text" class="form-control form-control-lg" placeholder="Enter search keywords" />
 					</div>
@@ -42,7 +43,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						<select class="selectpicker" title="Supplier"
 						        data-style="btn-outline btn-white"
 						        data-container="body"
-						        data-width="300px"
+						        data-width="240px"
 						>
 							<option>Supplier 1</option>
 							<option>Supplier 2</option>
@@ -56,7 +57,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						<select class="selectpicker" title="Brand"
 						        data-style="btn-outline btn-white"
 						        data-container="body"
-						        data-width="300px"
+						        data-width="240px"
 						>
 							<option title="Brand 1">A brand</option>
 							<option title="Brand 2">Another brand</option>
@@ -64,7 +65,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						</select>
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-7">
 					<h4>Search tips</h4>
 					<dl class="dl-horizontal">
 						<dt>Regular:</dt>

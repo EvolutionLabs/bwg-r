@@ -613,12 +613,10 @@ a.btn-inverse {
   tr[aria-expanded=false] {
     overflow: hidden;
   }
-  tr[aria-expanded=false]:hover, tr[aria-expanded=true] {
-    .offerWrap {
-      max-width: 100%;
-      .offerTag {
-        opacity: 1;
-      }
+  tr[aria-expanded=false] .offerWrap:hover, tr[aria-expanded=true] .offerWrap{
+    max-width: 100%;
+    .offerTag {
+      opacity: 1;
     }
   }
 }

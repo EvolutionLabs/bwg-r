@@ -456,9 +456,9 @@ a.btn-inverse {
       font-weight: 700; }
 .flex-table tr[aria-expanded=false] {
   overflow: hidden; }
-.flex-table tr[aria-expanded=false]:hover .offerWrap, .flex-table tr[aria-expanded=true] .offerWrap {
+.flex-table tr[aria-expanded=false] .offerWrap:hover, .flex-table tr[aria-expanded=true] .offerWrap {
   max-width: 100%; }
-  .flex-table tr[aria-expanded=false]:hover .offerWrap .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
+  .flex-table tr[aria-expanded=false] .offerWrap:hover .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
     opacity: 1; }
 
 @media (max-width: 767px) {
