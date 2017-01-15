@@ -326,7 +326,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 								<input type="hidden" name="cartAction" id="cartAction" value="replace" />
 								<span class="option" data-value="replace">replace</span>
 								<span class="toggle"></span>
-								<span class="option hidden" data-value="addTo">add to</span>
+								<span class="option hideMe" data-value="addTo">add to</span>
 							</span> cart from a previous order.
 							<select class="selectpicker dropup" data-style="btn-outline btn-white">
 								<option value="" class="default">select order</option>
@@ -337,6 +337,8 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 								<option value="5">Order 5</option>
 								<option value="6">Order 6</option>
 							</select>
+
+							<input type="button" class="btn btn-success" onclick="javascript: void(0);" value="Select"></p>
 						</p>
 				</div>
 			</div>

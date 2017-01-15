@@ -1,19 +1,26 @@
+@import "variables";
 p.select-line {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  select, input[type=button] {
+  justify-content: space-between;
+  >* {
+    margin: 0 5px;
+  }
+  select {
     padding: 5px;
-    border: 1px solid #ccc;
-    font-family: "Montserrat",Arial,Helvetica,sans-serif;
+    font-family: "Montserrat",sans-serif;
     background-color: white;
     margin-left: 20px;
   }
   input[type=button] {
-    padding: 8px 20px 7px;
-    background: #000091;
-    color: #fff;
-    border: none;
     cursor:pointer;
+    margin-left: 20px;
+    flex-grow: 1;
+  }
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  .bootstrap-select.dropup {
+    margin-left: 8px;
   }
 }
 .toggle-btn {
@@ -23,7 +30,7 @@ p.select-line {
   display: inline-flex;
   align-items: center;
   overflow: hidden;
-  max-width: 125px;
+  max-width: 110px;
   cursor: pointer;
   border: 1px solid #ddd;
   box-shadow: inset 0 2px 0 rgba(0,0,0,.07);
@@ -47,7 +54,7 @@ p.select-line {
         text-align: right;
       }
       width: 75px;
-      &.hidden {
+      &.hideMe {
         &:first-of-type {
           margin-left: -75px;
         }

@@ -62,8 +62,10 @@ $(window).on('load', function(){
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     };
-    $(document).on('click', '.toggleSwitch', toggleSwitch);
-    $('.selectpicker.dropup').trigger('click');
+    $(document)
+        .on('click', '.toggleSwitch', toggleSwitch)
+        .on('click', '.coco', toggleCartButton);
+
 });
 
 function toggleSwitch(e) {
@@ -74,4 +76,15 @@ function toggleSwitch(e) {
     ts.toggleClass('on');
     toggle.toggleClass('on');
     input.attr('checked', ts[0].classList.contains('on'));
+}
+
+function toggleCartButton (e){
+    var value = '';
+    $(e).children('.option').each(function(){
+        $(this).toggleClass('hideMe');
+        if (!this.classList.contains('hideMe')) {
+            value = $(this).data('value');
+        }
+    });
+    $('#cartAction').val(value);
 }
