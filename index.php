@@ -1,5 +1,5 @@
 <?php
-include "parts/init.php";
+include_once "parts/init.php";
 
 $path = substr($_SERVER["REQUEST_URI"], 1);
 $template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($path, 0, strpos($path,'?')) : $path);

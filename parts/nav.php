@@ -21,7 +21,7 @@
                         </button>
                     </span>
 				</div>
-				<a href="#" class="btn btn-search">Custom search</a>
+				<a href="/search" class="btn btn-search">Custom search</a>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" title="Layout"><i class="fa fa-2x fa-th-large"></i><span class="sr-only">Layout</span></a></li>

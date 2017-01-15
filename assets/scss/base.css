@@ -33,6 +33,9 @@ body {
 
 .rltv {
   position: relative; }
+  td:first-child > .rltv {
+    margin: -8px;
+    padding: 8px 8px 8px 28px; }
 
 .btn-success {
   background-color: #29b766;
@@ -338,119 +341,102 @@ a.btn-inverse {
       background-color: white;
       color: black; }
 
-table.flex-table {
+.card .flex-table th {
+  background-color: #3d3d3d;
+  color: white;
+  padding: 18px 8px;
+  font-size: 16px;
+  font-weight: 400;
+  vertical-align: middle; }
+  .card .flex-table th:not(:first-child) {
+    text-align: center; }
+  .card .flex-table th a {
+    color: white;
+    margin-left: 8px; }
+.flex-table tr {
+  background-color: white; }
+  .flex-table tr td.hide-x > * {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .flex-table tr[data-target] {
+    font-family: 'Montserrat', sans-serif;
+    position: relative; }
+    .flex-table tr[data-target] > td {
+      min-height: 60px;
+      border-top: none; }
+      .flex-table tr[data-target] > td:not(:first-child) {
+        text-align: center;
+        vertical-align: middle; }
+      .flex-table tr[data-target] > td:not(.no-grow) {
+        min-width: 60px; }
+      .flex-table tr[data-target] > td .input-group {
+        min-width: 140px;
+        height: 45px; }
+      .flex-table tr[data-target] > td.no-grow {
+        padding: 8px 8px 8px 0;
+        margin: 0; }
+  .flex-table tr[aria-expanded=true] {
+    background-color: #eee; }
+    .flex-table tr[aria-expanded=true], .flex-table tr[aria-expanded=true] + .hiddenRow {
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
+    .flex-table tr[aria-expanded=true] td.hide-x {
+      pointer-events: none; }
+      .flex-table tr[aria-expanded=true] td.hide-x > * {
+        opacity: 0; }
+  .flex-table tr.hiddenRow td {
+    padding: 0; }
+    .flex-table tr.hiddenRow td .tdWrapper {
+      padding: 12px 8px; }
+  .flex-table tr.clear {
+    background-color: transparent; }
+    .flex-table tr.clear td {
+      padding: 0;
+      border-top: none; }
+      .flex-table tr.clear td .rowSpacer {
+        height: 0;
+        transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .flex-table tr.clear.opened .rowSpacer {
+      height: 15px; }
+    .flex-table tr.clear.opened + tr + tr + tr .rowSpacer {
+      height: 15px; }
+.flex-table .offerWrap {
+  background-color: #ff0048;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0 10px;
+  max-width: 20px;
+  min-height: 57px;
+  right: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  border-spacing: 1px; }
-  table.flex-table thead {
-    display: flex !important;
-    flex-direction: column; }
-  table.flex-table tr {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    align-content: center;
-    overflow: hidden; }
-    table.flex-table tr td.no-grow {
-      flex-grow: 0;
-      padding: 8px 8px 8px 0;
-      margin: 0; }
-    table.flex-table tr td.shrink {
-      flex-shrink: 1; }
-    table.flex-table tr.hiddenRow > td:first-child {
-      flex-grow: 1;
-      flex-wrap: wrap; }
-      table.flex-table tr.hiddenRow > td:first-child > * + div {
-        padding: 0;
-        border-top: 1px solid #ddd;
-        flex-grow: 1; }
-        table.flex-table tr.hiddenRow > td:first-child > * + div > div {
-          padding: 15px 8px; }
-    table.flex-table tr[data-target] {
-      z-index: 1; }
-      table.flex-table tr[data-target] > td {
-        min-height: 58px; }
-        table.flex-table tr[data-target] > td:first-child {
-          text-align: left;
-          padding-left: 25px;
-          letter-spacing: -.5px;
-          font-size: 14px; }
-    table.flex-table tr[aria-expanded=true] td.hide-x {
-      pointer-events: none;
-      overflow: hidden;
-      position: relative;
-      opacity: 0; }
-  table.flex-table th {
-    max-width: 100%;
+  justify-content: center;
+  transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .flex-table .offerWrap > .fa {
+    position: absolute;
+    right: .4rem;
+    top: .5rem; }
+  .flex-table .offerWrap .offerTag {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    flex: 1 1 75px;
-    min-width: 60px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center; }
-    table.flex-table th:first-child {
-      flex: 0 1 150px;
-      min-width: 120px; }
-    table.flex-table th.price {
-      flex-direction: column; }
-    table.flex-table th.pusher {
-      flex: 1 0 280px; }
-    .col-main table.flex-table th {
-      background-color: #3d3d3d;
-      color: white;
-      padding: 18px 8px;
-      font-size: 16px;
-      font-weight: 400;
-      text-align: center; }
-      .col-main table.flex-table th a {
-        color: white;
-        margin-left: 8px; }
-    .aside table.flex-table th {
-      border-top: none;
-      border-bottom-width: 0; }
-  table.flex-table tbody {
     display: flex;
-    flex-direction: column; }
-  table.flex-table td {
-    max-width: 100%;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    flex: 1 1 75px;
-    min-width: 60px;
-    align-items: center;
-    display: inline-flex;
-    justify-content: center; }
-    table.flex-table td:first-child {
-      flex: 0 1 150px;
-      min-width: 120px; }
-    table.flex-table td.price {
-      display: inline-flex;
-      flex-direction: column; }
-    table.flex-table td i {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    table.flex-table td > * {
-      text-align: initial; }
-    .col-main table.flex-table td {
-      padding: 12px 8px;
-      font-weight: 600;
-      font-size: 15px; }
-    .aside table.flex-table td {
-      border-top: none;
-      text-align: initial; }
-    .cart table.flex-table td:last-child {
-      text-align: right; }
-  table.flex-table > tfoot > tr > td {
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -.8px; }
-  table.flex-table > tbody > .hiddenRow > td {
-    padding: 0 !important;
-    border-top: none; }
-    table.flex-table > tbody > .hiddenRow > td .tdWrapper {
-      padding: 15px 8px; }
-  .aside table.flex-table {
-    border-bottom: none; }
+    flex-direction: column;
+    line-height: 1.1;
+    opacity: 0;
+    width: auto;
+    padding: 0 8px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; }
+    .flex-table .offerWrap .offerTag .tagTitle {
+      font-weight: 700; }
+.flex-table tr[aria-expanded=false] {
+  overflow: hidden; }
+.flex-table tr[aria-expanded=false]:hover .offerWrap, .flex-table tr[aria-expanded=true] .offerWrap {
+  max-width: 100%; }
+  .flex-table tr[aria-expanded=false]:hover .offerWrap .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
+    opacity: 1; }
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -500,41 +486,6 @@ input::-webkit-input-placeholder, button {
 .card.transparent {
   box-shadow: none;
   background-color: transparent; }
-  .card.transparent tr {
-    overflow: hidden;
-    background-color: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer; }
-    .card.transparent tr.hiddenRow {
-      overflow: visible;
-      position: relative; }
-      .card.transparent tr.hiddenRow::after {
-        position: absolute;
-        height: 58px;
-        bottom: calc(100% - 1px);
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        border-bottom: 1px solid #ddd;
-        content: ""; }
-    .card.transparent tr td {
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-    .card.transparent tr[data-target] > td {
-      z-index: 1; }
-    .card.transparent tr[aria-expanded=true] {
-      border-bottom: 2px solid #eee;
-      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
-      position: relative;
-      z-index: unset;
-      margin-top: 15px; }
-      .card.transparent tr[aria-expanded=true] + .hiddenRow {
-        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
-        margin-bottom: 15px;
-        position: relative; }
-        .card.transparent tr[aria-expanded=true] + .hiddenRow::after {
-          height: 54px; }
-        .card.transparent tr[aria-expanded=true] + .hiddenRow + [aria-expanded=true] {
-          margin-top: 0; }
 
 .afterFlexTable {
   background-color: white;

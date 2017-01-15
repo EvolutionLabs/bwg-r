@@ -1,7 +1,4 @@
 <?php
-function getR($val) {
-	return is_array($val) ? $val[rand(1, count($val)  - 1)] : $val;
-}
 $dd = [
 	'id' => '5027952011316',
 	'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
@@ -108,21 +105,6 @@ $filters = [
 	]
 ];
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
-
-function makeSlug($name) {
-
-	$rule = 'NFD; [:Nonspacing Mark:] Remove; NFC';
-	$myTrans = \Transliterator::create($rule);
-	$name = $myTrans->transliterate($name);
-	$name = strtolower($name);
-
-	preg_match_all('([a-z0-9]+)', $name, $matches);
-	if (is_array($matches) && isset($matches[0]) && count($matches[0])) {
-		return implode('-', $matches[0]);
-	}
-	else
-		return null;
-}
 
 ?>
 <div style="background: #eee url('../../assets/image/banner.jpg') no-repeat 50% 50% /cover;" class="parallax-scroller">
@@ -240,11 +222,11 @@ function makeSlug($name) {
 					</div>
 					<span class="pull-right filters">
 						View as:
-						<a class="btn btn-clear active" href="#"><i class="fa fa-list"></i></a>
-						<a class="btn btn-clear" href="#"><i class="fa fa-th"></i></a>
+						<a class="btn btn-clear active" href="#view-list" data-target="#productsTable"><i class="fa fa-list"></i></a>
+						<a class="btn btn-clear" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
 					</span>
 				</div>
-				<table class="table products flex-table">
+				<table class="table products flex-table" id="productsTable">
 					<thead>
 					<tr>
 						<?php
@@ -259,13 +241,29 @@ function makeSlug($name) {
 					</thead>
 					<?php
 					for ($i = 0; $i < 12; $i++) { ?>
-						<tr data-toggle="collapse" data-target="#tr-<?=$dd['id'] ;?>" class="accordion-toggle">
+						<tr data-toggle="collapse" data-target="#tr-<?=$dd['id'] ;?>" class="accordion-toggle" aria-expanded="false">
 							<?php
+							$name = getR($dd['Name']);
 							foreach ($dd as $k => $v) {
 								if (in_array($k, ['id','Price','Details']))
 									continue;
 								$val = is_array($v)? $v[rand(1,count($v) - 1)] : $v;
-								echo '<td>'.$val.'</td>';
+								$onOffer = '';
+								if ($k == 'Name') {
+
+									$rand = (float)rand()/(float)getrandmax();
+									$onOffer .= ($rand < 0.33 ? '
+										<div class="offerWrap">
+											<i class="fa fa-tag"></i>
+											<div class="offerTag">
+												<span class="tagTitle">30% OFF</span>
+												<span class="tagDtail">End date</span>
+												<span class="tagDate">1/2/17</span>
+											</div>
+										</div>
+									' : '');
+								}
+								echo '<td><div class="rltv">'.$onOffer.($k == 'Name' ? $name : $val).'</div></td>';
 							}
 							?>
 							<td class="price">
@@ -294,23 +292,12 @@ function makeSlug($name) {
 						</tr>
 						<tr class="hiddenRow">
 							<td colspan="10">
-								<?php
-								$rand = (float)rand()/(float)getrandmax();
-								if ($rand < 0.33) { ?>
-									<div class="offerWrap">
-										<div class="offerTag">
-											<span class="tagTitle">30% OFF</span>
-											<span class="tagDtail">End date</span>
-											<span class="tagDate">1/2/17</span>
-										</div>
-									</div>
-								<?php } ?>
 								<div class="collapse" id="tr-<?= $dd['id'] ;?>" style="overflow: hidden; clear: both;">
 									<div class="tdWrapper">
 										<div class="imageWrap"><img class="img-responsive" src="<?= $dd['Details']['image'] ;?>" /></div>
 										<div class="main-col">
 											<div>
-												<div class="p-Title"><?= getR($dd['Name']) ;?></div>
+												<div class="p-Title"><?= $name ;?></div>
 												<p class="p-Description"><?= $dd['Details']['Description'] ;?></p>
 											</div>
 											<div class="p-Details">
@@ -352,7 +339,7 @@ function makeSlug($name) {
 									</div>
 								</div>
 								<div class="collapse" id="stock-<?= $dd['id'] ;?>">
-									<div><!--Don't remove this wrapper, it's needed for smooth animation !-->
+									<div class="tdWrapper"><!--Don't remove this wrapper, it's needed for smooth animation !-->
 										Stock card here
 									</div>
 								</div>

@@ -63,7 +63,6 @@ dl, .dl-horizontal {
   margin: -3px 0; }
 .products .input-group {
   max-width: 140px;
-  height: 47px;
   margin: -3px 0;
   border-radius: 0; }
   .products .input-group .input-group-addon {
@@ -93,7 +92,7 @@ dl, .dl-horizontal {
     .products .right-col .rltv .btn-stock {
       align-self: flex-end; }
   .products .right-col > * {
-    flex: 1 0 50%; }
+    flex: 0 0 196px; }
   .products .right-col .btn {
     letter-spacing: -1px;
     font-size: 15px; }
@@ -115,7 +114,7 @@ dl, .dl-horizontal {
     margin-top: 15px;
     box-shadow: none; }
 .products .iconBar {
-  flex: 0 0 145px; }
+  flex: 1 0 145px; }
   .products .iconBar .fa-2x {
     margin: 0 4px; }
 .products .fa-2x {
@@ -124,34 +123,6 @@ dl, .dl-horizontal {
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 .products [data-toggle="collapse"] .fa-2x.fa-heart {
   color: #ff0048; }
-.products .offerWrap {
-  background-color: #ff0048;
-  display: inline-block;
-  color: #fff;
-  position: absolute;
-  left: 0;
-  padding: 0 10px;
-  top: 0;
-  z-index: 1;
-  max-height: 57px;
-  overflow: hidden;
-  max-width: 20px;
-  transform: translateY(-100%);
-  transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-  .products .offerWrap .offerTag {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-    opacity: 0;
-    width: auto;
-    min-height: 57px;
-    padding: 8px 8px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400; }
-    .products .offerWrap .offerTag .tagTitle {
-      font-weight: 700; }
 .products [aria-expanded=true] + .hiddenRow .offerWrap {
   max-width: 100%;
   max-height: 100%;
