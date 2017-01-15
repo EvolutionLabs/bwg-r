@@ -43,7 +43,7 @@ $(window).on('load', function(){
         }
     });
     $('.fa.fa-heart').on('click', function(){
-        toastr["info"]("This could display on successful return of the ajax call.", "Added to favs!")
+        toastr["success"]("This could display on successful return of the ajax call.", "Added to favs!")
     });
     toastr.options = {
         "closeButton": true,
