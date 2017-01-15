@@ -243,7 +243,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					for ($i = 0; $i < 12; $i++) { ?>
 						<tr data-toggle="collapse" data-target="#tr-<?=$dd['id'] ;?>" class="accordion-toggle" aria-expanded="false">
 							<?php
-							$name = getR($dd['Name']);
+							$name = getRand($dd['Name']);
 							foreach ($dd as $k => $v) {
 								if (in_array($k, ['id','Price','Details']))
 									continue;

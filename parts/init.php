@@ -8,8 +8,8 @@
 
 $loggedIn = include "login.php";
 
-function getR($val) {
-	return is_array($val) ? $val[rand(1, count($val)  - 1)] : $val;
+function getRand($val) {
+	return is_array($val) ? $val[rand(0, count($val)  - 1)] : $val;
 }
 
 function makeSlug($name) {
