@@ -12,7 +12,7 @@
     }
   }
   .main-col {
-    flex: 0 0 35%;
+    flex: 1 0 calc(100% - 500px);
     font-size: 13px;
   }
   @media (max-width: 767px) {
@@ -150,9 +150,12 @@ dl, .dl-horizontal {
     }
   }
   .iconBar {
-    flex: 1 0 145px;
+    flex: 0 0 111px;
     .fa-2x {
       margin: 0 4px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 1.8rem;
     }
   }
   .fa-2x{

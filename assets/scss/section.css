@@ -8,7 +8,7 @@
     .tdWrapper .imageWrap img {
       object-fit: contain; }
   .tdWrapper .main-col {
-    flex: 0 0 35%;
+    flex: 1 0 calc(100% - 500px);
     font-size: 13px; }
   @media (max-width: 767px) {
     .tdWrapper .main-col {
@@ -114,9 +114,12 @@ dl, .dl-horizontal {
     margin-top: 15px;
     box-shadow: none; }
 .products .iconBar {
-  flex: 1 0 145px; }
+  flex: 0 0 111px; }
   .products .iconBar .fa-2x {
-    margin: 0 4px; }
+    margin: 0 4px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.8rem; }
 .products .fa-2x {
   line-height: 21.5px;
   opacity: .7;
