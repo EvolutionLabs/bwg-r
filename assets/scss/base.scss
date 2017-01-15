@@ -59,21 +59,23 @@ body {
   }
 }
 
-.btn-success {
-  background-color: #29b766;
-  border-color: darken(#29b766, 10);
-  &:focus, &:active, &:hover, &.active, &:active:focus, &:active:hover {
-    background-color: darken(#29b766, 10);
-    border-color: darken(#29b766, 20);
-  }
-}
-
-.btn-danger {
-  background-color: #ff0048;
-  border-color: darken(#ff0048, 10);
-  &:focus, &:active, &:hover, &.active, &:active:focus, &:active:hover {
-    background-color: darken(#ff0048, 10);
-    border-color: darken(#ff0048, 20);
+@for $i from 1 through length($colors) {
+  $key : nth(map_keys($colors), $i);
+  .btn-#{$key} {
+    background-color: map_get($colors, $key);
+    border-color: darken( map_get($colors, $key), 10);
+    &.btn-outline {
+      color: map_get($colors, $key);
+      background-color: transparent;
+    }
+    &:focus, &:active, &:hover, &.active, &:active:focus, &:active:hover {
+      background-color: darken(map_get($colors, $key), 10);
+      border-color: darken( map_get($colors, $key), 20);
+      &.btn-outline {
+        color: darken(map_get($colors, $key), 10);
+        background-color: transparent;
+      }
+    }
   }
 }
 
@@ -85,12 +87,15 @@ a.btn-inverse {
     background-color: #373737;
     border-color: darken(#373737, 15);
     color: white;
-
   }
 }
 
 .btn {
   border: none;
+  height: 50px;
+  &.btn-sm {
+    height: auto;
+  }
   border-radius: 0;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
@@ -514,6 +519,7 @@ a.btn-inverse {
     td {
       min-height: 60px;
       padding: 12px 8px;
+      border-top: 1px solid #ddd;
       &:not(:first-child) {
         text-align: center;
       }
@@ -527,7 +533,7 @@ a.btn-inverse {
       position: relative;
       >td {
         min-height: 60px;
-        border-top: none;
+        border-top-width: 0;
         vertical-align: middle;
         &:not(:first-child) {
           text-align: center;
@@ -542,6 +548,9 @@ a.btn-inverse {
         &.no-grow {
           padding: 8px 8px 8px 0;
           margin: 0;
+        }
+        &.hide-x > *{
+          transition: opacity .3s cubic-bezier(.4,0,.2,1);
         }
       }
 
@@ -567,9 +576,9 @@ a.btn-inverse {
     }
     &.clear {
       background-color: transparent;
-      td {
+      > td {
         padding: 0;
-        border-top: none;
+        border-top-width: 0;
         .rowSpacer {
           height: 0;
           transition: height .3s cubic-bezier(.4,0,.2,1);
@@ -718,9 +727,16 @@ input::-webkit-input-placeholder, button {
 .flexRow {
   display: flex;
   .flexCol {
+    &:first-child {
+      padding: 0 1rem 20px;
+    }
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    justify-content: flex-start;
+    >.push {
+      flex-grow: 1;
+    }
     &:last-child {
       flex-grow: 0;
     }

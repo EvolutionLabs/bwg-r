@@ -222,8 +222,8 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					</div>
 					<span class="pull-right layoutSwitch">
 						View as:
-						<a class="btn btn-clear active" href="#view-list" data-target="#productsTable"><i class="fa fa-list"></i></a>
-						<a class="btn btn-clear" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
+						<a class="btn btn-clear btn-sm active" href="#view-list" data-target="#productsTable"><i class="fa fa-list"></i></a>
+						<a class="btn btn-clear btn-sm" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
 					</span>
 				</div>
 				<table class="table products flex-table" id="productsTable">

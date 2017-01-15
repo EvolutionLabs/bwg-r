@@ -238,7 +238,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					<div class="flexRow">
 						<div class="flexCol">
 							<h4>Promotions</h4>
-							<dl class="dl-horizontal">
+							<dl class="dl-horizontal push">
 								<dt>Percentage Saving</dt>
 								<dd>14%</dd>
 								<dt>Cash Saving</dt>
