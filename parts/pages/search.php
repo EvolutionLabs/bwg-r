@@ -72,7 +72,13 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 								<option title="Brand 3">Yet another brand</option>
 							</select>
 						</div>
-						<div class="form-group">On promotion</div>
+						<div class="form-group flexRow">
+							<span class="toggleSwitch">
+								<input type="checkbox" name="on-promotion" id="onPromotion"/>
+								<div class="toggle" data-on="ON" data-off="OFF"></div>
+							</span>
+							<label for="onPromotion">On Promotion</label>
+						</div>
 						<div class="form-group search-buttons">
 							<button class="btn btn-success btn-block" type="submit">Search</button>
 							<a href="#save-search" class="btn btn-outline btn-white btn-block">Save this search</a>

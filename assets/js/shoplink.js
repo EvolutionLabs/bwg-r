@@ -37,4 +37,40 @@ $(window).on('load', function(){
         $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
     });
     $('[role="combobox"]').removeClass('open');
+    $('.modal-dialog').on('click tap', function(e){
+        if (e.target.classList.contains('modal-dialog')) {
+            $('.modal').modal('hide');
+        }
+    });
+    $('.fa.fa-heart').on('click', function(){
+        toastr["info"]("This could display on successful return of the ajax call.", "Added to favs!")
+    });
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "6000",
+        "extendedTimeOut": "1500",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+    $(document).on('click', '.toggleSwitch', toggleSwitch);
 });
+
+function toggleSwitch(e) {
+    var ts = $(e.target).closest('.toggleSwitch'),
+        input = ts.find('input').eq(0),
+        toggle = ts.find('.toggle');
+    console.log(input);
+    ts.toggleClass('on');
+    toggle.toggleClass('on');
+    input.attr('checked', ts[0].classList.contains('on'));
+}

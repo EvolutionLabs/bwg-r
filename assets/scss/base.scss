@@ -749,17 +749,16 @@ input::-webkit-input-placeholder, button {
     }
   }
 }
-.modal-header {
-  .close {
-    font-size: 3rem;
-    min-width: 3rem;
+.modal-header .close, .toast-close-button {
+    font-size: 3em;
+    min-width: 3em;
+
     font-family: 'bwg-i',fantasy;
     position: relative;
     color: white;
-    text-shadow: 0px -1px 12px black;
-    opacity: .5;
+    opacity: .42;
     &:hover {
-      opacity: .8;
+      opacity: .65;
     }
     span {
       opacity: 0;
@@ -769,7 +768,10 @@ input::-webkit-input-placeholder, button {
       top: 0;right: 0;bottom: 0;left: 0;
       content: '\0043';
     }
-  }
+}
+.toast-close-button {
+  font-size: 2em;
+  min-width: 1em;
 }
 .modal-dialog {
   display: flex;
@@ -785,5 +787,69 @@ input::-webkit-input-placeholder, button {
   text-align: center;
   .btn {
     min-width: 150px;
+  }
+}
+.flexRow.form-group {
+  align-items: center;
+  label {
+    margin-bottom: 0;
+    line-height: 3rem;
+    cursor: pointer;
+    font-weight: 400;
+  }
+}
+.toggleSwitch {
+  margin-right: 2rem;
+  position: relative;
+  display: block;
+  padding: 2px;
+  width: 100px;
+  &.wide {
+    width: 120px;
+  }
+  &.wider {
+    width: 150px;
+  }
+  height: 34px;
+  align-items: center;
+  background-color: #ddd;
+  font-family: 'Montserrat', sans-serif;
+  &.on {
+    background-color: map_get($colors, 'green');
+    color: white
+  }
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color .1s linear .1s;
+  box-shadow: inset 0 3px 2px rgba(0,0,0,.07);
+  input {
+    display: none;
+  }
+  .toggle {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    right: calc(100% - 32px);
+    transition: right .25s cubic-bezier(.4,0,.2,1);
+    &.on {
+      right: 2px;
+    }
+    &:before,&:after {
+      display: inline-block;
+      position: absolute;
+      top:0;
+      padding: 0 10px;
+    }
+    &:before {
+      content: attr(data-on);
+      right: 100%;
+    }
+    &:after {
+      left: 100%;
+      content: attr(data-off);
+    }
   }
 }

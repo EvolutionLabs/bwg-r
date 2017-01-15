@@ -735,25 +735,28 @@ input::-webkit-input-placeholder, button {
     .flexRow .flexCol .btn-group.clear {
       display: inline-flex; }
 
-.modal-header .close {
-  font-size: 3rem;
-  min-width: 3rem;
+.modal-header .close, .toast-close-button {
+  font-size: 3em;
+  min-width: 3em;
   font-family: 'bwg-i',fantasy;
   position: relative;
   color: white;
-  text-shadow: 0px -1px 12px black;
-  opacity: .5; }
-  .modal-header .close:hover {
-    opacity: .8; }
-  .modal-header .close span {
+  opacity: .42; }
+  .modal-header .close:hover, .toast-close-button:hover {
+    opacity: .65; }
+  .modal-header .close span, .toast-close-button span {
     opacity: 0; }
-  .modal-header .close::after {
+  .modal-header .close::after, .toast-close-button::after {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     content: '\0043'; }
+
+.toast-close-button {
+  font-size: 2em;
+  min-width: 1em; }
 
 .modal-dialog {
   display: flex;
@@ -769,5 +772,59 @@ input::-webkit-input-placeholder, button {
   text-align: center; }
   .modal-footer .btn {
     min-width: 150px; }
+
+.flexRow.form-group {
+  align-items: center; }
+  .flexRow.form-group label {
+    margin-bottom: 0;
+    line-height: 3rem;
+    cursor: pointer;
+    font-weight: 400; }
+
+.toggleSwitch {
+  margin-right: 2rem;
+  position: relative;
+  display: block;
+  padding: 2px;
+  width: 100px;
+  height: 34px;
+  align-items: center;
+  background-color: #ddd;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color .1s linear .1s;
+  box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.07); }
+  .toggleSwitch.wide {
+    width: 120px; }
+  .toggleSwitch.wider {
+    width: 150px; }
+  .toggleSwitch.on {
+    background-color: #29b766;
+    color: white; }
+  .toggleSwitch input {
+    display: none; }
+  .toggleSwitch .toggle {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    right: calc(100% - 32px);
+    transition: right 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+    .toggleSwitch .toggle.on {
+      right: 2px; }
+    .toggleSwitch .toggle:before, .toggleSwitch .toggle:after {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      padding: 0 10px; }
+    .toggleSwitch .toggle:before {
+      content: attr(data-on);
+      right: 100%; }
+    .toggleSwitch .toggle:after {
+      left: 100%;
+      content: attr(data-off); }
 
 /*# sourceMappingURL=base.css.map */

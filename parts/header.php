@@ -16,6 +16,7 @@
 	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+	<link href="../assets/vendor/toastr/toastr.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
