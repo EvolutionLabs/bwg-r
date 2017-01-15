@@ -24,6 +24,7 @@ $dd = [
 	]
 ];
 
+$modal = isset($modal) ? $modal : '';
 ob_start();
 ?>
 
@@ -62,7 +63,18 @@ ob_start();
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <?php
-$modal = ob_get_clean();
+$modal .= ob_get_clean();
+
+/**
+ * You can use this method to collect modals from all over the app
+ * (all you need is take care not to duplicate ids).
+ *
+ * I usually place modals at the end of '<body>'.
+ * Alternatively, you can just output them anywhere in DOM and run this one-liner on $(window).load() :
+ *
+ *   $('.modal').appendTo('body');
+ *
+ */
 
 $filters = [
 	[
@@ -147,10 +159,9 @@ $filters = [
 ];
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
-echo $modal;
 
 ?>
-<div class="container dull">
+<div class="container first dull">
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
 			<div class="card transparent">
@@ -322,3 +333,5 @@ echo $modal;
 		</div>
 	</div>
 </div>
+
+<?= $modal ;?>
