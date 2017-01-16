@@ -159,11 +159,17 @@ $filters = [
 ];
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
+$empty = isset($_GET['empty']);
 
 ?>
 <div class="container first dull">
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
+<?php if ($empty): ?>
+				<div class="card padding">
+					<div class="empty-cart">Your cart is empty.</div>
+				</div>
+<?php else: ?>
 			<div class="card transparent">
 				<table class="table products flex-table">
 					<thead>
@@ -179,11 +185,15 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 					</tr>
 					</thead>
 					<?php
+
 					for ($i = 0; $i < 7; $i++) {
 						include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."product-row.php";
-					} ?>
+					}
+
+					?>
 				</table>
-				<div class="afterFlexTable card">
+			</div>
+			<div class="afterFlexTable card">
 					<div class="flexRow">
 						<div class="flexCol">
 							<h4>Promotions</h4>
@@ -214,7 +224,8 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						</div>
 					</div>
 				</div>
-				<div class="card padding">
+<?php endif; ?>
+			<div class="card padding">
 					<h4 class="heading">Options</h4>
 						<p class="select-line">Or
 							<span class="toggle-btn" onclick="toggleCartButton(this)">
@@ -236,7 +247,6 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 							<input type="button" class="btn btn-success" onclick="javascript: void(0);" value="Select"></p>
 						</p>
 				</div>
-			</div>
 
 		</div>
 		<div class="col-md-3 col-sm-12 aside">
