@@ -579,6 +579,31 @@ a.btn-inverse {
     .flexWrap .cardTitle a.btn-secondary {
       background-color: white;
       color: black; }
+  .flexWrap > .parallax-container {
+    overflow: hidden; }
+    .flexWrap > .parallax-container + .submenu {
+      box-shadow: 0 -3px 5px -1px rgba(0, 0, 0, 0.2), 0 -6px 10px 0 rgba(0, 0, 0, 0.14), 0 -1px 18px 0 rgba(0, 0, 0, 0.12); }
+    .flexWrap > .parallax-container > .parallax-scroller {
+      height: 500px;
+      position: relative; }
+      .flexWrap > .parallax-container > .parallax-scroller .scene {
+        color: white;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; }
+        .flexWrap > .parallax-container > .parallax-scroller .scene h3, .flexWrap > .parallax-container > .parallax-scroller .scene div {
+          text-transform: uppercase; }
+        .flexWrap > .parallax-container > .parallax-scroller .scene h3 {
+          font-size: 4.5rem;
+          font-weight: 900; }
+        .flexWrap > .parallax-container > .parallax-scroller .scene div {
+          font-size: 3.5rem;
+          font-weight: 200; }
+        .flexWrap > .parallax-container > .parallax-scroller .scene .btn {
+          margin-top: 6rem;
+          padding: 6px 6rem; }
 
 .flex-table {
   width: 100%; }

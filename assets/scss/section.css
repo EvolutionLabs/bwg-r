@@ -309,30 +309,4 @@ dl, .dl-horizontal {
       .megaMenu .filtersList > * i {
         margin: 10px; }
 
-/* toDo: implement pure CSS parallax */
-.parallax-container {
-  overflow: hidden; }
-
-.parallax-scroller {
-  height: 500px;
-  position: relative; }
-  .parallax-scroller .scene {
-    color: white;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; }
-    .parallax-scroller .scene h3, .parallax-scroller .scene div {
-      text-transform: uppercase; }
-    .parallax-scroller .scene h3 {
-      font-size: 4.5rem;
-      font-weight: 900; }
-    .parallax-scroller .scene div {
-      font-size: 3.5rem;
-      font-weight: 200; }
-    .parallax-scroller .scene .btn {
-      margin-top: 6rem;
-      padding: 6px 6rem; }
-
 /*# sourceMappingURL=section.css.map */

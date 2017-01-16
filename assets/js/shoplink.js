@@ -98,8 +98,18 @@ $(window).on('load', function(){
                         translateY: (this.top / 2) + 'px'
                     },0)
                 }
+            },
+            init:function(){
+                var top = Math.min(e.getBoundingClientRect().top, $(window).height()) / 2;
+                $(this.e).velocity({
+                    marginTop : '-'+top+'px',
+                    paddingTop : top+'px'
+                    }
+                );
+                delete this.init;
+                return this;
             }
-        };
+        }.init();
         $(document).on('scroll', function (e) {
             PS.update;
         });
