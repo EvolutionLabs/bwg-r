@@ -16,6 +16,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
+    "jquery-bar-rating": "^1.2.1",
     "pixrem": "^3.0.2",
     "postcss-flexboxfixer": "^0.0.5"
   },

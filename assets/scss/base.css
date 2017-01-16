@@ -7,6 +7,9 @@ body {
   .input-group .form-control .input-group-addon:last-child {
     border-radius: 0; }
 
+.toast, .pagination {
+  font-family: 'Montserrat', sans-serif; }
+
 .pagination {
   display: flex;
   align-items: center;
@@ -15,7 +18,6 @@ body {
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
     color: #3d3d3d; }
 
 .btn-group, .card {
@@ -283,17 +285,32 @@ a.btn-inverse {
       .btn-group:not(.separate) .btn + .btn:hover, .btn-group:not(.separate) .btn + .btn:focus, .btn-group:not(.separate) .btn + .btn:active {
         border-color: rgba(0, 0, 0, 0.03); }
 
-.productActions .open .dropdown-menu {
-  padding-top: 0;
-  transform: translateX(-33%);
-  left: 50%; }
-  .productActions .open .dropdown-menu > li > a {
-    padding: 10px 15px; }
-.productActions .dropdown.dropup {
-  display: inline-block;
-  margin-right: 1.5rem; }
-.productActions .btn-sm {
-  font-size: 2rem; }
+.productActions {
+  display: inline-flex; }
+  .productActions .bar-rating {
+    border: 1px solid;
+    padding: 5px 12px;
+    margin-right: 15px; }
+    .productActions .bar-rating .br-theme-fontawesome-stars .br-widget a {
+      line-height: 2.8rem;
+      font-size: 2.2rem; }
+      .productActions .bar-rating .br-theme-fontawesome-stars .br-widget a:first-child {
+        font-family: 'bwg-i', fantasy;
+        font-size: 1.5rem;
+        margin-right: 12px; }
+        .productActions .bar-rating .br-theme-fontawesome-stars .br-widget a:first-child:after {
+          content: "C"; }
+  .productActions .open .dropdown-menu {
+    padding-top: 0;
+    transform: translateX(-33%);
+    left: 50%; }
+    .productActions .open .dropdown-menu > li > a {
+      padding: 10px 15px; }
+  .productActions .dropdown.dropup {
+    display: inline-block;
+    margin-right: 1.5rem; }
+  .productActions .btn-sm {
+    font-size: 2rem; }
 
 .btn-group-sm > .btn, .btn-sm {
   border-radius: 0; }

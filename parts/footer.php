@@ -3,6 +3,7 @@
 <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../assets/vendor/bootstrap-select/bootstrap-select.min.js"></script>
 <script src="../assets/vendor/toastr/toastr.min.js"></script>
+<script src="../assets/vendor/bar-rating/jquery.barrating.min.js"></script>
 <script src="../assets/vendor/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 <?php
 foreach ( $js as $s ) { ?>
