@@ -310,6 +310,9 @@ dl, .dl-horizontal {
         margin: 10px; }
 
 /* toDo: implement pure CSS parallax */
+.parallax-container {
+  overflow: hidden; }
+
 .parallax-scroller {
   height: 500px;
   position: relative; }

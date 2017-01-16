@@ -81,6 +81,29 @@ $(window).on('load', function(){
             }, 600);
         }
     });
+    var e = $('.parallax-scroller')[0];
+    if (e) {
+        var PS = {
+            e: e,
+            height: e.getBoundingClientRect().height,
+            get top() {
+                return $(window).scrollTop()
+            },
+            get active () {
+                return this.height - (this.top + 95 ) > 0;
+            },
+            get update () {
+                if (this.active) {
+                    $(this.e).velocity({
+                        translateY: (this.top / 2) + 'px'
+                    },0)
+                }
+            }
+        };
+        $(document).on('scroll', function (e) {
+            PS.update;
+        });
+    }
     $(document)
         .on('click', '.toggleSwitch', toggleSwitch)
         .on('click', '.coco', toggleCartButton);

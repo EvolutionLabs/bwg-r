@@ -397,7 +397,9 @@ dl, .dl-horizontal {
   }
 }
 /* toDo: implement pure CSS parallax */
-
+.parallax-container {
+  overflow: hidden;
+}
 .parallax-scroller {
   height: 500px;
   position: relative;
