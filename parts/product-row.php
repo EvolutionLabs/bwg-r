@@ -130,7 +130,7 @@
 													</span>
 						</div>
 						<a href="#<?= $isCart ? 'remove-from-' : 'add-to-' ;?>cart?id=<?= $dd['id'] ;?>"
-						   onclick="javascript:void(0)" class="btn <?= $isCart ? 'btn-cart btn-inverse':'btn-success' ;?> btn-block"><?= isCart ? 'Remove':'Add to cart';?></a>
+						   onclick="javascript:void(0)" class="btn <?= $isCart ? 'btn-cart btn-inverse':'btn-success' ;?> btn-block"><?= $isCart ? 'Remove':'Add to cart';?></a>
 						<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle btn-outline" data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
 					</div>
 				</div>
