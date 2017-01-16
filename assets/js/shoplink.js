@@ -27,13 +27,11 @@ $(window).on('load', function(){
     $('a[href="#view-list"]').on('click', function(e){
         e.preventDefault();
         var target = $(e.target).closest('a').data('target');
-        console.log(target);
         $(target + ' .hiddenRow>td>.collapse.in[id^="tr-"]').collapse('hide');
     });
     $('a[href="#view-boxes"]').on('click', function(e){
         e.preventDefault();
         var target = $(e.target).closest('a').data('target');
-        console.log(target);
         $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
     });
     $('[role="combobox"]').removeClass('open');
@@ -73,7 +71,11 @@ $(window).on('load', function(){
             var message = value ? 'Your ' + value + ' star' + (value > 1 ? 's':'') + ' rating was saved.' : 'Your rating was removed.',
                 type = value ? 'success' : 'info',
                 title = value ? 'Rating saved' : 'Rating deleted';
-            // you should send an ajax call saving the value and only display this toast on success
+            /**
+             * you should send an ajax call saving the value and only display this toast on success
+             * @see http://antenna.io/demo/jquery-bar-rating/examples/
+             */
+
             setTimeout (function(){
                 toastr[type](message, title);
             }, 600);
@@ -88,7 +90,6 @@ function toggleSwitch(e) {
     var ts = $(e.target).closest('.toggleSwitch'),
         input = ts.find('input').eq(0),
         toggle = ts.find('.toggle');
-    console.log(input);
     ts.toggleClass('on');
     toggle.toggleClass('on');
     input.attr('checked', ts[0].classList.contains('on'));

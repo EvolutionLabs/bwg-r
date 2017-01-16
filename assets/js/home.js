@@ -8,7 +8,6 @@ $(window).on('load', function(){
     }, 200, function(){
         loader.css({'background-color':'transparent'});
         loader.find('div').each(function(i){
-            console.log(i < 2);
             $(this).velocity({
                 'margin-left':(i % 2 == 0 ? '0': '10px'),
                 'margin-right':(i % 2 == 0 ? '10px': '0')
