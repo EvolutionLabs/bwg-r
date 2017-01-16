@@ -883,4 +883,14 @@ input::-webkit-input-placeholder, button {
       left: 100%;
       content: attr(data-off); }
 
+.empty-cart {
+  background-color: #eee;
+  padding: 2rem;
+  min-height: 10rem;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat",sans-serif; }
+
 /*# sourceMappingURL=base.css.map */

@@ -10,41 +10,49 @@
 		'€6.50',
 		'€10.50'
 	]
-]; ?>
+];
+$empty = isset($_GET['empty']);
+?>
 
 <div class="card cart">
 	<h4 class="title">Current Order</h4>
-	<table class="table">
-		<thead>
-		<tr>
+	<?php
+	if ( $empty ) : ?>
+		<div class="empty-cart">Your cart is empty</div>
+		<?php else : ?>
+
+		<table class="table">
+			<thead>
+			<tr>
+
+				<?php
+				foreach ( $dd as $k => $v ) {
+					echo '<th>' . $k . '</th>';
+				}
+				?>
+			</tr>
+			</thead>
 
 			<?php
-			foreach ( $dd as $k => $v ) {
-				echo '<th>' . $k . '</th>';
-			}
-			?>
-		</tr>
-		</thead>
-
-		<?php
-		for ( $i = 0; $i < count( array_values( $dd )[0] ); $i ++ ) { ?>
+			for ( $i = 0; $i < count( array_values( $dd )[0] ); $i ++ ) { ?>
+				<tr>
+					<td><?= $dd['Product'][ $i ]; ?></td>
+					<td><?= $dd['Qty.'][ $i ]; ?></td>
+					<td><?= $dd['Cost'][ $i ]; ?></td>
+				</tr>
+			<?php } ?>
+			<tfoot>
 			<tr>
-				<td><?= $dd['Product'][ $i ]; ?></td>
-				<td><?= $dd['Qty.'][ $i ]; ?></td>
-				<td><?= $dd['Cost'][ $i ]; ?></td>
+				<td colspan="2">Total (excluding VAT)</td>
+				<td>€33.50</td>
 			</tr>
-		<?php } ?>
-		<tfoot>
-		<tr>
-			<td colspan="2">Total (excluding VAT)</td>
-			<td>€33.50</td>
-		</tr>
-		<tr>
-			<td colspan="2">Total cases</td>
-			<td>6</td>
-		</tr>
-		</tfoot>
-	</table>
-	<a href="/cart" class="btn btn-block btn-primary">View cart</a>
+			<tr>
+				<td colspan="2">Total cases</td>
+				<td>6</td>
+			</tr>
+			</tfoot>
+		</table>
+		<a href="/cart" class="btn btn-block btn-primary">View cart</a>
+	<?php endif; ?>
 
 </div>
