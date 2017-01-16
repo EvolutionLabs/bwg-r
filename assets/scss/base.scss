@@ -550,6 +550,7 @@ a.btn-inverse {
     > .parallax-scroller {
       height: 500px;
       position: relative;
+      box-sizing: content-box;
       .scene {
         color: white;
         min-height: 100%;
