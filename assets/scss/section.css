@@ -10,6 +10,8 @@
   .tdWrapper .main-col {
     flex: 1 0 calc(100% - 500px);
     font-size: 13px; }
+    .tdWrapper .main-col .btn-group.separate {
+      margin-top: 15px; }
   @media (max-width: 767px) {
     .tdWrapper .main-col {
       flex: 0 1 calc(100% - 170px); } }
