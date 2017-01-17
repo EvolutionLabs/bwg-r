@@ -3,8 +3,9 @@ $(window).on('load', function(){
         $(this).parent().parent().parent().find('.btn').removeClass('active');
         $(this).addClass('active');
     });
-    $('.products').on('click', '.fa-2x', function(e){
+    $('.products').on('click', 'td>.dropdown>.dropdown-menu', function(e){
         e.stopPropagation();
+        $(this).closest('.dropdown-menu').dropdown('hide');
         $(this).closest('td').toggleClass('active');
     }).on('click', '.input-group-addon', function(e){
         e.stopPropagation();

@@ -166,7 +166,8 @@ dl, .dl-horizontal {
     opacity: .7;
     transition: opacity .3s cubic-bezier(.4,0,.2,1);
   }
-  [data-toggle] .fa-2x.fa-heart {
+  [data-toggle] .fa-2x.fa-heart,
+  [data-toggle] .fa-2x.fa-heart-o {
     color: #ff0048;
   }
 

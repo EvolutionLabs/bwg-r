@@ -27,10 +27,25 @@
 	<td class="price">
 		<span class="old"><?= $dd['Price']['old'];?></span> <?= $dd['Price']['new'];?>
 	<td>
-								<span class="placer">
-									<i class="fa fa-heart-o fa-2x"></i>
-									<i class="fa fa-heart fa-2x"></i>
-								</span></td>
+		<div class="dropdown">
+			<a href="#"
+			   class="dropdown-toggle placer"
+			   id="favoritesDd-<?= $dd['id'];?>"
+			   title="Add product to favorites"
+			   aria-haspopup="true" aria-expanded="false"
+			   data-toggle="dropdown"
+			><i class="fa fa-heart-o fa-2x"></i>
+				<i class="fa fa-heart fa-2x"></i>
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="favoritesDd-<?= $dd['id'];?>">
+				<li><a href="#">Fav list 1</a></li>
+				<li><a href="#">Fav list 2</a></li>
+				<li><a href="#">Fav list 3</a></li>
+				<li><a href="#">Fav list 4</a></li>
+				<li><a href="#">Fav list 5</a></li>
+			</ul>
+		</div>
+	</td>
 	<td class="no-grow hide-x">
 		<div class="input-group">
 									<span class="input-group-addon">

@@ -40,9 +40,9 @@ $(window).on('load', function(){
             $('.modal').modal('hide');
         }
     });
-    $('.fa.fa-heart').on('click', function(){
+    /*$('.fa.fa-heart').on('click', function(){
         toastr["success"]("This could display on successful return of the ajax call.", "Added to favs!")
-    });
+    });*/
     toastr.options = {
         "closeButton": true,
         "debug": false,
