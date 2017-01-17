@@ -77,31 +77,47 @@ body {
     align-items: center;
   }
 }
+.alert {
+  border: 2px solid;
+  border-radius: 0;
+  font-family: 'Montserrat', sans-serif;
+}
 
 @for $i from 1 through length($colors) {
   $key : nth(map_keys($colors), $i);
+  $color: map_get($colors, $key);
+  .alert-#{$key} {
+    border-color: $color;
+    color: darken($color, 12);
+  }
+  .label-#{$key} {
+    background-color: $color;
+  }
   .btn-#{$key} {
-    background-color: map_get($colors, $key);
-    border-color: darken( map_get($colors, $key), 10);
+    background-color: $color;
+    border-color: darken( $color, 10);
     &.btn-outline {
-      color: map_get($colors, $key);
+      color: $color;
       background-color: transparent;
     }
     &:focus, &:active, &:hover, &.active, &:active:focus, &:active:hover {
-      background-color: darken(map_get($colors, $key), 10);
-      border-color: darken( map_get($colors, $key), 20);
+      background-color: darken($color, 10);
+      border-color: darken( $color, 20);
       &.btn-outline {
-        color: darken(map_get($colors, $key), 10);
+        color: darken($color, 10);
         background-color: transparent;
       }
     }
   }
   .bg-#{$key} {
     color: white;
-    background-color: map_get($colors, $key);
+    background-color: $color;
   }
 }
 
+.label-warning {
+  background-color: #ea6207;
+}
 a.btn-inverse {
   background-color: #484848;
   border-color: darken(#484848, 15);
