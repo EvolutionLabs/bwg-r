@@ -227,25 +227,41 @@ $empty = isset($_GET['empty']);
 <?php endif; ?>
 			<div class="card padding">
 					<h4 class="heading">Options</h4>
-						<p class="select-line">Or
-							<span class="toggle-btn" onclick="toggleCartButton(this)">
-								<input type="hidden" name="cartAction" id="cartAction" value="replace" />
-								<span class="option" data-value="replace">replace</span>
-								<span class="toggle"></span>
-								<span class="option hideMe" data-value="addTo">add to</span>
-							</span> cart from a previous order.
-							<select class="selectpicker dropup" data-style="btn-outline btn-white">
-								<option value="" class="default">select order</option>
-								<option value="1">Order 1</option>
-								<option value="2">Order 2</option>
-								<option value="3">Order 3</option>
-								<option value="4">Order 4</option>
-								<option value="5">Order 5</option>
-								<option value="6">Order 6</option>
-							</select>
 
-							<input type="button" class="btn btn-success" onclick="javascript: void(0);" value="Select"></p>
-						</p>
+					<div class="alert alert-success" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<p>This is a default success alert. You can display it anywhere in the project
+					and it will stretch the full width of its parent.</p>
+						<p><strong>Note</strong> If you don't want it to be dismissible, remove the top button.</p>
+					</div>
+				<div class="alert alert-danger" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<p>This is a default danger alert. You can use <code>alert-danger</code>, <code>alert-danger</code>, <code>alert-info</code>, <code>alert-primary</code> and  <code>alert-default</code>.</p>
+					<p>I might change their default look, entering and exiting animations, but the markup will remain.</p>
+				</div>
+					<p class="select-line">Or
+						<span class="toggle-btn" onclick="toggleCartButton(this)">
+							<input type="hidden" name="cartAction" id="cartAction" value="replace" />
+							<span class="option" data-value="replace">replace</span>
+							<span class="toggle"></span>
+							<span class="option hideMe" data-value="addTo">add to</span>
+						</span> cart from a previous order.
+						<select class="selectpicker dropup" data-style="btn-outline btn-white">
+							<option value="" class="default">select order</option>
+							<option value="1">Order 1</option>
+							<option value="2">Order 2</option>
+							<option value="3">Order 3</option>
+							<option value="4">Order 4</option>
+							<option value="5">Order 5</option>
+							<option value="6">Order 6</option>
+						</select>
+
+						<input type="button" class="btn btn-success" onclick="javascript: void(0);" value="Select"></p>
+					</p>
 				</div>
 
 		</div>
