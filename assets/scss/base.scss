@@ -23,6 +23,16 @@ body {
     font-weight: 400;
     color: #3d3d3d;
   }
+  .bgn-group-spacer {
+    display: inline-block;
+    min-width: 50px;
+    margin: 0;
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 4.2rem;
+    height: 50px;
+    vertical-align: sub;
+  }
   display: flex;
   align-items: center;
   justify-content: space-between;
