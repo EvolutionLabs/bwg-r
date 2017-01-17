@@ -149,6 +149,31 @@
     background-color: #eee;
     border-bottom-color: #eee;
   }
+  .nav-tabs>li {
+    margin-bottom: -2px;
+    z-index: 1;
+  }
+  .nav-tabs>li>a {
+    font-size: 2rem;
+    color: rgb(51, 51, 51);
+    font-weight: 700;
+  }
+  .nav-tabs{
+    >li{
+      &.active>a {
+        color: #ff0048;
+      }
+      &:hover, &:focus, &:active,&.active {
+        .badge {
+          background-color: #ff0048;
+        }
+      }
+    }
+  }
+  .badge {
+    font-size: 14px;
+  }
+  font-family:'Montserrat', sans-serif;
 }
 .hhtError {
   background-color: #eee;

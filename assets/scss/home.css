@@ -104,26 +104,41 @@
   right: 1rem;
   bottom: 1rem; }
 
-#hhtErrorsModal .tab-pane {
-  display: block;
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  top: 0; }
-  #hhtErrorsModal .tab-pane.active {
+#hhtErrorsModal {
+  font-family: 'Montserrat', sans-serif; }
+  #hhtErrorsModal .tab-pane {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0; }
+    #hhtErrorsModal .tab-pane.active {
+      position: relative;
+      opacity: 1;
+      pointer-events: all; }
+  #hhtErrorsModal .tab-content {
+    overflow: hidden;
     position: relative;
-    opacity: 1;
-    pointer-events: all; }
-#hhtErrorsModal .tab-content {
-  overflow: hidden;
-  position: relative;
-  min-height: 50vh;
-  max-height: 50vh; }
-#hhtErrorsModal .tab-content > .tab-pane {
-  background-color: #eee; }
-#hhtErrorsModal .nav-tabs > li.active > a, #hhtErrorsModal .nav-tabs > li.active > a:focus, #hhtErrorsModal .nav-tabs > li.active > a:hover {
-  background-color: #eee;
-  border-bottom-color: #eee; }
+    min-height: 50vh;
+    max-height: 50vh; }
+  #hhtErrorsModal .tab-content > .tab-pane {
+    background-color: #eee; }
+  #hhtErrorsModal .nav-tabs > li.active > a, #hhtErrorsModal .nav-tabs > li.active > a:focus, #hhtErrorsModal .nav-tabs > li.active > a:hover {
+    background-color: #eee;
+    border-bottom-color: #eee; }
+  #hhtErrorsModal .nav-tabs > li {
+    margin-bottom: -2px;
+    z-index: 1; }
+  #hhtErrorsModal .nav-tabs > li > a {
+    font-size: 2rem;
+    color: #333333;
+    font-weight: 700; }
+  #hhtErrorsModal .nav-tabs > li.active > a {
+    color: #ff0048; }
+  #hhtErrorsModal .nav-tabs > li:hover .badge, #hhtErrorsModal .nav-tabs > li:focus .badge, #hhtErrorsModal .nav-tabs > li:active .badge, #hhtErrorsModal .nav-tabs > li.active .badge {
+    background-color: #ff0048; }
+  #hhtErrorsModal .badge {
+    font-size: 14px; }
 
 .hhtError {
   background-color: #eee;
