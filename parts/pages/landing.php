@@ -16,7 +16,6 @@
 		]
 	];
 
-	$displayErrors = rand(0,1) == 1;
 	$modal = isset($modal) ? $modal : '';
 	ob_start();
 	?>
@@ -29,24 +28,46 @@
 				</div>
 				<div class="modal-body">
 					<?php
+					$tabs = [];
 					foreach ($hhtErrors as $name => $errors) {
 						$times = rand(0,5);
-						if ($times) { ?>
-							<div class="well hhrError">
-							<h4><?= $name;?> Issues</h4>
-						<?php
-							for ($i = 0; $i < $times +1; $i++) { ?>
-									<hr />
-									<p class="error-body">
-										<?= $errors[rand(0, count($errors) - 1)]; ?>
-									</p>
-								<?php
-							} ?>
-							</div>
-						<?php
+						$tab = '';
+						if ($times) {
+							$tab .= '<div class="hhtError">';
+							for ($i = 0; $i < $times +1; $i++) {
+								$tab .= ($i ? '<hr />':'');
+								$tab .= '<p class="error-body">'.$errors[rand(0, count($errors) - 1)].'</p>';
+							}
+							$tab .="</div>";
+						} else {
+							$tab .= "<div class='hhtError no-errors'>No $name errors.</div>";
 						}
+						$tabs[$name] = [
+							'body' => $tab,
+							'count' => $times
+						];
 					}
 					?>
+					<ul class="nav nav-tabs" role="tablist">
+						<?php
+						$tabPanes = '<div class="tab-content">';
+						$index = 0;
+						foreach ($tabs as $name => $section) { ?>
+							<li role="presentation" class="<?= $index ?: 'active';?>">
+								<a href="#t-<?= $name;?>" aria-controls="t-<?= $name;?>"
+								   role="tab" data-toggle="tab"><?= $name;?>
+									<span class="badge"><?=$section['count'] ;?></span>
+								</a>
+							</li>
+						<?php
+							$tabPanes .= "<div role='tabpanel' class='tab-pane" .
+							             ( $index++ ?: ' in active' ) . "' id='t-$name'>{$section['body']}</div>";
+
+						}
+						$tabPanes .= '</div>';
+						?>
+					</ul>
+					<?= $tabPanes ;?>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-outline btn-danger" data-dismiss="modal">Close</button>
@@ -77,11 +98,10 @@
 	</div>
 
 <?php
-	if ($displayErrors) {
-		echo '<a href="#" class="hhtErrToggle btn btn-danger"
+	echo $modal;
+	echo '<a href="#" class="hhtErrToggle btn btn-danger"
 data-toggle="modal" data-target="#hhtErrorsModal">HHT Errors</a>';
-		echo $modal;
-	}
+
 
 } else { ?>
 	<div class="card login">

@@ -1,4 +1,16 @@
 $(window).on('load', function(){
+    $('#hhtErrorsModal').on('show.bs.modal', function(){
+        if (!window.tabAlreadySet) {
+            var height = $('.tab-pane.active').height();
+            if (height) {
+                $('.tab-content').velocity({
+                    maxHeight:height + 'px',
+                    minHeight:height + 'px'
+                });
+                window.tabAlreadySet = true;
+            }
+        }
+    });
     var loader = $('.shop-links .loader');
     for(var i = 0; i < 4; i++) {
         loader.append($('<div />'));
@@ -19,10 +31,17 @@ $(window).on('load', function(){
                     function(){
                         $(this).velocity({opacity: 1},500, function(){
                             loader.remove();
+                            $('#hhtErrorsModal').modal('show');
                         })
                     }
                 )
             });
         })
+    });
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var height = $($(e.target).attr('href')).height(); // newly activated tab
+        $('.tab-content').velocity({maxHeight:height+'px',minHeight:height+'px'}, 300);
+        // e.relatedTarget // previous active tab
     })
+
 });

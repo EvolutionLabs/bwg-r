@@ -122,9 +122,38 @@
   right: 1rem;
   bottom: 1rem;
 }
-.hhrError {
+#hhtErrorsModal {
+  .tab-pane {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    &.active {
+      position: relative;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  .tab-content {
+    overflow: hidden;
+    position: relative;
+    min-height: 50vh;
+    max-height: 50vh;
+  }
+
+  .tab-content>.tab-pane {
+    background-color: #eee;
+  }
+  .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #eee;
+    border-bottom-color: #eee;
+  }
+}
+.hhtError {
   background-color: #eee;
   border: 1px solid #ddd;
+  padding: 15px;
   hr {
     margin: 10px 0;
     border-style: solid;

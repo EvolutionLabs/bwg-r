@@ -272,7 +272,8 @@ dl, .dl-horizontal {
       top: calc(100% - 11px); } }
   .megaMenu .filtersList {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding-bottom: 20px; }
     .megaMenu .filtersList > * {
       flex: 0 0 25%;
       padding: 10px 10px 0;
