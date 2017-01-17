@@ -106,13 +106,13 @@
 
 #hhtErrorsModal {
   font-family: 'Montserrat', sans-serif; }
-  #hhtErrorsModal .tab-pane {
+  #hhtErrorsModal .tab-content > * {
     display: block;
     position: absolute;
     opacity: 0;
     pointer-events: none;
     top: 0; }
-    #hhtErrorsModal .tab-pane.active {
+    #hhtErrorsModal .tab-content > *.active {
       position: relative;
       opacity: 1;
       pointer-events: all; }

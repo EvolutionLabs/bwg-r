@@ -34,7 +34,7 @@
 						$tab = '';
 						if ($times) {
 							$tab .= '<div class="hhtError">';
-							for ($i = 0; $i < $times +1; $i++) {
+							for ($i = 0; $i < $times; $i++) {
 								$tab .= ($i ? '<hr />':'');
 								$tab .= '<p class="error-body">'.$errors[rand(0, count($errors) - 1)].'</p>';
 							}
