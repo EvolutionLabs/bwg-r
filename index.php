@@ -1,7 +1,11 @@
 <?php
-include_once "parts/init.php";
 
-$path = substr($_SERVER["REQUEST_URI"], 1);
+define('BWG_ROOT', '/');
+
+$path = substr($_SERVER["REQUEST_URI"], strlen(BWG_ROOT));
+
+include_once dirname(__FILE__).DIRECTORY_SEPARATOR."parts/init.php";
+
 $template = strlen($path) < 1 ? 'landing' : (strpos($path, '?') > -1 ? substr($path, 0, strpos($path,'?')) : $path);
 
 $template = $loggedIn? $template : 'landing';
@@ -31,14 +35,14 @@ switch ($template) {
 }
 $css = array_merge($css, $page_css);
 $js = array_merge($js, $page_js);
-include "parts/header.php";
-include "parts/nav.php";
+include dirname(__FILE__).DIRECTORY_SEPARATOR."parts/header.php";
+include dirname(__FILE__).DIRECTORY_SEPARATOR."parts/nav.php";
 
 echo '<div class="flexWrap'.($template == 'landing' ? ' v-center':' clear').'">';
 
-include "parts/pages/{$template}.php";
+include dirname(__FILE__).DIRECTORY_SEPARATOR."parts/pages/{$template}.php";
 
 echo '</div>';
-include "parts/footer.php";
+include dirname(__FILE__).DIRECTORY_SEPARATOR."parts/footer.php";
 
 endif;

@@ -5,7 +5,7 @@
 		</div>
 		<div class="col-sm-3 aside">
 			<?php
-			include "../sidebar.php";
+			include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."sidebar.php";
 			?>
 		</div>
 	</div>

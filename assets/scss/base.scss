@@ -583,6 +583,7 @@ a.btn-inverse {
       vertical-align: middle;
       &:not(:first-child) {
         text-align: center;
+        white-space: nowrap;
       }
       a {
         color: white;
