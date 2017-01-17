@@ -273,26 +273,37 @@ dl, .dl-horizontal {
     display: flex;
     flex-wrap: wrap; }
     .megaMenu .filtersList > * {
-      flex: 0 0 20%;
+      flex: 0 0 25%;
       padding: 10px 10px 0;
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       text-transform: uppercase;
       position: relative; }
+      .megaMenu .filtersList > *:hover input[type=checkbox] ~ label {
+        opacity: 1; }
+      .megaMenu .filtersList > *:hover i {
+        transform: scale(1.2); }
       .megaMenu .filtersList > * label {
-        cursor: pointer; }
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        line-height: 2.4rem; }
       .megaMenu .filtersList > * input[type=checkbox] {
-        opacity: 0; }
+        opacity: 0;
+        height: 20px;
+        width: 20px;
+        margin-right: -2px; }
         .megaMenu .filtersList > * input[type=checkbox] ~ * {
           opacity: .6;
           transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .megaMenu .filtersList > * input[type=checkbox]:checked ~ * {
-          opacity: 1; }
+          opacity: 1;
+          color: #29b766; }
         .megaMenu .filtersList > * input[type=checkbox] + .fake {
           position: absolute;
           left: 10px;
-          top: 50%;
-          border: 2px solid white;
+          top: calc(50% + 2px);
+          border: 1px solid white;
           width: 15px;
           height: 15px;
           transform: translateY(-50%) translateZ(0);
@@ -307,6 +318,9 @@ dl, .dl-horizontal {
       .megaMenu .filtersList > * > * {
         vertical-align: baseline; }
       .megaMenu .filtersList > * i {
-        margin: 10px; }
+        margin: 0 12px;
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
 /*# sourceMappingURL=section.css.map */

@@ -26,82 +26,82 @@ $dd = [
 $filters = [
 	[
 		'name' => 'Top Sellers',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-top-sellers'
 	],[
 		'name' => 'Plus Top Sellers',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-top-sellers-plus'
 	],[
 		'name' => 'Group Top',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-group-top'
 	],[
 		'name' => 'My Top Sellers',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-my-top-sellers'
 	],[
 		'name' => 'My products',
-	    'icon' => 'fa fa-circle-thin',
+	    'icon' => 'fa bwg-i-my-products',
 	],[
 		'name' => 'Category Man.',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-category-man'
 	],[
 		'name' => 'Trade show',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-trade-show'
 	],[
 		'name' => 'Back in stock',
-	    'icon' => 'fa fa-circle-thin'
-	],[
-		'name' => 'Promotions',
-	    'icon' => 'fa fa-tag'
-	],[
-		'name' => 'Own Brand',
-	    'icon' => 'fa fa-circle-thin'
+	    'icon' => 'fa bwg-i-back-in-stock'
 	],[
 		'name' => 'Clearance',
-	    'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-clearance'
+	],[
+		'name' => 'Own Brand',
+	    'icon' => 'fa bwg-i-own-brand'
+	],[
+		'name' => 'Promotions',
+		'icon' => 'fa fa-tag'
 	],[
 		'name' => 'Handbill',
 	    'icon' => 'fa fa-file'
 	],[
 		'name' => 'Top FoodM/Conv.',
-	    'icon' => 'fa fa-circle-thin'
+    'icon' => 'fa bwg-i-top-food-m'
 	],[
 		'name' => 'New Product',
-		'icon' => "fa fa-circle-thin"
+		'icon' => "fa bwg-i-new-product"
 	],[
 		'name' => 'New Listing',
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-new-listing'
 	],[
 		'name' => 'Core',
 		'icon' => 'fa fa-dot-circle-o'
 	],[
 		'name' => 'Cycle',
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-cycle'
 	],[
-		'name' => 'Multibuy',
-		'icon' => 'fa fa-circle-thin'
+		'name' => 'Multi-buy',
+		'icon' => 'fa bwg-i-multi-buy'
 	],[
 		'name' => 'Recommended',
 		'icon' => 'fa fa-thumbs-up'
 	],[
 		'name' => 'All Products',
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-all-products'
+	],[
+		'name' => 'All Promotions',
+		'icon' => 'fa fa-tags'
 	],[
 		'name' => 'Small Case',
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-small-case'
 	],[
 		'name' => 'Mixed Case',
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-mixed-case'
 	],[
 		'name' => "Mix and Match",
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-mix-and-match'
 	],[
 		'name' => 'Value Line',
 		'icon' => 'fa fa-eur'
 	],[
 		'name' => 'Monday Madness',
-		'icon' => 'fa fa-calendar-o'
-	],[
-		'name' => 'All Products',
-		'icon' => 'fa fa-circle-thin'
+		'icon' => 'fa bwg-i-monday-madness'
 	]
 ];
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
@@ -149,9 +149,9 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 												$slug = makeSlug($f['name']);
 												?>
 												<span>
-													<input type="checkbox" id="filters[<?= $slug; ?>]" name="filters[<?= $slug; ?>]" />
-													<span class="fake"></span>
-													<label for="filters[<?= $slug; ?>]">
+													<input type="checkbox" id="filters[<?= $slug; ?>]" name="filters[<?= $slug; ?>]" /><!--
+													--><span class="fake"></span><!--
+													--><label for="filters[<?= $slug; ?>]">
 														<i class="<?= $f['icon']; ?>"></i><?= $f['name']; ?>
 													</label>
 												</span>
