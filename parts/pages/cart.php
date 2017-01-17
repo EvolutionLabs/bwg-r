@@ -240,8 +240,8 @@ $empty = isset($_GET['empty']);
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<p>This is a default danger alert. You can use <code>alert-danger</code>, <code>alert-danger</code>, <code>alert-info</code>, <code>alert-primary</code> and  <code>alert-default</code>.</p>
-					<p>I might change their default look, entering and exiting animations, but the markup will remain.</p>
+					<p>This is a default danger alert. You could use <label class="label label-success">.alert-success</label>, <label class="label label-danger">.alert-danger</label>, <label class="label label-info">.alert-info</label>, <label class="label label-primary">.alert-primary</label>, <label class="label label-warning">.alert-warning</label> and  <label class="label label-default">.alert-default</label>.</p>
+					<p>Most likley, I will change their appearance and transition effect, but the markup will stay.</p>
 				</div>
 					<p class="select-line">Or
 						<span class="toggle-btn" onclick="toggleCartButton(this)">
