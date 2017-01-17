@@ -117,3 +117,23 @@
     }
   }
 }
+.hhtErrToggle {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+.hhrError {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  hr {
+    margin: 10px 0;
+    border-style: solid;
+    border-width: 1px 0;
+    border-top-color: rgba(0,0,0,.12);
+    border-bottom-color: white;
+  }
+  .error-body {
+    font-weight: 600;
+  }
+}
+

@@ -207,7 +207,7 @@ $empty = isset($_GET['empty']);
 							<div class="btn-group clear separate">
 								<a href="#" class="btn btn-success">Continue Shopping</a>
 								<a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#deleteCartModal">Erase Cart</a>
-								<a href="#modal-example" class="btn btn-default btn-outline" data-toggle="modal" data-target="#updateCartModal">Update Cart</a>
+								<a href="#" class="btn btn-default btn-outline" data-toggle="modal" data-target="#updateCartModal">Update Cart</a>
 							</div>
 						</div>
 						<div class="flexCol well">
