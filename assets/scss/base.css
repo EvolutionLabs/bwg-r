@@ -257,6 +257,11 @@ a.btn-inverse {
     border-color: #111111;
     color: white; }
 
+.btn-white.btn-outline {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  border-color: white; }
+
 .btn {
   border: none;
   height: 50px;
@@ -850,6 +855,8 @@ input::-webkit-input-placeholder, button {
   position: relative;
   color: white;
   opacity: .65; }
+  #hhtErrorsModal .modal-header .close, #hhtErrorsModal .toast-close-button {
+    color: black; }
   .modal-header .close:active, .modal-header .close:focus, .modal-header .close:hover, .toast-close-button:active, .toast-close-button:focus, .toast-close-button:hover {
     color: black;
     text-shadow: 1px 1px 1px white;

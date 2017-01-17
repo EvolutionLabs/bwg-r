@@ -22,9 +22,9 @@
 	<div class="modal fade" tabindex="-1" role="dialog" id="hhtErrorsModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-				<div class="modal-header bg-danger">
+				<div class="modal-header bg-default">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title">HHT Errors</h4>
+					<h4 class="modal-title">HHT Orders</h4>
 				</div>
 				<div class="modal-body">
 					<?php
@@ -99,8 +99,8 @@
 
 <?php
 	echo $modal;
-	echo '<a href="#" class="hhtErrToggle btn btn-danger"
-data-toggle="modal" data-target="#hhtErrorsModal">HHT Errors</a>';
+	echo '<a href="#" class="hhtErrToggle btn btn-white btn-outline"
+data-toggle="modal" data-target="#hhtErrorsModal">HHT Orders</a>';
 
 
 } else { ?>

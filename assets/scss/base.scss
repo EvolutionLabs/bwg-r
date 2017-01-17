@@ -112,7 +112,11 @@ a.btn-inverse {
     color: white;
   }
 }
-
+.btn-white.btn-outline {
+  background-color: rgba(0,0,0,.35);
+  color: white;
+  border-color: white;
+}
 .btn {
   border: none;
   height: 50px;
@@ -874,6 +878,9 @@ input::-webkit-input-placeholder, button {
   padding: 1rem;
   outline: none;
   text-shadow: none;
+  #hhtErrorsModal & {
+    color: black;
+  }
   &:active,&:focus,&:hover {
     color: black;
     text-shadow: 1px 1px 1px white;
