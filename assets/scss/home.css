@@ -119,8 +119,8 @@
   #hhtErrorsModal .tab-content {
     overflow: hidden;
     position: relative;
-    min-height: 50vh;
-    max-height: 50vh; }
+    min-height: 90vh;
+    max-height: 90vh; }
   #hhtErrorsModal .tab-content > .tab-pane {
     background-color: #eee; }
   #hhtErrorsModal .nav-tabs > li.active > a, #hhtErrorsModal .nav-tabs > li.active > a:focus, #hhtErrorsModal .nav-tabs > li.active > a:hover {
