@@ -617,6 +617,11 @@ a.btn-inverse {
           margin-top: 6rem;
           padding: 6px 6rem; }
 
+.flex-table.saved-searches tr > td {
+  border-top: 1px solid #ddd; }
+  .flex-table.saved-searches tr > td:last-child, .flex-table.saved-searches tr > td:first-child {
+    width: 1%; }
+
 .flex-table {
   width: 100%; }
   .card .flex-table th {

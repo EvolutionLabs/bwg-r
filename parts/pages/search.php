@@ -26,9 +26,9 @@ $dd = [
 $ss = [
 	'Date' => ['25/12/16','28/12/16', '8/1/17', '20/5/15'],
     'Keyword' => ['Vodka','Biscuits','Bacon'],
-    'Supplier' => ['McDonnagh','-'],
+    /*'Supplier' => ['McDonnagh','-'],
     'Brand' => ['Smirnoff','-'],
-    'On Promotion' => ['<i class="fa fa-close"></i>', '<i class="fa fa-check"></i>']
+    'On Promotion' => ['<i class="fa fa-close"></i>', '<i class="fa fa-check"></i>']*/
 ];
 
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
@@ -121,7 +121,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				</div>
 			</div>-->
 			<div class="card transparent">
-				<table class="flex-table">
+				<table class="flex-table saved-searches">
 					<thead>
 					<tr>
 						<?php

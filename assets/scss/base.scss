@@ -584,6 +584,12 @@ a.btn-inverse {
     }
   }
 }
+.flex-table.saved-searches tr>td{
+  border-top: 1px solid #ddd;
+  &:last-child, &:first-child {
+    width: 1%;
+  }
+}
 .flex-table {
   width: 100%;
   th {
@@ -612,7 +618,6 @@ a.btn-inverse {
       &:not(:first-child) {
         text-align: center;
       }
-
       .hide-x > * {
         transition: opacity .3s cubic-bezier(.4,0,.2,1);
       }
