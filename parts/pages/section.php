@@ -21,6 +21,7 @@ $dd = [
         'Pallet Qty.' => '14/11/2016',
         'VAT' => '13.5%',
         'Supplier' => '14/11/2016',
+	      'Shelf life' => '12days'
     ]
 ];
 $filters = [
