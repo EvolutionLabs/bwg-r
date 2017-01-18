@@ -450,6 +450,18 @@ dl, .dl-horizontal {
       padding: 0;
       border-top: 1px solid #eee;
       > a {
+        transition: all .3s cubic-bezier(.4,0,.2,1);
+        &[aria-expanded="true"] {
+          .toggLer {
+            transform: scaleY(-1);
+            margin: 0;
+          }
+          &,&:hover {
+            background-color: #303030;
+            color: white;
+          }
+          margin-top: 20px;
+        }
         display: block;
         padding: 12px 15px;
         background-color: white;
@@ -475,5 +487,6 @@ dl, .dl-horizontal {
     font-size: 1.5rem;
     float: right;
     margin: -6px 0;
+    transition: transform .3s cubic-bezier(.4,0,.2,1), margin .3s cubic-bezier(.4,0,.2,1);
   }
 }

@@ -198,6 +198,9 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 			];
 			?>
 			<div class="simpleList clear">
+				<div class="cardTitle">
+					<h1><?= $category ;?> Lists</h1>
+				</div>
 				<ul>
 				<?php
 				foreach ( $favLists as $favList ) {
