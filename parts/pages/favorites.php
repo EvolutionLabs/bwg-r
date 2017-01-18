@@ -199,7 +199,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 			?>
 			<div class="simpleList clear">
 				<div class="cardTitle">
-					<h1><?= $category ;?> Lists</h1>
+					<h1><?= $category ;?> Favorite Lists</h1>
 				</div>
 				<ul>
 				<?php
