@@ -459,5 +459,12 @@ dl, .dl-horizontal {
       }
     }
   }
-
+}
+.listTitleLink {
+  &, &:hover, &:active, &:focus {
+    color: #333;
+    text-decoration: none;
+  }
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
 }

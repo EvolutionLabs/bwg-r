@@ -364,4 +364,11 @@ dl, .dl-horizontal {
           .simpleList > ul > li > a span.btn-sm i {
             margin: 6px 0; }
 
+.listTitleLink {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif; }
+  .listTitleLink, .listTitleLink:hover, .listTitleLink:active, .listTitleLink:focus {
+    color: #333;
+    text-decoration: none; }
+
 /*# sourceMappingURL=section.css.map */

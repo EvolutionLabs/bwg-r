@@ -25,6 +25,7 @@ switch ($template) {
 	case "cart" :
 		$page_css[] = 'css/cart.css';
 	case "section" :
+	case "favorites" :
 		$page_css[] = 'css/section.css';
 		$page_js []= 'js/section.js';
 		break;

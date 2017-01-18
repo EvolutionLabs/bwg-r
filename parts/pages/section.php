@@ -134,7 +134,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				<div id="navbar-secondary" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="#" class="btn btn-default btn-sm">Promotions</a></li>
-						<li><a href="#" class="btn btn-default btn-sm active">Favorites</a></li>
+						<li><a href="/favorites?category=<?= $category ;?>" class="btn btn-default btn-sm active">Favorites</a></li>
 						<li><a href="/planogram?category=<?= $category ;?>" class="btn btn-default btn-sm">Planogram</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -188,87 +188,16 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 <div class="container dull">
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
-			<div class="card transparent">
-				<div class="cardTitle">
-					<span class="filters">Filter by:</span>
-					<div class="btn-group dropdown">
-						<a href="#" onclick="void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddDepartment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Department
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="ddDepartment">
-							<li><a class="dropdown-item" href="#">Department 1</a></li>
-							<li><a class="dropdown-item" href="#">Department 2</a></li>
-							<li><a class="dropdown-item" href="#">Department 3</a></li>
-						</ul>
-					</div>
-					<div class="btn-group dropdown">
-						<a href="#" onclick="void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Group
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="ddGroup">
-							<li><a class="dropdown-item" href="#">Group 1</a></li>
-							<li><a class="dropdown-item" href="#">Group 2</a></li>
-							<li><a class="dropdown-item" href="#">Group 3</a></li>
-						</ul>
-					</div>
-					<div class="btn-group dropdown">
-						<a href="#" onclick="void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Category
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="ddCategory">
-							<li><a class="dropdown-item" href="#">Category 1</a></li>
-							<li><a class="dropdown-item" href="#">Category 2</a></li>
-							<li><a class="dropdown-item" href="#">Category 3</a></li>
-						</ul>
-					</div>
-					<span class="pull-right layoutSwitch">
-						View as:
-						<a class="btn btn-clear btn-sm active" href="#view-list" data-target="#productsTable"><i class="fa fa-list"></i></a>
-						<a class="btn btn-clear btn-sm" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
-					</span>
-				</div>
-				<table class="table products flex-table" id="productsTable">
-					<thead>
-					<tr>
-						<?php
-						foreach ( $dd as $k => $v ) {
-							if (in_array($k, ['id','Price','Details']))
-								continue;
-							echo '<th>'.$k.'<a href="#"><i class="fa fa-sort"></i></a></th>';
-						}
-						echo '<th>Price</th><th colspan="3" class="pusher"></th>'
-						?>
-					</tr>
-					</thead>
-					<?php
-					for ($i = 0; $i < 12; $i++) {
-						include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."product-row.php";
-					} ?>
-				</table>
-			</div>
-			<div class="pagination">
-				<span class="count">
-					Items 56 of 4694
-				</span>
-				<div>
-					<div class="btn-group">
-						<a class="btn btn-white" href="#">Previous</a>
-						<a class="btn btn-white" href="#">1</a>
-						<a class="btn btn-white" href="#">2</a>
-						<a class="btn btn-white" href="#">3</a>
-						<span class="btn btn-disabled">4</span>
-						<a class="btn btn-white" href="#">5</a>
-					</div>
-					<span class="bgn-group-spacer">&hellip;</span>
-					<div class="btn-group">
-						<a class="btn btn-white" href="#">20</a>
-						<a class="btn btn-white" href="#">Next</a>
-					</div>
-				</div>
-			</div>
+			<?php
+			$table = [
+				'id' => 'products',
+				'min-prods' => 9,
+				'max-prods' => 12,
+				'filters' => true,
+				'pagination' => true
+			];
+			include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."product-table.php";
+			?>
 		</div>
 		<div class="col-md-3 col-sm-12 aside">
 			<?php include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."sidebar.php"; ?>
