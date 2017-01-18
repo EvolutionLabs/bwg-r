@@ -36,7 +36,7 @@ $images = [
 				<div id="navbar-secondary" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="#" class="btn btn-default btn-sm">Promotions</a></li>
-						<li><a href="#" class="btn btn-default btn-sm active">Favorites</a></li>
+						<li><a href="/favorites?category=<?= $category;?>" class="btn btn-default btn-sm active">Favorites</a></li>
 						<li><a href="/section?category=<?= $category;?>" class="btn btn-default btn-sm">Section</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
