@@ -376,16 +376,46 @@ dl, .dl-horizontal {
           .simpleList > ul > li > a span.btn-sm i {
             margin: 6px 0; }
 
-.listTitleLink {
+.listTitleLink, .stockcardlink {
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif; }
-  .listTitleLink, .listTitleLink:hover, .listTitleLink:active, .listTitleLink:focus {
+  .listTitleLink, .listTitleLink:hover, .listTitleLink:active, .listTitleLink:focus, .stockcardlink, .stockcardlink:hover, .stockcardlink:active, .stockcardlink:focus {
     color: #333;
     text-decoration: none; }
-  .listTitleLink .toggLer {
+  .listTitleLink .toggLer, .stockcardlink .toggLer {
     font-size: 1.5rem;
     float: right;
     margin: -6px 0;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.stockcard {
+  background: white;
+  width: 100%; }
+  .stockcard .stockCardLink {
+    display: inline-block;
+    position: relative;
+    padding-right: 50px; }
+  .stockcard table.table {
+    margin: 0;
+    border: 1px solid #eee !important;
+    width: 100% !important;
+    border-collapse: collapse; }
+    .stockcard table.table .img-responsive {
+      margin: 0 auto; }
+    .stockcard table.table th {
+      padding: 8px; }
+    .stockcard table.table td:first-of-type {
+      background-color: #eee !important;
+      white-space: nowrap; }
+    .stockcard table.table td, .stockcard table.table th {
+      padding: 2px 5px;
+      line-height: 30px;
+      text-align: center; }
+      .stockcard table.table td.td-left, .stockcard table.table th.td-left {
+        text-align: left; }
+      .stockcard table.table td.td-right, .stockcard table.table th.td-right {
+        text-align: right; }
+    .stockcard table.table td {
+      border: 1px solid #eee !important; }
 
 /*# sourceMappingURL=section.css.map */

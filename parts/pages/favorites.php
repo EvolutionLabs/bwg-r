@@ -217,7 +217,6 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						<a class="listTitleLink" role="button" data-toggle="collapse" href="#list-<?= $table['id'];?>" aria-expanded="false" aria-controls="list-<?= $table['id'];?>"">
 						<span class="toggLer"><i class="fa fa-2x fa-chevron-down"></i></span>
 								<?= $favList ;?>
-
 						</a>
 						<div class="collapse" id="list-<?= $table['id'];?>">
 							<div>

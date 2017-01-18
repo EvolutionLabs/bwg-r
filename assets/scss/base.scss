@@ -689,8 +689,8 @@ a.btn-inverse {
         overflow: visible !important;
       }
       z-index: 1;
-     td {
-        padding: 0;
+     > td {
+        padding: 0 !important;
        border-top: none;
        .tdWrapper {
          padding: 12px 8px;

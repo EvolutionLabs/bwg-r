@@ -146,14 +146,86 @@
 						</div>
 						<a href="#<?= $isCart ? 'remove-from-' : 'add-to-' ;?>cart?id=<?= $dd['id'] ;?>"
 						   onclick="javascript:void(0)" class="btn <?= $isCart ? 'btn-cart btn-inverse':'btn-success' ;?> btn-block"><?= $isCart ? 'Remove':'Add to cart';?></a>
-						<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle btn-outline" data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
+						<a href="#" class="btn btn-default btn-stock btn-block accordion-toggle btn-outline"
+						   data-toggle="collapse" data-target="#stock-<?= $dd['id']; ?>">View Stock Card</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="collapse" id="stock-<?= $dd['id'] ;?>">
 			<div class="tdWrapper"><!--Don't remove this wrapper, it's needed for smooth animation !-->
-				Stock card here
+				<div class="stockcard" id="info88216">
+					<table cellspacing="1" class="table">
+						<tbody><tr class="sales_info_title_Chill">
+							<th class="sales_info_detail" style="width: 61px;"><strong>Sales</strong></th>
+							<th class="sales_info_detail" colspan="2">Sun</th>
+							<th class="sales_info_detail" colspan="2">Mon</th>
+							<th class="sales_info_detail" colspan="2">Tues</th>
+							<th class="sales_info_detail" colspan="2">Wed</th>
+							<th class="sales_info_detail" colspan="2">Thur</th>
+							<th class="sales_info_detail" colspan="2">Fri</th>
+							<th class="sales_info_detail" colspan="2">Sat</th>
+						</tr>
+						<tr class="sales_info_row_Chill">
+							<td>last week</td>
+							<td id="s_lw_qty_0_88216"></td><td id="s_lw_val_0_88216"></td>
+							<td id="s_lw_qty_1_88216"></td><td id="s_lw_val_1_88216"></td>
+							<td id="s_lw_qty_2_88216"></td><td id="s_lw_val_2_88216"></td>
+							<td id="s_lw_qty_3_88216"></td><td id="s_lw_val_3_88216"></td>
+							<td id="s_lw_qty_4_88216"></td><td id="s_lw_val_4_88216"></td>
+							<td id="s_lw_qty_5_88216"></td><td id="s_lw_val_5_88216"></td>
+							<td id="s_lw_qty_6_88216"></td><td id="s_lw_val_6_88216"></td>
+						</tr>
+						<tr class="sales_info_row_Chill">
+							<td>4 wk avg</td>
+							<td id="s_4w_qty_0_88216"></td><td id="s_4w_val_0_88216"></td>
+							<td id="s_4w_qty_1_88216"></td><td id="s_4w_val_1_88216"></td>
+							<td id="s_4w_qty_2_88216"></td><td id="s_4w_val_2_88216"></td>
+							<td id="s_4w_qty_3_88216"></td><td id="s_4w_val_3_88216"></td>
+							<td id="s_4w_qty_4_88216"></td><td id="s_4w_val_4_88216"></td>
+							<td id="s_4w_qty_5_88216"></td><td id="s_4w_val_5_88216"></td>
+							<td id="s_4w_qty_6_88216"></td><td id="s_4w_val_6_88216"></td>
+						</tr>
+						<tr class="sales_info_row_Chill">
+							<td>daily rank</td>
+							<td colspan="2" id="s_dr_rank_0_88216"></td>
+							<td colspan="2" id="s_dr_rank_1_88216"></td>
+							<td colspan="2" id="s_dr_rank_2_88216"></td>
+							<td colspan="2" id="s_dr_rank_3_88216"></td>
+							<td colspan="2" id="s_dr_rank_4_88216"></td>
+							<td colspan="2" id="s_dr_rank_5_88216"></td>
+							<td colspan="2" id="s_dr_rank_6_88216"></td>
+						</tr>
+						<tr class="sales_info_title_Chill">
+							<td colspan="15" class="td-left"><strong>Purchases</strong></td>
+						</tr>
+						<tr class="sales_info_row_Chill">
+							<td>last week</td>
+							<td colspan="14" id="p_lw_0_88216"></td>
+						</tr>
+						<tr class="sales_info_row_Chill">
+							<td>4 week avg</td>
+							<td colspan="14" id="p_4w_0_88216"></td>
+						</tr>
+						<tr class="sales_info_row_Chill">
+							<td colspan="15" id="graph_header_store_88216">
+								<a class="stockcardlink accordion-toggle"
+								   data-toggle="collapse" data-target="#stockGraph-<?= $dd['id']; ?>"
+								   href="#">Display Sales Trend My Store <span class="toggLer"><i class="fa fa-2x fa-chevron-down"></i></span></a></td>
+						</tr>
+						<tr class="hiddenRow">
+							<td colspan="15">
+								<div id="stockGraph-<?= $dd['id']; ?>" aria-expanded="false" class="collapse">
+									<div class="tdWrapper">
+										<img class="img-responsive" src="/assets/image/example_graph.jpg">
+									</div>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+
+				</div>
 			</div>
 		</div>
 	</td>
