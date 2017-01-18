@@ -1,3 +1,6 @@
+<?php
+	$columns = isset($table['cols']) ? $table['cols'] : ($category == 'chill' ? 10 : 9);
+?>
 <div class="card transparent">
 	<?php if ( $table['filters'] ) { ?>
 		<div class="cardTitle">
@@ -66,6 +69,13 @@
 		for ( $i = 0; $i < rand( $table['min-prods'], $table['max-prods'] ); $i ++ ) {
 			include "product-row.php";
 		} ?>
+		<tfoot>
+			<td colspan="<?= $columns; ?>">
+				<div class="text-right">
+					<a href="#" class="btn btn-default btn-outline btn-sm">Add selection to cart</a>
+				</div>
+			</td>
+		</tfoot>
 	</table>
 </div>
 <?php if ( $table['pagination'] ) { ?>

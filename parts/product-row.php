@@ -1,4 +1,6 @@
-<?php $isCart = $template == 'cart'; ?>
+<?php
+$isCart = $template == 'cart';
+?>
 <tr data-toggle="collapse" data-target="#tr-<?=$dd['id'] ;?>" class="accordion-toggle" aria-expanded="false">
 	<?php
 	$name = getRand($dd['Name']);
@@ -59,13 +61,13 @@
 	</td>
 	<td class="no-grow hide-x">
 		<a href="#<?= $isCart ? 'remove-from-' : 'add-to-' ;?>cart?id=<?= $dd['id'] ;?>"
-		   onclick="javascript:void(0)" class="btn btn-cart btn-sm <?= $isCart ? 'btn-danger':'btn-success' ;?>">
+		   onclick="void(0)" class="btn btn-cart btn-sm <?= $isCart ? 'btn-danger':'btn-success' ;?>">
 			<i class="fa fa-2x bwg-i-cart"></i>
 		</a>
 	</td>
 </tr>
 <tr class="hiddenRow">
-	<td colspan="9">
+	<td colspan="<?= $columns ;?>">
 		<div class="collapse" id="tr-<?= $dd['id'] ;?>" style="overflow: hidden; clear: both;">
 			<div class="tdWrapper">
 				<div class="imageWrap"><img class="img-responsive" src="<?= $dd['Details']['image'] ;?>" /></div>
@@ -224,7 +226,6 @@
 						</tr>
 						</tbody>
 					</table>
-
 				</div>
 			</div>
 		</div>

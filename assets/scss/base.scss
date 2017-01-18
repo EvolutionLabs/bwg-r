@@ -614,6 +614,12 @@ a.btn-inverse {
 }
 .flex-table {
   width: 100%;
+  tfoot>tr{
+    background-color: #eee;
+    >td>div {
+      padding: 20px 0 0;
+    }
+  }
   th {
     .card & {
       background-color: #3d3d3d;
