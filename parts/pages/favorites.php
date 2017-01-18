@@ -197,7 +197,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				'Wine Stock'
 			];
 			?>
-			<div class="simpleList">
+			<div class="simpleList clear">
 				<ul>
 				<?php
 				foreach ( $favLists as $favList ) {
@@ -206,12 +206,15 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						'min-prods'  => 3,
 						'max-prods'  => 5,
 						'filters'    => false,
+						'header'     => false,
 						'pagination' => false
 					];
 					?>
 					<li>
 						<a class="listTitleLink" role="button" data-toggle="collapse" href="#list-<?= $table['id'];?>" aria-expanded="false" aria-controls="list-<?= $table['id'];?>"">
-							<?= $favList ;?>
+						<span class="openList"><i class="fa fa-2x fa-chevron-down"></i></span>
+								<?= $favList ;?>
+
 						</a>
 						<div class="collapse" id="list-<?= $table['id'];?>">
 							<div>

@@ -358,7 +358,8 @@ dl, .dl-horizontal {
       border-top: 1px solid #eee; }
       .simpleList > ul > li > a {
         display: block;
-        padding: 12px 15px; }
+        padding: 12px 15px;
+        background-color: white; }
         .simpleList > ul > li > a:hover {
           background-color: #f5f5f5; }
         .simpleList > ul > li > a span.btn-sm {
@@ -372,5 +373,9 @@ dl, .dl-horizontal {
   .listTitleLink, .listTitleLink:hover, .listTitleLink:active, .listTitleLink:focus {
     color: #333;
     text-decoration: none; }
+
+.openList {
+  float: right;
+  margin: -6px 0; }
 
 /*# sourceMappingURL=section.css.map */

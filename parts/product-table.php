@@ -47,20 +47,22 @@
 		</div>
 	<?php } ?>
 	<table class="table products flex-table" id="productsTable">
-		<thead>
-		<tr>
-			<?php
-			foreach ( $dd as $k => $v ) {
-				if ( in_array( $k, [ 'id', 'Price', 'Details' ] ) ) {
-					continue;
+		<?php if ($table['header']) { ?>
+			<thead>
+			<tr>
+				<?php
+				foreach ( $dd as $k => $v ) {
+					if ( in_array( $k, [ 'id', 'Price', 'Details' ] ) ) {
+						continue;
+					}
+					echo '<th>' . $k . '<a href="#"><i class="fa fa-sort"></i></a></th>';
 				}
-				echo '<th>' . $k . '<a href="#"><i class="fa fa-sort"></i></a></th>';
-			}
-			echo '<th>Price</th><th colspan="3" class="pusher"></th>'
-			?>
-		</tr>
-		</thead>
+				echo '<th>Price</th><th colspan="3" class="pusher"></th>'
+				?>
+			</tr>
+			</thead>
 		<?php
+		}
 		for ( $i = 0; $i < rand( $table['min-prods'], $table['max-prods'] ); $i ++ ) {
 			include "product-row.php";
 		} ?>

@@ -194,7 +194,8 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				'min-prods' => 9,
 				'max-prods' => 12,
 				'filters' => true,
-				'pagination' => true
+				'header'     => true,
+				'pagination' => true,
 			];
 			include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."product-table.php";
 			?>
