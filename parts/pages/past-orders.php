@@ -61,15 +61,20 @@ $dd = [
 				<span class="count">
 					Items 56 of 4694
 				</span>
-				<div class="btn-group">
-					<a class="btn btn-white" href="#">Previous</a>
-					<a class="btn btn-white" href="#">1</a>
-					<a class="btn btn-white" href="#">2</a>
-					<a class="btn btn-white" href="#">3</a>
-					<a class="btn btn-white" href="#">4</a>
-					<a class="btn btn-disabled" href="#">5</a>
-					<a class="btn btn-white" href="#">6</a>
-					<a class="btn btn-white" href="#">Next</a>
+				<div>
+					<div class="btn-group">
+						<a class="btn btn-white" href="#">&laquo;</a>
+						<a class="btn btn-white" href="#">1</a>
+						<a class="btn btn-white" href="#">2</a>
+						<a class="btn btn-white" href="#">3</a>
+						<span class="btn btn-disabled">4</span>
+						<a class="btn btn-white" href="#">5</a>
+					</div>
+					<span class="bgn-group-spacer">&hellip;</span>
+					<div class="btn-group">
+						<a class="btn btn-white" href="#">89</a>
+						<a class="btn btn-white" href="#">&raquo;</a>
+					</div>
 				</div>
 			</div>
 		</div>
