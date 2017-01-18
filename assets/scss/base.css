@@ -342,11 +342,6 @@ a.btn-inverse {
     border-color: #111111;
     color: white; }
 
-.btn-white.btn-outline {
-  background-color: rgba(0, 0, 0, 0.35);
-  color: white;
-  border-color: white; }
-
 .btn {
   border: none;
   height: 50px;

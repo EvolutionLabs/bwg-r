@@ -153,4 +153,9 @@
   .hhtError .error-body {
     font-weight: 600; }
 
+.btn-white.btn-outline {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  border-color: white; }
+
 /*# sourceMappingURL=home.css.map */
