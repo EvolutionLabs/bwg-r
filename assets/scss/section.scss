@@ -471,8 +471,9 @@ dl, .dl-horizontal {
   }
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
-}
-.openList {
-  float: right;
-  margin: -6px 0;
+  .toggLer {
+    font-size: 1.5rem;
+    float: right;
+    margin: -6px 0;
+  }
 }

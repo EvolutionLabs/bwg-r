@@ -373,9 +373,9 @@ dl, .dl-horizontal {
   .listTitleLink, .listTitleLink:hover, .listTitleLink:active, .listTitleLink:focus {
     color: #333;
     text-decoration: none; }
-
-.openList {
-  float: right;
-  margin: -6px 0; }
+  .listTitleLink .toggLer {
+    font-size: 1.5rem;
+    float: right;
+    margin: -6px 0; }
 
 /*# sourceMappingURL=section.css.map */
