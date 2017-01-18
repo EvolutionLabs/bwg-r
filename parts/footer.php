@@ -7,7 +7,7 @@
 <script src="../assets/vendor/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 <?php
 foreach ( $js as $s ) { ?>
-	<script src="../assets/js/<?= $s; ?>"></script>
+	<script src="../assets/<?= $s; ?>"></script>
 <?php } ?>
 </body>
 </html>

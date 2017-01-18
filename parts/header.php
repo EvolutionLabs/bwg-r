@@ -25,7 +25,7 @@
 
 	<?php
 	foreach ( $css as $c ) { ?>
-		<link href="../assets/css/<?= $c; ?>" rel="stylesheet"/>
+		<link href="../assets/<?= $c; ?>" rel="stylesheet"/>
 	<?php } ?>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

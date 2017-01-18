@@ -2,7 +2,7 @@ $(window).on('load', function(){
     $('[href^="#"]').on('click',function(e){
         e.preventDefault();
     });
-    $('table tr[data-toggle]').each(function(i){
+    $('table tr[data-toggle]').each(function(){
         var cS = $(this).next().find('td[colspan]').attr('colspan');
         $(this).before($('<tr />', {
             html:'<td colspan="'+cS+'">' +
@@ -26,13 +26,24 @@ $(window).on('load', function(){
     });
     $('a[href="#view-list"]').on('click', function(e){
         e.preventDefault();
-        var target = $(e.target).closest('a').data('target');
-        $(target + ' .hiddenRow>td>.collapse.in[id^="tr-"]').collapse('hide');
+        if (window.location.pathname.indexOf('section') > 0){
+            var target = $(e.target).closest('a').data('target');
+            $(target + ' .hiddenRow>td>.collapse.in[id^="tr-"]').collapse('hide');
+        } else if (window.location.pathname.indexOf('planogram') > 0){
+
+        } else {
+            return false;
+        }
     });
     $('a[href="#view-boxes"]').on('click', function(e){
         e.preventDefault();
-        var target = $(e.target).closest('a').data('target');
-        $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
+        if (window.location.pathname.indexOf('section') > 0){
+            var target = $(e.target).closest('a').data('target');
+            $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
+        } else if (window.location.pathname.indexOf('planogram') > 0){
+        } else {
+            return false;
+        }
     });
     $('[role="combobox"]').removeClass('open');
     $('.modal-dialog').on('click tap', function(e){
@@ -66,7 +77,7 @@ $(window).on('load', function(){
         initialRating: null,
         allowEmpty: true,
         deselectable: true,
-        onSelect:function(value, label, event){
+        onSelect:function(value){
             value = JSON.parse(value);
             var message = value ? 'Your ' + value + ' star' + (value > 1 ? 's':'') + ' rating was saved.' : 'Your rating was removed.',
                 type = value ? 'success' : 'info',
@@ -110,7 +121,7 @@ $(window).on('load', function(){
                 return this;
             }
         }.init();
-        $(document).on('scroll', function (e) {
+        $(document).on('scroll', function () {
             PS.update;
         });
     }

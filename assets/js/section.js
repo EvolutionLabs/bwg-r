@@ -24,5 +24,45 @@ $(window).on('load', function(){
     });
     $('.megaMenu').on('click', function(e){
         e.stopPropagation();
-    })
+    });
+    if (window.location.pathname.indexOf('planogram') > 0){
+        $('.planogram').magnificPopup({
+            delegate:'.imgSlot',
+            type: 'image',
+            mainClass: 'mfp-with-zoom',
+
+            zoom: {
+                enabled: true,
+
+                duration: 300,
+                easing: 'ease-in-out',
+
+                opener: function(openerElement) {
+                    return openerElement.is('img') ? openerElement : openerElement.find('img');
+                }
+            }
+        });
+        $('.simpleList').magnificPopup({
+            delegate: 'li>a',
+            type: 'image',
+            mainClass: 'mfp-with-zoom',
+
+            zoom: {
+                enabled: true,
+
+                duration: 300,
+                easing: 'ease-in-out',
+
+                opener: function(openerElement) {
+                    return openerElement.is('img') ? openerElement : openerElement.find('i');
+                }
+            }
+        });
+        $('#planogram').velocity('scroll', {
+            duration: 700,
+            offset: -95,
+            easing: 'cubic-bezier(.4,0,.2,1)'
+        });
+    }
+
 });

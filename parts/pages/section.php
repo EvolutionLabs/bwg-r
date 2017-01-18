@@ -118,7 +118,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 		</div>
 	</div>
 </div>
-<div class="submenu <?= $_GET['category']; ?>">
+<div class="submenu <?= $category; ?>">
 	<div class="container">
 		<nav class="navbar">
 			<div class="container-fluid">
@@ -133,9 +133,9 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				</div>
 				<div id="navbar-secondary" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#promotions" class="btn btn-default btn-sm">Promotions</a></li>
-						<li><a href="#favorites" class="btn btn-default btn-sm active">Favorites</a></li>
-						<li><a href="#program" class="btn btn-default btn-sm">Program</a></li>
+						<li><a href="#" class="btn btn-default btn-sm">Promotions</a></li>
+						<li><a href="#" class="btn btn-default btn-sm active">Favorites</a></li>
+						<li><a href="/planogram?category=<?= $category ;?>" class="btn btn-default btn-sm">Planogram</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
@@ -192,7 +192,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				<div class="cardTitle">
 					<span class="filters">Filter by:</span>
 					<div class="btn-group dropdown">
-						<a href="#" onclick="javascript:void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddDepartment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a href="#" onclick="void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddDepartment" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Department
 							<span class="caret"></span>
 						</a>
@@ -203,7 +203,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						</ul>
 					</div>
 					<div class="btn-group dropdown">
-						<a href="#" onclick="javascript:void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a href="#" onclick="void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddGroup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Group
 							<span class="caret"></span>
 						</a>
@@ -214,7 +214,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 						</ul>
 					</div>
 					<div class="btn-group dropdown">
-						<a href="#" onclick="javascript:void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a href="#" onclick="void(0)" class="btn btn-secondary btn-sm dropdown-toggle" role="button" id="ddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Category
 							<span class="caret"></span>
 						</a>

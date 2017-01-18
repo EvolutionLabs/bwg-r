@@ -39,8 +39,9 @@ $(window).on('load', function(){
         })
     });
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        var height = $($(e.target).attr('href')).height(); // newly activated tab
+        var height = $($(e.target).attr('href')).height();
         $('.tab-content').velocity({maxHeight:height+'px',minHeight:height+'px'}, 300);
+        // e.target // newly active tab
         // e.relatedTarget // previous active tab
     })
 
