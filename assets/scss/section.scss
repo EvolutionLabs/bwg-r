@@ -440,6 +440,9 @@ dl, .dl-horizontal {
 }
 .simpleList {
   background-color: white;
+  &.clear {
+    background-color: transparent;
+  }
   > ul {
     list-style-type: none;
     padding: 0;

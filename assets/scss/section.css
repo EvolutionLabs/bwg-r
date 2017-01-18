@@ -348,6 +348,8 @@ dl, .dl-horizontal {
 
 .simpleList {
   background-color: white; }
+  .simpleList.clear {
+    background-color: transparent; }
   .simpleList > ul {
     list-style-type: none;
     padding: 0; }
