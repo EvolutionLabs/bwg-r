@@ -277,7 +277,7 @@ $empty = isset( $_GET['empty'] );
 							<span class="toggle"></span>
 							<span class="option hideMe" data-value="addTo">add to</span>
 						</span> cart from a previous order.
-						<select class="selectpicker dropup" data-style="btn-outline btn-white">
+						<select class="selectpicker dropup" data-style="btn-outline btn-white" data-dropup-auto="false">
 							<option value="" class="default">select order</option>
 							<option value="1">Order 1</option>
 							<option value="2">Order 2</option>
@@ -287,7 +287,7 @@ $empty = isset( $_GET['empty'] );
 							<option value="6">Order 6</option>
 						</select>
 
-						<input type="button" class="btn btn-success" onclick="javascript: void(0);" value="Select"></p>
+						<input type="button" class="btn btn-success" onclick="void(0);" value="Select"></p>
 					</p>
 				</div>
 

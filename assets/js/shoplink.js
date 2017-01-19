@@ -30,6 +30,7 @@ $(window).on('load', function(){
             var target = $(e.target).closest('a').data('target');
             $(target + ' .hiddenRow>td>.collapse.in[id^="tr-"]').collapse('hide');
         } else if (window.location.pathname.indexOf('planogram') > 0){
+            // custom logic for planogram page. not needed anymore (i used tabs)
 
         } else {
             return false;
@@ -41,6 +42,7 @@ $(window).on('load', function(){
             var target = $(e.target).closest('a').data('target');
             $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
         } else if (window.location.pathname.indexOf('planogram') > 0){
+            // custom logic for planogram page. not needed anymore (i used tabs)
         } else {
             return false;
         }
@@ -126,8 +128,7 @@ $(window).on('load', function(){
         });
     }
     $(document)
-        .on('click', '.toggleSwitch', toggleSwitch)
-        .on('click', '.coco', toggleCartButton);
+        .on('click', '.toggleSwitch', toggleSwitch);
 });
 
 function toggleSwitch(e) {
