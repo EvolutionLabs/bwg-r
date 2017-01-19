@@ -555,6 +555,16 @@ a.btn-inverse {
     .card {
       padding: 1rem;
       flex-grow: 0 !important;
+      &.cart table {
+        margin-bottom: 8px;
+      }
+      tfoot, thead {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        & th, & td {
+          background-color: #eee;
+        }
+      }
     }
   }
   .card {
@@ -887,6 +897,15 @@ input::-webkit-input-placeholder, button {
     }
     &:last-child {
       flex-grow: 0;
+    }
+    @media (max-width: 1199px) {
+      .btn-group.separate {
+        flex-wrap: wrap;
+        > * {
+          flex: 1 0 50%;
+          margin: 15px 0 0;
+        }
+      }
     }
     @media(max-width: 992px) {
       .btn-group {

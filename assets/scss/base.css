@@ -668,6 +668,13 @@ a.btn-inverse {
   .flexWrap .aside .card {
     padding: 1rem;
     flex-grow: 0 !important; }
+    .flexWrap .aside .card.cart table {
+      margin-bottom: 8px; }
+    .flexWrap .aside .card tfoot, .flexWrap .aside .card thead {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700; }
+      .flexWrap .aside .card tfoot th, .flexWrap .aside .card tfoot td, .flexWrap .aside .card thead th, .flexWrap .aside .card thead td {
+        background-color: #eee; }
   .flexWrap .card {
     background-color: white; }
   .flexWrap h4 {
@@ -932,6 +939,12 @@ input::-webkit-input-placeholder, button {
       flex-grow: 1; }
     .flexRow .flexCol:last-child {
       flex-grow: 0; }
+    @media (max-width: 1199px) {
+      .flexRow .flexCol .btn-group.separate {
+        flex-wrap: wrap; }
+        .flexRow .flexCol .btn-group.separate > * {
+          flex: 1 0 50%;
+          margin: 15px 0 0; } }
     @media (max-width: 992px) {
       .flexRow .flexCol .btn-group {
         display: flex;

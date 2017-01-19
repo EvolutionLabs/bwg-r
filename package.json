@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.cartu.ro:developers/carturestiro"
+    "url": "https://github.com/andrei-gheorghiu/bwg-r.git"
   },
   "keywords": [
     "e-commerce",
