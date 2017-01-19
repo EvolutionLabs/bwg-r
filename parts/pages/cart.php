@@ -198,6 +198,7 @@ $empty = isset( $_GET['empty'] );
 					foreach ($departments as $cartList) {
 
 						$table = new TableView( [
+							'id'         => makeSlug($cartList['name']),
 							'minProds'   => 3,
 							'maxProds'   => 5,
 							'filters'    => false,
