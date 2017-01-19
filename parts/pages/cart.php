@@ -183,15 +183,24 @@ $empty = isset( $_GET['empty'] );
 					$departments = [
 						[
 							'name' => 'Bread and Cakes',
-							'category' => 'ambient'
+							'category' => 'ambient',
+							'percent' => '33%',
+							'cases' => "3",
+							'amount' => "24.90"
 						],
 						[
 							'name' => 'Confectionery',
-							'category' => 'chill'
+							'category' => 'chill',
+							'percent' => '22%',
+							'cases' => "3",
+							'amount' => "16.60"
 						],
 						[
 							'name' => 'Non food',
-							'category' => 'chill'
+							'category' => 'chill',
+							'percent' => '45%',
+							'cases' => "3",
+							'amount' => "33.95"
 						]
 					];
 
@@ -232,7 +241,7 @@ $empty = isset( $_GET['empty'] );
 								</div>
 							</div>
 							<div class="flexCol well">
-								<h4>Total <span class="pull-right">€45.50</span></h4>
+								<h4>Total <span class="pull-right">€75.45</span></h4>
 								<dl class="dl-horizontal push">
 									<dt>Order reference</dt>
 									<dd>09876</dd>

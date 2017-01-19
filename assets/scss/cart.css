@@ -52,4 +52,11 @@ p.select-line {
       .toggle-btn span.option.hideMe:last-of-type {
         margin-right: -75px; }
 
+.cartFooter {
+  font-family: 'Montserrat', sans-serif;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
 /*# sourceMappingURL=cart.css.map */

@@ -108,7 +108,13 @@ class TableView {
 	 *  ]
 	 */
 	public function cartFooter() {
-		$f = 'This is a test footer';
+		global $cartList;
+		$f = '<div class="cartFooter">' .
+	       '<span>Percentage of current Order: <em>'.$cartList['percent'].'</em></span>' .
+		     $cartList['cases'].' case' . ( $cartList['cases'] > 1 ? 's' : '' ) .
+		     ' | ' .
+		     '€'.$cartList['amount'] .
+		     '</div>';
 		/**
 		 * the wrapper below makes the footer full row width. If you'd rather have control
 		 * over each cell inside $f, just wrap it in <tr> and <tfoot> and return it

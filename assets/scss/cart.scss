@@ -65,3 +65,11 @@ p.select-line {
     }
   }
 }
+
+.cartFooter {
+  font-family: 'Montserrat', sans-serif;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
