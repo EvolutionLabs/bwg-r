@@ -82,7 +82,7 @@ class TableView {
 	 * Example custom method to be used as wildcard instead of any table part, like this
 	 *  $table = [
 	 *    ...
-	 *    'footer' => '%cartFooter%'
+	 *    'header' => '%cartHeader%'
 	 *    ...
 	 *  ]
 	 */
@@ -91,8 +91,8 @@ class TableView {
 		global $cartList; // let's use a variable defined in view
 		$h = $cartList;
 		/**
-		 * the wrapper below makes the footer full row width. If you'd rather have control
-		 * over each cell inside $f, just wrap it in <tr> and <tfoot> and return it
+		 * the wrapper below makes the header full row width. If you'd rather have control
+		 * over each cell inside $h, just wrap it in <tr> and <thead> and return it
 		 */
 		return '<thead><tr><td colspan="'.$this->colspan.'"><div class="tdWrapper">' .
 		       '<h4>'.$h['name'].'</h4>' .
