@@ -447,44 +447,6 @@ dl, .dl-horizontal {
     }
   }
 }
-.simpleList {
-  background-color: white;
-  &.clear {
-    background-color: transparent;
-  }
-  > ul {
-    list-style-type: none;
-    padding: 0;
-    > li {
-      padding: 0;
-      border-top: 1px solid #eee;
-      > a {
-        transition: all .3s cubic-bezier(.4,0,.2,1);
-        &[aria-expanded="true"] {
-          .toggLer {
-            transform: scaleY(-1);
-            margin: 0;
-          }
-          &,&:hover {
-            background-color: #303030;
-            color: white;
-          }
-          margin-top: 20px;
-        }
-        display: block;
-        padding: 12px 15px;
-        background-color: white;
-        &:hover {
-          background-color: #f5f5f5;
-        }
-        span.btn-sm {
-          margin: -8px 8px 0 0;
-          i {margin: 6px 0;}
-        }
-      }
-    }
-  }
-}
 .listTitleLink, .stockcardlink {
   &, &:hover, &:active, &:focus {
     color: #333;

@@ -19,15 +19,68 @@ $hhtErrors = [
 
 $hhtOrders = [];
 
-$default =
+for ($i = 0; $i < 10; $i++) {
+	$dateTime = date('M d, Y H:i', rand(strtotime('15 August 2016'), strtotime('now')));
+	$hht = [
+		'errors' => generateHHT($hhtErrors),
+		'dateTime' => $dateTime
+	];
+	$hht['summary'] = generateHhtSummary($hht['errors']);
+	$hht['body'] = generateHhtBody($i, $hht['errors']);
+
+	$hhtOrders[] = $hht;
+}
+
+function generateHhtSummary($errors) {
+	$summary = [];
+	$total = 0;
+	foreach ($errors as $cat => $errs) {
+		$summary[] = count($errs) . ' ' .$cat;
+		$total += count($errs);
+	}
+
+	return implode($summary, ', ')." &mdash; ".$total." Errors";
+}
+
+function generateHhtBody ($id, $errors) {
+	$out = '<ul class="nav nav-tabs" role="tablist">';
+	$tabPanes = '<div class="tab-content">';
+	$index = 0;
+	foreach ($errors as $name => $errs) {
+		$out .="<li role='presentation' class='".($index ?:'active')."'>".
+		       "<a href='#t$id-$name' aria-controls='t$id-$name' role='tab' data-toggle='tab'>".
+		       "$name<span class='badge'>".count($errs)."</span>".
+		       "</a></li>";
+		$tabPanes .= "<div role='tabpanel' class='tab-pane" .
+		             ( $index++ ?: ' in active' ) . "' id='t$id-$name'>".
+		             implode($errs, '<hr />') .
+		             "</div>";
+		}
+		$tabPanes .= '</div>';
+	$out .= "</ul>";
+
+	return $out . $tabPanes;
+}
+
+function generateHHT ($hhtErrors){
+	$errors = [];
+	foreach ($hhtErrors as $name => $errs) {
+		$errors[$name] = [];
+		for ($i = 0; $i < rand(0,5); $i++) {
+			$errors[$name][] = $errs[rand(0, count($errs) - 1)];
+		}
+	}
+
+	return $errors;
+}
 
 $dd = [
 	'Order #' => '098675',
-    'Delivery date' => '13/02/16',
-    'Submission date' => '12/02/16',
-    'Pack/Case' => '12/24',
-    'Total' => '16.50',
-    'Order Type' => '<a href="#!">Invoice 123456</a>'
+	'Delivery date' => '13/02/16',
+	'Submission date' => '12/02/16',
+	'Pack/Case' => '12/24',
+	'Total' => '16.50',
+	'Order Type' => '<a href="#!">Invoice 123456</a>'
 ]
 ?>
 
@@ -39,45 +92,24 @@ $dd = [
 					<span class="pull-right"><a href="#" class="btn btn-default btn-sm">Return to products</a></span>
 					<h1>HHT Orders</h1>
 				</div>
-				<table class="table flex-table">
-					<thead>
-						<tr>
+				<div class="simpleList clear" id="hhtList">
+					<ul>
 						<?php
-						foreach ( $dd as $k => $v ) {
-							echo '<th>'.$k.'<a href="#"><i class="fa fa-sort"></i></a></th>';
-						}
-						echo '<th></th><th></th>'
-						?>
-						</tr>
-					</thead>
-				<?php
-				for ($i = 0; $i < 12; $i++) { ?>
-					<tr data-toggle="collapse" data-target="#tr-<?=$dd['Order #'] ;?>" class="accordion-toggle">
-						<?php
-						foreach ($dd as $v) {
-							echo '<td>'.$v.'</td>';
-						}
-						?>
-						<td>
-							<a href="#add-to-cart"><i class="fa fa-plus"></i></a></td>
-						<td>
-							<a href="#open" onclick="javascript:void(0)">
-								<i class="fa fa-chevron-down"></i></a></td>
-					</tr>
-					<tr class="hiddenRow">
-						<td colspan="8">
-							<div class="collapse" id="tr-<?=$dd['Order #'] ;?>" style="overflow: hidden; clear: both;">
-								<div class="tdWrapper">
-									This is extra content
+						foreach ($hhtOrders  as $k => $hhtOrder) { ?>
+							<li>
+								<a href="#hhtO-<?= $k;?>" data-toggle="collapse">
+									<span class="hhtDate"><?= $hhtOrder['dateTime'];?></span>
+									<span class="hhtSummary"><?= $hhtOrder['summary'];?></span>
+									<span class="toggLer"><i class="fa fa-2x fa-chevron-down"></i></span>
+								</a>
+								<div id="hhtO-<?= $k;?>" class="collapse">
+										<?= $hhtOrder['body']; ?>
 								</div>
-							</div>
-						</td>
-					</tr>
-				<?php
-					$string = strval(intval($dd['Order #']) + 1);
-					$dd['Order #'] = str_pad($string, 6, '0');
-				} ?>
-				</table>
+							</li>
+						<?php } ?>
+					</ul>
+				</div>
+
 			</div>
 			<div class="pagination">
 				<span class="count">

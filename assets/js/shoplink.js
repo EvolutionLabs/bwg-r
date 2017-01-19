@@ -53,6 +53,11 @@ $(window).on('load', function(){
             $('.modal').modal('hide');
         }
     });
+    $('#hhtList').on('show.bs.collapse', '[id^="hht"]', function(){
+        $(this).closest('li').addClass('active');
+    }).on('hide.bs.collapse', '[id^="hht"]', function(){
+        $(this).closest('li').removeClass('active');
+    });
     /*$('.fa.fa-heart').on('click', function(){
         toastr["success"]("This could display on successful return of the ajax call.", "Added to favs!")
     });*/
