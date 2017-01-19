@@ -452,6 +452,10 @@ a.btn-inverse {
   right: -1px;
   position: relative; }
 
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+  padding-right: 17px; }
+
 .dropdown-menu {
   display: block;
   opacity: 0;
@@ -727,6 +731,9 @@ a.btn-inverse {
     font-size: 16px;
     font-weight: 400;
     vertical-align: middle; }
+    @media (max-width: 1199px) {
+      .card .flex-table th {
+        padding: 12px 4px; } }
     .card .flex-table th:not(:first-child) {
       text-align: center;
       white-space: nowrap; }
@@ -738,6 +745,9 @@ a.btn-inverse {
     .flex-table tr td {
       min-height: 60px;
       padding: 12px 8px; }
+      @media (max-width: 1199px) {
+        .flex-table tr td {
+          padding: 12px 4px; } }
       .flex-table tr td:not(:first-child) {
         text-align: center; }
       .flex-table tr td .hide-x > * {
@@ -746,7 +756,7 @@ a.btn-inverse {
       font-family: 'Montserrat', sans-serif;
       position: relative; }
       .flex-table tr[data-target] > td {
-        min-height: 60px;
+        min-height: 50px;
         border-top: 1px solid #ddd;
         vertical-align: middle; }
         .flex-table tr[data-target] > td:not(:first-child) {
@@ -756,6 +766,9 @@ a.btn-inverse {
         .flex-table tr[data-target] > td .input-group {
           min-width: 140px;
           height: 45px; }
+          @media (max-width: 1199px) {
+            .flex-table tr[data-target] > td .input-group {
+              min-width: 120px; } }
         .flex-table tr[data-target] > td.no-grow {
           padding: 8px 8px 8px 0;
           margin: 0; }

@@ -10,6 +10,9 @@
   .tdWrapper .main-col {
     flex: 1 0 calc(100% - 500px);
     font-size: 13px; }
+    @media (max-width: 1199px) {
+      .tdWrapper .main-col {
+        flex-basis: 365px; } }
     .tdWrapper .main-col .btn-group.separate {
       margin-top: 15px; }
   @media (max-width: 767px) {
@@ -95,6 +98,9 @@ dl, .dl-horizontal {
       align-self: flex-end; }
   .products .right-col > * {
     flex: 0 0 196px; }
+    @media (max-width: 119px) {
+      .products .right-col > * {
+        flex-basis: 175px; } }
   .products .right-col .btn {
     letter-spacing: -1px;
     font-size: 15px; }
@@ -117,6 +123,9 @@ dl, .dl-horizontal {
     box-shadow: none; }
 .products .iconBar {
   flex: 0 0 111px; }
+  @media (max-width: 1199px) {
+    .products .iconBar {
+      flex-basis: 100%; } }
   .products .iconBar .fa-2x {
     margin: 0 4px;
     height: 30px;

@@ -271,6 +271,10 @@ a.btn-inverse {
   right: -1px;
   position: relative;
 }
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+  padding-right: 17px;
+}
 
 .dropdown-menu {
   display: block;
@@ -625,6 +629,9 @@ a.btn-inverse {
       background-color: #3d3d3d;
       color: white;
       padding: 18px 8px;
+      @media(max-width: 1199px) {
+        padding: 12px 4px;
+      }
       font-size: 16px;
       font-weight: 400;
       vertical-align: middle;
@@ -643,6 +650,9 @@ a.btn-inverse {
     td {
       min-height: 60px;
       padding: 12px 8px;
+      @media(max-width: 1199px) {
+        padding: 12px 4px;
+      }
       &:not(:first-child) {
         text-align: center;
       }
@@ -654,7 +664,7 @@ a.btn-inverse {
       font-family: 'Montserrat', sans-serif;
       position: relative;
       >td {
-        min-height: 60px;
+        min-height: 50px;
         border-top: 1px solid #ddd;
         vertical-align: middle;
         &:not(:first-child) {
@@ -666,6 +676,9 @@ a.btn-inverse {
         .input-group {
           min-width: 140px;
           height: 45px;
+          @media(max-width: 1199px) {
+            min-width: 120px;
+          }
         }
         &.no-grow {
           padding: 8px 8px 8px 0;

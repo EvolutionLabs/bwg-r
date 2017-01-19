@@ -1,30 +1,7 @@
 <?php
-$dd = [
-	'id' => '5027952011316',
-	'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
-	'Rank' => '12',
-	'RSP' => '12.99',
-	'Margin' => '21%',
-	'Pack<br />/Case' => '280g/12',
-	'Price' => [
-		'old' => '€20.50',
-		'new' => '16.50'
-	],
-	'Details' => [
-		'image' => '/assets/image/product.jpg',
-		'Description' => 'Lorem ipsum dolor sit amet, albucius salutatus an pri, ei reque impetus fabellas sea. Ad sit congue ocurreret constituto, quaestio similique id vel. Quidam platonem intellegebat qui an. Quod repudiandae ne vel.',
-		'Code' => '123456',
-		'EAN' => '5027952011316',
-		'TUC' => '5027952011316',
-		'On order' => '13',
-		'Start date' => '12/2/2016',
-		'Price increase' => '14/11/2016',
-		'Pallet Qty.' => '14/11/2016',
-		'VAT' => '13.5%',
-		'Supplier' => '14/11/2016',
-		'Shelf life' => '12days'
-	]
-];
+
+use parts\product\TableView;
+
 $filters = [
 	[
 		'name' => 'Top Sellers',
@@ -204,24 +181,23 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 				<ul>
 				<?php
 				foreach ( $favLists as $favList ) {
-					$table = [
+					$table = new TableView([
 						'id'         => makeSlug( $favList ),
-						'min-prods'  => 3,
-						'max-prods'  => 5,
+						'minProds'  => 3,
+						'maxProds'  => 5,
 						'filters'    => false,
-						'header'     => false,
 						'pagination' => false
-					];
+					]);
 					?>
 					<li>
-						<a class="listTitleLink" role="button" data-toggle="collapse" href="#list-<?= $table['id'];?>" aria-expanded="false" aria-controls="list-<?= $table['id'];?>"">
+						<a class="listTitleLink" role="button" data-toggle="collapse" href="#list-<?= $table->id; ?>" aria-expanded="false" aria-controls="list-<?= $table->id; ?>"">
 						<span class="toggLer"><i class="fa fa-2x fa-chevron-down"></i></span>
 								<?= $favList ;?>
 						</a>
-						<div class="collapse" id="list-<?= $table['id'];?>">
+						<div class="collapse" id="list-<?= $table->id;?>">
 							<div>
 								<?php
-								include dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . "product-table.php";
+								include dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . "product". DIRECTORY_SEPARATOR.  "product-table.php";
 								?>
 							</div>
 						</div>

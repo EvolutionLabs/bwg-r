@@ -13,6 +13,9 @@
   }
   .main-col {
     flex: 1 0 calc(100% - 500px);
+    @media(max-width: 1199px) {
+      flex-basis: 365px;
+    }
     font-size: 13px;
     .btn-group.separate {
       margin-top: 15px;
@@ -125,6 +128,9 @@ dl, .dl-horizontal {
     }
     >* {
       flex: 0 0 196px;
+      @media(max-width: 119px) {
+        flex-basis: 175px;
+      }
     }
     .btn {
       letter-spacing: -1px;
@@ -154,6 +160,9 @@ dl, .dl-horizontal {
   }
   .iconBar {
     flex: 0 0 111px;
+    @media(max-width: 1199px) {
+      flex-basis: 100%;
+    }
     .fa-2x {
       margin: 0 4px;
       height: 30px;

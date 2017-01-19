@@ -14,10 +14,10 @@ $(window).on('load', function(){
         if (val < 1 ) {
             field.val(1);
         } else {
-            if ($(this).is(':last-child') && val > 1) {
+            if ($(this).is(':first-child') && val > 1) {
                 field.val(val - 1);
             }
-            if ($(this).is(':first-child')) {
+            if ($(this).is(':last-child')) {
                 field.val(val + 1);
             }
         }
