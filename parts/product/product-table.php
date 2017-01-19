@@ -9,8 +9,8 @@
 	 * Filters
 	 */
 	if ( $table->filters ) {
-		if ( is_string( $table->pagination ) ) {
-			echo $table->pagination;
+		if ( is_string( $table->filters ) ) {
+			echo $table->filters;
 		} else {
 			?>
 		<div class="cardTitle">
