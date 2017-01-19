@@ -5,7 +5,7 @@ $(window).on('load', function(){
     });
     $('.products').on('click', 'td>.dropdown>.dropdown-menu', function(e){
         e.stopPropagation();
-        $(this).closest('.dropdown-menu').dropdown('hide');
+        $(this).closest('.dropdown-menu').dropdown('toggle');
         $(this).closest('td').toggleClass('active');
     }).on('click', '.input-group-addon', function(e){
         e.stopPropagation();
