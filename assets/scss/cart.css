@@ -57,6 +57,8 @@ p.select-line {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-size: 1.8rem;
+  font-weight: 400; }
 
 /*# sourceMappingURL=cart.css.map */
