@@ -210,17 +210,14 @@ $empty = isset( $_GET['empty'] );
 							'id'         => makeSlug($cartList['name']),
 							'minProds'   => 3,
 							'maxProds'   => 5,
-							'filters'    => false,
-							'header'     => '%cartHeader%',
+							'filters'     => '%cartHeader%',
 							'footer'     => '%cartFooter%',
 							'pagination' => false,
-							'category'   => $cartList['category']
+							'category'   => $cartList['category'],
 						] );
 
 						include dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . "product" . DIRECTORY_SEPARATOR . "product-table.php";
 					}
-
-
 
 					?>
 					<div class="afterFlexTable card">

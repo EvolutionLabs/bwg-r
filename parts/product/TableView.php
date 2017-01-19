@@ -48,9 +48,10 @@ class TableView {
 		$this->colspan = count($this->cols) + 3;
 
 		foreach (['filters', 'header', 'footer', 'pagination'] as $part) {
-			if (($p = $this->{$part}) &&
-			    ($p[0] === '%') && ($p[strlen($p) -1] === '%') &&
-			    method_exists($this, substr($this->{$part}, 1, -1))
+			if (
+				($p = $this->{$part}) &&
+				($p[0] === '%') && ($p[strlen($p) -1] === '%') &&
+				method_exists($this, substr($this->{$part}, 1, -1))
 			) {
 				$method = substr($this->{$part}, 1, -1);
 				$this->{$part} = $this->{$method}();
@@ -94,9 +95,9 @@ class TableView {
 		 * the wrapper below makes the header full row width. If you'd rather have control
 		 * over each cell inside $h, just wrap it in <tr> and <thead> and return it
 		 */
-		return '<thead><tr><td colspan="'.$this->colspan.'"><div class="tdWrapper">' .
+		return '<div class="cartHeader">' .
 		       '<h4>'.$h['name'].'</h4>' .
-		       '</div></td></tr></thead>';
+		       '</div>';
 	}
 
 	/**

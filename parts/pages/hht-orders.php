@@ -1,4 +1,26 @@
 <?php
+
+$hhtErrors = [
+	'Ambient' => [
+		'674577, ACE PODS is discontinued, search for a replacement line in ShopLink.',
+		'671239, CAD RICH TEA MILK CHOC is discontinued, search for a replacement line in ShopLink.',
+		'680512, SPAR 6 CRUMB MINCE PIES is discontinued, search for a replacement line in ISIS.'
+	],
+	'Chill' => [
+		'670827, NOMADIC MANGO LASSI is discontinued, search for a replacement line in ShopLink.'
+	],
+	'Bond' => [
+		'677800, COCA COLA 1.25LTR is discontinued, search for a replacement line in ShopLink.',
+		'671239, CAD RICH TEA MILK CHOC has no alcohol and has therefore been discontinued. Go home!',
+		'677800, COCA COLA 1.25LTR has no alcohol and has therefore been discontinued. Go home!',
+		'The system recovered from a serious error encountered while trying to display the following validation message: <code>"No errors found."</code>'
+	]
+];
+
+$hhtOrders = [];
+
+$default =
+
 $dd = [
 	'Order #' => '098675',
     'Delivery date' => '13/02/16',
