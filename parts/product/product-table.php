@@ -4,7 +4,15 @@
  */
 ?>
 <div class="card transparent">
-	<?php if ( $table->filters ) { ?>
+	<?php
+	/**
+	 * Filters
+	 */
+	if ( $table->filters ) {
+		if ( is_string( $table->pagination ) ) {
+			echo $table->pagination;
+		} else {
+			?>
 		<div class="cardTitle">
 			<span class="filters">Filter by:</span>
 			<div class="btn-group dropdown">
@@ -50,40 +58,76 @@
 						<a class="btn btn-clear btn-sm" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
 					</span>
 		</div>
-	<?php } ?>
-	<table class="table products flex-table" id="productsTable">
-		<?php if ($table->header) { ?>
-			<thead>
-			<tr>
-				<?php
-				foreach ( $table->cols as $col ) {
-					echo '<th>' . $col . '<a href="#"><i class="fa fa-sort"></i></a></th>';
-				}
-				echo '<th colspan="3" class="pusher"></th>'
-				?>
-			</tr>
-			</thead>
-		<?php
-		if ($table->footer) { ?>
-			<tfoot>
-			<tr>
-				<td colspan="<?= $table->colspan; ?>">
-					<div class="text-right">
-						<a href="#" class="btn btn-default btn-outline btn-sm">Add selection to cart</a>
-					</div>
-				</td>
-			</tr>
-			</tfoot>
-		<?php  }
+			<?php
 		}
+	} /** end of Filters */
+
+	?>
+	<table class="table products flex-table" id="productsTable">
+		<?php
+		/**
+		 * Header
+		 */
+		if ($table->header) {
+			if ( is_string( $table->header ) ) {
+				echo $table->header;
+			} else {
+				?>
+				<thead>
+				<tr>
+					<?php
+					foreach ( $table->cols as $col ) {
+						echo '<th>' . $col . '<a href="#"><i class="fa fa-sort"></i></a></th>';
+					}
+					echo '<th colspan="3" class="pusher"></th>'
+					?>
+				</tr>
+				</thead>
+				<?php
+			}
+		}
+		/** end of Header */
+
+		/**
+		 * Body
+		 */
 		foreach ($table->products as $product) {
 			include "product-row.php";
-		}
-?>
+		} /** end of Body */
 
+		/**
+		 * Footer
+		 */
+		if ($table->footer) {
+			if ( is_string( $table->footer ) ) {
+				echo $table->footer;
+			} else {
+				?>
+				<tfoot>
+				<tr>
+					<td colspan="<?= $table->colspan; ?>">
+						<div class="text-right">
+							<a href="#" class="btn btn-default btn-outline btn-sm">Add selection to cart</a>
+						</div>
+					</td>
+				</tr>
+				</tfoot>
+			<?php
+			}
+		} /** end of Footer */
+
+		?>
 	</table>
 </div>
-<?php if ( $table->pagination ) { ?>
+<?php
+/**
+ * Pagination
+ */
+if ( $table->pagination ) {
+	if ( is_string( $table->pagination ) ) {
+		echo $table->pagination;
+	} else {
+		?>
 	<div class="pagination">
 				<span class="count">
 					Items 56 of 4694
@@ -104,4 +148,6 @@
 			</div>
 		</div>
 	</div>
-<?php }
+<?php
+	}
+} /** end of Pagination */

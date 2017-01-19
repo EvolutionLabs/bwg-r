@@ -727,6 +727,9 @@ a.btn-inverse {
 
 .flex-table {
   width: 100%; }
+  .flex-table tfoot tr, .flex-table thead tr {
+    background-color: #3d3d3d;
+    color: white; }
   .flex-table tfoot > tr {
     background-color: #3d3d3d; }
     .flex-table tfoot > tr > td > div {

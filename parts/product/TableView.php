@@ -47,6 +47,16 @@ class TableView {
 
 		$this->colspan = count($this->cols) + 3;
 
+		foreach (['filters', 'header', 'footer', 'pagination'] as $part) {
+			if (($p = $this->{$part}) &&
+			    ($p[0] === '%') && ($p[strlen($p) -1] === '%') &&
+			    method_exists($this, substr($this->{$part}, 1, -1))
+			) {
+				$method = substr($this->{$part}, 1, -1);
+				$this->{$part} = $this->{$method}();
+			}
+		}
+
 		if (!$this->products) {
 			$this->generateDummyData();
 		}
@@ -61,16 +71,57 @@ class TableView {
 	 *
 	 * @return array
 	 */
-	private function assocSplice($target, $item, $position) {
+	public function assocSplice($target, $item, $position) {
 
 		return array_slice($target, 0, $position, true) +
 		       $item +
 		       array_slice($target, $position, NULL, true);
 	}
 
+	/**
+	 * Example custom method to be used as wildcard instead of any table part, like this
+	 *  $table = [
+	 *    ...
+	 *    'footer' => '%cartFooter%'
+	 *    ...
+	 *  ]
+	 */
+	public function cartHeader() {
+
+		global $cartList; // let's use a variable defined in view
+		$h = $cartList;
+		/**
+		 * the wrapper below makes the footer full row width. If you'd rather have control
+		 * over each cell inside $f, just wrap it in <tr> and <tfoot> and return it
+		 */
+		return '<thead><tr><td colspan="'.$this->colspan.'"><div class="tdWrapper">' .
+		       '<h4>'.$h['name'].'</h4>' .
+		       '</div></td></tr></thead>';
+	}
 
 	/**
-	 * What's below is only used to generate dummy data, I don't think you need it
+	 * Example custom method to be used as wildcard instead of any table part, like this
+	 *  $table = [
+	 *    ...
+	 *    'footer' => '%cartFooter%'
+	 *    ...
+	 *  ]
+	 */
+	public function cartFooter() {
+		$f = 'This is a test footer';
+		/**
+		 * the wrapper below makes the footer full row width. If you'd rather have control
+		 * over each cell inside $f, just wrap it in <tr> and <tfoot> and return it
+		 */
+		return '<tfoot><tr><td colspan="'.$this->colspan.'"><div class="tdWrapper">' .
+		       $f .
+		       '</div></td></tr></tfoot>';
+	}
+
+
+	/**
+	 * The properties and functions below are only used to generate dummy data,
+	 * I don't think you'll need them in production.
 	 */
 
 	public $minProds = 9;

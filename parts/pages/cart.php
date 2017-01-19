@@ -180,15 +180,37 @@ $empty = isset( $_GET['empty'] );
 
 <?php else:
 
-					$table = new TableView( [
-						'minProds'   => 5,
-						'maxProds'   => 7,
-						'filters'    => false,
-						'footer'     => false,
-						'pagination' => false,
-					] );
+					$departments = [
+						[
+							'name' => 'Bread and Cakes',
+							'category' => 'ambient'
+						],
+						[
+							'name' => 'Confectionery',
+							'category' => 'chill'
+						],
+						[
+							'name' => 'Non food',
+							'category' => 'chill'
+						]
+					];
 
-					include dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . "product" . DIRECTORY_SEPARATOR . "product-table.php";
+					foreach ($departments as $cartList) {
+
+						$table = new TableView( [
+							'minProds'   => 3,
+							'maxProds'   => 5,
+							'filters'    => false,
+							'header'     => '%cartHeader%',
+							'footer'     => '%cartFooter%',
+							'pagination' => false,
+							'category'   => $cartList['category']
+						] );
+
+						include dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . "product" . DIRECTORY_SEPARATOR . "product-table.php";
+					}
+
+
 
 					?>
 					<div class="afterFlexTable card">
