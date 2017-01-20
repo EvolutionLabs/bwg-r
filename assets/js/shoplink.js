@@ -61,6 +61,20 @@ $(window).on('load', function(){
     /*$('.fa.fa-heart').on('click', function(){
         toastr["success"]("This could display on successful return of the ajax call.", "Added to favs!")
     });*/
+    $('.filter-controls').on('click', '.btn-group', function(e){
+        var action = $(e.target).closest('.btn-sm').attr('href').replace('#filters-', ''),
+            list = $(e.target).closest('.container').find('.filtersList').eq(0);
+        if (action == 'all') {
+            list.find('input:checkbox').prop('checked', true);
+        } else if (action == 'none'){
+            list.find('input:checkbox').prop('checked', false);
+        } else if (action == 'inverse') {
+            list.find('input:checkbox').each(function(){
+                $(this).prop('checked', !$(this).prop('checked'));
+            });
+        }
+        return false;
+    });
     toastr.options = {
         "closeButton": true,
         "debug": false,

@@ -1086,65 +1086,66 @@ input::-webkit-input-placeholder, button {
   justify-content: center;
   font-family: "Montserrat",sans-serif; }
 
-#hhtList {
+#hhtList .tab-content > * {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  top: 0; }
+  #hhtList .tab-content > *.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: all; }
+#hhtList .tab-content {
+  overflow: hidden;
+  position: relative; }
+#hhtList .tab-content > [role="tabpanel"] {
+  background-color: #eee;
+  min-height: 120px;
+  padding: 15px; }
+  #hhtList .tab-content > [role="tabpanel"] hr {
+    margin: 10px -15px;
+    border: 0;
+    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid white; }
+#hhtList .nav-tabs > li.active > a, #hhtList .nav-tabs > li.active > a:focus, #hhtList .nav-tabs > li.active > a:hover {
+  background-color: #eee;
+  border-bottom-color: #eee; }
+#hhtList .nav-tabs > li {
+  margin-bottom: -2px;
+  z-index: 1; }
+#hhtList .nav-tabs > li > a {
+  font-size: 1.6rem;
+  color: #333333;
+  font-weight: 700; }
+#hhtList .nav-tabs > li.active > a {
+  color: #ff0048; }
+#hhtList .nav-tabs > li:hover .badge, #hhtList .nav-tabs > li:focus .badge, #hhtList .nav-tabs > li:active .badge, #hhtList .nav-tabs > li.active .badge {
+  background-color: #ff0048; }
+#hhtList .badge {
+  font-size: 14px;
+  margin-left: 8px; }
+#hhtList .nav-tabs {
+  padding: 8px 0 0 8px; }
+
+.simpleList {
   font-family: 'Montserrat', sans-serif;
   background-color: white; }
-  #hhtList .tab-content > * {
-    display: block;
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    top: 0; }
-    #hhtList .tab-content > *.active {
-      position: relative;
-      opacity: 1;
-      pointer-events: all; }
-  #hhtList .tab-content {
-    overflow: hidden;
-    position: relative; }
-  #hhtList .tab-content > [role="tabpanel"] {
-    background-color: #eee;
-    min-height: 120px;
-    padding: 15px; }
-    #hhtList .tab-content > [role="tabpanel"] hr {
-      margin: 10px -15px;
-      border: 0;
-      border-top: 1px solid #cfcfcf;
-      border-bottom: 1px solid white; }
-  #hhtList .nav-tabs > li.active > a, #hhtList .nav-tabs > li.active > a:focus, #hhtList .nav-tabs > li.active > a:hover {
-    background-color: #eee;
-    border-bottom-color: #eee; }
-  #hhtList .nav-tabs > li {
-    margin-bottom: -2px;
-    z-index: 1; }
-  #hhtList .nav-tabs > li > a {
-    font-size: 1.6rem;
-    color: #333333;
-    font-weight: 700; }
-  #hhtList .nav-tabs > li.active > a {
-    color: #ff0048; }
-  #hhtList .nav-tabs > li:hover .badge, #hhtList .nav-tabs > li:focus .badge, #hhtList .nav-tabs > li:active .badge, #hhtList .nav-tabs > li.active .badge {
-    background-color: #ff0048; }
-  #hhtList .badge {
-    font-size: 14px;
-    margin-left: 8px; }
-  #hhtList .nav-tabs {
-    padding: 8px 0 0 8px; }
-  #hhtList.clear {
+  .simpleList.clear {
     background-color: transparent; }
-  #hhtList > ul {
+  .simpleList > ul {
     list-style-type: none;
     padding: 0; }
-    #hhtList > ul > li {
+    .simpleList > ul > li {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       background-color: white;
       border-top: 1px solid #ddd; }
-      #hhtList > ul > li.active {
+      .simpleList > ul > li.active {
         box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
         margin: 20px 0; }
-        #hhtList > ul > li.active + .active {
+        .simpleList > ul > li.active + .active {
           border-top: 0; }
-      #hhtList > ul > li > a {
+      .simpleList > ul > li > a {
         display: flex;
         background-color: white;
         align-items: center;
@@ -1154,23 +1155,23 @@ input::-webkit-input-placeholder, button {
         color: #212121;
         padding: 8px;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        #hhtList > ul > li > a:hover, #hhtList > ul > li > a:focus, #hhtList > ul > li > a:active, #hhtList > ul > li > a:active:focus {
+        .simpleList > ul > li > a:hover, .simpleList > ul > li > a:focus, .simpleList > ul > li > a:active, .simpleList > ul > li > a:active:focus {
           text-decoration: none; }
-        #hhtList > ul > li > a .toggLer {
+        .simpleList > ul > li > a .toggLer {
           transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        #hhtList > ul > li > a:hover {
+        .simpleList > ul > li > a:hover {
           color: #212121;
           background-color: #f5f5f5; }
-        #hhtList > ul > li > a[aria-expanded="true"], #hhtList > ul > li > a[aria-expanded="true"]:hover, #hhtList > ul > li > a[aria-expanded="true"]:focus, #hhtList > ul > li > a[aria-expanded="true"]:active, #hhtList > ul > li > a[aria-expanded="true"]:active:focus {
+        .simpleList > ul > li > a[aria-expanded="true"], .simpleList > ul > li > a[aria-expanded="true"]:hover, .simpleList > ul > li > a[aria-expanded="true"]:focus, .simpleList > ul > li > a[aria-expanded="true"]:active, .simpleList > ul > li > a[aria-expanded="true"]:active:focus {
           outline: none;
           background-color: #e7e7e7;
           border-top: 1px solid #f5f5f5;
           border-bottom: 1px solid #ddd; }
-        #hhtList > ul > li > a[aria-expanded="true"] .toggLer {
+        .simpleList > ul > li > a[aria-expanded="true"] .toggLer {
           transform: scaleY(-1); }
-        #hhtList > ul > li > a span.btn-sm {
+        .simpleList > ul > li > a span.btn-sm {
           margin: -8px 8px 0 0; }
-          #hhtList > ul > li > a span.btn-sm i {
+          .simpleList > ul > li > a span.btn-sm i {
             margin: 6px 0; }
 
 /*# sourceMappingURL=base.css.map */

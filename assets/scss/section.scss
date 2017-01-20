@@ -246,6 +246,18 @@ dl, .dl-horizontal {
         margin-right: 0;
       }
     }
+    .btn {
+      margin: 0 8px;
+      padding: 10px;
+      text-transform: initial;
+      font-size: 17px;
+      letter-spacing: -.5px;
+      &.btn-sm {
+        font-size: 1.5rem;
+        letter-spacing: 0;
+        padding: 8px;
+      }
+    }
   }
 
   @each $l in $links {
@@ -261,13 +273,6 @@ dl, .dl-horizontal {
   .navbar-toggle {
     color: white;
     border-color: white;
-  }
-  .navbar .btn {
-    margin: 0 8px;
-    padding: 10px;
-    text-transform: initial;
-    font-size: 17px;
-    letter-spacing: -.5px;
   }
   .navbar-right .btn {
     text-transform: uppercase ;
@@ -307,7 +312,20 @@ dl, .dl-horizontal {
     }
   }
 }
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid white;
+  .btn-sm {
 
+  }
+  .btn-outline.btn-default {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+  }
+}
 #dropdownFilters {
   box-shadow: none;
   width: 50px;
@@ -361,7 +379,11 @@ dl, .dl-horizontal {
     padding-bottom: 20px;
     > * {
       flex: 0 0 25%;
-      padding: 10px 10px 0;
+      @media (max-width: 991px) {
+        flex: 0 0 33%;
+      }
+      padding: 5px 10px;
+      display: flex;
       &:hover {
         input[type=checkbox]~label{
           opacity: 1;
@@ -375,6 +397,7 @@ dl, .dl-horizontal {
         display: inline-flex;
         align-items: center;
         line-height: 2.4rem;
+        margin: 5px 0;
       }
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
@@ -396,7 +419,7 @@ dl, .dl-horizontal {
         + .fake {
           position: absolute;
           left: 10px;
-          top: calc(50% + 2px);
+          top: 50%;
           border: 1px solid white;
           width: 15px;
           height: 15px;
@@ -409,7 +432,7 @@ dl, .dl-horizontal {
           transform: rotate(35deg) translateX(-5px);
           transform-origin: 200% 50%;
           height: 25px;
-          border-color: transparent white white transparent;
+          border-color: transparent #29b766 #29b766 transparent;
         }
       }
       > * {
