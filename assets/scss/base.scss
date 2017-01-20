@@ -153,8 +153,7 @@ a.btn-inverse {
     margin-left: .4em;
     transition: transform .2s cubic-bezier(.4, 0, .2, 1);
     .open > & {
-      transform: scaleY(-1), translateY(-2px);
-
+      transform: scaleY(-1);
     }
     &::before {
       content: "\f078";
