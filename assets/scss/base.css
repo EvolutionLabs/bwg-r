@@ -66,11 +66,15 @@ body {
         margin: -8px -4px;
         padding: 8px 4px 8px 24px; } }
     td:first-child > .rltv .supplier {
-      margin-left: -24px;
-      padding-left: 24px;
+      margin-left: -28px;
+      padding-left: 28px;
       border-top: 1px solid #bbb;
       background-color: #ddd;
       transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      @media (max-width: 1199px) {
+        td:first-child > .rltv .supplier {
+          margin-left: -24px;
+          padding-left: 24px; } }
       [aria-expanded=true] td:first-child > .rltv .supplier {
         background-color: white; }
 
@@ -408,11 +412,24 @@ a.btn-inverse {
         border-color: rgba(0, 0, 0, 0.03); }
 
 .productActions {
-  display: inline-flex; }
+  display: inline-flex;
+  /*.open .dropdown-menu {
+    padding-top: 0;
+    transform: translateX(-33%);
+    left: 50%;
+    border: solid #3d3d3d;
+    border-width: 3px 0;
+    >li>a {
+      padding: 10px 15px
+    }
+  }
+  .dropdown.dropup {
+    display: inline-block;
+    margin-right: 1.5rem;
+  }*/ }
   .productActions .bar-rating {
     border: 1px solid;
-    padding: 5px 12px;
-    margin-right: 15px; }
+    padding: 5px 12px; }
     .productActions .bar-rating .br-theme-fontawesome-stars .br-widget a {
       line-height: 2.8rem;
       font-size: 2.2rem; }
@@ -422,19 +439,12 @@ a.btn-inverse {
         margin-right: 12px; }
         .productActions .bar-rating .br-theme-fontawesome-stars .br-widget a:first-child:after {
           content: "C"; }
-  .productActions .open .dropdown-menu {
-    padding-top: 0;
-    transform: translateX(-33%);
-    left: 50%;
-    border: solid #3d3d3d;
-    border-width: 3px 0; }
-    .productActions .open .dropdown-menu > li > a {
-      padding: 10px 15px; }
-  .productActions .dropdown.dropup {
-    display: inline-block;
-    margin-right: 1.5rem; }
   .productActions .btn-sm {
     font-size: 2rem; }
+    .productActions .btn-sm.active {
+      background-color: #29b766;
+      color: white;
+      border-color: transparent; }
 
 .btn-group-sm > .btn, .btn-sm {
   border-radius: 0; }
@@ -785,7 +795,7 @@ a.btn-inverse {
     background-color: #3d3d3d;
     color: white;
     padding: 18px 8px;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     vertical-align: middle; }
     @media (max-width: 1199px) {

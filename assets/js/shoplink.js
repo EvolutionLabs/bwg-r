@@ -75,6 +75,9 @@ $(window).on('load', function(){
         }
         return false;
     });
+    $('.productActions').on('click', '.btn-sm', function(){
+        $(this).toggleClass('active');
+    });
     toastr.options = {
         "closeButton": true,
         "debug": false,

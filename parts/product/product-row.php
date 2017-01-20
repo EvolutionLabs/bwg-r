@@ -105,36 +105,12 @@ global $product;
 									<option value="5">5</option>
 								</select>
 							</div>
-							<div class="dropdown dropup">
-								<a href="#" class="btn btn-sm btn-outline btn-default dropdown-toggle"
-								   title="Add product to favorites"
-								   aria-haspopup="true" aria-expanded="false"
-								   data-toggle="dropdown" id="dropdownFavorites"
-								><i class="fa fa-star"></i></a>
-								<ul class="dropdown-menu" aria-labelledby="dropdownFavorites">
-									<li><a href="#">Fav list 1</a></li>
-									<li><a href="#">Fav list 2</a></li>
-									<li><a href="#">Fav list 3</a></li>
-									<li><a href="#">Fav list 4</a></li>
-									<li><a href="#">Fav list 5</a></li>
-								</ul>
-							</div>
-							<div class="dropdown dropup">
-								<a href="#" class="btn btn-sm btn-outline btn-default dropdown-toggle"
-								   title="Promote this product"
-								   aria-haspopup="true" aria-expanded="false"
-								   data-toggle="dropdown" id="dropdownPromote"
-								><i class="fa fa-thumbs-up"></i></a>
-								<ul class="dropdown-menu" aria-labelledby="dropdownPromote">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">First action again</a></li>
-									<li>
-										<hr class="divider">
-									</li>
-									<li><a href="#">Never mind</a></li>
-								</ul>
-							</div>
+							<a href="#" class="btn btn-sm btn-outline btn-default"
+							   title="Recommend this product"
+							><i class="fa fa-thumbs-up"></i></a>
+							<a href="#" class="btn btn-sm btn-outline btn-default"
+							   title="Promote this product"
+							><i class="fa fa-bullhorn"></i></a>
 						</div>
 					</div>
 					<div class="right-col">
