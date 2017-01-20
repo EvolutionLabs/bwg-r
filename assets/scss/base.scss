@@ -145,20 +145,29 @@ a.btn-inverse {
     border: 1px solid;
     box-shadow: none;
   }
-  .caret {
-    width: 1.2em;
-    height: inherit;
-    border: none;
-    font: normal normal normal 16px/1 FontAwesome;
-    margin-left: .4em;
-    transition: transform .2s cubic-bezier(.4, 0, .2, 1);
-    .open > & {
-      transform: scaleY(-1);
-    }
-    &::before {
-      content: "\f078";
+  &.dropdown-toggle {
+    position: relative;
+    padding-right: 2em !important;
+    .caret {
+      width: 1.2em;
+      height: inherit;
+      border: none;
+      font: normal normal normal 16px/1 FontAwesome;
+      margin-left: .4em;
+      top: 50%;
+      right: 6px;
+      position: absolute;
+      transform: translateY(calc(-50% - 1px));
+      transition: transform .2s cubic-bezier(.4, 0, .2, 1);
+      .open > & {
+        transform: translateY(calc(-50% + 2px)) scaleY(-1);
+      }
+      &::before {
+        content: "\f078";
+      }
     }
   }
+
   .cardTitle &, &.btn-sm {
     line-height: 1.42857143;
   }
