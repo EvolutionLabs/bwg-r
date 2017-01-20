@@ -53,9 +53,9 @@ $(window).on('load', function(){
             $('.modal').modal('hide');
         }
     });
-    $('.simpleList').on('show.bs.collapse', '[id^="hht"]', function(){
+    $('.simpleList').on('show.bs.collapse', '[id^="hht"], [id^="list-"]', function(){
         $(this).closest('li').addClass('active');
-    }).on('hide.bs.collapse', '[id^="hht"]', function(){
+    }).on('hide.bs.collapse', '[id^="hht"], [id^="list-"]', function(){
         $(this).closest('li').removeClass('active');
     });
     /*$('.fa.fa-heart').on('click', function(){
