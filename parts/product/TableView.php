@@ -37,13 +37,13 @@ class TableView {
 			$this->category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 		}
 
-		if ($this->category == 'chill') {
+		/*if ($this->category == 'chill') {
 			array_splice($this->cols, 1, 0, "Supplier");
 			$this->dProduct = $this->assocSplice(
 				$this->dProduct,
 				['Supplier'=> ['McDonagh', 'Coca Cola', 'Smirnoff']],
 				2);
-		}
+		}*/
 
 		$this->colspan = count($this->cols) + 3;
 
@@ -51,9 +51,8 @@ class TableView {
 			if (
 				($p = $this->{$part}) &&
 				($p[0] === '%') && ($p[strlen($p) -1] === '%') &&
-				method_exists($this, substr($this->{$part}, 1, -1))
+				method_exists($this, $method = substr($this->{$part}, 1, -1))
 			) {
-				$method = substr($this->{$part}, 1, -1);
 				$this->{$part} = $this->{$method}();
 			}
 		}
@@ -83,18 +82,15 @@ class TableView {
 	 * Example custom method to be used as wildcard instead of any table part, like this
 	 *  $table = [
 	 *    ...
-	 *    'header' => '%cartHeader%'
+	 *    'filters' => '%cartFilters%'
 	 *    ...
 	 *  ]
 	 */
-	public function cartHeader() {
+	public function cartFilters() {
 
 		global $cartList; // let's use a variable defined in view
 		$h = $cartList;
-		/**
-		 * the wrapper below makes the header full row width. If you'd rather have control
-		 * over each cell inside $h, just wrap it in <tr> and <thead> and return it
-		 */
+
 		return '<div class="cartHeader">' .
 		       '<h4>'.$h['name'].'</h4>' .
 		       '</div>';
@@ -155,7 +151,7 @@ class TableView {
 			'Price increase' => '14/11/2016',
 			'Pallet Qty.' => '14/11/2016',
 			'VAT' => '13.5%',
-			'Supplier' => '14/11/2016',
+			'Supplier' => 'McDonagh',
 			'Shelf life' => '12days'
 		]
 	];
@@ -166,7 +162,7 @@ class TableView {
 			$product = $this->dProduct;
 			$product['Name'] = getRand($product['Name']);
 			if ($this->category == 'chill') {
-				$product['Supplier'] = getRand($product['Supplier']);
+				$product['Name'] .= '<div class="supplier">'.$this->generateSupplier().'</div>';
 			}
 			$this->products[] = $product; // juice
 
@@ -175,6 +171,10 @@ class TableView {
 			$this->dProduct['id'] = $string;
 			$this->dProduct['Details']['Code'] = strval(intval($this->dProduct['Details']['Code'] + 1));
 		}
+	}
+
+	private function generateSupplier() {
+		return getRand(['McDonagh', 'Coca Cola', 'Smirnoff']);
 	}
 
 

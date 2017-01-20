@@ -72,9 +72,24 @@ body {
   td:first-child > & {
     margin: -8px;
     padding: 8px 8px 8px 28px;
+    @media(max-width: 1199px) {
+      margin: -8px -4px;
+      padding: 8px 4px 8px 24px;
+    }
     min-height: 60px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    flex-direction: column;
+    .supplier {
+      margin-left: -24px;
+      padding-left: 24px;
+      border-top: 1px solid #bbb;
+      background-color: #ddd;
+      transition: background-color .3s cubic-bezier(.4,0,.2,1);
+      [aria-expanded=true] & {
+        background-color: white;
+      }
+    }
   }
 }
 .alert {
@@ -147,7 +162,9 @@ a.btn-inverse {
   }
   &.dropdown-toggle {
     position: relative;
-    padding-right: 2em !important;
+    &#dropdownIcons {
+      padding-right: 2em;
+    }
     .caret {
       width: 1.2em;
       height: inherit;
@@ -157,9 +174,11 @@ a.btn-inverse {
       top: 50%;
       right: 6px;
       position: absolute;
+      //noinspection CssInvalidFunction
       transform: translateY(calc(-50% - 1px));
       transition: transform .2s cubic-bezier(.4, 0, .2, 1);
       .open > & {
+        //noinspection CssInvalidFunction
         transform: translateY(calc(-50% + 2px)) scaleY(-1);
       }
       &::before {
@@ -683,12 +702,13 @@ a.btn-inverse {
       background-color: #3d3d3d;
       color: white;
       padding: 18px 8px;
-      @media(max-width: 1199px) {
-        padding: 12px 4px;
-      }
-      font-size: 16px;
+      font-size: 1.6rem;
       font-weight: 400;
       vertical-align: middle;
+      @media(max-width: 1199px) {
+        padding: 12px 4px;
+        font-size: 1.4rem;
+      }
       &:not(:first-child) {
         text-align: center;
         white-space: nowrap;
@@ -1168,7 +1188,6 @@ input::-webkit-input-placeholder, button {
           border-top: 0;
         }
       }
-
       border-top: 1px solid #ddd;
       > a {
         display: flex;
@@ -1221,6 +1240,18 @@ input::-webkit-input-placeholder, button {
     .navbar-right {
       display: flex;
       align-items: center;
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .table {
+    &>tbody, & > tfoot, & > thead {
+      >tr {
+        &>td, &>th {
+          padding-right: 4px;
+          padding-left: 4px;
+        }
+      }
     }
   }
 }

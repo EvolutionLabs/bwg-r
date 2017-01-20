@@ -14,7 +14,7 @@
   .main-col {
     flex: 1 0 calc(100% - 500px);
     @media(max-width: 1199px) {
-      flex-basis: 365px;
+      flex: 1 1 auto;
     }
     font-size: 13px;
     .btn-group.separate {
@@ -127,7 +127,7 @@ dl, .dl-horizontal {
       }
     }
     >* {
-      flex: 0 0 196px;
+      flex: 1 0 100px;
       @media(max-width: 119px) {
         flex-basis: 175px;
       }

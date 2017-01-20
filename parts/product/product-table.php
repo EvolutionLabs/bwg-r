@@ -77,7 +77,12 @@
 				<tr>
 					<?php
 					foreach ( $table->cols as $col ) {
-						echo '<th>' . $col . '<a href="#"><i class="fa fa-sort"></i></a></th>';
+						$suffix = '';
+						$sorter = '<a href="#"><i class="fa fa-sort"></i></a>';
+						if ($col == 'Name' && $table->category == 'chill') {
+							$suffix = 'Supplier'.$sorter;
+						}
+						echo '<th>' . $col . $sorter. $suffix. '</th>';
 					}
 					echo '<th colspan="3" class="pusher"></th>'
 					?>

@@ -59,7 +59,20 @@ body {
     padding: 8px 8px 8px 28px;
     min-height: 60px;
     display: flex;
-    align-items: center; }
+    align-items: stretch;
+    flex-direction: column; }
+    @media (max-width: 1199px) {
+      td:first-child > .rltv {
+        margin: -8px -4px;
+        padding: 8px 4px 8px 24px; } }
+    td:first-child > .rltv .supplier {
+      margin-left: -24px;
+      padding-left: 24px;
+      border-top: 1px solid #bbb;
+      background-color: #ddd;
+      transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      [aria-expanded=true] td:first-child > .rltv .supplier {
+        background-color: white; }
 
 .alert {
   border: 2px solid;
@@ -359,8 +372,9 @@ a.btn-inverse {
     border: 1px solid;
     box-shadow: none; }
   .btn.dropdown-toggle {
-    position: relative;
-    padding-right: 2em !important; }
+    position: relative; }
+    .btn.dropdown-toggle#dropdownIcons {
+      padding-right: 2em; }
     .btn.dropdown-toggle .caret {
       width: 1.2em;
       height: inherit;
@@ -771,12 +785,13 @@ a.btn-inverse {
     background-color: #3d3d3d;
     color: white;
     padding: 18px 8px;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     vertical-align: middle; }
     @media (max-width: 1199px) {
       .card .flex-table th {
-        padding: 12px 4px; } }
+        padding: 12px 4px;
+        font-size: 1.4rem; } }
     .card .flex-table th:not(:first-child) {
       text-align: center;
       white-space: nowrap; }
@@ -1194,5 +1209,10 @@ input::-webkit-input-placeholder, button {
     #navbar-secondary .navbar-right {
       display: flex;
       align-items: center; } }
+
+@media (max-width: 1199px) {
+  .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding-right: 4px;
+    padding-left: 4px; } }
 
 /*# sourceMappingURL=base.css.map */

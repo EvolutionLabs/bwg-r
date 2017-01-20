@@ -12,7 +12,7 @@
     font-size: 13px; }
     @media (max-width: 1199px) {
       .tdWrapper .main-col {
-        flex-basis: 365px; } }
+        flex: 1 1 auto; } }
     .tdWrapper .main-col .btn-group.separate {
       margin-top: 15px; }
   @media (max-width: 767px) {
@@ -97,7 +97,7 @@ dl, .dl-horizontal {
     .products .right-col .rltv .btn-stock {
       align-self: flex-end; }
   .products .right-col > * {
-    flex: 0 0 196px; }
+    flex: 1 0 100px; }
     @media (max-width: 119px) {
       .products .right-col > * {
         flex-basis: 175px; } }
