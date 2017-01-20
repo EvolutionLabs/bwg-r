@@ -53,7 +53,7 @@ $(window).on('load', function(){
             $('.modal').modal('hide');
         }
     });
-    $('#hhtList').on('show.bs.collapse', '[id^="hht"]', function(){
+    $('.simpleList').on('show.bs.collapse', '[id^="hht"]', function(){
         $(this).closest('li').addClass('active');
     }).on('hide.bs.collapse', '[id^="hht"]', function(){
         $(this).closest('li').removeClass('active');
