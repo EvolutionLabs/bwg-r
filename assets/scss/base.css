@@ -566,6 +566,9 @@ a.btn-inverse {
         background-color: #373737;
         color: white; }
 
+@media (max-width: 767px) {
+  .container {
+    width: 100%; } }
 .navbar-default {
   min-height: 95px;
   background-color: #29b766;
@@ -1173,5 +1176,16 @@ input::-webkit-input-placeholder, button {
           margin: -8px 8px 0 0; }
           .simpleList > ul > li > a span.btn-sm i {
             margin: 6px 0; }
+
+@media (min-width: 768px) {
+  #navbar-secondary {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center; }
+    #navbar-secondary::before, #navbar-secondary::after {
+      content: none; }
+    #navbar-secondary .navbar-right {
+      display: flex;
+      align-items: center; } }
 
 /*# sourceMappingURL=base.css.map */

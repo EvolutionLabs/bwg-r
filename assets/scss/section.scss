@@ -354,6 +354,12 @@ dl, .dl-horizontal {
 }
 .filtersDd {
   margin-right: 100px;
+  @media (max-width: 1199px) {
+    margin-right: 56px;
+  }
+  @media (max-width: 991px) {
+    margin-right: 8px;
+  }
   .nav &.open>a {
     background-color: transparent;
   }
@@ -378,10 +384,7 @@ dl, .dl-horizontal {
     flex-wrap: wrap;
     padding-bottom: 20px;
     > * {
-      flex: 0 0 25%;
-      @media (max-width: 991px) {
-        flex: 0 0 33%;
-      }
+      flex: 1 0 240px;
       padding: 5px 10px;
       display: flex;
       &:hover {

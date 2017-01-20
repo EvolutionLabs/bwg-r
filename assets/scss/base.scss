@@ -405,7 +405,11 @@ a.btn-inverse {
     }
   }
 }
-
+@media(max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
 .navbar-default {
   .navbar-brand {
     max-width: 180px;
@@ -1195,6 +1199,20 @@ input::-webkit-input-placeholder, button {
           i {margin: 6px 0;}
         }
       }
+    }
+  }
+}
+#navbar-secondary {
+  @media (min-width: 768px) {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    &::before, &::after {
+      content: none;
+    }
+    .navbar-right {
+      display: flex;
+      align-items: center;
     }
   }
 }

@@ -277,6 +277,12 @@ dl, .dl-horizontal {
 
 .filtersDd {
   margin-right: 100px; }
+  @media (max-width: 1199px) {
+    .filtersDd {
+      margin-right: 56px; } }
+  @media (max-width: 991px) {
+    .filtersDd {
+      margin-right: 8px; } }
   .nav .filtersDd.open > a {
     background-color: transparent; }
   .filtersDd > a {
@@ -298,16 +304,13 @@ dl, .dl-horizontal {
     flex-wrap: wrap;
     padding-bottom: 20px; }
     .megaMenu .filtersList > * {
-      flex: 0 0 25%;
+      flex: 1 0 240px;
       padding: 5px 10px;
       display: flex;
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       text-transform: uppercase;
       position: relative; }
-      @media (max-width: 991px) {
-        .megaMenu .filtersList > * {
-          flex: 0 0 33%; } }
       .megaMenu .filtersList > *:hover input[type=checkbox] ~ label {
         opacity: 1; }
       .megaMenu .filtersList > *:hover i {
