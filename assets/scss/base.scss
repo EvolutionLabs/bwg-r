@@ -2,7 +2,7 @@
 
 body {
   padding-top: 95px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .input-group {
@@ -209,6 +209,8 @@ a.btn-inverse {
     padding-top: 0;
     transform: translateX(-33%);
     left: 50%;
+    border: solid #3d3d3d;
+    border-width: 3px 0;
     >li>a {
       padding: 10px 15px
     }
@@ -339,15 +341,15 @@ a.btn-inverse {
     }
   }
 }
-
 .open {
   & > a, & > a:focus, & > a:hover, & > .dropdown-toggle.active, & > .dropdown-toggle.active:focus, * > .dropdown-toggle.active:hover {
     outline: none;
     background-color: white;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-  }
-  td > & > a {
-    box-shadow: none!important;
+    td > & {
+      box-shadow: none!important;
+      background-color: transparent;
+    }
   }
   /*.dropdown-toggle[aria-haspopup=true]::after{
     height: 13px;
@@ -367,10 +369,31 @@ a.btn-inverse {
     .navbar-nav > & {
       margin-top: 1px;
     }
+    td > & {
+      transform: translateX(-50%);
+      left: 50%;
+      border: solid #ff0048;
+      border-width: 3px 0;
+
+      /*&::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        background-color: #ff0048;
+        left: 50%;
+        transform: rotate(45deg) translateX(-50%);
+        top: -2px;
+      }*/
+    }
+    >li>a {
+      padding: 10px 12px;
+    }
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     border-radius: 0;
-    padding: 14px 0 0 0;
+    padding: 0;
     border: none;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .1), 0 8px 10px 1px rgba(0, 0, 0, .07), 0 3px 14px 2px rgba(0, 0, 0, .06);
     form {

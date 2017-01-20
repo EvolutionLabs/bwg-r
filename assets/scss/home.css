@@ -121,8 +121,9 @@
     position: relative;
     min-height: 60vh;
     max-height: 60vh; }
-  #hhtErrorsModal .tab-content > .tab-pane {
-    background-color: #eee; }
+  #hhtErrorsModal .tab-content > [role="tabpanel"] {
+    background-color: #eee;
+    min-height: 120px; }
   #hhtErrorsModal .nav-tabs > li.active > a, #hhtErrorsModal .nav-tabs > li.active > a:focus, #hhtErrorsModal .nav-tabs > li.active > a:hover {
     background-color: #eee;
     border-bottom-color: #eee; }

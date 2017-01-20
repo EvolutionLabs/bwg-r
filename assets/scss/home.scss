@@ -141,9 +141,9 @@
     min-height: 60vh;
     max-height: 60vh;
   }
-
-  .tab-content>.tab-pane {
+  .tab-content>[role="tabpanel"] {
     background-color: #eee;
+    min-height: 120px;
   }
   .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     background-color: #eee;
