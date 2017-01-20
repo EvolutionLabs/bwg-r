@@ -1148,6 +1148,8 @@ input::-webkit-input-placeholder, button {
         display: flex;
         background-color: white;
         align-items: center;
+        border: 0 solid;
+        border-color: #f5f5f5 transparent #ddd transparent;
         justify-content: space-between;
         color: #212121;
         padding: 8px;
@@ -1159,9 +1161,11 @@ input::-webkit-input-placeholder, button {
         #hhtList > ul > li > a:hover {
           color: #212121;
           background-color: #f5f5f5; }
-        #hhtList > ul > li > a[aria-expanded="true"], #hhtList > ul > li > a[aria-expanded="true"]:hover {
-          background-color: #303030;
-          color: white; }
+        #hhtList > ul > li > a[aria-expanded="true"], #hhtList > ul > li > a[aria-expanded="true"]:hover, #hhtList > ul > li > a[aria-expanded="true"]:focus, #hhtList > ul > li > a[aria-expanded="true"]:active, #hhtList > ul > li > a[aria-expanded="true"]:active:focus {
+          outline: none;
+          background-color: #e7e7e7;
+          border-top: 1px solid #f5f5f5;
+          border-bottom: 1px solid #ddd; }
         #hhtList > ul > li > a[aria-expanded="true"] .toggLer {
           transform: scaleY(-1); }
         #hhtList > ul > li > a span.btn-sm {
