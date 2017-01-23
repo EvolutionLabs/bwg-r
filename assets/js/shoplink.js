@@ -126,7 +126,7 @@ $(window).on('load', function(){
                 '<span class="input-group-addon"><i class="fa fa-plus"></i></span>' +
                 '</div>'
             });
-        menu.append(form);
+        menu.find('li:last-child').append(form);
     }).on('hide.bs.dropdown', '.favMenu', function(e){
         $(e.target).find('form').remove();
     }).on('click', 'form', function(e){

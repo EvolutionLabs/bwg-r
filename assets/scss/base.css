@@ -1204,12 +1204,14 @@ input::-webkit-input-placeholder, button {
 td > .favMenu .dropdown-menu {
   min-width: 210px; }
 
-#addNewFavlist .input-group {
-  max-width: 100%; }
-  #addNewFavlist .input-group .input-group-addon {
-    background-color: #ff0048;
-    color: white; }
-  #addNewFavlist .input-group input {
-    font-size: 14px; }
+#addNewFavlist {
+  margin-top: 0; }
+  #addNewFavlist .input-group {
+    max-width: 100%; }
+    #addNewFavlist .input-group .input-group-addon {
+      background-color: #ff0048;
+      color: white; }
+    #addNewFavlist .input-group input {
+      font-size: 14px; }
 
 /*# sourceMappingURL=base.css.map */
