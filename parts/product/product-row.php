@@ -34,7 +34,7 @@ global $product;
 				echo $product['Price'];
 			} ?>
 		<td>
-			<div class="dropdown">
+			<div class="dropdown favMenu">
 				<a href="#"
 				   class="dropdown-toggle placer"
 				   id="favDd-<?= $table->id.'-'.$product['id']; ?>"
@@ -48,13 +48,12 @@ global $product;
 					<li><a href="#">Fav list 1</a></li>
 					<li><a href="#">Fav list 2</a></li>
 					<li><a href="#">Fav list 3</a></li>
-					<li><a href="#">Fav list 4</a></li>
-					<li><a href="#">Fav list 5</a></li>
+					<li class="addNewList"></li>
 				</ul>
 			</div>
 		</td>
 		<td class="no-grow hide-x">
-			<div class="input-group">
+			<div class="input-group .qty">
 				<span class="input-group-addon">
 					<i class="fa fa-minus"></i>
 				</span>

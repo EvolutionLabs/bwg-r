@@ -1201,4 +1201,15 @@ input::-webkit-input-placeholder, button {
       display: flex;
       align-items: center; } }
 
+td > .favMenu .dropdown-menu {
+  min-width: 210px; }
+
+#addNewFavlist .input-group {
+  max-width: 100%; }
+  #addNewFavlist .input-group .input-group-addon {
+    background-color: #ff0048;
+    color: white; }
+  #addNewFavlist .input-group input {
+    font-size: 14px; }
+
 /*# sourceMappingURL=base.css.map */

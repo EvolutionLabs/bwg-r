@@ -116,6 +116,22 @@ $(window).on('load', function(){
             }, 600);
         }
     });
+    $('.flex-table').on('show.bs.dropdown','.favMenu', function(e){
+        var menu = $(e.target).find('.dropdown-menu'),
+            form = $('<form />', {
+                id:'addNewFavlist',
+                class:'addFavlist',
+                html: '<div class="input-group">' +
+                '<input class="form-control" placeholder="Add new list..." type="text" name="favName" />' +
+                '<span class="input-group-addon"><i class="fa fa-plus"></i></span>' +
+                '</div>'
+            });
+        menu.append(form);
+    }).on('hide.bs.dropdown', '.favMenu', function(e){
+        $(e.target).find('form').remove();
+    }).on('click', 'form', function(e){
+        e.stopPropagation();
+    });
     var e = $('.parallax-scroller')[0];
     if (e) {
         var PS = {
