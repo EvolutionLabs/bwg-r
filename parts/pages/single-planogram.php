@@ -1,17 +1,30 @@
 <?php
+
 use parts\product\TableView;
-global $category;
+
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
-include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."parallax.php";
+$images = [
+	'planogram_3.jpg',
+]
+?>
 
-$filters = true;
-include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."filters.php";
+<?php include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."parallax.php" ;?>
+<?php include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."filters.php" ;?>
 
- ?>
 <div class="container dull">
 	<div class="row">
 		<div class="col-md-9 col-sm-12 col-main">
+			<div class="planogram single-planogram">
+				<?php
+				$sh = $images;
+				shuffle($sh);
+				foreach ($sh as $image) { ?>
+					<a href="/assets/image/<?= $image;?>" class='imgSlot'>
+						<img src='/assets/image/<?= $image;?>' />
+					</a>
+				<?php } ?>
+			</div>
 			<?php
 			$table = new TableView();
 

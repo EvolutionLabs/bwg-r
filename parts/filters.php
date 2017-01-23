@@ -1,6 +1,7 @@
 <?php
 global $category;
-$filters = [
+
+$filters = isset($filters) ? [
 	[
 		'name' => 'Top Sellers',
 		'icon' => 'fa bwg-i-top-sellers'
@@ -80,7 +81,7 @@ $filters = [
 		'name' => 'Monday Madness',
 		'icon' => 'fa bwg-i-monday-madness'
 	]
-];
+] : false;
 ?>
 <div class="submenu <?= $category; ?>">
 	<div class="container">
@@ -101,7 +102,8 @@ $filters = [
 						<li><a href="/favorites?category=<?= $category ;?>" class="btn btn-default btn-sm active">Favorites</a></li>
 						<li><a href="/planogram?category=<?= $category ;?>" class="btn btn-default btn-sm">Planogram</a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
+					<?php if ($filters) { ?>
+						<ul class="nav navbar-nav navbar-right">
 						<li>
 							<div class="dropdown filtersDd">
 								<a href="#" id="dropdownFilters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -151,6 +153,7 @@ $filters = [
 							</div>
 						</li>
 					</ul>
+					<?php } ?>
 				</div><!--/.nav-collapse -->
 			</div><!--/.container-fluid -->
 		</nav>

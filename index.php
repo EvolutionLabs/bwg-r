@@ -30,6 +30,7 @@ if ( strlen( $template ) > 1 ) :
 			$page_js [] = 'js/section.js';
 			break;
 		case "planogram":
+		case "single-planogram":
 			$page_css[] = 'vendor/mp/magnific.popup.css';
 			$page_css[] = 'css/section.css';
 			$page_js [] = 'vendor/mp/magnific.popup.min.js';

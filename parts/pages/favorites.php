@@ -5,17 +5,10 @@ use parts\product\TableView;
 
 $category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
 
-?>
-<div class="parallax-container">
-	<div style="background: #eee url('../../assets/image/banner.jpg') no-repeat 50% 50% /cover;" class="parallax-scroller">
-		<div class="scene container">
-			<h3>New Season Offers</h3>
-			<div class="subtitle">2 Cases for the price of 1</div>
-			<a href="#" class="btn btn-success">Buy Now</a>
-		</div>
-	</div>
-</div>
-<?php
+
+include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."parallax.php";
+
+$filters = true;
 include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."filters.php"
 ?>
 

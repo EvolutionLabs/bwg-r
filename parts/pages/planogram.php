@@ -11,39 +11,8 @@ $images = [
 	'planogram_6.png',
 ]
 ?>
-<div class="parallax-container">
-	<div style="background: #eee url('../../assets/image/banner.jpg') no-repeat 50% 50% /cover;" class="parallax-scroller">
-		<div class="scene container">
-			<h3>New Season Offers</h3>
-			<div class="subtitle">2 Cases for the price of 1</div>
-			<a href="#" class="btn btn-success">Buy Now</a>
-		</div>
-	</div>
-</div>
-<div class="submenu <?= $category;?> " id="planogram">
-	<div class="container">
-		<nav class="navbar">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-secondary" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<span class="navbar-brand"><?= $category;?></span>
-				</div>
-				<div id="navbar-secondary" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="#" class="btn btn-default btn-sm">Promotions</a></li>
-						<li><a href="/favorites?category=<?= $category;?>" class="btn btn-default btn-sm active">Favorites</a></li>
-						<li><a href="/section?category=<?= $category;?>" class="btn btn-default btn-sm">Section</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div><!--/.container-fluid -->
-		</nav>
-	</div>
-</div>
+<?php include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."parallax.php" ;?>
+<?php include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."filters.php" ;?>
 
 <div class="container dull">
 	<div class="row">
