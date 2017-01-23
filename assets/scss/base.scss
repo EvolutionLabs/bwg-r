@@ -2,6 +2,9 @@
 
 body {
   padding-top: 95px;
+  @media(max-width: 767px) {
+    padding-top: 50px;
+  }
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -453,7 +456,9 @@ a.btn-inverse {
     margin-right: 30px;
     padding: 0;
   }
-  min-height: 95px;
+  @media (min-width: 768px) {
+    min-height: 95px;
+  }
   background-color: map_get($colors, 'green');
   display: flex;
   justify-content: space-between;
@@ -713,9 +718,8 @@ a.btn-inverse {
       padding: 18px 8px;
       @media(max-width: 1199px) {
         padding: 12px 4px;
-        font-size: 1.4rem;
       }
-      font-size: 16px;
+      font-size: 1.4rem;
       font-weight: 400;
       vertical-align: middle;
       &:not(:first-child) {
