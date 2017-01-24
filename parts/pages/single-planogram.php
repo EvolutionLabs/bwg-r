@@ -26,8 +26,9 @@ $images = [
 				<?php } ?>
 			</div>
 			<?php
-			$table = new TableView();
-
+			$table = new TableView([
+				"id" => "productsTable"
+			]);
 			include dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR."product".DIRECTORY_SEPARATOR . "product-table.php";
 			?>
 		</div>

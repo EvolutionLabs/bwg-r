@@ -53,7 +53,7 @@ global $product;
 			</div>
 		</td>
 		<td class="no-grow hide-x">
-			<div class="input-group .qty">
+			<div class="input-group qty" itemscope="qty-<?= $table->id.'-'.$product['id'];?>">
 				<span class="input-group-addon">
 					<i class="fa fa-minus"></i>
 				</span>
@@ -120,7 +120,7 @@ global $product;
 							<i class="fa fa-2x fa-tag"></i>
 						</div>
 						<div class="rltv">
-							<div class="input-group">
+							<div class="input-group qty" itemscope="qty-<?= $table->id.'-'.$product['id'];?>">
 								<span class="input-group-addon">
 									<i class="fa fa-minus"></i>
 								</span>
