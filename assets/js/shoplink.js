@@ -11,6 +11,29 @@ $(window).on('load', function(){
             class:'clear'
         }))
     });
+    $('.products').on('click', 'td>.dropdown>.dropdown-menu', function(e){
+        e.stopPropagation();
+        $(this).closest('.dropdown-menu').dropdown('toggle');
+        $(this).closest('td').toggleClass('active');
+    }).on('click', '.input-group-addon', function(e){
+        e.stopPropagation();
+        if ($(e.target).closest('.qty')) {
+            var field = $(this).closest('.input-group').find('.form-control'),
+                val = field.val() ? field.val() * 1 : 0;
+            if (val < 0 ) {
+                field.val(0);
+            }
+            if ($(this).is(':first-child') && val > 0) {
+                field.val(val - 1);
+            }
+            if ($(this).is(':last-child')) {
+                field.val(val + 1);
+            }
+            console.log($(this).is(':first-child'), $(this).is(':last-child'));
+        }
+    }).on('click', 'td.hide-x', function(e){
+        e.stopPropagation();
+    });
     $('table').on('hide.bs.collapse', 'tr', function(e){
         if (e.target.id.indexOf('tr-') > -1) {
             var tr = $(e.target).closest('tr'),
@@ -176,33 +199,6 @@ $(window).on('load', function(){
     $('.submenu .navbar-nav, .cardTitle').on('click', '.btn', function () {
         $(this).parent().parent().parent().find('.btn').removeClass('active');
         $(this).addClass('active');
-    });
-    $('.products').on('click', 'td>.dropdown>.dropdown-menu', function(e){
-        e.stopPropagation();
-        $(this).closest('.dropdown-menu').dropdown('toggle');
-        $(this).closest('td').toggleClass('active');
-    }).on('click', '.input-group-addon', function(e){
-        if ($(e.target).closest('.qty')) {
-            e.stopPropagation();
-            var field = $(this).closest('.input-group').find('.form-control'),
-                val = field.val() ? field.val() * 1 : 0,
-                scope = $(e.target).closest('.qty').attr('itemscope');
-            if (val < 0 ) {
-                field.val(0);
-            } else {
-                if ($(this).is(':first-child') && val > 0) {
-                    $('[itemscope="'+scope+'"]').each(function(){
-                        $(this).find('.form-control').val(val - 1);
-                    });
-                }
-                if ($(this).is(':last-child')) {
-                    $('[itemscope="'+scope+'"]').each(function(){
-                        $(this).find('.form-control').val(val + 1);
-                    });
-                }
-            }
-        }
-
     });
     $('.megaMenu').on('click', function(e){
         e.stopPropagation();
