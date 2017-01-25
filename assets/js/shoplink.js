@@ -1,4 +1,5 @@
 $(window).on('load', function(){
+    var Page = $('body').data("page");
     $('[href^="#"]').on('click',function(e){
         e.preventDefault();
     });
@@ -51,31 +52,6 @@ $(window).on('load', function(){
                 rltv = tr.find('.right-col>.rltv').eq(0);
             rltv.prepend(inputGroup);
             tr.prevAll(".clear:first").addClass('opened');
-        }
-    });
-    $('a[href="#view-list"]').on('click', function(e){
-        e.preventDefault();
-        if (window.location.pathname.indexOf('section') > 0 ||
-            window.location.pathname.indexOf('single-planogram') > 0){
-            var target = $(e.target).closest('a').data('target');
-            $(target + ' .hiddenRow>td>.collapse.in[id^="tr-"]').collapse('hide');
-        } else if (window.location.pathname.indexOf('planogram') > 0){
-            // custom logic for planogram page. not needed anymore (i used tabs)
-
-        } else {
-            return false;
-        }
-    });
-    $('a[href="#view-boxes"]').on('click', function(e){
-        e.preventDefault();
-        if (window.location.pathname.indexOf('section') > 0  ||
-            window.location.pathname.indexOf('single-planogram') > 0){
-            var target = $(e.target).closest('a').data('target');
-            $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
-        } else if (window.location.pathname.indexOf('planogram') > 0){
-            // custom logic for planogram page. not needed anymore (i used tabs)
-        } else {
-            return false;
         }
     });
     $('[role="combobox"]').removeClass('open');
@@ -203,7 +179,7 @@ $(window).on('load', function(){
     $('.megaMenu').on('click', function(e){
         e.stopPropagation();
     });
-    if (window.location.pathname.indexOf('planogram') > 0){
+    if (Page == 'planogram') {
         $('.planogram').magnificPopup({
             delegate:'.imgSlot',
             type: 'image',
@@ -261,50 +237,65 @@ $(window).on('load', function(){
         // e.target // newly active tab
         // e.relatedTarget // previous active tab
     });
-    for(var i = 0; i < 4; i++) {
-        loader.append($('<div />'));
+    if (errorsModal) {
+        for(var i = 0; i < 4; i++) {
+            loader.append($('<div />'));
+        }
+        loader.velocity({
+            width:'100%'
+        }, 200, function(){
+            loader.css({'background-color':'transparent'});
+            loader.find('div').each(function(i){
+                if ($(window).width() > 820) {
+                    $(this).velocity({
+                        'margin-left':(i % 2 == 0 ? '0': '10px'),
+                        'margin-right':(i % 2 == 0 ? '10px': '0')
+                    }, 120).velocity({
+                        'margin-top':(i < 2 ?'0':'10px'),
+                        'margin-bottom':(i < 2 ?'10px':'0')
+                    }, 120, function(){
+                        $('.shop-links>div:last-child>span').each(
+                            function(){
+                                $(this).velocity({opacity: 1},500, function(){
+                                    loader.remove();
+                                    $('#hhtErrorsModal').modal('show');
+                                })
+                            }
+                        )
+                    });
+                } else {
+                    $(this).velocity({
+                        'margin-top':'10px'
+                    },120, function(){
+                        $('.shop-links>div:last-child>span').each(
+                            function(){
+                                $(this).velocity({opacity: 1},500, function(){
+                                    loader.remove();
+                                    $('#hhtErrorsModal').modal('show');
+                                })
+                            }
+                        );
+                    });
+                }
+            })
+        });
     }
-    loader.velocity({
-        width:'100%'
-    }, 200, function(){
-        loader.css({'background-color':'transparent'});
-        loader.find('div').each(function(i){
-            if ($(window).width() > 820) {
-                $(this).velocity({
-                    'margin-left':(i % 2 == 0 ? '0': '10px'),
-                    'margin-right':(i % 2 == 0 ? '10px': '0')
-                }, 120).velocity({
-                    'margin-top':(i < 2 ?'0':'10px'),
-                    'margin-bottom':(i < 2 ?'10px':'0')
-                }, 120, function(){
-                    $('.shop-links>div:last-child>span').each(
-                        function(){
-                            $(this).velocity({opacity: 1},500, function(){
-                                loader.remove();
-                                $('#hhtErrorsModal').modal('show');
-                            })
-                        }
-                    )
-                });
-            } else {
-                $(this).velocity({
-                    'margin-top':'10px'
-                },120, function(){
-                    $('.shop-links>div:last-child>span').each(
-                        function(){
-                            $(this).velocity({opacity: 1},500, function(){
-                                loader.remove();
-                                $('#hhtErrorsModal').modal('show');
-                            })
-                        }
-                    );
-                });
+    $(document)
+        .on('click', '.toggleSwitch', toggleSwitch)
+        .on('click', 'a[href="#view-list"]', function(e){
+            e.preventDefault();
+            if (Page == 'section' || Page == 'single-planogram') {
+                var target = $(e.target).closest('a').data('target');
+                $(target + ' .hiddenRow>td>.collapse.in[id^="tr-"]').collapse('hide');
             }
         })
-    });
-    $(document)
-        .on('click', '.toggleSwitch', toggleSwitch);
-
+        .on('click', 'a[href="#view-boxes"]', function(e){
+            e.preventDefault();
+            if (Page == 'section' || Page == 'single-planogram') {
+                var target = $(e.target).closest('a').data('target');
+                $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
+            }
+        });
 });
 
 function toggleSwitch(e) {
