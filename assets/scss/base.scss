@@ -157,8 +157,10 @@ a.btn-inverse {
       top: 50%;
       right: 6px;
       position: absolute;
+      //noinspection CssInvalidFunction
       transform: translateY(calc(-50% - 1px));
       transition: transform .2s cubic-bezier(.4, 0, .2, 1);
+      //noinspection CssInvalidFunction
       .open > & {
         transform: translateY(calc(-50% + 2px)) scaleY(-1);
       }
@@ -212,26 +214,20 @@ a.btn-inverse {
       }
     }
   }
-  /*.open .dropdown-menu {
-    padding-top: 0;
-    transform: translateX(-33%);
-    left: 50%;
-    border: solid #3d3d3d;
-    border-width: 3px 0;
-    >li>a {
-      padding: 10px 15px
-    }
-  }
-  .dropdown.dropup {
-    display: inline-block;
-    margin-right: 1.5rem;
-  }*/
   .btn-sm {
     font-size: 2rem;
     &.active {
       background-color: map_get($colors, 'green');
       color: white;
       border-color: transparent;
+    }
+    .badge {
+      min-height: 24px;
+      min-width: 24px;
+      line-height: 24px;
+      padding: 0;
+      border-radius: 12px;
+      margin-right: -4px;
     }
   }
 

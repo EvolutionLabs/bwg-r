@@ -23,7 +23,7 @@ $(window).on('load', function(){
                 val = field.val() ? field.val() * 1 : 0,
                 tr = $(this).closest('tr.hiddenRow'),
                 tr = tr.is('tr') ? tr : $(this).closest('tr[data-toggle="collapse"]').next(),
-                hiddenQty = tr.find('input[name="quantity"]');
+                hiddenQty = tr.find('input[name="qty"]');
             if (val < 0 ) {
                 field.val(0);
                 hiddenQty.val(0)

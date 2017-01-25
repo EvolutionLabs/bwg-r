@@ -78,7 +78,7 @@ global $product;
 						<input type="hidden" name="pcode" value="<?= $product['id'];?>" />
 						<input type="hidden" name="qis" value="" />
 						<input type="hidden" name="isProm" value="N" />
-						<input type="hidden" name="quantity" value="0">
+						<input type="hidden" name="qty" value="0">
 					</form>
 					<div class="imageWrap"><img class="img-responsive" src="<?= $product['Details']['image']; ?>"/></div>
 					<div class="main-col">
@@ -112,10 +112,13 @@ global $product;
 							</div>
 							<a href="#" class="btn btn-sm btn-outline btn-default"
 							   title="Recommend this product"
-							><i class="fa fa-thumbs-up"></i></a>
+							><i class="fa fa-thumbs-up"></i>
+								<span class="badge">0</span>
+							</a>
 							<a href="#" class="btn btn-sm btn-outline btn-default"
 							   title="Promote this product"
-							><i class="fa fa-bullhorn"></i></a>
+							><i class="fa fa-bullhorn"></i>
+								<span class="badge">3</span></a>
 						</div>
 					</div>
 					<div class="right-col">
