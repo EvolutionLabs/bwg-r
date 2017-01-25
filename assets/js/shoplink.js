@@ -120,6 +120,9 @@ $(window).on('load', function(){
     });
     $('.productActions').on('click', '.btn-sm', function(){
         $(this).toggleClass('active');
+        var badge = $(this).find('.badge'),
+            val = parseInt(badge.text()) + ($(this).hasClass('active') ? 1: -1);
+        badge.text(val);
     });
     toastr.options = {
         "closeButton": true,

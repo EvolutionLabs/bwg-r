@@ -413,13 +413,18 @@ a.btn-inverse {
       background-color: #29b766;
       color: white;
       border-color: transparent; }
-    .productActions .btn-sm .badge {
-      min-height: 24px;
-      min-width: 24px;
-      line-height: 24px;
-      padding: 0;
-      border-radius: 12px;
-      margin-right: -4px; }
+  .productActions .badge {
+    min-height: 20px;
+    min-width: 20px;
+    line-height: 20px;
+    padding: 0 5.5px;
+    border-radius: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #303030; }
+  .productActions .bar-rating {
+    position: relative; }
 
 .btn-group-sm > .btn, .btn-sm {
   border-radius: 0; }

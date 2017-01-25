@@ -109,6 +109,7 @@ global $product;
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
+								<span class="badge">3.8</span>
 							</div>
 							<a href="#" class="btn btn-sm btn-outline btn-default"
 							   title="Recommend this product"
