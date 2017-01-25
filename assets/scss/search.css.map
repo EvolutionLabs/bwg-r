@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACE,oBAAK;EACH,SAAS,EAAE,KAAK;EAChB,2BAAO;IACL,UAAU,EAAE,IAAI;AAGpB,4BAAa;EACX,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,OAAO;EACd,YAAY,EAAE,OAAO",
-"sources": ["search.scss"],
-"names": [],
-"file": "search.css"
-}

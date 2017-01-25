@@ -17,24 +17,10 @@ if ( strlen( $template ) > 1 ) :
 	$page_css = [];
 	$page_js  = [];
 	switch ( $template ) {
-		case "landing" :
-			$page_css[] = 'css/home.css';
-			break;
-		/** @noinspection PhpMissingBreakStatementInspection */
-		case "cart" :
-			$page_css[] = 'css/cart.css';
-		case "section" :
-		case "favorites" :
-			$page_css[] = 'css/section.css';
-			break;
 		case "planogram":
 		case "single-planogram":
 			$page_css[] = 'vendor/mp/magnific.popup.css';
-			$page_css[] = 'css/section.css';
 			$page_js [] = 'vendor/mp/magnific.popup.min.js';
-			break;
-		case "search" :
-			$page_css[] = 'css/search.css';
 			break;
 		default:
 	}
