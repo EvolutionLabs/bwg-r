@@ -13,14 +13,20 @@ $(window).on('load', function(){
     });
     $('table').on('hide.bs.collapse', 'tr', function(e){
         if (e.target.id.indexOf('tr-') > -1) {
-            var tr = $(e.target).closest('tr');
+            var tr = $(e.target).closest('tr'),
+                inputGroup = tr.find('.right-col>.rltv .input-group').eq(0),
+                td = $('[data-target="#'+e.target.id+'"]').find('td.no-grow.hide-x').eq(0);
+            td.append(inputGroup);
             tr.prevAll(".clear:first").removeClass('opened');
             var id = e.target.id.substr(e.target.id.indexOf('-') + 1);
             $('#stock-' + id).collapse('hide');
         }
     }).on('show.bs.collapse', 'tr', function(e){
         if (e.target.id.indexOf('tr-') > -1) {
-            var tr = $(e.target).closest('tr');
+            var tr = $(e.target).closest('tr'),
+                inputGroup = $('[data-target="#'+e.target.id+'"]').find('.input-group').eq(0),
+                rltv = tr.find('.right-col>.rltv').eq(0);
+            rltv.prepend(inputGroup);
             tr.prevAll(".clear:first").addClass('opened');
         }
     });

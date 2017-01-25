@@ -120,15 +120,6 @@ global $product;
 							<i class="fa fa-2x fa-tag"></i>
 						</div>
 						<div class="rltv">
-							<div class="input-group qty" itemscope="qty-<?= $table->id.'-'.$product['id'];?>">
-								<span class="input-group-addon">
-									<i class="fa fa-minus"></i>
-								</span>
-								<input type="text" class="form-control" value="1" name="qty-<?= $table->id.'-'.$product['id']; ?>"/>
-								<span class="input-group-addon">
-									<i class="fa fa-plus"></i>
-								</span>
-							</div>
 							<a href="#<?= $isCart ? 'remove-from-' : 'add-to-'; ?>cart?id=<?= $product['id']; ?>"
 							   onclick="void(0)"
 							   class="btn <?= $isCart ? 'btn-cart btn-inverse' : 'btn-success'; ?> btn-block"><?= $isCart ? 'Remove' : 'Add to cart'; ?></a>
