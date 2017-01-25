@@ -39,11 +39,13 @@ $(window).on('load', function(){
         }
     }).on('click', 'td.hide-x', function(e){
         e.stopPropagation();
-    }).on('keydown', '.form-control', function(e){
+    }).on('keyup', '.form-control', function(e){
+        var tr = $(this).closest('tr.hiddenRow'),
+            tr = tr.is('tr') ? tr : $(this).closest('tr[data-toggle="collapse"]').next(),
+            input = tr.find('input[name="qty"]');
+        input.val($(this).val());
         if (e.which == 13 || e.keyCode == 13) {
-            var tr = $(this).closest('tr.hiddenRow'),
-                tr = tr.is('tr') ? tr : $(this).closest('tr[data-toggle="collapse"]').next(),
-                form = tr.find('form');
+            var form = tr.find('form');
             form.submit();
         }
     });
