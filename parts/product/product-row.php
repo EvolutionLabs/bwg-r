@@ -74,6 +74,12 @@ global $product;
 		<td colspan="<?= $table->colspan; ?>">
 			<div class="collapse" id="tr-<?= $table->id.'-'.$product['id']; ?>" style="overflow: hidden; clear: both;">
 				<div class="tdWrapper">
+					<form id="orderFrm<?= $product['id'];?>" action="./" method="get" onsubmit="return doAddToCart('<?= $product['id'];?>', '', '1')">
+						<input type="hidden" name="pcode" value="<?= $product['id'];?>" />
+						<input type="hidden" name="qis" value="" />
+						<input type="hidden" name="isProm" value="N" />
+						<input type="hidden" name="quantity" value="0">
+					</form>
 					<div class="imageWrap"><img class="img-responsive" src="<?= $product['Details']['image']; ?>"/></div>
 					<div class="main-col">
 						<div>

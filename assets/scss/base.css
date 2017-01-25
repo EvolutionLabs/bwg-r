@@ -854,6 +854,8 @@ a.btn-inverse {
         height: 15px; }
       .flex-table tr.clear.opened + tr + tr + tr .rowSpacer {
         height: 15px; }
+      .flex-table tr.clear.opened + .opened .rowSpacer {
+        height: 0; }
   .flex-table .offerWrap {
     background-color: #ff0048;
     color: #fff;

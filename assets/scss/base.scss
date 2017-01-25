@@ -793,6 +793,11 @@ a.btn-inverse {
         + tr + tr + tr .rowSpacer {
           height: 15px;
         }
+        + .opened {
+          .rowSpacer {
+            height: 0;
+          }
+        }
       }
     }
   }

@@ -3,7 +3,7 @@ $(window).on('load', function(){
     $('[href^="#"]').on('click',function(e){
         e.preventDefault();
     });
-    $('table tr[data-toggle]').each(function(){
+    /*$('table tr[data-toggle]').each(function(){
         var cS = $(this).next().find('td[colspan]').attr('colspan');
         $(this).before($('<tr />', {
             html:'<td colspan="'+cS+'">' +
@@ -11,7 +11,7 @@ $(window).on('load', function(){
             '</td>',
             class:'clear'
         }))
-    });
+    });*/
     $('.products').on('click', 'td>.dropdown>.dropdown-menu', function(e){
         e.stopPropagation();
         $(this).closest('.dropdown-menu').dropdown('toggle');
@@ -20,26 +20,48 @@ $(window).on('load', function(){
         e.stopPropagation();
         if ($(e.target).closest('.qty')) {
             var field = $(this).closest('.input-group').find('.form-control'),
-                val = field.val() ? field.val() * 1 : 0;
+                val = field.val() ? field.val() * 1 : 0,
+                tr = $(this).closest('tr.hiddenRow'),
+                tr = tr.is('tr') ? tr : $(this).closest('tr[data-toggle="collapse"]').next(),
+                hiddenQty = tr.find('input[name="quantity"]');
             if (val < 0 ) {
                 field.val(0);
+                hiddenQty.val(0)
             }
             if ($(this).is(':first-child') && val > 0) {
                 field.val(val - 1);
+                hiddenQty.val(val - 1)
             }
             if ($(this).is(':last-child')) {
                 field.val(val + 1);
+                hiddenQty.val(val + 1)
             }
-            console.log($(this).is(':first-child'), $(this).is(':last-child'));
         }
     }).on('click', 'td.hide-x', function(e){
         e.stopPropagation();
+    }).on('keydown', '.form-control', function(e){
+        if (e.which == 13 || e.keyCode == 13) {
+            var tr = $(this).closest('tr.hiddenRow'),
+                tr = tr.is('tr') ? tr : $(this).closest('tr[data-toggle="collapse"]').next(),
+                form = tr.find('form');
+            form.submit();
+        }
     });
     $('table').on('hide.bs.collapse', 'tr', function(e){
         if (e.target.id.indexOf('tr-') > -1) {
             var tr = $(e.target).closest('tr'),
                 inputGroup = tr.find('.right-col>.rltv .input-group').eq(0),
-                td = $('[data-target="#'+e.target.id+'"]').find('td.no-grow.hide-x').eq(0);
+                td = $('[data-target="#'+e.target.id+'"]').find('td.no-grow.hide-x').eq(0),
+                next = tr.next(),
+                prev = tr.prev().prev();
+
+            next.removeClass('opened');
+            prev.removeClass('opened');
+            setTimeout(function(){
+                next.remove();
+                prev.remove();
+            }, 600);
+
             td.append(inputGroup);
             tr.prevAll(".clear:first").removeClass('opened');
             var id = e.target.id.substr(e.target.id.indexOf('-') + 1);
@@ -49,9 +71,23 @@ $(window).on('load', function(){
         if (e.target.id.indexOf('tr-') > -1) {
             var tr = $(e.target).closest('tr'),
                 inputGroup = $('[data-target="#'+e.target.id+'"]').find('.input-group').eq(0),
-                rltv = tr.find('.right-col>.rltv').eq(0);
+                rltv = tr.find('.right-col>.rltv').eq(0),
+                cS = tr.find('td[colspan]').attr('colspan'),
+                clear = $('<tr />', {
+                    html:'<td colspan="'+cS+'">' +
+                    '<div class="rowSpacer"></div>' +
+                    '</td>',
+                    class:'clear'
+                }) ;
+            tr.prev().before(clear.clone());
+            tr.after(clear);
+            setTimeout(function(){
+                tr.prev().prev().addClass('opened');
+                tr.next().addClass('opened');
+            }, 0);
+
+
             rltv.prepend(inputGroup);
-            tr.prevAll(".clear:first").addClass('opened');
         }
     });
     $('[role="combobox"]').removeClass('open');
