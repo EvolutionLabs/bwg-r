@@ -163,7 +163,7 @@ $filters  = [
 		'icon' => 'fa fa-circle-thin'
 	]
 ];
-$category = isset( $_GET['category'] ) ? $_GET['category'] : 'alcohol';
+$category = isset( $_GET['category'] ) ? $_GET['category'] : 'bond';
 
 $empty = isset( $_GET['empty'] );
 

@@ -1,6 +1,6 @@
 <?php
 
-$category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
+$category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 
 $images = [
 	'planogram_1.jpg',

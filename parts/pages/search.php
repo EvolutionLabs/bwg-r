@@ -31,7 +31,7 @@ $ss = [
     'On Promotion' => ['<i class="fa fa-close"></i>', '<i class="fa fa-check"></i>']*/
 ];
 
-$category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
+$category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 
 ?>
 

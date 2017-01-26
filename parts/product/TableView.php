@@ -34,7 +34,7 @@ class TableView {
 		}
 
 		if (!$this->category) {
-			$this->category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
+			$this->category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 		}
 
 		if ($this->category == 'chill') {

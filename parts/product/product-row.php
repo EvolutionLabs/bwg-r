@@ -210,7 +210,7 @@ global $product;
 							</tr>
 							<tr class="sales_info_row_Chill">
 								<td colspan="15" id="graph_header_store_88216">
-									<a class="stockcardlink accordion-toggle"
+									<a class="stockcardlink accordion-toggle collapsed"
 									   data-toggle="collapse" data-target="#sG-<?= $table->id.'-'.$product['id']; ?>"
 									   href="#">Display Sales Trend My Store <span class="toggLer"><i
 												class="fa fa-2x fa-chevron-down"></i></span></a></td>

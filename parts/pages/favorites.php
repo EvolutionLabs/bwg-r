@@ -3,7 +3,7 @@
 use parts\product\TableView;
 
 
-$category = isset($_GET['category']) ? $_GET['category'] : 'alcohol';
+$category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 
 
 include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."parallax.php";
