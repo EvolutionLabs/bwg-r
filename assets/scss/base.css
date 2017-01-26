@@ -520,9 +520,10 @@ a.btn-inverse {
     position: absolute;
     right: 6px; }
   .btn-secondary.dropdown-toggle + .dropdown-menu {
-    min-width: 165px; }
+    min-width: 230px; }
     .btn-secondary.dropdown-toggle + .dropdown-menu > li {
-      padding: 0; }
+      padding: 0;
+      white-space: initial; }
       .btn-secondary.dropdown-toggle + .dropdown-menu > li > * {
         padding: 8px 20px; }
 
@@ -778,6 +779,12 @@ a.btn-inverse {
   .flex-table.products td:first-child, .flex-table.products th:first-child {
     min-width: 200px;
     max-width: 210px; }
+  .flex-table.chill td:first-child, .flex-table.chill th:first-child {
+    min-width: 150px;
+    max-width: 150px; }
+  .flex-table.chill td:nth-child(2), .flex-table.chill th:nth-child(2) {
+    max-width: 75px;
+    padding-left: 0; }
   .card .flex-table th {
     background-color: #3d3d3d;
     color: white;
@@ -794,6 +801,8 @@ a.btn-inverse {
     .card .flex-table th a {
       color: white;
       margin-left: 8px; }
+  .card .flex-table.chill th {
+    padding: 18px 4px; }
   .flex-table tr {
     background-color: white; }
     .flex-table tr.clear td, .flex-table tr.hiddenRow td {
@@ -819,6 +828,8 @@ a.btn-inverse {
           text-align: center; }
         .flex-table tr[data-target] > td:not(.no-grow) {
           min-width: 50px; }
+          .flex-table tr[data-target] > td:not(.no-grow) + .no-grow {
+            min-width: 148px; }
         .flex-table tr[data-target] > td .input-group {
           min-width: 140px;
           height: 45px; }
@@ -893,10 +904,13 @@ a.btn-inverse {
       font-weight: 400; }
       .flex-table .offerWrap .offerTag .tagTitle {
         font-weight: 700; }
+  .flex-table.chill .offerWrap {
+    margin-right: -175px; }
   .flex-table tr[aria-expanded=false] {
     overflow: hidden; }
   .flex-table tr[aria-expanded=false] td:hover .offerWrap, .flex-table tr[aria-expanded=true] .offerWrap {
-    max-width: 100%; }
+    max-width: calc(100% + 85px);
+    width: calc(100% + 85px); }
     .flex-table tr[aria-expanded=false] td:hover .offerWrap .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
       opacity: 1; }
 
@@ -1388,9 +1402,13 @@ td > .favMenu .dropdown-menu {
   position: relative;
   display: flex; }
   .tdWrapper .imageWrap {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     flex: 0 0 170px; }
     .tdWrapper .imageWrap img {
-      object-fit: contain; }
+      object-fit: contain;
+      min-width: 120px; }
   .tdWrapper .main-col {
     flex: 1 0 40%;
     font-size: 13px; }
@@ -1479,6 +1497,8 @@ dl, .dl-horizontal {
     display: flex;
     flex-direction: column;
     justify-content: space-between; }
+    .products .right-col .rltv .btn-success {
+      margin: 15px 0; }
     .products .right-col .rltv .btn-stock {
       align-self: flex-end; }
   .products .right-col > * {
@@ -1504,7 +1524,6 @@ dl, .dl-horizontal {
     .products .right-col {
       flex-direction: column; } }
   .products .right-col .btn-stock {
-    margin-top: 15px;
     box-shadow: none; }
 .products .iconBar {
   flex: 0 0 111px; }
@@ -1621,6 +1640,9 @@ dl, .dl-horizontal {
     .iconsDd .dropdown-menu {
       right: -1px; } }
   .iconsDd .dropdown-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .iconsDd .dropdown-menu li:hover {
       background-color: #303030;
@@ -1630,7 +1652,7 @@ dl, .dl-horizontal {
 
 .filter-controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 15px 0;
   border-bottom: 1px solid white; }
   .filter-controls .btn-outline.btn-default {

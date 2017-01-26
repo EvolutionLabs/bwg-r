@@ -63,7 +63,7 @@
 	} /** end of Filters */
 
 	?>
-	<table class="table products flex-table" id="productsTable">
+	<table class="table products flex-table <?= $table->category ;?>" id="productsTable">
 		<?php
 		/**
 		 * Header

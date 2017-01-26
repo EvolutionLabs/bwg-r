@@ -348,9 +348,10 @@ a.btn-inverse {
     right: 6px;
   }
   + .dropdown-menu {
-    min-width: 165px;
+    min-width: 230px;
     > li {
       padding: 0;
+      white-space: initial;
       > * {
         padding: 8px 20px;
       }
@@ -696,6 +697,18 @@ a.btn-inverse {
       }
     }
   }
+  &.chill {
+    td,th {
+      &:first-child {
+        min-width: 150px;
+        max-width: 150px;
+      }
+      &:nth-child(2) {
+        max-width: 75px;
+        padding-left: 0;
+      }
+    }
+  }
   th {
     .card & {
       background-color: #3d3d3d;
@@ -716,6 +729,9 @@ a.btn-inverse {
         margin-left: 8px;
       }
     }
+  }
+  .card &.chill th {
+    padding: 18px 4px;
   }
   tr {
     background-color: white;
@@ -749,6 +765,9 @@ a.btn-inverse {
         }
         &:not(.no-grow) {
           min-width: 50px;
+          + .no-grow {
+            min-width: 148px;
+          }
         }
         .input-group {
           min-width: 140px;
@@ -849,11 +868,15 @@ a.btn-inverse {
       }
     }
   }
+  &.chill .offerWrap {
+    margin-right: -175px;
+  }
   tr[aria-expanded=false] {
     overflow: hidden;
   }
   tr[aria-expanded=false] td:hover .offerWrap, tr[aria-expanded=true] .offerWrap{
-    max-width: 100%;
+    max-width: calc(100% + 85px);
+    width: calc(100% + 85px);
     .offerTag {
       opacity: 1;
     }
@@ -1470,9 +1493,13 @@ td>.favMenu .dropdown-menu {
   position: relative;
   display: flex;
   .imageWrap {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     flex: 0 0 170px;
     img {
       object-fit: contain;
+      min-width: 120px;
     }
   }
   .main-col {
@@ -1587,6 +1614,9 @@ dl, .dl-horizontal {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      .btn-success {
+        margin: 15px 0;
+      }
       .btn-stock {
         align-self: flex-end;
       }
@@ -1619,7 +1649,6 @@ dl, .dl-horizontal {
     }
 
     .btn-stock {
-      margin-top: 15px;
       box-shadow: none;
     }
   }
@@ -1764,6 +1793,9 @@ dl, .dl-horizontal {
     border-radius: 0;
     padding: 8px;
     li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       transition: all .3s cubic-bezier(.4,0,.2,1);
       &:hover {
         background-color: #303030;
@@ -1778,7 +1810,7 @@ dl, .dl-horizontal {
 }
 .filter-controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 15px 0;
   border-bottom: 1px solid white;
   .btn-sm {
