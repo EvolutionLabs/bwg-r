@@ -344,6 +344,9 @@ a.btn-inverse {
     border-color: #111111;
     color: white; }
 
+.dropdown-menu > li > a {
+  white-space: initial; }
+
 .btn {
   border: none;
   height: 50px;
@@ -495,7 +498,7 @@ a.btn-inverse {
   overflow: hidden; }
 
 .form-control-lg {
-  height: 45px;
+  height: 52px;
   border: 1px solid;
   border-radius: 0; }
 
@@ -1912,13 +1915,26 @@ dl, .dl-horizontal {
 [data-page="cart"] .card .flex-table th {
   padding: 8px; }
 
-[data-page="search"] .search-buttons .btn {
-  max-width: 240px; }
-  [data-page="search"] .search-buttons .btn + .btn {
-    margin-top: 20px; }
-[data-page="search"] .search-buttons .btn-outline {
-  box-shadow: none;
-  color: inherit;
-  border-color: inherit; }
+[data-page="search"] .search-buttons {
+  display: flex;
+  justify-content: space-between; }
+  [data-page="search"] .search-buttons .btn {
+    max-width: 240px;
+    min-width: 240px; }
+    [data-page="search"] .search-buttons .btn + .btn {
+      margin-top: 20px; }
+  [data-page="search"] .search-buttons .btn-outline {
+    box-shadow: none;
+    color: inherit;
+    border-color: inherit; }
+  [data-page="search"] .search-buttons .input-group-btn.input-group-addon {
+    padding: 0;
+    margin: 0 0 0 20px; }
+    [data-page="search"] .search-buttons .input-group-btn.input-group-addon .btn {
+      box-shadow: none;
+      margin: 0; }
+  [data-page="search"] .search-buttons .form-control {
+    outline: none;
+    border-color: #ccc; }
 
 /*# sourceMappingURL=base.css.map */

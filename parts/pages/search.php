@@ -79,15 +79,6 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 							</span>
 							<label for="onPromotion">On Promotion</label>
 						</div>
-						<div class="form-group search-buttons">
-							<button class="btn btn-success btn-block" type="submit">Search</button>
-							<div class="input-group">
-								<span class="input-group-addon input-group-btn">
-									<a href="javascript:saveSearch();" class="btn btn-default btn-outline">Save this search as </a>
-								</span>
-								<input class="form-control form-control-lg" type="text" name="savename" id="savename">
-							</div>
-						</div>
 					</form>
 				</div>
 				<div class="col-sm-7">
@@ -108,6 +99,17 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 							<code>-"low fat"</code>
 						</dd>
 					</dl>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group search-buttons form-inline">
+						<button class="btn btn-success" type="submit">Search</button>
+						<div class="input-group">
+								<span class="input-group-addon input-group-btn">
+									<a href="javascript:saveSearch();" class="btn btn-default btn-outline">Save this search as </a>
+								</span>
+							<input class="form-control form-control-lg" type="text" name="savename" id="savename">
+						</div>
+					</div>
 				</div>
 			</div>
 			<!--<div class="pagination">
