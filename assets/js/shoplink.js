@@ -122,26 +122,29 @@ $(window).on('load', function(){
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     };
-    $('[id^="rating-"]').barrating({
-        theme:'fontawesome-stars',
-        emptyValue: '&times;',
-        initialRating: null,
-        allowEmpty: true,
-        deselectable: true,
-        onSelect:function(value){
-            value = JSON.parse(value);
-            var message = value ? 'Your ' + value + ' star' + (value > 1 ? 's':'') + ' rating was saved.' : 'Your rating was removed.',
-                type = value ? 'success' : 'info',
-                title = value ? 'Rating saved' : 'Rating deleted';
-            /**
-             * you should send an ajax call saving the value and only display this toast on success
-             * @see http://antenna.io/demo/jquery-bar-rating/examples/
-             */
+    $('[id^="rating-"]').each(function () {
+        // console.log()
+        $(this).barrating({
+            theme:'fontawesome-stars-o',
+            emptyValue: '&times;',
+            initialRating:  $(this).data('initial'),
+            allowEmpty: true,
+            deselectable: true,
+            onSelect:function(value){
+                value = JSON.parse(value);
+                var message = value ? 'Your ' + value + ' star' + (value > 1 ? 's':'') + ' rating was saved.' : 'Your rating was removed.',
+                    type = value ? 'success' : 'info',
+                    title = value ? 'Rating saved' : 'Rating deleted';
+                /**
+                 * you should send an ajax call saving the value and only display this toast on success
+                 * @see http://antenna.io/demo/jquery-bar-rating/examples/
+                 */
 
-            setTimeout (function(){
-                toastr[type](message, title);
-            }, 600);
-        }
+                setTimeout (function(){
+                    toastr[type](message, title);
+                }, 600);
+            }
+        })
     });
     $('.flex-table').on('show.bs.dropdown','.favMenu', function(e){
         var menu = $(e.target).find('.dropdown-menu'),

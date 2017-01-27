@@ -101,7 +101,8 @@ global $product;
 						</div>
 						<div class="btn-group btn-group-sm separate productActions">
 							<div class="bar-rating">
-								<select id="rating-<?= $product['id']; ?>">
+								<?php $rating = rand(10,50) / 10;?>
+								<select id="rating-<?= $product['id']; ?>" data-initial="<?= $rating;?>">
 									<option>0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -109,7 +110,7 @@ global $product;
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-								<span class="badge">3.8</span>
+								<span class="badge"><?= $rating ;?></span>
 							</div>
 							<a href="#" class="btn btn-sm btn-outline btn-default"
 							   title="Recommend this product"

@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet">
-	<link href="../assets/vendor/bar-rating/fontawesome-stars.css" rel="stylesheet">
+	<link href="../assets/vendor/bar-rating/fontawesome-stars-o.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
 	<link href="../assets/vendor/toastr/toastr.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
