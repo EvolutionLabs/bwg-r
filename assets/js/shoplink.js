@@ -210,38 +210,40 @@ $(window).on('load', function(){
         e.stopPropagation();
     });
     if (Page == 'planogram') {
-        $('.planogram').magnificPopup({
-            delegate:'.imgSlot',
-            type: 'image',
-            mainClass: 'mfp-with-zoom',
+        if ($.isFunction($.fn.magnificPopup)) {
+            $('.planogram').magnificPopup({
+                delegate:'.imgSlot',
+                type: 'image',
+                mainClass: 'mfp-with-zoom',
 
-            zoom: {
-                enabled: true,
+                zoom: {
+                    enabled: true,
 
-                duration: 300,
-                easing: 'ease-in-out',
+                    duration: 300,
+                    easing: 'ease-in-out',
 
-                opener: function(openerElement) {
-                    return openerElement.is('img') ? openerElement : openerElement.find('img');
+                    opener: function(openerElement) {
+                        return openerElement.is('img') ? openerElement : openerElement.find('img');
+                    }
                 }
-            }
-        });
-        $('.simpleList').magnificPopup({
-            delegate: 'li>a',
-            type: 'image',
-            mainClass: 'mfp-with-zoom',
+            });
+            $('.simpleList').magnificPopup({
+                delegate: 'li>a',
+                type: 'image',
+                mainClass: 'mfp-with-zoom',
 
-            zoom: {
-                enabled: true,
+                zoom: {
+                    enabled: true,
 
-                duration: 300,
-                easing: 'ease-in-out',
+                    duration: 300,
+                    easing: 'ease-in-out',
 
-                opener: function(openerElement) {
-                    return openerElement.is('img') ? openerElement : openerElement.find('i');
+                    opener: function(openerElement) {
+                        return openerElement.is('img') ? openerElement : openerElement.find('i');
+                    }
                 }
-            }
-        });
+            });
+        }
         $('#planogram').velocity('scroll', {
             duration: 700,
             offset: -95,
