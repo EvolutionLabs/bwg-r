@@ -344,9 +344,6 @@ a.btn-inverse {
     border-color: #111111;
     color: white; }
 
-.dropdown-menu > li > a {
-  white-space: initial; }
-
 .btn {
   border: none;
   height: 50px;
@@ -1936,5 +1933,8 @@ dl, .dl-horizontal {
   [data-page="search"] .search-buttons .form-control {
     outline: none;
     border-color: #ccc; }
+
+.open .dropdown-menu > li > a {
+  white-space: initial; }
 
 /*# sourceMappingURL=base.css.map */
