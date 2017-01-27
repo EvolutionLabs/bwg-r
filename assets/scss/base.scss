@@ -130,7 +130,9 @@ a.btn-inverse {
     color: white;
   }
 }
-
+.dropdown-menu>li>a {
+  white-space: initial;
+}
 .btn {
   border: none;
   height: 50px;
@@ -1283,6 +1285,15 @@ td>.favMenu .dropdown-menu {
     }
   }
 }
+.input-group-addon.input-group-btn {
+  padding: 0;
+  margin: 0;
+  .btn {
+    box-shadow: none;
+    margin: 0;
+  }
+}
+
 [data-page="landing"] {
   .shop-links {
     position: relative;

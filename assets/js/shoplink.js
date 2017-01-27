@@ -124,6 +124,7 @@ $(window).on('load', function(){
     };
     $('[id^="rating-"]').each(function () {
         // console.log()
+	var code = $(this).data('code');
         $(this).barrating({
             theme:'fontawesome-stars-o',
             emptyValue: '&times;',
@@ -135,6 +136,7 @@ $(window).on('load', function(){
                 var message = value ? 'Your ' + value + ' star' + (value > 1 ? 's':'') + ' rating was saved.' : 'Your rating was removed.',
                     type = value ? 'success' : 'info',
                     title = value ? 'Rating saved' : 'Rating deleted';
+		        doRate(value,code);
                 /**
                  * you should send an ajax call saving the value and only display this toast on success
                  * @see http://antenna.io/demo/jquery-bar-rating/examples/

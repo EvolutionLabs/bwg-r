@@ -81,7 +81,12 @@ $category = isset($_GET['category']) ? $_GET['category'] : 'bond';
 						</div>
 						<div class="form-group search-buttons">
 							<button class="btn btn-success btn-block" type="submit">Search</button>
-							<a href="#save-search" class="btn btn-outline btn-white btn-block">Save this search</a>
+							<div class="input-group">
+								<span class="input-group-addon input-group-btn">
+									<a href="javascript:saveSearch();" class="btn btn-default btn-outline">Save this search as </a>
+								</span>
+								<input class="form-control form-control-lg" type="text" name="savename" id="savename">
+							</div>
 						</div>
 					</form>
 				</div>
