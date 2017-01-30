@@ -719,7 +719,7 @@ a.btn-inverse {
       @media(max-width: 1199px) {
         padding: 12px 4px;
       }
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 400;
       vertical-align: middle;
       &:not(:first-child) {
@@ -728,6 +728,7 @@ a.btn-inverse {
       }
       a {
         color: white;
+
         margin-left: 8px;
       }
     }
@@ -767,12 +768,12 @@ a.btn-inverse {
         }
         &:not(.no-grow) {
           min-width: 50px;
-          + .no-grow {
+          /*+ .no-grow {
             min-width: 148px;
-          }
+          }*/
         }
         .input-group {
-          min-width: 140px;
+          /*min-width: 140px;*/
           height: 45px;
           @media(max-width: 1199px) {
             min-width: 120px;
@@ -877,8 +878,12 @@ a.btn-inverse {
     overflow: hidden;
   }
   tr[aria-expanded=false] td:hover .offerWrap, tr[aria-expanded=true] .offerWrap{
-    max-width: calc(100% + 85px);
-    width: calc(100% + 85px);
+    max-width: 100%;
+    width: 100%;
+    .chill & {
+      max-width: calc(100% + 85px);
+      width: calc(100% + 85px);
+    }
     .offerTag {
       opacity: 1;
     }
@@ -1505,7 +1510,7 @@ td>.favMenu .dropdown-menu {
     }
   }
   .main-col {
-    flex: 1 0 40%;
+    flex: 1 1 auto;
     @media(max-width: 1199px) {
       flex-basis: 365px;
     }
@@ -1585,7 +1590,7 @@ dl, .dl-horizontal {
     }
   }
   .input-group {
-    max-width: 140px;
+    max-width: 110px;
     margin: -3px 0;
     border-radius: 0;
     .input-group-addon {
@@ -1606,12 +1611,13 @@ dl, .dl-horizontal {
       line-height: 30px;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
+      padding: 6px;
     }
   }
   .right-col {
     display: flex;
     margin-left: 20px;
-    min-width: 310px;
+    min-width: 285px;
     .rltv {
       display: flex;
       flex-direction: column;
@@ -1624,7 +1630,7 @@ dl, .dl-horizontal {
       }
     }
     >* {
-      flex: 0 0 196px;
+      flex: 1 1 177px;
       @media(max-width: 119px) {
         flex-basis: 175px;
       }
@@ -1655,7 +1661,7 @@ dl, .dl-horizontal {
     }
   }
   .iconBar {
-    flex: 0 0 111px;
+    flex: 1 1 111px;
     @media(max-width: 1199px) {
       flex-basis: 100%;
     }
