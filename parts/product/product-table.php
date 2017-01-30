@@ -51,6 +51,7 @@
 					<li><a class="dropdown-item" href="#">Category 3</a></li>
 				</ul>
 			</div>
+            <a href="void(0)" class="btn btn-sm btn-danger">Apply</a>
 			<span class="pull-right layoutSwitch">
 						View as:
 						<a class="btn btn-clear btn-sm active" href="#view-list" data-target="#productsTable"><i
