@@ -836,10 +836,8 @@ a.btn-inverse {
               padding: 8px 4px; } }
         .flex-table tr[data-target] > td .input-group {
           /*min-width: 140px;*/
-          height: 45px; }
-          @media (max-width: 1199px) {
-            .flex-table tr[data-target] > td .input-group {
-              min-width: 105px; } }
+          height: 45px;
+          min-width: 105px; }
         .flex-table tr[data-target] > td.no-grow {
           padding: 8px 8px 8px 0;
           margin: 0; }
