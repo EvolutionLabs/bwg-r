@@ -62,6 +62,9 @@ body {
     padding: 8px 8px 8px 28px;
     display: block;
     min-height: 56px; }
+    @media (max-width: 1199px) {
+      td:first-child > .rltv {
+        padding: 8px 0 8px 28px; } }
 
 .alert {
   border: 2px solid;
@@ -827,19 +830,22 @@ a.btn-inverse {
         .flex-table tr[data-target] > td:not(:first-child) {
           text-align: center; }
         .flex-table tr[data-target] > td:not(.no-grow) {
-          min-width: 50px;
-          /*+ .no-grow {
-            min-width: 148px;
-          }*/ }
+          min-width: 50px; }
+          @media (max-width: 1199px) {
+            .flex-table tr[data-target] > td:not(.no-grow) {
+              padding: 8px 4px; } }
         .flex-table tr[data-target] > td .input-group {
           /*min-width: 140px;*/
           height: 45px; }
           @media (max-width: 1199px) {
             .flex-table tr[data-target] > td .input-group {
-              min-width: 120px; } }
+              min-width: 105px; } }
         .flex-table tr[data-target] > td.no-grow {
           padding: 8px 8px 8px 0;
           margin: 0; }
+          @media (max-width: 1199px) {
+            .flex-table tr[data-target] > td.no-grow {
+              padding: 8px 4px 8px 0; } }
         .flex-table tr[data-target] > td.hide-x > * {
           transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .flex-table tr[aria-expanded=true] {
@@ -1414,11 +1420,11 @@ td > .favMenu .dropdown-menu {
       object-fit: contain;
       min-width: 120px; }
   .tdWrapper .main-col {
-    flex: 1 1 aut;
+    flex: 1 1 auto;
+    /*@media(max-width: 1199px) {
+      flex-basis: 365px;
+    }*/
     font-size: 13px; }
-    @media (max-width: 1199px) {
-      .tdWrapper .main-col {
-        flex-basis: 365px; } }
     .tdWrapper .main-col .btn-group.separate {
       margin-top: 15px; }
   @media (max-width: 767px) {
@@ -1496,8 +1502,10 @@ dl, .dl-horizontal {
     padding: 6px; }
 .products .right-col {
   display: flex;
-  margin-left: 20px;
-  min-width: 285px; }
+  margin-left: 20px; }
+  @media (min-width: 1200px) {
+    .products .right-col {
+      min-width: 285px; } }
   .products .right-col .rltv {
     display: flex;
     flex-direction: column;

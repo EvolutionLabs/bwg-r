@@ -77,6 +77,9 @@ body {
   td:first-child > & {
     margin: -8px;
     padding: 8px 8px 8px 28px;
+    @media(max-width: 1199px){
+      padding: 8px 0 8px 28px;
+    }
     display: block;
     min-height: 56px;
   }
@@ -768,19 +771,22 @@ a.btn-inverse {
         }
         &:not(.no-grow) {
           min-width: 50px;
-          /*+ .no-grow {
-            min-width: 148px;
-          }*/
+          @media(max-width: 1199px) {
+            padding: 8px 4px;
+          }
         }
         .input-group {
           /*min-width: 140px;*/
           height: 45px;
           @media(max-width: 1199px) {
-            min-width: 120px;
+            min-width: 105px;
           }
         }
         &.no-grow {
           padding: 8px 8px 8px 0;
+          @media(max-width: 1199px) {
+            padding: 8px 4px 8px 0;
+          }
           margin: 0;
         }
         &.hide-x > *{
@@ -1511,9 +1517,9 @@ td>.favMenu .dropdown-menu {
   }
   .main-col {
     flex: 1 1 auto;
-    @media(max-width: 1199px) {
+    /*@media(max-width: 1199px) {
       flex-basis: 365px;
-    }
+    }*/
     font-size: 13px;
     .btn-group.separate {
       margin-top: 15px;
@@ -1617,7 +1623,10 @@ dl, .dl-horizontal {
   .right-col {
     display: flex;
     margin-left: 20px;
-    min-width: 285px;
+    @media(min-width: 1200px) {
+      min-width: 285px;
+    }
+
     .rltv {
       display: flex;
       flex-direction: column;
