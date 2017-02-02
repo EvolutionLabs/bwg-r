@@ -64,7 +64,8 @@ body {
     min-height: 56px; }
     @media (max-width: 1199px) {
       td:first-child > .rltv {
-        padding: 8px 0 8px 28px; } }
+        padding: 8px 0 8px 28px;
+        margin: -8px 0 -8px -4px; } }
 
 .alert {
   border: 2px solid;
@@ -782,12 +783,23 @@ a.btn-inverse {
   .flex-table.products td:first-child, .flex-table.products th:first-child {
     min-width: 200px;
     max-width: 210px; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .flex-table.products td:first-child, .flex-table.products th:first-child {
+        max-width: 184px;
+        min-width: 175px; } }
   .flex-table.chill td:first-child, .flex-table.chill th:first-child {
     min-width: 150px;
     max-width: 150px; }
+    @media (max-width: 1199px) {
+      .flex-table.chill td:first-child, .flex-table.chill th:first-child {
+        min-width: 130px;
+        max-width: 130px; } }
   .flex-table.chill td:nth-child(2), .flex-table.chill th:nth-child(2) {
     max-width: 75px;
     padding-left: 0; }
+    @media (max-width: 1199px) {
+      .flex-table.chill td:nth-child(2), .flex-table.chill th:nth-child(2) {
+        margin-left: -8px; } }
   .card .flex-table th {
     background-color: #3d3d3d;
     color: white;
@@ -833,7 +845,8 @@ a.btn-inverse {
           min-width: 50px; }
           @media (max-width: 1199px) {
             .flex-table tr[data-target] > td:not(.no-grow) {
-              padding: 8px 4px; } }
+              padding: 8px 4px;
+              min-width: 42px; } }
         .flex-table tr[data-target] > td .input-group {
           /*min-width: 140px;*/
           height: 45px;
@@ -1427,7 +1440,7 @@ td > .favMenu .dropdown-menu {
       margin-top: 15px; }
   @media (max-width: 767px) {
     .tdWrapper .main-col {
-      flex: 0 1 calc(100% - 170px); } }
+      flex: 0 1 calc(100% - 200px); } }
   @media (min-width: 768px) {
     .tdWrapper .p-Details {
       column-count: 2; } }
@@ -1533,7 +1546,10 @@ dl, .dl-horizontal {
       flex-wrap: wrap; } }
   @media (max-width: 767px) {
     .products .right-col {
-      flex-direction: column; } }
+      display: block;
+      max-width: 160px; }
+      .products .right-col .iconBar {
+        margin-bottom: 20px; } }
   .products .right-col .btn-stock {
     box-shadow: none; }
 .products .iconBar {
