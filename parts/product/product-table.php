@@ -34,9 +34,7 @@
 					<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu" aria-labelledby="ddGroup">
-					<li><a class="dropdown-item" href="#">Group 1</a></li>
-					<li><a class="dropdown-item" href="#">Group 2</a></li>
-					<li><a class="dropdown-item" href="#">Group 3</a></li>
+					<li class="info">You should first select a department.</li>
 				</ul>
 			</div>
 			<div class="btn-group dropdown">
@@ -46,9 +44,7 @@
 					<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu" aria-labelledby="ddCategory">
-					<li><a class="dropdown-item" href="#">Category 1</a></li>
-					<li><a class="dropdown-item" href="#">Category 2</a></li>
-					<li><a class="dropdown-item" href="#">Category 3</a></li>
+                    <li class="info">You should first select department and group.</li>
 				</ul>
 			</div>
             <a href="void(0)" class="btn btn-sm btn-danger">Apply</a>

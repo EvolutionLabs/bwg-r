@@ -358,6 +358,13 @@ a.btn-inverse {
     > li {
       padding: 0;
       white-space: initial;
+      &.info {
+        padding: 16px;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.4rem;
+        opacity: .5;
+      }
       > * {
         padding: 8px 20px;
       }
