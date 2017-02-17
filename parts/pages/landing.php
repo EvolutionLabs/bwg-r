@@ -84,7 +84,7 @@
 			<span><a href="/section?category=ambient" class="ambient">Ambient</a></span>
 			<span><a href="/section?category=chill" class="chill">Chill</a></span>
 			<span><a href="/section?category=bond" class="bond">Bond</a></span>
-			<span><div class="dropdown dropup">
+			<span><div class="dropdown">
 					<a href="#" class="centre dropdown-toggle" data-toggle="dropdown" id="centreDd">Value Centre</a>
 					<ul class="dropdown-menu" aria-labelledby="centreDd">
 						<li><a href="#">Option 1</a></li>

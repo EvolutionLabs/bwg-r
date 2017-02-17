@@ -251,7 +251,7 @@ $(window).on('load', function(){
         });
     }
     var errorsModal = $('#hhtErrorsModal'),
-        loader = $('.shop-links .loader');;
+        loader = $('.shop-links .loader');
     errorsModal.on('show.bs.modal', function(){
         if (!window.tabIsSet) {
             var height = $('.tab-pane.active').height();
@@ -266,18 +266,16 @@ $(window).on('load', function(){
     }).on('shown.bs.tab','a[data-toggle="tab"]', function (e) {
         var height = $($(e.target).attr('href')).height();
         $('.tab-content').velocity({maxHeight:height+'px',minHeight:height+'px'}, 300);
-        // e.target // newly active tab
-        // e.relatedTarget // previous active tab
     });
     if (errorsModal) {
         for(var i = 0; i < 4; i++) {
             loader.append($('<div />'));
         }
         loader.velocity({
-            width:'100%'
-        }, 200, function(){
-            loader.css({'background-color':'transparent'});
-            loader.find('div').each(function(i){
+           width:'85vw'
+        }, 360, function(){
+           loader.css({'background-color':'transparent'});
+           loader.find('div').each(function(i){
                 if ($(window).width() > 820) {
                     $(this).velocity({
                         'margin-left':(i % 2 == 0 ? '0': '10px'),
@@ -313,6 +311,11 @@ $(window).on('load', function(){
         });
     }
     $(document)
+        .on('click', '[data-dismiss="modal"]', function(){
+            $('.modal-backdrop').velocity({opacity:0}, function(){
+                $('.modal-backdrop').remove();
+            })
+        })
         .on('click', '.toggleSwitch', toggleSwitch)
         .on('click', 'a[href="#view-list"]', function(e){
             e.preventDefault();

@@ -1281,12 +1281,13 @@ td > .favMenu .dropdown-menu {
     width: 0;
     height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    transform: translate(-50%, -50%);
     justify-content: space-between; }
     [data-page="landing"] .shop-links .loader div {
       flex: 0 1 50%;
@@ -1315,7 +1316,8 @@ td > .favMenu .dropdown-menu {
       transition: box-shadow .3s ease-in-out; }
       @media (max-width: 820px) {
         [data-page="landing"] .shop-links > div > span {
-          flex-basis: 100%; } }
+          flex-basis: 100%;
+          min-width: calc(100% - 10px); } }
       @media (min-width: 820px) {
         [data-page="landing"] .shop-links > div > span:first-of-type, [data-page="landing"] .shop-links > div > span:first-of-type + span {
           margin-bottom: 10px;
@@ -1366,6 +1368,9 @@ td > .favMenu .dropdown-menu {
           background-color: #ea6207; }
         [data-page="landing"] .shop-links > div > span > a.centre:hover, [data-page="landing"] .shop-links > div > span > .dropdown > a.centre:hover {
           color: #ea6207; }
+        @media (max-width: 420px) {
+          [data-page="landing"] .shop-links > div > span > a, [data-page="landing"] .shop-links > div > span > .dropdown > a {
+            padding-right: 10px; } }
         [data-page="landing"] .shop-links > div > span > a::after, [data-page="landing"] .shop-links > div > span > .dropdown > a::after {
           width: 73px;
           height: 73px;
@@ -1375,6 +1380,12 @@ td > .favMenu .dropdown-menu {
           position: absolute;
           right: 0;
           transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+          @media (max-width: 420px) {
+            [data-page="landing"] .shop-links > div > span > a::after, [data-page="landing"] .shop-links > div > span > .dropdown > a::after {
+              width: 10px;
+              right: -6px;
+              top: -10px;
+              height: calc(100% + 20px); } }
         [data-page="landing"] .shop-links > div > span > a:hover, [data-page="landing"] .shop-links > div > span > .dropdown > a:hover {
           text-decoration: none; }
           [data-page="landing"] .shop-links > div > span > a:hover::after, [data-page="landing"] .shop-links > div > span > .dropdown > a:hover::after {
