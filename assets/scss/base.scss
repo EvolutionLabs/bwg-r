@@ -2012,8 +2012,25 @@ dl, .dl-horizontal {
     padding: 0;
     border: 1px solid #ccc;
     background-color: #ddd;
+    position: relative;
     img {
       max-height: 125px;
+    }
+
+    .bays {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 0 1rem;
+      height: 3rem;
+      background-color: #303030;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      white-space: nowrap;
+      font-size: 0.9em;
     }
   }
 }

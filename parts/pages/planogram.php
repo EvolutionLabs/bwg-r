@@ -78,6 +78,7 @@ $images = [
 						foreach ($sh as $image) { ?>
 							<a href="/assets/image/<?= $image;?>" class='imgSlot'>
 								<img src='/assets/image/<?= $image;?>' />
+                                <span class="bays"><?= rand(2,6); ?> bay | <?= rand(1,4) * 6;?> shelf</span>
 							</a>
 						<?php } ?>
 					</div>

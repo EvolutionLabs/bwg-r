@@ -20,7 +20,7 @@ class TableView {
 	public $footer = true;
 	public $category = false;
 	public $cols = [
-		'Name', 'Rank', 'RSP', 'Margin', 'Pack<br />/Case', 'Price'
+		'Name', 'RSP', 'Margin', 'Pack<br />/Case', 'Price'
 	];
 
 	/**
@@ -136,7 +136,6 @@ class TableView {
 	public $dProduct = [
 		'id' => '5027952011316',
 		'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
-		'Rank' => '12',
 		'RSP' => '12.99',
 		'Margin' => '21%',
 		'Pack<br />/Case' => '280g/12',
