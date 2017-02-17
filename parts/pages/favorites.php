@@ -26,6 +26,7 @@ include dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."filters.php"
 			?>
 			<div class="simpleList clear">
 				<div class="cardTitle">
+                    <a href="#" class="pull-right btn btn-sm btn-default">Return to products</a>
 					<h1><?= $category ;?> Favorite Lists</h1>
 				</div>
 				<ul>

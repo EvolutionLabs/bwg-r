@@ -52,6 +52,9 @@ body {
   .btn-group.separate .btn:first-child {
     margin-left: 0; }
 
+.btn-sm {
+  line-height: 2.4rem; }
+
 .dropdown-toggle.btn-secondary {
   padding-right: 30px; }
 
@@ -386,7 +389,9 @@ a.btn-inverse {
   .cardTitle .btn, .btn.btn-sm {
     line-height: 1.42857143; }
   .btn.btn-sm {
-    font-size: 14px; }
+    font-size: 14px;
+    line-height: 2rem;
+    padding: .8rem; }
   .btn.btn-clear {
     box-shadow: none;
     background-color: transparent;
@@ -740,7 +745,7 @@ a.btn-inverse {
       font-weight: 600;
       margin: 0;
       color: white; }
-    .flexWrap .cardTitle .pull-right {
+    .flexWrap .cardTitle .pull-right:not(.btn-sm, .btn) {
       line-height: 4rem; }
     .flexWrap .cardTitle a.btn-secondary {
       background-color: white;

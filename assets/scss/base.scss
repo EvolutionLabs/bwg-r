@@ -67,6 +67,9 @@ body {
     }
   }
 }
+.btn-sm {
+  line-height: 2.4rem;
+}
 
 .dropdown-toggle.btn-secondary {
   padding-right: 30px;
@@ -182,6 +185,8 @@ a.btn-inverse {
   }
   &.btn-sm {
     font-size: 14px;
+    line-height: 2rem;
+    padding: .8rem;
   }
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
   &.btn-clear {
@@ -644,7 +649,7 @@ a.btn-inverse {
       margin: 0;
       color: white;
     }
-    .pull-right {
+    .pull-right:not(.btn-sm, .btn) {
       line-height: 4rem;
     }
     a.btn-secondary {
