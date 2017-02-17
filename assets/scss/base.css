@@ -835,6 +835,8 @@ a.btn-inverse {
     padding: 18px 4px; }
   .flex-table tr {
     background-color: white; }
+    .flex-table tr.in-cart {
+      background-color: #cfd; }
     .flex-table tr.clear td, .flex-table tr.hiddenRow td {
       min-height: initial; }
     .flex-table tr td {
@@ -876,6 +878,8 @@ a.btn-inverse {
           transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .flex-table tr[aria-expanded=true] {
       background-color: #eee; }
+      .flex-table tr[aria-expanded=true].in-cart {
+        background-color: #bec; }
       .flex-table tr[aria-expanded=true], .flex-table tr[aria-expanded=true] + .hiddenRow {
         box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
       .flex-table tr[aria-expanded=true] td.hide-x > * {

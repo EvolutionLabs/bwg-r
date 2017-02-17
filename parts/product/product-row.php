@@ -1,8 +1,9 @@
 <?php
 $isCart = $template == 'cart';
+$inCart = rand(0,4);
 global $product;
 ?>
-	<tr data-toggle="collapse" data-target="#tr-<?= $table->id.'-'.$product['id']; ?>" class="accordion-toggle" aria-expanded="false">
+	<tr data-toggle="collapse" data-target="#tr-<?= $table->id.'-'.$product['id']; ?>" class="accordion-toggle<?= $inCart >= 3 ? ' in-cart':'';?>" aria-expanded="false">
 		<?php
 		foreach ( $product as $k => $v ) {
 			if ( in_array( $k, [ 'id', 'Price', 'Details' ] ) ) {
