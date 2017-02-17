@@ -1932,6 +1932,9 @@ dl, .dl-horizontal {
     padding: 0;
     top: calc(100% - 11px);
   }
+  .col-sm-9 .filtersList {
+    border-right: 1px solid white;
+  }
   .filtersList {
     display: flex;
     flex-wrap: wrap;
