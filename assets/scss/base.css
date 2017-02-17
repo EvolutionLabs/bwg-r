@@ -351,6 +351,10 @@ a.btn-inverse {
     border-color: #111111;
     color: white; }
 
+.navbar-brand > img {
+  margin: 0 -2rem;
+  max-width: calc(100% + 4rem); }
+
 .btn {
   border: none;
   height: 50px;
