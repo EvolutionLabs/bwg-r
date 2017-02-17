@@ -1273,6 +1273,24 @@ td > .favMenu .dropdown-menu {
     #addNewFavlist .input-group input {
       font-size: 14px; }
 
+.table.products .pusher .bootstrap-select {
+  width: auto; }
+  .table.products .pusher .bootstrap-select button {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee; }
+  .table.products .pusher .bootstrap-select .dropdown-menu {
+    background-color: #3d3d3d;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    .table.products .pusher .bootstrap-select .dropdown-menu a {
+      padding: 10px 15px;
+      margin: 0; }
+      .table.products .pusher .bootstrap-select .dropdown-menu a[aria-selected="true"], .table.products .pusher .bootstrap-select .dropdown-menu a:hover, .table.products .pusher .bootstrap-select .dropdown-menu a:active {
+        background-color: #484848;
+        outline: none; }
+      .table.products .pusher .bootstrap-select .dropdown-menu a[aria-selected="true"] {
+        color: #69dd9b; }
+
 [data-page="landing"] .shop-links {
   position: relative;
   display: flex;

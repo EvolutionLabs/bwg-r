@@ -1332,6 +1332,29 @@ td>.favMenu .dropdown-menu {
     }
   }
 }
+.table.products .pusher .bootstrap-select {
+  width: auto;
+  button {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+  }
+  .dropdown-menu {
+    background-color: #3d3d3d;
+    border-top: 1px solid rgba(255,255,255,.2);
+    a {
+      padding: 10px 15px;
+      margin: 0;
+      &[aria-selected="true"],&:hover,&:active {
+        background-color: #484848;
+        outline: none;
+      }
+      &[aria-selected="true"] {
+        color: lighten(map_get($colors, 'green'), 20);
+      }
+    }
+  }
+}
 [data-page="landing"] {
   .shop-links {
     position: relative;

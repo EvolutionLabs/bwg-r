@@ -75,8 +75,16 @@
 					<?php
 					foreach ( $table->cols as $col ) {
 						echo '<th>' . $col . '<a href="#"><i class="fa fa-sort"></i></a></th>';
-					}
-					echo '<th colspan="3" class="pusher"></th>'
+					} ?>
+					<th colspan="3" class="pusher">
+						<select class="pull-right selectpicker">
+							<option value="10">10</option>
+							<option value="25">25</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+					</th>
+					<?php
 					?>
 				</tr>
 				</thead>
