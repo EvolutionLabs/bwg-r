@@ -274,40 +274,27 @@ $(window).on('load', function(){
         loader.velocity({
            width:'100%'
         }, 360, function(){
-           loader.css({'background-color':'transparent'});
-           loader.find('div').each(function(i){
-                if ($(window).width() > 820) {
+            loader.css({'background-color':'transparent'});
+
+            loader.velocity({
+                padding: '10px'
+            }, 120, function(){
+                loader.find('div').each(function(i){
                     $(this).velocity({
-                        'margin-left':(i % 2 == 0 ? '0': '10px'),
-                        'margin-right':(i % 2 == 0 ? '10px': '0')
-                    }, 120).velocity({
-                        'margin-top':(i < 2 ?'0':'10px'),
-                        'margin-bottom':(i < 2 ?'10px':'0')
-                    }, 120, function(){
-                        $('.shop-links>div:last-child>span').each(
-                            function(){
-                                $(this).velocity({opacity: 1},500, function(){
-                                    loader.remove();
-                                    $('#hhtErrorsModal').modal('show');
-                                })
-                            }
-                        )
-                    });
-                } else {
-                    $(this).velocity({
-                        'margin-top':'10px'
+                        margin:'10px'
                     },120, function(){
                         $('.shop-links>div:last-child>span').each(
                             function(){
                                 $(this).velocity({opacity: 1},500, function(){
-                                    loader.remove();
-                                    $('#hhtErrorsModal').modal('show');
+
+                                    // loader.remove();
+                                    // $('#hhtErrorsModal').modal('show');
                                 })
                             }
                         );
                     });
-                }
-            })
+                })
+            });
         });
     }
     $(document)
