@@ -17,6 +17,8 @@
 	<link href="../assets/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bar-rating/fontawesome-stars-o.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+	<link href="../assets/vendor/slick/slick.css" rel="stylesheet">
+	<link href="../assets/vendor/slick/slick-theme.css" rel="stylesheet">
 	<link href="../assets/vendor/toastr/toastr.min.css" rel="stylesheet">
 	<link href="../assets/vendor/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 

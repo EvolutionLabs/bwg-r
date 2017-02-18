@@ -169,38 +169,50 @@ $(window).on('load', function(){
     }).on('click', 'form', function(e){
         e.stopPropagation();
     });
-    var e = $('.parallax-scroller')[0];
-    if (e) {
-        var PS = {
-            e: e,
-            height: e.getBoundingClientRect().height,
-            get top() {
-                return $(window).scrollTop()
-            },
-            get active () {
-                return this.height - (this.top + 95 ) > 0;
-            },
-            get update () {
-                if (this.active) {
-                    $(this.e).velocity({
-                        translateY: (this.top / 2) + 'px'
-                    },0)
-                }
-            },
-            init:function(){
-                var top = Math.min(e.getBoundingClientRect().top, $(window).height()) / 2;
-                $(this.e).velocity({
-                    marginTop : '-'+top+'px',
-                    paddingTop : top+'px'
-                    }
-                );
-                delete this.init;
-                return this;
-            }
-        }.init();
-        $(document).on('scroll', function () {
-            PS.update;
+    var e = $('.parallax-container');
+    if (e[0]) {
+        e.slick({
+            autoplay: true,
+            autoplaySpeed: 2345,
+            pauseOnFocus:false
         });
+        setTimeout(function(){
+            var PS = {
+                parent:e[0],
+                get scroller() {
+                    return e.find('.parallax-scroller')
+                },
+                get height() {
+                    return this.parent.getBoundingClientRect().height
+                },
+                get top() {
+                    return $(window).scrollTop()
+                },
+                get active () {
+                    return this.height - (this.top + 95 ) > 0;
+                },
+                get update () {
+                    if (this.active) {
+                        this.scroller.velocity({
+                            translateY: (this.top / 2) + 'px'
+                        },0)
+                    }
+                },
+                init:function(){
+                    var top = Math.min(this.scroller.eq(0)[0].getBoundingClientRect().top, $(window).height()) / 2;
+                    $(this.current).velocity({
+                            marginTop : '-'+top+'px',
+                            paddingTop : top+'px'
+                        }
+                    );
+                    delete this.init;
+                    return this;
+                }
+            }.init();
+            $(document).on('scroll', function () {
+                PS.update;
+            });
+        }, 300);
     }
     $('.submenu .navbar-nav, .cardTitle').on('click', '.btn', function () {
         $(this).parent().parent().parent().find('.btn').removeClass('active');
