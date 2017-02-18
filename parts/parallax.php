@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: tao
- * Date: 1/23/2017
- * Time: 7:13 PM
- */
+* Created by PhpStorm.
+* User: tao
+* Date: 1/23/2017
+* Time: 7:13 PM
+*/
 ?>
 <div class="parallax-container">
 	<div style="background: #eee url('../../assets/image/banner.jpg') no-repeat 50% 50% /cover;" class="parallax-scroller">
@@ -29,4 +29,3 @@
 		</div>
 	</div>
 </div>
-

@@ -2,6 +2,9 @@
 
 body {
   padding-top: 95px;
+  @media(max-width: 767px) {
+    padding-top: 50px;
+  }
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   display: flex;
@@ -452,7 +455,9 @@ a.btn-inverse {
     margin-right: 30px;
     padding: 0;
   }
-  height: 95px;
+  @media(min-width: 768px) {
+    height: 95px;
+  }
   background-color: map_get($colors, 'green');
   display: flex;
   justify-content: space-between;
@@ -582,6 +587,9 @@ a.btn-inverse {
     flex-grow: 1;
 
     min-height: calc(100vh - 95px);
+    @media(max-width: 767px) {
+      min-height: calc(100vh - 50px);
+    }
     background: url('../image/retail.jpg') no-repeat 50% 50% /cover;
     position: relative;
     &.v-center {
@@ -655,16 +663,19 @@ a.btn-inverse {
     a.btn-secondary {
       background-color: white;
       color: black;
-
     }
   }
-  > .parallax-container {
+  .parallax-container {
     overflow: hidden;
+    width: 100vw;
     + .submenu {
       box-shadow: 0 -3px 5px -1px rgba(0,0,0,.2), 0 -6px 10px 0 rgba(0,0,0,.14), 0 -1px 18px 0 rgba(0,0,0,.12);
     }
     .parallax-scroller {
       height: 500px;
+      @media(max-width: 991px) {
+        height: 33.3333vw;
+      }
       position: relative;
       box-sizing: content-box;
       .scene {
@@ -683,6 +694,15 @@ a.btn-inverse {
         }
         div {font-size: 3.5rem; font-weight: 200;}
         .btn {margin-top: 6rem; padding: 6px 6rem;}
+        @media(max-width: 991px) {
+          h3 {
+            font-size: 4.5vw;
+          }
+          div {font-size: 2.4rem;
+            width: 50vw;
+            line-height: 3.5vw;}
+          .btn {margin-top: 4vw; padding: 6px 4vw;}
+        }
       }
     }
   }

@@ -4,6 +4,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 767px) {
+    body {
+      padding-top: 50px; } }
 
 .input-group .form-control {
   border-radius: 0; }
@@ -600,7 +603,6 @@ a.btn-inverse {
   .container {
     width: 100%; } }
 .navbar-default {
-  height: 95px;
   background-color: #29b766;
   display: flex;
   justify-content: space-between;
@@ -612,6 +614,9 @@ a.btn-inverse {
     flex: 1 0 180px;
     margin-right: 30px;
     padding: 0; }
+  @media (min-width: 768px) {
+    .navbar-default {
+      height: 95px; } }
   @media (max-width: 991px) {
     .navbar-default > .container {
       width: 100%; } }
@@ -697,6 +702,9 @@ a.btn-inverse {
     min-height: calc(100vh - 95px);
     background: url("../image/retail.jpg") no-repeat 50% 50%/cover;
     position: relative; }
+    @media (max-width: 767px) {
+      body > .flexWrap {
+        min-height: calc(100vh - 50px); } }
     body > .flexWrap.v-center {
       justify-content: center;
       align-items: center; }
@@ -750,32 +758,46 @@ a.btn-inverse {
     .flexWrap .cardTitle a.btn-secondary {
       background-color: white;
       color: black; }
-  .flexWrap > .parallax-container {
-    overflow: hidden; }
-    .flexWrap > .parallax-container + .submenu {
+  .flexWrap .parallax-container {
+    overflow: hidden;
+    width: 100vw; }
+    .flexWrap .parallax-container + .submenu {
       box-shadow: 0 -3px 5px -1px rgba(0, 0, 0, 0.2), 0 -6px 10px 0 rgba(0, 0, 0, 0.14), 0 -1px 18px 0 rgba(0, 0, 0, 0.12); }
-    .flexWrap > .parallax-container .parallax-scroller {
+    .flexWrap .parallax-container .parallax-scroller {
       height: 500px;
       position: relative;
       box-sizing: content-box; }
-      .flexWrap > .parallax-container .parallax-scroller .scene {
+      @media (max-width: 991px) {
+        .flexWrap .parallax-container .parallax-scroller {
+          height: 33.3333vw; } }
+      .flexWrap .parallax-container .parallax-scroller .scene {
         color: white;
         min-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start; }
-        .flexWrap > .parallax-container .parallax-scroller .scene h3, .flexWrap > .parallax-container .parallax-scroller .scene div {
+        .flexWrap .parallax-container .parallax-scroller .scene h3, .flexWrap .parallax-container .parallax-scroller .scene div {
           text-transform: uppercase; }
-        .flexWrap > .parallax-container .parallax-scroller .scene h3 {
+        .flexWrap .parallax-container .parallax-scroller .scene h3 {
           font-size: 4.5rem;
           font-weight: 900; }
-        .flexWrap > .parallax-container .parallax-scroller .scene div {
+        .flexWrap .parallax-container .parallax-scroller .scene div {
           font-size: 3.5rem;
           font-weight: 200; }
-        .flexWrap > .parallax-container .parallax-scroller .scene .btn {
+        .flexWrap .parallax-container .parallax-scroller .scene .btn {
           margin-top: 6rem;
           padding: 6px 6rem; }
+        @media (max-width: 991px) {
+          .flexWrap .parallax-container .parallax-scroller .scene h3 {
+            font-size: 4.5vw; }
+          .flexWrap .parallax-container .parallax-scroller .scene div {
+            font-size: 2.4rem;
+            width: 50vw;
+            line-height: 3.5vw; }
+          .flexWrap .parallax-container .parallax-scroller .scene .btn {
+            margin-top: 4vw;
+            padding: 6px 4vw; } }
 
 .flex-table.saved-searches tr > td {
   border-top: 1px solid #ddd; }

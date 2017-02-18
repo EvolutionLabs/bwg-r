@@ -24,12 +24,12 @@
 				<a href="/search" class="btn btn-search">Custom search</a>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" title="Layout"><i class="fa fa-2x fa-th-large"></i><span class="sr-only">Layout</span></a></li>
-				<li><a href="#" title="Favorites"><i class="fa fa-2x fa-heart"></i><span class="sr-only">Favorites</span></a></li>
+				<li><a href="#" title="Layout"><i class="fa fa-2x fa-th-large"></i><span class="visible-xs-inline-block">Layout</span></a></li>
+				<li><a href="#" title="Favorites"><i class="fa fa-2x fa-heart"></i><span class="visible-xs-inline-block">Favorites</span></a></li>
 				<li><a href="#" title="Settings"
 				       class="dropdown-toggle" id="dropdownSettings"
 				       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-					><i class="fa fa-2x fa-cog"></i><span class="sr-only">Settings</span></a>
+					><i class="fa fa-2x fa-cog"></i><span class="visible-xs-inline-block">Settings</span></a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownSettings">
 						<li><a href="/cart">Current Order</a></li>
 						<li><a href="/past-orders">Past Orders</a></li>
@@ -43,7 +43,7 @@
 						<li><div class="info"><?= $_SESSION['username'];?> 1234</div></li>
 					</ul>
 				</li>
-				<li><a href="/cart" title="Cart"><i class="fa fa-2x bwg-i-cart"></i><span class="sr-only">Cart</span></a></li>
+				<li><a href="/cart" title="Cart"><i class="fa fa-2x bwg-i-cart"></i><span class="visible-xs-inline-block">Cart</span></a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 		<?php } ?>

@@ -316,6 +316,7 @@ $(window).on('load', function(){
             })
         })
         .on('show.bs.dropdown', '.shop-links .dropdown', function(e){
+            console.log(e);
             var children = $(e.target).find('.dropdown-menu li').length;
             $('.flexWrap').velocity({paddingBottom: (children * 50)+'px'});
         })
