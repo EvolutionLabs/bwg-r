@@ -1397,7 +1397,7 @@ td>.favMenu .dropdown-menu {
     position: relative;
     .loader {
       width: 0;
-      height: 100%;
+      height: 246px;
       position: absolute;
       top: 0; bottom: 0;
       left: 0; right: 0;
@@ -1406,7 +1406,7 @@ td>.favMenu .dropdown-menu {
       background-color: white;
       justify-content: space-between;
       > div {
-        flex: 1 1 calc(50% - 20px);
+        flex: 1 1 50%;
         max-width: calc(50% - 20px);
         @media (max-width: 820px) {
           flex: 1 1 100%;

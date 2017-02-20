@@ -298,9 +298,8 @@ $(window).on('load', function(){
                         $('.shop-links>div:last-child>span').each(
                             function(){
                                 $(this).velocity({opacity: 1},500, function(){
-
-                                    // loader.remove();
-                                    // $('#hhtErrorsModal').modal('show');
+                                    loader.remove();
+                                    $('#hhtErrorsModal').modal('show');
                                 })
                             }
                         );
