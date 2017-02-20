@@ -766,7 +766,8 @@ a.btn-inverse {
     .flexWrap .parallax-container .parallax-scroller {
       height: 500px;
       position: relative;
-      box-sizing: content-box; }
+      box-sizing: content-box;
+      outline: none; }
       @media (max-width: 991px) {
         .flexWrap .parallax-container .parallax-scroller {
           height: 33.3333vw; } }
