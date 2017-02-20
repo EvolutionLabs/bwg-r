@@ -147,7 +147,7 @@ $filters = isset($filters) ? [
                                                            name="filters[<?= $slug; ?>]"
                                                     /><span class="fake"></span
                                                         ><label for="filters[<?= $slug; ?>]"
-                                                            ><i class="<?= $f['icon']; ?>"></i><?= $f['name']. ' | '.$i; ?>
+                                                            ><i class="<?= $f['icon']; ?>"></i><?= $f['name']; ?>
                                                             </label></span><?php } ?>
                                                     </div>
                                                 </div>
@@ -168,7 +168,7 @@ $filters = isset($filters) ? [
                                                                     name="filters[<?= $slug; ?>]"
                                                             /><span class="fake"></span
                                                             ><label for="filters[<?= $slug; ?>]"
-                                                            ><i class="<?= $f['icon']; ?>"></i><?= $f['name']. ' | '.$i; ?>
+                                                            ><i class="<?= $f['icon']; ?>"></i><?= $f['name']; ?>
                                                             </label></span><?php } ?>
                                                     </div>
                                                 </div>

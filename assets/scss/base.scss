@@ -1355,10 +1355,26 @@ td>.favMenu .dropdown-menu {
 }
 .table.products .pusher .bootstrap-select {
   width: auto;
+  height: 36px;
+  margin-left: 90px;
+  &::before {
+    content: "Items per page: ";
+    text-transform: uppercase;
+    padding-right: 8px;
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    white-space:initial;
+  }
   button {
     background-color: transparent;
     border: 1px solid #eee;
     color: #eee;
+    line-height: 2rem;
+    font-size: 14px;
+    height: 36px;
   }
   .dropdown-menu {
     background-color: #3d3d3d;

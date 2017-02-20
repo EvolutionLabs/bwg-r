@@ -1297,11 +1297,26 @@ td > .favMenu .dropdown-menu {
       font-size: 14px; }
 
 .table.products .pusher .bootstrap-select {
-  width: auto; }
+  width: auto;
+  height: 36px;
+  margin-left: 90px; }
+  .table.products .pusher .bootstrap-select::before {
+    content: "Items per page: ";
+    text-transform: uppercase;
+    padding-right: 8px;
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    white-space: initial; }
   .table.products .pusher .bootstrap-select button {
     background-color: transparent;
     border: 1px solid #eee;
-    color: #eee; }
+    color: #eee;
+    line-height: 2rem;
+    font-size: 14px;
+    height: 36px; }
   .table.products .pusher .bootstrap-select .dropdown-menu {
     background-color: #3d3d3d;
     border-top: 1px solid rgba(255, 255, 255, 0.2); }
