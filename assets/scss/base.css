@@ -1032,7 +1032,26 @@ input::-webkit-input-placeholder, button {
 
 .navbar-brand > img {
   left: 15px;
-  position: relative; }
+  position: relative;
+  display: block;
+  width: 100%; }
+
+.slick-arrow {
+  z-index: 1;
+  opacity: .35;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .slick-arrow:hover {
+    opacity: .65; }
+  .slick-arrow:before {
+    font-size: 60px;
+    position: absolute;
+    transform: translate(-50%, -50%); }
+
+.slick-prev {
+  left: 40px; }
+
+.slick-next {
+  right: 40px; }
 
 .card.transparent {
   box-shadow: none;

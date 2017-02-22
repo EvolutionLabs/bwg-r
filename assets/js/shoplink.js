@@ -174,7 +174,10 @@ $(window).on('load', function(){
         e.slick({
             autoplay: true,
             autoplaySpeed: 2345,
-            pauseOnFocus:false
+            pauseOnFocus:false,
+            arrows:true,
+            prevArrow:'<button type="button" class="slick-prev">Previous</button>',
+            nextArrow:'<button type="button" class="slick-next">Next</button>',
         });
         setTimeout(function(){
             var PS = {
