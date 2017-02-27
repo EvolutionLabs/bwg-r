@@ -1851,6 +1851,11 @@ dl, .dl-horizontal {
       top: calc(100% - 11px); } }
   .megaMenu .col-sm-9 .filtersList {
     border-right: 1px solid white; }
+    .megaMenu .col-sm-9 .filtersList > * {
+      max-width: 33.33%; }
+      @media (max-width: 992px) {
+        .megaMenu .col-sm-9 .filtersList > * {
+          max-width: 50%; } }
   .megaMenu .filtersList {
     display: flex;
     flex-wrap: wrap;
