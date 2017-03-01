@@ -2183,7 +2183,7 @@ dl, .dl-horizontal {
 .stockcard {
   background: white;
   width: 100%;
-  tr[class^="sales_info"] td:not(:first-child) {
+  tr[class^="sales_info"] td:not(:first-child) div {
     font-size: 1.4rem;
     line-height: 2rem;
   }
