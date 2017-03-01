@@ -147,78 +147,134 @@ global $product;
 						<table cellspacing="1" class="table">
 							<tr class="sales_info_title_Chill">
 								<th class="sales_info_detail" style="width: 61px;"><strong>Sales</strong></th>
-								<th class="sales_info_detail" colspan="2">Sun</th>
-								<th class="sales_info_detail" colspan="2">Mon</th>
-								<th class="sales_info_detail" colspan="2">Tues</th>
-								<th class="sales_info_detail" colspan="2">Wed</th>
-								<th class="sales_info_detail" colspan="2">Thur</th>
-								<th class="sales_info_detail" colspan="2">Fri</th>
-								<th class="sales_info_detail" colspan="2">Sat</th>
+								<th class="sales_info_detail">Sun</th>
+								<th class="sales_info_detail">Mon</th>
+								<th class="sales_info_detail">Tues</th>
+								<th class="sales_info_detail">Wed</th>
+								<th class="sales_info_detail">Thur</th>
+								<th class="sales_info_detail">Fri</th>
+								<th class="sales_info_detail">Sat</th>
 							</tr>
 							<tr class="sales_info_row_Chill">
 								<td>last week</td>
-								<td id="s_lw_qty_0_88216"></td>
-								<td id="s_lw_val_0_88216"></td>
-								<td id="s_lw_qty_1_88216"></td>
-								<td id="s_lw_val_1_88216"></td>
-								<td id="s_lw_qty_2_88216"></td>
-								<td id="s_lw_val_2_88216"></td>
-								<td id="s_lw_qty_3_88216"></td>
-								<td id="s_lw_val_3_88216"></td>
-								<td id="s_lw_qty_4_88216"></td>
-								<td id="s_lw_val_4_88216"></td>
-								<td id="s_lw_qty_5_88216"></td>
-								<td id="s_lw_val_5_88216"></td>
-								<td id="s_lw_qty_6_88216"></td>
-								<td id="s_lw_val_6_88216"></td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_0_88216"></span>
+                                        <span id="s_lw_qty_0_88216"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_1_88216"></span>
+                                        <span id="s_lw_qty_1_88216"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_2_88216"></span>
+                                        <span id="s_lw_qty_2_88216"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_3_88216"></span>
+                                        <span id="s_lw_qty_3_88216"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_4_88216"></span>
+                                        <span id="s_lw_qty_4_88216"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_5_88216"></span>
+                                        <span id="s_lw_qty_5_88216"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_lw_val_6_88216"></span>
+                                        <span id="s_lw_qty_6_88216"></span>
+                                    </div>
+                                </td>
 							</tr>
 							<tr class="sales_info_row_Chill">
 								<td>4 wk avg</td>
-								<td id="s_4w_qty_0_88216"></td>
-								<td id="s_4w_val_0_88216"></td>
-								<td id="s_4w_qty_1_88216"></td>
-								<td id="s_4w_val_1_88216"></td>
-								<td id="s_4w_qty_2_88216"></td>
-								<td id="s_4w_val_2_88216"></td>
-								<td id="s_4w_qty_3_88216"></td>
-								<td id="s_4w_val_3_88216"></td>
-								<td id="s_4w_qty_4_88216"></td>
-								<td id="s_4w_val_4_88216"></td>
-								<td id="s_4w_qty_5_88216"></td>
-								<td id="s_4w_val_5_88216"></td>
-								<td id="s_4w_qty_6_88216"></td>
-								<td id="s_4w_val_6_88216"></td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_0_88216">111.25*</span>
+                                        <span id="s_4w_val_0_88216">€142.34*</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_1_88216">118.5*</span>
+                                        <span id="s_4w_val_1_88216">€149.82*</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_2_88216">96.5*</span>
+                                        <span id="s_4w_val_2_88216">€122.16*</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_3_88216">97.75*</span>
+                                        <span id="s_4w_val_3_88216">€124.24*</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_4_88216">124*</span>
+                                        <span id="s_4w_val_4_88216">€159.50*</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_5_88216">146.5*</span>
+                                        <span id="s_4w_val_5_88216">€187.01*</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span id="s_4w_qty_6_88216">150.5*</span>
+                                        <span id="s_4w_val_6_88216">€188.96*</span>
+                                    </div>
+                                </td>
 							</tr>
 							<tr class="sales_info_row_Chill">
 								<td>daily rank</td>
-								<td colspan="2" id="s_dr_rank_0_88216"></td>
-								<td colspan="2" id="s_dr_rank_1_88216"></td>
-								<td colspan="2" id="s_dr_rank_2_88216"></td>
-								<td colspan="2" id="s_dr_rank_3_88216"></td>
-								<td colspan="2" id="s_dr_rank_4_88216"></td>
-								<td colspan="2" id="s_dr_rank_5_88216"></td>
-								<td colspan="2" id="s_dr_rank_6_88216"></td>
+								<td id="s_dr_rank_0_88216">2</td>
+								<td id="s_dr_rank_1_88216">1</td>
+								<td id="s_dr_rank_2_88216">1</td>
+								<td id="s_dr_rank_3_88216">1</td>
+								<td id="s_dr_rank_4_88216">1</td>
+								<td id="s_dr_rank_5_88216">1</td>
+								<td id="s_dr_rank_6_88216">1</td>
 							</tr>
 							<tr class="sales_info_title_Chill">
-								<td colspan="15" class="td-left"><strong>Purchases</strong></td>
+								<td colspan="8" class="td-left"><strong>Purchases</strong></td>
 							</tr>
 							<tr class="sales_info_row_Chill">
 								<td>last week</td>
-								<td colspan="14" id="p_lw_0_88216"></td>
+								<td colspan="7" id="p_lw_0_88216"></td>
 							</tr>
 							<tr class="sales_info_row_Chill">
 								<td>4 week avg</td>
-								<td colspan="14" id="p_4w_0_88216"></td>
+								<td colspan="7" id="p_4w_0_88216"></td>
 							</tr>
 							<tr class="sales_info_row_Chill">
-								<td colspan="15" id="graph_header_store_88216">
+								<td colspan="8" id="graph_header_store_88216">
 									<a class="stockcardlink accordion-toggle collapsed"
 									   data-toggle="collapse" data-target="#sG-<?= $table->id.'-'.$product['id']; ?>"
 									   href="#">Display Sales Trend My Store <span class="toggLer"><i
 												class="fa fa-2x fa-chevron-down"></i></span></a></td>
 							</tr>
 							<tr class="hiddenRow">
-								<td colspan="15">
+								<td colspan="8">
 									<div id="sG-<?= $table->id.'-'.$product['id']; ?>" aria-expanded="false" class="collapse">
 										<div class="tdWrapper">
 											<img class="img-responsive" src="/assets/image/example_graph.jpg">

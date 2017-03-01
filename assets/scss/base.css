@@ -1970,6 +1970,9 @@ dl, .dl-horizontal {
 .stockcard {
   background: white;
   width: 100%; }
+  .stockcard tr[class^="sales_info"] td:not(:first-child) {
+    font-size: 1.4rem;
+    line-height: 2rem; }
   .stockcard .stockCardLink {
     display: inline-block;
     position: relative;
