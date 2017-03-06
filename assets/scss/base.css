@@ -751,6 +751,14 @@ a.btn-inverse {
   .flexWrap .cardTitle {
     background-color: #303030;
     padding: 1.5rem; }
+    .flexWrap .cardTitle .btn-white.btn-outline {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      margin-right: 1rem; }
+    .flexWrap .cardTitle .btn-sm.btn-outline {
+      max-height: 36px;
+      line-height: 1.8rem; }
     .flexWrap .cardTitle h1, .flexWrap .cardTitle .filters, .flexWrap .cardTitle .layoutSwitch {
       text-transform: uppercase;
       font-size: 1.8rem;

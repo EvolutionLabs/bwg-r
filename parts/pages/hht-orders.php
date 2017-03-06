@@ -89,7 +89,10 @@ $dd = [
 		<div class="col-md-9 col-sm-12 col-main">
 			<div class="card transparent">
 				<div class="cardTitle">
-					<span class="pull-right"><a href="#" class="btn btn-default btn-sm">Return to products</a></span>
+					<span class="pull-right">
+						<a href="#" class="hhtErrToggle btn btn-white btn-sm btn-outline">Check HHT Orders</a>
+						<a href="#" class="btn btn-default btn-sm">Return to products</a>
+					</span>
 					<h1>HHT Orders</h1>
 				</div>
 				<div class="simpleList clear" id="hhtList">

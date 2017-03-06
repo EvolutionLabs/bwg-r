@@ -652,6 +652,16 @@ a.btn-inverse {
   .cardTitle {
     background-color: #303030;
     padding: 1.5rem;
+    .btn-white.btn-outline{
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      margin-right: 1rem;
+    }
+    .btn-sm.btn-outline {
+      max-height: 36px;
+      line-height: 1.8rem;
+    }
     h1, .filters, .layoutSwitch {
       text-transform: uppercase;
       font-size: 1.8rem;
