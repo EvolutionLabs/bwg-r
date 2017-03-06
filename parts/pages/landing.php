@@ -99,7 +99,7 @@
 
 <?php
 	echo '<a href="#" class="hhtErrToggle btn btn-white btn-outline"
-data-toggle="modal" data-target="#hhtErrorsModal">HHT Orders</a>';
+data-toggle="modal" data-target="#hhtErrorsModal">Check HHT Orders</a>';
 
 
 } else { ?>

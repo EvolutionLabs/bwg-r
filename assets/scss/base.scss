@@ -9,6 +9,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .input-group {
@@ -591,6 +592,8 @@ a.btn-inverse {
       min-height: calc(100vh - 50px);
     }
     background: url('../image/retail.jpg') no-repeat 50% 50% /cover;
+    .foodservice & {background-image: url('../image/food-service.jpg')}
+    .wholesale & {background-image: url('../image/wholesale.jpg')}
     position: relative;
     &.v-center {
       justify-content: center;
@@ -671,6 +674,7 @@ a.btn-inverse {
     + .submenu {
       box-shadow: 0 -3px 5px -1px rgba(0,0,0,.2), 0 -6px 10px 0 rgba(0,0,0,.14), 0 -1px 18px 0 rgba(0,0,0,.12);
     }
+    max-height: 500px;
     .parallax-scroller {
       height: 500px;
       @media(max-width: 991px) {
@@ -1741,6 +1745,7 @@ dl, .dl-horizontal {
     margin-left: 20px;
     @media(min-width: 1200px) {
       min-width: 285px;
+      flex: 0 1 285px;
     }
 
     .rltv {
@@ -1755,7 +1760,7 @@ dl, .dl-horizontal {
       }
     }
     >* {
-      flex: 1 1 177px;
+      flex: 1 1 200px;
       @media(max-width: 119px) {
         flex-basis: 175px;
       }
@@ -1790,7 +1795,7 @@ dl, .dl-horizontal {
     }
   }
   .iconBar {
-    flex: 1 1 111px;
+    flex: 0 1 111px;
     @media(max-width: 1199px) {
       flex-basis: 100%;
     }
@@ -1934,10 +1939,10 @@ dl, .dl-horizontal {
       align-items: center;
       justify-content: flex-start;
       transition: all .3s cubic-bezier(.4,0,.2,1);
-      &:hover {
+      /*&:hover {
         background-color: #303030;
         color: white;
-      }
+      }*/
       i {
         margin: 12px 8px;
 

@@ -337,6 +337,7 @@ $(window).on('load', function(){
                 $(target + ' .hiddenRow>td>.collapse[id^="tr-"]').collapse('show');
             }
         });
+    $('a[href="#view-boxes"]').trigger('click');
 });
 
 function toggleSwitch(e) {

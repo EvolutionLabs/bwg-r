@@ -131,8 +131,8 @@ class TableView {
 	 * I don't think you'll need them in production.
 	 */
 
-	public $minProds = 9;
-	public $maxProds = 12;
+	public $minProds = 50;
+	public $maxProds = 50;
 	public $dProduct = [
 		'id' => '5027952011316',
 		'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
