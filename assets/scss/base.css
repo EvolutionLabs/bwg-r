@@ -1552,12 +1552,13 @@ td > .favMenu .dropdown-menu {
   position: relative;
   display: flex; }
   .tdWrapper .imageWrap {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: block;
     flex: 0 0 170px; }
     .tdWrapper .imageWrap img {
       object-fit: contain;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
       /*min-width: 120px;*/ }
   .tdWrapper .main-col {
     flex: 1 1 auto;

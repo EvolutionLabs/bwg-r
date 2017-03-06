@@ -1660,12 +1660,13 @@ td>.favMenu .dropdown-menu {
   position: relative;
   display: flex;
   .imageWrap {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: block;
     flex: 0 0 170px;
     img {
       object-fit: contain;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
       /*min-width: 120px;*/
     }
   }
