@@ -584,6 +584,8 @@ a.btn-inverse {
   flex-direction: column;
   flex-wrap: wrap;
   padding-bottom: 20px;
+  .foodservice & {background-image: url('../image/food-service.jpg')}
+  .wholesale & {background-image: url('../image/wholesale.jpg')}
   body > & {
     flex-grow: 1;
 
@@ -592,8 +594,6 @@ a.btn-inverse {
       min-height: calc(100vh - 50px);
     }
     background: url('../image/retail.jpg') no-repeat 50% 50% /cover;
-    .foodservice & {background-image: url('../image/food-service.jpg')}
-    .wholesale & {background-image: url('../image/wholesale.jpg')}
     position: relative;
     &.v-center {
       justify-content: center;

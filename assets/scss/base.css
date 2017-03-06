@@ -698,6 +698,10 @@ a.btn-inverse {
   flex-direction: column;
   flex-wrap: wrap;
   padding-bottom: 20px; }
+  .foodservice .flexWrap {
+    background-image: url("../image/food-service.jpg"); }
+  .wholesale .flexWrap {
+    background-image: url("../image/wholesale.jpg"); }
   body > .flexWrap {
     flex-grow: 1;
     min-height: calc(100vh - 95px);
@@ -706,10 +710,6 @@ a.btn-inverse {
     @media (max-width: 767px) {
       body > .flexWrap {
         min-height: calc(100vh - 50px); } }
-    .foodservice body > .flexWrap {
-      background-image: url("../image/food-service.jpg"); }
-    .wholesale body > .flexWrap {
-      background-image: url("../image/wholesale.jpg"); }
     body > .flexWrap.v-center {
       justify-content: center;
       align-items: center; }
