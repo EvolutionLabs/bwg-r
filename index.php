@@ -1,12 +1,11 @@
 <?php
 
-define( 'BWG_ROOT', '/' );
-
-$path = substr( $_SERVER["REQUEST_URI"], strlen( BWG_ROOT ) );
+define( 'BWG_ROOT', 'http://' .$_SERVER['HTTP_HOST']);
+$path = $_SERVER["REQUEST_URI"];
 
 include_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . "parts/init.php";
 
-$template = strlen( $path ) < 1 ? 'landing' : ( strpos( $path, '?' ) > - 1 ? substr( $path, 0, strpos( $path, '?' ) ) : $path );
+$template = strlen( $path ) < 2 ? 'landing' : ( strpos( $path, '?' ) > - 1 ? substr( $path, 0, strpos( $path, '?' ) ) : $path );
 
 $template = $loggedIn ? $template : 'landing';
 

@@ -13,27 +13,27 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900&amp;subset=latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../assets/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet">
-	<link href="../assets/vendor/bar-rating/fontawesome-stars-o.css" rel="stylesheet">
-	<link href="../assets/vendor/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
-	<link href="../assets/vendor/slick/slick.css" rel="stylesheet">
-	<link href="../assets/vendor/slick/slick-theme.css" rel="stylesheet">
-	<link href="../assets/vendor/toastr/toastr.min.css" rel="stylesheet">
-	<link href="../assets/vendor/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT;?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/bar-rating/fontawesome-stars-o.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/slick/slick.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/slick/slick-theme.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/toastr/toastr.min.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/vendor/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="../assets/css/base.css" rel="stylesheet">
+	<link href="<?=BWG_ROOT; ?>/assets/css/base.css" rel="stylesheet">
 
 	<?php
 	foreach ( $css as $c ) { ?>
-		<link href="../assets/<?= $c; ?>" rel="stylesheet"/>
+		<link href="<?=BWG_ROOT; ?>/assets/<?= $c; ?>" rel="stylesheet"/>
 	<?php } ?>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
-	<script src="../assets/vendor/bootstrap/js/html5shiv.min.js"></script>
-	<script src="../assets/vendor/bootstrap/js/respond.min.js"></script>
+	<script src="<?=BWG_ROOT; ?>/assets/vendor/bootstrap/js/html5shiv.min.js"></script>
+	<script src="<?=BWG_ROOT; ?>/assets/vendor/bootstrap/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 

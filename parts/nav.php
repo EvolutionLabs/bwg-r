@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/"><img class="img-responsive" src="../assets/image/shoplink_original_transparent.svg" /><div class="sr-only">Shoplink</div></a>
+			<a class="navbar-brand" href="/"><img class="img-responsive" src="<?=BWG_ROOT;?>/assets/image/shoplink_original_transparent.svg" /><div class="sr-only">Shoplink</div></a>
 		</div>
 		<?php if ($loggedIn) { ?>
 		<div id="navbar" class="navbar-collapse collapse">
