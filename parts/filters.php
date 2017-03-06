@@ -77,9 +77,6 @@ $filters = isset($filters) ? [
     ], [
         'name' => 'Value Line',
         'icon' => 'fa fa-eur'
-    ], [
-        'name' => 'Monday Madness',
-        'icon' => 'fa bwg-i-monday-madness'
     ]
 ] : false;
 ?>

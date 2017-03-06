@@ -1024,8 +1024,28 @@ input::-webkit-input-placeholder, button {
 .navbar-brand>img {
   left: 15px;
   position: relative;
+  display: block;
+  width: 100%;
 }
-
+.slick-arrow {
+  z-index: 1;
+  opacity: .35;
+  transition: opacity .3s cubic-bezier(.4,0,.2,1);
+  &:hover {
+    opacity: .65;
+  }
+  &:before {
+    font-size: 60px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+}
+.slick-prev {
+  left: 40px;
+}
+.slick-next {
+  right: 40px;
+}
 .card.transparent {
   box-shadow: none;
   background-color: transparent;
@@ -2025,6 +2045,12 @@ dl, .dl-horizontal {
   }
   .col-sm-9 .filtersList {
     border-right: 1px solid white;
+    > * {
+      max-width: 33.33%;
+      @media(max-width: 992px) {
+        max-width: 50%;
+      }
+    }
   }
   .filtersList {
     display: flex;
@@ -2162,6 +2188,10 @@ dl, .dl-horizontal {
 .stockcard {
   background: white;
   width: 100%;
+  tr[class^="sales_info"] td:not(:first-child) div {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
   .stockCardLink {
     display: inline-block;
     position: relative;

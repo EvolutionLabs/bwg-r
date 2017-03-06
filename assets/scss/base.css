@@ -1038,7 +1038,26 @@ input::-webkit-input-placeholder, button {
 
 .navbar-brand > img {
   left: 15px;
-  position: relative; }
+  position: relative;
+  display: block;
+  width: 100%; }
+
+.slick-arrow {
+  z-index: 1;
+  opacity: .35;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  .slick-arrow:hover {
+    opacity: .65; }
+  .slick-arrow:before {
+    font-size: 60px;
+    position: absolute;
+    transform: translate(-50%, -50%); }
+
+.slick-prev {
+  left: 40px; }
+
+.slick-next {
+  right: 40px; }
 
 .card.transparent {
   box-shadow: none;
@@ -1840,6 +1859,11 @@ dl, .dl-horizontal {
       top: calc(100% - 11px); } }
   .megaMenu .col-sm-9 .filtersList {
     border-right: 1px solid white; }
+    .megaMenu .col-sm-9 .filtersList > * {
+      max-width: 33.33%; }
+      @media (max-width: 992px) {
+        .megaMenu .col-sm-9 .filtersList > * {
+          max-width: 50%; } }
   .megaMenu .filtersList {
     display: flex;
     flex-wrap: wrap;
@@ -1954,6 +1978,9 @@ dl, .dl-horizontal {
 .stockcard {
   background: white;
   width: 100%; }
+  .stockcard tr[class^="sales_info"] td:not(:first-child) div {
+    font-size: 1.4rem;
+    line-height: 2rem; }
   .stockcard .stockCardLink {
     display: inline-block;
     position: relative;
