@@ -734,6 +734,7 @@ a.btn-inverse {
 }
 .flex-table {
   width: 100%;
+  border-collapse: separate;
   tfoot, thead {
     tr {
       background-color: #3d3d3d;
@@ -801,6 +802,15 @@ a.btn-inverse {
   }
   .card &.chill th {
     padding: 18px 4px;
+  }
+  >tbody>tr {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .3s linear, transform .3s cubic-bezier(.4,0,.2,1);
+    &.uHoH {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   tr {
     background-color: white;

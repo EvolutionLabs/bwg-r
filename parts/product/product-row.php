@@ -3,7 +3,7 @@ $isCart = $template == 'cart';
 $inCart = rand(0,4);
 global $product;
 ?>
-	<tr data-toggle="collapse" data-target="#tr-<?= $table->id.'-'.$product['id']; ?>" class="accordion-toggle<?= $inCart >= 3 ? ' in-cart':'';?>" aria-expanded="false">
+	<tr data-toggle="collapse" data-target="#tr-<?= $table->id.'-'.$product['id']; ?>" class="accordion-toggle<?= $inCart >= 3 ? ' in-cart':'';?>" aria-expanded="<?= $open?'true': 'false';?>">
 		<?php
 		foreach ( $product as $k => $v ) {
 			if ( in_array( $k, [ 'id', 'Price', 'Details' ] ) ) {
@@ -73,7 +73,7 @@ global $product;
 	</tr>
 	<tr class="hiddenRow">
 		<td colspan="<?= $table->colspan; ?>">
-			<div class="collapse" id="tr-<?= $table->id.'-'.$product['id']; ?>" style="overflow: hidden; clear: both;">
+			<div class="collapse<?=$open?' in':'';?>" id="tr-<?= $table->id.'-'.$product['id']; ?>" style="overflow: hidden; clear: both;">
 				<div class="tdWrapper">
 					<form id="orderFrm<?= $product['id'];?>" action="./" method="get" onsubmit="return doAddToCart('<?= $product['id'];?>', '', '1')">
 						<input type="hidden" name="pcode" value="<?= $product['id'];?>" />

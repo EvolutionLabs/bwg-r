@@ -7,6 +7,8 @@ include_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . "parts/init.php";
 
 $template = strlen( $path ) < 2 ? 'landing' : ( strpos( $path, '?' ) > - 1 ? substr( $path, 0, strpos( $path, '?' ) ) : $path );
 
+$open = isset($_GET['open']);
+
 $template = $loggedIn ? $template : 'landing';
 
 if ( strlen( $template ) > 1 ) :

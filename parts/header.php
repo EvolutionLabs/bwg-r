@@ -37,4 +37,4 @@
 	<![endif]-->
 </head>
 
-<body data-page="<?=$template;?>">
+<body data-page="<?=$template;?>"<?= $open?' class="openRows"':'';?>>
