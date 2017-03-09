@@ -1839,11 +1839,9 @@ dl, .dl-horizontal {
     position: static; }
   .submenu .navbar-right > li {
     position: static; }
-  .submenu .filtersDd {
-    position: static; }
 
 .filtersDd {
-  margin-right: 100px; }
+  display: inline-block; }
   @media (max-width: 1199px) {
     .filtersDd {
       margin-right: 56px; } }
