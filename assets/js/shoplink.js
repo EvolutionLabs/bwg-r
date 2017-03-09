@@ -1,3 +1,9 @@
+$(window).on('load resize', function(){
+    $('.megaMenu').each(function(){
+        $(this).css({'margin-left':'-'+$(this).closest('.dropdown')[0].getBoundingClientRect().left + 'px'});
+    })
+});
+
 $(window).on('load', function(){
     var Page = $('body').data("page");
     $('[href^="#"]').on('click',function(e){

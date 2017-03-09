@@ -48,10 +48,10 @@
 				</ul>
 			</div>
             <a href="void(0)" class="btn btn-sm btn-danger">Apply</a>
-
+            <span class="filters">More:</span>
             <div class="dropdown filtersDd">
                     <a href="#" id="dropdownFilters" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
+                       aria-expanded="false" class="btn btn-sm mmDd">
                         <span class="sr-only">Filters</span><i class="fa fa-chevron-down fa-2x"></i>
                     </a>
                     <div class="megaMenu dropdown-menu" aria-labelledby="dropdownFilters">

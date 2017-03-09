@@ -771,6 +771,9 @@ a.btn-inverse {
     .flexWrap .cardTitle a.btn-secondary {
       background-color: white;
       color: black; }
+    .flexWrap .cardTitle .filters {
+      position: relative;
+      top: 2px; }
   .flexWrap .parallax-container {
     overflow: hidden;
     width: 100vw;
@@ -1820,18 +1823,17 @@ dl, .dl-horizontal {
     color: white; }
 
 #dropdownFilters {
-  box-shadow: none;
-  width: 50px;
-  height: 50px;
   display: inline-block;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none;
+  color: white; }
+  .open #dropdownFilters {
+    transform: scaleY(-1);
+    background-color: #303030; }
 
-.open #dropdownFilters {
-  box-shadow: 0 -5px 5px -3px rgba(0, 0, 0, 0.2), 0 -8px 10px 1px rgba(0, 0, 0, 0.14), 0 -3px 14px 2px rgba(0, 0, 0, 0.12);
-  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12);
-  background-color: #373737;
-  transform: scaleY(-1); }
+.dropdown ~ .filters {
+  margin-left: 1em !important; }
 
 .submenu {
   position: relative; }
@@ -1852,13 +1854,13 @@ dl, .dl-horizontal {
     color: white;
     text-shadow: 0 3px 3px rgba(0, 0, 0, 0.21); }
     .filtersDd > a i {
-      line-height: 4.6rem; }
+      line-height: 1em; }
 
 .nav .filtersDd.open > a {
   background-color: transparent; }
 
 .megaMenu {
-  width: 100%;
+  width: 100vw;
   background-color: #373737;
   color: #fff;
   height: 0; }
