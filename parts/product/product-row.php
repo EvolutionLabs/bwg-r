@@ -23,7 +23,15 @@ global $product;
 												<span class="tagDate">1/2/17</span>
 											</div>
 										</div>
-									' : '' );
+									' : ($rand > 0.85 ? '
+										<div class="mixNmatch offerWrap">
+											<i class="fa bwg-i-mix-and-match"></i>
+											<div class="offerTag">
+												<span class="tagTitle">Buy 3 <em>"'.$product['Name'].'"</em> get 1 free</span>
+												<span class="tagDtail">until 1/2/17</span>
+											</div>
+										</div>
+									':''));
 			}
 			echo '<td><div class="rltv">' . $onOffer . $val . '</div></td>';
 		}
