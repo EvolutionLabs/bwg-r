@@ -28,7 +28,6 @@ $(window).on('load', function () {
     $('.flex-table > tbody > tr').each(function (i, e) {
         setTimeout(function () {
             introStaggerStep += $(e).hasClass('accordion-toggle') && (e.getBoundingClientRect().top > 0) ? 0 : 1;
-            console.log(i,introStaggerStep,(e.getBoundingClientRect().top>0),((i - introStaggerStep) * 12) + 100);
             $(e).addClass('uHoH');
         }, ((i - introStaggerStep) * 12) + 100);
     });

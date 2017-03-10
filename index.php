@@ -31,9 +31,9 @@ if ( strlen( $template ) > 1 ) :
 	include dirname( __FILE__ ) . DIRECTORY_SEPARATOR . "parts/nav.php";
 
 	echo '<div class="flexWrap' . ( $template == 'landing' ? ' v-center' : ' clear' ) . '">';
-
-	include dirname( __FILE__ ) . DIRECTORY_SEPARATOR . "parts/pages/{$template}.php";
-
+	if ($template !== '/!'){
+		include dirname( __FILE__ ) . DIRECTORY_SEPARATOR . "parts/pages/{$template}.php";
+	}
 
 	echo '</div>' . $modal;
 	include dirname( __FILE__ ) . DIRECTORY_SEPARATOR . "parts/footer.php";
