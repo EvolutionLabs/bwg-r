@@ -907,7 +907,7 @@ a.btn-inverse {
     transition: opacity 0.3s linear, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .flex-table > tbody > tr.uHoH {
       opacity: 1;
-      transform: translateY(0); }
+      transform: none; }
   .flex-table tr {
     background-color: white; }
     .flex-table tr.in-cart {

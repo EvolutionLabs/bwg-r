@@ -844,7 +844,7 @@ a.btn-inverse {
     transition: opacity .3s linear, transform .3s cubic-bezier(.4,0,.2,1);
     &.uHoH {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
   tr {

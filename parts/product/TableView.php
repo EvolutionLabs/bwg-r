@@ -103,6 +103,10 @@ class TableView {
 		       '</div>';
 	}
 
+	public function mnmFooter(){
+		return '<tfoot><tr><td colspan="'.$this->colspan.'"><div class="cartFooter"></div></td></tr></tfoot>';
+	}
+
 	public static function getRand($val) {
         return is_array($val) ? $val[rand(0, count($val)  - 1)] : $val;
     }
