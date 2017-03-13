@@ -46,7 +46,8 @@ body {
 .btn-group, .card {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }
   .btn-group.clear, .btn-group.separate, .card.clear, .card.separate {
-    box-shadow: none; }
+    box-shadow: none;
+    margin-right: 15px; }
 
 .card.padding {
   padding: 20px; }
@@ -64,13 +65,13 @@ body {
 
 .rltv {
   position: relative; }
-  td:first-child > .rltv {
+  .table:not(.mnmTable) td:first-child > .rltv {
     margin: -8px;
     padding: 8px 8px 8px 28px;
     display: block;
     min-height: 56px; }
     @media (max-width: 1199px) {
-      td:first-child > .rltv {
+      .table:not(.mnmTable) td:first-child > .rltv {
         padding: 8px 0 8px 28px;
         margin: -8px 0 -8px -4px; } }
 
@@ -823,7 +824,9 @@ a.btn-inverse {
     width: 1%; }
 
 #mixAndMatch .modal-dialog {
-  width: 1070px;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
   padding: 1em; }
   @media (max-width: 1199px) {
     #mixAndMatch .modal-dialog {
@@ -835,9 +838,14 @@ a.btn-inverse {
     background-color: #373737;
     color: #fff;
     padding: 15px;
-    margin: -16px -15px 15px; }
+    margin: -16px -15px 0; }
   #mixAndMatch .modal-dialog .modal-content {
-    min-height: 80vh; }
+    min-height: 55vh; }
+  #mixAndMatch .modal-dialog .modal-body {
+    padding-bottom: 0; }
+    #mixAndMatch .modal-dialog .modal-body .mnmTable {
+      position: absolute;
+      opacity: 0; }
 
 .modal-content {
   border-radius: 0; }
@@ -845,9 +853,12 @@ a.btn-inverse {
 .flex-table {
   width: 100%;
   border-collapse: separate; }
-  .flex-table tfoot tr, .flex-table thead tr {
-    background-color: #3d3d3d;
-    color: white; }
+  .flex-table tfoot, .flex-table thead {
+    position: relative;
+    z-index: 1; }
+    .flex-table tfoot tr, .flex-table thead tr {
+      background-color: #3d3d3d;
+      color: white; }
   .flex-table tfoot > tr {
     background-color: #3d3d3d; }
     .flex-table tfoot > tr > td > div {
@@ -2153,22 +2164,24 @@ dl, .dl-horizontal {
   white-space: initial; }
 
 .modal-dialog .sk-folding-cube {
-  display: none; }
-.modal-dialog .loading .sk-folding-cube {
-  display: block;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
   margin: 20px auto;
   width: 120px;
   height: 120px;
-  opacity: .1;
-  position: relative;
-  transform: rotateZ(45deg); }
-  .modal-dialog .loading .sk-folding-cube .sk-cube {
+  transform: rotate(45deg) translate(-100%, -50%);
+  top: 60%;
+  left: 50%; }
+  .modal-dialog .sk-folding-cube.loaded {
+    display: none; }
+  .modal-dialog .sk-folding-cube .sk-cube {
     float: left;
     width: 50%;
     height: 50%;
     position: relative;
     transform: scale(1.1); }
-    .modal-dialog .loading .sk-folding-cube .sk-cube::before {
+    .modal-dialog .sk-folding-cube .sk-cube::before {
       content: '';
       position: absolute;
       top: 0;
@@ -2178,18 +2191,20 @@ dl, .dl-horizontal {
       background-color: #333;
       animation: sk-foldCubeAngle 2.4s infinite linear both;
       transform-origin: 100% 100%; }
-  .modal-dialog .loading .sk-folding-cube .sk-cube2 {
+  .modal-dialog .sk-folding-cube .sk-cube2 {
     transform: scale(1.1) rotateZ(90deg); }
-    .modal-dialog .loading .sk-folding-cube .sk-cube2::before {
+    .modal-dialog .sk-folding-cube .sk-cube2::before {
       animation-delay: 0.3s; }
-  .modal-dialog .loading .sk-folding-cube .sk-cube3 {
+  .modal-dialog .sk-folding-cube .sk-cube3 {
     transform: scale(1.1) rotateZ(180deg); }
-    .modal-dialog .loading .sk-folding-cube .sk-cube3::before {
+    .modal-dialog .sk-folding-cube .sk-cube3::before {
       animation-delay: 0.6s; }
-  .modal-dialog .loading .sk-folding-cube .sk-cube4 {
+  .modal-dialog .sk-folding-cube .sk-cube4 {
     transform: scale(1.1) rotateZ(270deg); }
-    .modal-dialog .loading .sk-folding-cube .sk-cube4::before {
+    .modal-dialog .sk-folding-cube .sk-cube4::before {
       animation-delay: 0.9s; }
+.modal-dialog .loading .sk-folding-cube {
+  opacity: .1; }
 
 @keyframes sk-foldCubeAngle {
   0%, 10% {
@@ -2201,5 +2216,20 @@ dl, .dl-horizontal {
   90%, 100% {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
+.table.mnmTable {
+  margin-bottom: 0; }
+  .table.mnmTable > tbody > tr > td {
+    vertical-align: middle;
+    min-height: 50px; }
+    .table.mnmTable > tbody > tr > td:nth-child(2) {
+      text-align: left; }
+  .table.mnmTable th {
+    background-color: #3d3d3d;
+    color: #fff;
+    padding: 18px 8px; }
+
+.table > thead:first-child > tr:first-child > th {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
 /*# sourceMappingURL=base.css.map */

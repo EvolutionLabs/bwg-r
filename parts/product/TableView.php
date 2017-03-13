@@ -19,6 +19,8 @@ class TableView {
 	public $pagination = true;
 	public $footer = true;
 	public $category = false;
+    public $minProds = 50;
+    public $maxProds = 50;
 	public $cols = [
 		'Name', 'RSP', 'Margin', 'Pack<br />/Case', 'Price'
 	];
@@ -44,6 +46,7 @@ class TableView {
 				['Supplier'=> ['McDonagh', 'Coca Cola', 'Smirnoff']],
 				2);
 		}
+
 
 		$this->colspan = count($this->cols) + 3;
 
@@ -100,6 +103,11 @@ class TableView {
 		       '</div>';
 	}
 
+	public static function getRand($val) {
+        return is_array($val) ? $val[rand(0, count($val)  - 1)] : $val;
+    }
+
+
 	/**
 	 * Example custom method to be used as wildcard instead of any table part, like this
 	 *  $table = [
@@ -131,8 +139,6 @@ class TableView {
 	 * I don't think you'll need them in production.
 	 */
 
-	public $minProds = 50;
-	public $maxProds = 50;
 	public $dProduct = [
 		'id' => '5027952011316',
 		'Name' => ['Glenn\'s Vodka','Spaghetti Sauce', 'Sugar for my honey','This is a very long product name ready to help us style'],
@@ -163,9 +169,9 @@ class TableView {
 	private function generateDummyData() {
 		for ( $i = 0; $i < rand( $this->minProds, $this->maxProds); $i ++ ) {
 			$product = $this->dProduct;
-			$product['Name'] = getRand($product['Name']);
+			$product['Name'] = self::getRand($product['Name']);
 			if ($this->category == 'chill') {
-				$product['Supplier'] = getRand($product['Supplier']);
+				$product['Supplier'] = self::getRand($product['Supplier']);
 			}
 			$this->products[] = $product; // juice
 
@@ -176,5 +182,9 @@ class TableView {
 		}
 	}
 
+	public function mixAndMatch(){
+        $this->generateDummyData();
+        return $this->products;
+    }
 
 }

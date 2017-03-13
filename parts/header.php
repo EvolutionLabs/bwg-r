@@ -40,19 +40,23 @@
 <body data-page="<?=$template;?>"<?= $open?' class="openRows"':'';?>>
 <div class="modal fade" tabindex="-1" role="dialog" id="mixAndMatch">
 	<div class="modal-dialog" role="document">
-		<div class="modal-content loading">
-			<div class="modal-header bg-alert">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-						aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title"></h4>
-			</div>
-			<div class="modal-body"></div>
-			<div class="sk-folding-cube">
-				<div class="sk-cube1 sk-cube"></div>
-				<div class="sk-cube2 sk-cube"></div>
-				<div class="sk-cube4 sk-cube"></div>
-				<div class="sk-cube3 sk-cube"></div>
-			</div>
-		</div><!-- /.modal-content -->
+        <div class="container">
+            <div class="row">
+                <div class="modal-content loading">
+                    <div class="modal-header bg-alert">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="sk-folding-cube">
+                        <div class="sk-cube1 sk-cube"></div>
+                        <div class="sk-cube2 sk-cube"></div>
+                        <div class="sk-cube4 sk-cube"></div>
+                        <div class="sk-cube3 sk-cube"></div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
