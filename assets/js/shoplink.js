@@ -21,7 +21,7 @@ $(window).on('load', function () {
     });
     if (openRows) {
         $('tr.clear').each(function (i, e) {
-            $(e).addClass('before after')
+            $(e).addClass(i?'before after':'before')
         })
     }
     var introStaggerStep = -1;
