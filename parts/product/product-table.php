@@ -122,7 +122,7 @@
 						View as:
 						<a class="btn btn-clear btn-sm<?= $open?'':' active';?>" href="#view-list" data-target="#productsTable"><i
 								class="fa fa-list"></i></a>
-						<a class="btn btn-clear btn-sm<?= $open?' active':'active';?>" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
+						<a class="btn btn-clear btn-sm<?= $open?' active':'';?>" href="#view-boxes" data-target="#productsTable"><i class="fa fa-th"></i></a>
 					</span>
 		</div>
 			<?php
