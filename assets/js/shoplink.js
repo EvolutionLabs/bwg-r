@@ -323,6 +323,8 @@ $(window).on('load', function () {
         for (var i = 0; i < 4; i++) {
             loader.append($('<div />'));
         }
+    }
+    if (loader.is('.loader')) {
         loader.velocity({
             width: '100%'
         }, 360, function () {
