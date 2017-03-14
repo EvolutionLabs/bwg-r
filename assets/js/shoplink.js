@@ -210,7 +210,7 @@ $(window).on('load', function () {
     if (e.is('.parallax-container')) {
         e.slick({
             autoplay: true,
-            autoplaySpeed: 2345,
+            autoplaySpeed: 5000,
             pauseOnFocus: false,
             arrows: true,
             prevArrow: '<button type="button" class="slick-prev">Previous</button>',
