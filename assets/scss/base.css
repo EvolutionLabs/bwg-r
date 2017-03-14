@@ -831,7 +831,7 @@ a.btn-inverse {
   @media (max-width: 1199px) {
     #mixAndMatch .modal-dialog {
       width: 960px; } }
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     #mixAndMatch .modal-dialog {
       width: 100%; } }
   #mixAndMatch .modal-dialog .mnmDetails {
@@ -841,8 +841,14 @@ a.btn-inverse {
     margin: -16px -15px 0; }
   #mixAndMatch .modal-dialog .modal-content {
     min-height: 100px;
-    max-width: 600px;
     margin: 0 auto; }
+    @media (min-width: 768px) {
+      #mixAndMatch .modal-dialog .modal-content {
+        max-width: 600px;
+        min-width: 600px; } }
+    @media (max-width: 767px) {
+      #mixAndMatch .modal-dialog .modal-content {
+        width: 100%; } }
   #mixAndMatch .modal-dialog .modal-body {
     padding-bottom: 0; }
     #mixAndMatch .modal-dialog .modal-body .mnmTable {
@@ -1149,7 +1155,7 @@ input::-webkit-input-placeholder, button {
         .flexRow .flexCol .btn-group.separate > * {
           flex: 1 0 50%;
           margin: 15px 0 0; } }
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
       .flexRow .flexCol .btn-group {
         display: flex;
         flex-direction: column; }
@@ -1918,7 +1924,7 @@ dl, .dl-horizontal {
     border-right: 1px solid white; }
     .megaMenu .col-sm-9 .filtersList > * {
       max-width: 33.33%; }
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         .megaMenu .col-sm-9 .filtersList > * {
           max-width: 50%; } }
   .megaMenu .filtersList {

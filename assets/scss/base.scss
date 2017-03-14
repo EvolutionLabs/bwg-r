@@ -741,7 +741,7 @@ a.btn-inverse {
   @media(max-width: 1199px){
     width: 960px;
   }
-  @media(max-width: 992px) {
+  @media(max-width: 991px) {
     width: 100%;
   }
   .mnmDetails {
@@ -752,7 +752,13 @@ a.btn-inverse {
   }
   .modal-content {
     min-height: 100px;
-    max-width: 600px;
+    @media (min-width: 768px) {
+      max-width: 600px;
+      min-width: 600px;
+    }
+    @media(max-width: 767px) {
+      width: 100%;
+    }
     margin: 0 auto;
   }
   .modal-body {
@@ -1153,7 +1159,7 @@ input::-webkit-input-placeholder, button {
         }
       }
     }
-    @media(max-width: 992px) {
+    @media(max-width: 991px) {
       .btn-group {
         display: flex;
         flex-direction: column;
@@ -2111,7 +2117,7 @@ dl, .dl-horizontal {
     border-right: 1px solid white;
     > * {
       max-width: 33.33%;
-      @media(max-width: 992px) {
+      @media(max-width: 991px) {
         max-width: 50%;
       }
     }
