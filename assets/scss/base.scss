@@ -751,7 +751,9 @@ a.btn-inverse {
     margin: -16px -15px 0;
   }
   .modal-content {
-    min-height: 55vh;
+    min-height: 100px;
+    max-width: 600px;
+    margin: 0 auto;
   }
   .modal-body {
     padding-bottom: 0;
@@ -2477,25 +2479,13 @@ dl, .dl-horizontal {
 
   }
 }
-@keyframes sk-foldCubeAngle {
-  0%, 10% {
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0;
-  } 25%, 75% {
-      transform: perspective(140px) rotateX(0deg);
-      opacity: 1;
-    } 90%, 100% {
-        transform: perspective(140px) rotateY(180deg);
-        opacity: 0;
-      }
-}
 .table.mnmTable{
   margin-bottom:0;
   >tbody>tr>td {
     vertical-align: middle;
     min-height: 50px;
     &:nth-child(2) {
-      text-align: left;
+      width: 125px;
     }
   }
   th {
@@ -2507,4 +2497,16 @@ dl, .dl-horizontal {
 .table>thead:first-child>tr:first-child>th {
   border-bottom: none;
   border-top: 1px solid rgba(255,255,255,.1);
+}
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  } 25%, 75% {
+      transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+      }
 }

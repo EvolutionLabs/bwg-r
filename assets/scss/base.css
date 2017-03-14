@@ -840,7 +840,9 @@ a.btn-inverse {
     padding: 15px;
     margin: -16px -15px 0; }
   #mixAndMatch .modal-dialog .modal-content {
-    min-height: 55vh; }
+    min-height: 100px;
+    max-width: 600px;
+    margin: 0 auto; }
   #mixAndMatch .modal-dialog .modal-body {
     padding-bottom: 0; }
     #mixAndMatch .modal-dialog .modal-body .mnmTable {
@@ -2206,6 +2208,22 @@ dl, .dl-horizontal {
 .modal-dialog .loading .sk-folding-cube {
   opacity: .1; }
 
+.table.mnmTable {
+  margin-bottom: 0; }
+  .table.mnmTable > tbody > tr > td {
+    vertical-align: middle;
+    min-height: 50px; }
+    .table.mnmTable > tbody > tr > td:nth-child(2) {
+      width: 125px; }
+  .table.mnmTable th {
+    background-color: #3d3d3d;
+    color: #fff;
+    padding: 18px 8px; }
+
+.table > thead:first-child > tr:first-child > th {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
 @keyframes sk-foldCubeAngle {
   0%, 10% {
     transform: perspective(140px) rotateX(-180deg);
@@ -2216,20 +2234,5 @@ dl, .dl-horizontal {
   90%, 100% {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
-.table.mnmTable {
-  margin-bottom: 0; }
-  .table.mnmTable > tbody > tr > td {
-    vertical-align: middle;
-    min-height: 50px; }
-    .table.mnmTable > tbody > tr > td:nth-child(2) {
-      text-align: left; }
-  .table.mnmTable th {
-    background-color: #3d3d3d;
-    color: #fff;
-    padding: 18px 8px; }
-
-.table > thead:first-child > tr:first-child > th {
-  border-bottom: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
 /*# sourceMappingURL=base.css.map */

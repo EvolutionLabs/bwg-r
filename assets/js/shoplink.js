@@ -90,6 +90,24 @@ $(window).on('load', function () {
             rltv.prepend(inputGroup);
         }
     });
+    $('#mixAndMatch').on('click', '.input-group-addon', function(e){
+        e.stopPropagation();
+        var field = $(this).closest('.input-group').find('.form-control'),
+            val = field.val() ? field.val() * 1 : 0;
+        if (val < 0) {
+            field.val(0);
+        }
+        if ($(this).is(':first-child') && val > 0) {
+            field.val(val - 1);
+        }
+        if ($(this).is(':last-child')) {
+            field.val(val + 1);
+        }
+
+        $(this).closest('.input-group').find('.form-control').trigger('update')
+        console.log('triggered `update` of `.form-control`!');
+
+    });
     $('[role="combobox"]').removeClass('open');
     $('.modal-dialog').on('click tap', function (e) {
         if ($(e.target).hasClass('modal-dialog')) {
@@ -394,77 +412,69 @@ $(window).on('load', function () {
 });
 
 function getMixAndMatch() {
-    $.ajax('mix-and-match', {
-        data: {
-            action:'mix-and-match'
-        },
-        type:'POST',
-        success:function(r){
-            setTimeout(function(){
-                var mnmTable = $('<table />',{
-                    class:'mnmTable table products flex-table'
-                });
-                $('.modal-content').removeClass('loading');
+    if((window.location.hostname.indexOf('bwg.dev') > -1) ||
+        (window.location.hostname.indexOf('dahood')> -1)){
+        $.ajax('mix-and-match', {
+            data: {
+                action:'mix-and-match'
+            },
+            type:'POST',
+            success:function(r){
                 setTimeout(function(){
-                    $('.sk-folding-cube').addClass('loaded');
-                },800);
-                mnmTable.append(
-                    $('<thead />',{
-                        html: '<tr>' +
-                        '<th>Product code</th>' +
-                        '<th>Description</th>' +
-                        '<th>Case Qty</th>' +
-                        '<th>Pack size</th>' +
-                        '<th>WSP</th>' +
-                        '<th></th>' +
-                        '</tr>'
-                    }));
-                $.each(r,function(i,e){
-                    var tr = $('<tr />');
-                    tr  .append($('<td />', {html:'<span class="rltv">'+e['id']+'</span>'}))
-                        .append($('<td />', {html:'<span class="rltv">'+e['Name']+'</span>'}))
-                        .append($('<td />', {html:'<span class="rltv">'+e['Pack<br />/Case']
-                            .replace(/(<([^>]+)>)/ig,"").split('/')[1]+'</span>'}))
-                        .append($('<td />', {html:'<span class="rltv">'+e['Pack<br />/Case']
-                            .replace(/(<([^>]+)>)/ig,"").split('/')[0]+'</span>'}))
-                        .append($('<td />', {html:'<span class="rltv">€' + e['Price']['new']+'</span>'}))
-                        .append($('<td />',{
-                                html:'<div class="input-group qty">' +
-                                '<span class="input-group-addon"><i class="fa fa-minus"></i></span>' +
-                                '<input type="text" class="form-control" name="qty-products-'+e['id']+'" />' +
-                                '<span class="input-group-addon"><i class="fa fa-plus"></i></span>' +
-                                '</div>'
-                            })
-                        );
-                    mnmTable.append(tr);
-                });
+                    var mnmTable = $('<table />',{
+                        class:'mnmTable table products flex-table'
+                    });
+                    $('.modal-content').removeClass('loading');
+                    setTimeout(function(){
+                        $('.sk-folding-cube').addClass('loaded');
+                    },800);
+                    mnmTable.append(
+                        $('<thead />',{
+                            html: '<tr>' +
+                            '<th>Product code</th>' +
+                            '<th></th>' +
+                            '</tr>'
+                        }));
+                    $.each(r,function(i,e){
+                        var tr = $('<tr />');
+                        tr  .append($('<td />', {html:'<span class="rltv">'+e['Name']+'</span>'}))
+                            .append($('<td />',{
+                                    html:'<div class="input-group qty">' +
+                                    '<span class="input-group-addon"><i class="fa fa-minus"></i></span>' +
+                                    '<input type="text" class="form-control" name="qty-products-'+e['id']+'" />' +
+                                    '<span class="input-group-addon"><i class="fa fa-plus"></i></span>' +
+                                    '</div>'
+                                })
+                            );
+                        mnmTable.append(tr);
+                    });
 
-                var tFoot = $('<tfoot />');
-                tFoot.append($('<tr />', {
-                    html:'<td colspan="4"></td>' +
-                    '<td>Total: </td>' +
-                    '<td><span id="mnmTotal" class="rltv">0</span></td>'
-                })).appendTo(mnmTable);
+                    var tFoot = $('<tfoot />');
+                    tFoot.append($('<tr />', {
+                        html:'<td colspan="2"></td>'
+                    })).appendTo(mnmTable);
 
-                var tableContainer = $('<div />',{class:'row'}),
-                    mBody = $('#mixAndMatch .modal-body');
-                tableContainer.append(mnmTable).appendTo(mBody);
-                mnmTable.velocity({
-                    opacity: 1
-                });
-                mBody.velocity({
-                    minHeight: mnmTable.height() + $('.mnmDetails').height()
-                }, function(){
-                    mnmTable.css({position:'relative'});
-                    $('.mnmTable tr').each(function(i,e){
-                        setTimeout(function(){
-                            $(e).addClass('uHoH');
-                        }, i * 65)
-                    })
-                });
-            }, 1200);
-        }
-    })
+                    var tableContainer = $('<div />',{class:'row'}),
+                        mBody = $('#mixAndMatch .modal-body');
+                    tableContainer.append(mnmTable).appendTo(mBody);
+                    mnmTable.velocity({
+                        opacity: 1
+                    });
+                    mBody.velocity({
+                        minHeight: mnmTable.height() + $('.mnmDetails').height()
+                    }, function(){
+                        mnmTable.css({position:'relative'});
+                        $('.mnmTable tr').each(function(i,e){
+                            setTimeout(function(){
+                                $(e).addClass('uHoH');
+                            }, i * 65)
+                        })
+                    });
+                }, 1200);
+            }
+        })
+    }
+
 }
 
 function toggleSwitch(e) {
