@@ -1609,6 +1609,8 @@ td > .favMenu .dropdown-menu {
     .tdWrapper .imageWrap img {
       object-fit: contain;
       position: relative;
+      display: block;
+      margin: 0 auto;
       /*min-width: 120px;*/ }
   .tdWrapper .main-col {
     flex: 1 1 auto;

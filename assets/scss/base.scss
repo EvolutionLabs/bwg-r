@@ -1727,6 +1727,8 @@ td>.favMenu .dropdown-menu {
       //top: 50%;
       //transform: translateY(-50%);
       position: relative;
+      display: block;
+      margin: 0 auto;
       /*min-width: 120px;*/
     }
   }
