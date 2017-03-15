@@ -68,8 +68,9 @@ body {
   .table:not(.mnmTable) td:first-child > .rltv {
     margin: -8px;
     padding: 8px 8px 8px 28px;
-    display: block;
-    min-height: 56px; }
+    min-height: 56px;
+    display: flex;
+    align-items: center; }
     @media (max-width: 1199px) {
       .table:not(.mnmTable) td:first-child > .rltv {
         padding: 8px 0 8px 28px;
@@ -1606,11 +1607,10 @@ td > .favMenu .dropdown-menu {
   display: flex; }
   .tdWrapper .imageWrap {
     display: block;
-    flex: 0 0 170px; }
+    flex: 0 0 170px;
+    margin: auto; }
     .tdWrapper .imageWrap img {
       object-fit: contain;
-      top: 50%;
-      transform: translateY(-50%);
       position: relative;
       /*min-width: 120px;*/ }
   .tdWrapper .main-col {
