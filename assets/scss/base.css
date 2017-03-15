@@ -829,9 +829,6 @@ a.btn-inverse {
   min-height: 100vh;
   margin: 0;
   padding: 1em; }
-  @media (max-width: 1199px) {
-    #mixAndMatch .modal-dialog {
-      width: 960px; } }
   @media (max-width: 991px) {
     #mixAndMatch .modal-dialog {
       width: 100%; } }
@@ -1696,10 +1693,13 @@ dl, .dl-horizontal {
     padding: 6px; }
 .products .right-col {
   display: flex;
-  margin-left: 20px; }
+  margin-left: 20px;
+  flex: 0 0 161px;
+  max-width: 161px; }
   @media (min-width: 1200px) {
     .products .right-col {
       min-width: 285px;
+      max-width: none;
       flex: 0 1 285px; } }
   .products .right-col .rltv {
     display: flex;
