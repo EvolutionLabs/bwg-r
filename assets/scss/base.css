@@ -843,7 +843,8 @@ a.btn-inverse {
     @media (min-width: 768px) {
       #mixAndMatch .modal-dialog .modal-content {
         max-width: 600px;
-        min-width: 600px; } }
+        min-width: 600px;
+        width: 600px; } }
     @media (max-width: 767px) {
       #mixAndMatch .modal-dialog .modal-content {
         width: 100%; } }
