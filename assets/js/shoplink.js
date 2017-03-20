@@ -320,11 +320,11 @@ $(window).on('load', function () {
             var height = $($(e.target).attr('href')).height();
             $('.tab-content').velocity({maxHeight: height + 'px', minHeight: height + 'px'}, 300);
         });
+    }
+    if (loader.is('.loader')) {
         for (var i = 0; i < 4; i++) {
             loader.append($('<div />'));
         }
-    }
-    if (loader.is('.loader')) {
         loader.velocity({
             width: '100%'
         }, 360, function () {
