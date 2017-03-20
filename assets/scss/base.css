@@ -1987,6 +1987,12 @@ dl, .dl-horizontal {
         line-height: 2.4rem;
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
+@media (max-width: 991px) {
+  .layoutSwitch {
+    float: none !important;
+    text-align: right;
+    display: block; } }
+
 .layoutSwitch ul {
   display: inline-flex;
   list-style-type: none;

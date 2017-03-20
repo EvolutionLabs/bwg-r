@@ -2199,6 +2199,15 @@ dl, .dl-horizontal {
     }
   }
 }
+
+.layoutSwitch {
+  @media (max-width: 991px) {
+    float: none !important;
+    text-align: right;
+    display: block;
+  }
+}
+
 .layoutSwitch ul {
   display: inline-flex;
   list-style-type: none;
