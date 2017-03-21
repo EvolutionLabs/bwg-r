@@ -1823,6 +1823,8 @@ dl, .dl-horizontal {
     background-color: #710808; }
   .submenu.centre {
     background-color: #ea6207; }
+  .submenu[class*=" vc_"] {
+    background-color: #ea6207; }
   .submenu .navbar-brand {
     color: white;
     text-transform: uppercase;

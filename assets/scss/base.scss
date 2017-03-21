@@ -2001,6 +2001,9 @@ dl, .dl-horizontal {
       background-color: map_get($colors, $l);
     }
   }
+  &[class*=" vc_"] {
+    background-color: map_get($colors, 'centre');
+  }
   .navbar-brand {
     color: white;
     text-transform: uppercase;
