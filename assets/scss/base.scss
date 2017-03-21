@@ -1995,7 +1995,7 @@ dl, .dl-horizontal {
       }
     }
   }
-
+  background-color: #424242;
   @each $l in $links {
     &.#{$l} {
       background-color: map_get($colors, $l);
