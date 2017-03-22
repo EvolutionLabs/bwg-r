@@ -108,6 +108,15 @@ $(window).on('load', function () {
         console.log('triggered `update` of `.form-control`!');
 
     });
+
+    $('#mixAndMatch').on('keydown', 'input', function (e) {
+        if (e.which == 38 || e.which == 104) {
+            $(this).val() ? $(this).val((parseInt($(this).val()) + 1)) : $(this).val(1);
+        } else if (e.which == 40 || e.which == 98) {
+            $(this).val() ? $(this).val((parseInt($(this).val()) - 1)) : $(this).val(1);
+        }
+    });
+
     $('[role="combobox"]').removeClass('open');
     $('.modal-dialog').on('click tap', function (e) {
         if ($(e.target).hasClass('modal-dialog')) {
@@ -395,17 +404,25 @@ $(window).on('load', function () {
             }
         }).on('click','.mixNmatch', function(e){
             var mnm = $(e.target).closest('.mixNmatch'),
-                title = mnm.find('.tagTitle').html(),
-                until = mnm.find('.tagDtail').html(),
+                title = mnm.data('title'),
+                description = mnm.data('description'),
+                dateFrom = mnm.data('from'),
+                dateTo = mnm.data('to'),
+                threshold = mnm.data('threshold'),
                 mnMdl = $('#mixAndMatch');
 
+            var modalWidth = mnm.width() + 'px';
             mnMdl.find('.modal-title').html(title);
+            mnMdl.find('.mnm-description').html(description);
             mnMdl.find('.sk-folding-cube').removeClass('loaded');
             mnMdl.find('.modal-content').addClass('loading');
             mnMdl.find('.modal-body').html($('<div />', {
                 class:'mnmDetails',
-                html:until
+                html: '<strong>Active</strong>: from ' + dateFrom + ' to ' + dateTo + '<br /> <strong>Threshold</strong>: ' + threshold
             }));
+            mnMdl.find('.modal-content').css('width', modalWidth);
+            mnMdl.find('.modal-content').css('max-width', modalWidth);
+            mnMdl.find('.modal-content').css('min-width', modalWidth);
             mnMdl.modal('show');
             getMixAndMatch();
             if (mnm.closest('.accordion-toggle').is('.accordion-toggle[aria-expanded="true"]'))
@@ -434,12 +451,19 @@ function getMixAndMatch() {
                         $('<thead />',{
                             html: '<tr>' +
                             '<th>Product code</th>' +
+                            '<th>Description</th>' +
+                            '<th>Case Qty</th>' +
+                            '<th>WSP</th>' +
                             '<th></th>' +
                             '</tr>'
                         }));
                     $.each(r,function(i,e){
                         var tr = $('<tr />');
-                        tr  .append($('<td />', {html:'<span class="rltv">'+e['Name']+'</span>'}))
+                        tr  .append($('<td />', {html:'<span class="rltv">'+e['id']+'</span>'}))
+                            .append($('<td />', {html:'<span class="rltv">'+e['Name']+'</span>'}))
+                            .append($('<td />', {html:'<span class="rltv">'+e['Pack<br />/Case']
+                                .replace(/(<([^>]+)>)/ig,"").split('/')[1]+'</span>'}))
+                            .append($('<td />', {html:'<span class="rltv">€' + e['Price']['new']+'</span>'}))
                             .append($('<td />',{
                                     html:'<div class="input-group qty">' +
                                     '<span class="input-group-addon"><i class="fa fa-minus"></i></span>' +
@@ -453,8 +477,25 @@ function getMixAndMatch() {
 
                     var tFoot = $('<tfoot />');
                     tFoot.append($('<tr />', {
-                        html:'<td colspan="2"></td>'
-                    })).appendTo(mnmTable);
+                        html:'<td colspan="5"><div class="pagination">' +
+                        '<span class="count">Items 56 of 4694</span>'  +
+                        '<div>' +
+                        '<div class="btn-group">' +
+                        '<a class="btn btn-white" href="#">Previous</a>' +
+                        '<a class="btn btn-white" href="#">1</a>' +
+                        '<a class="btn btn-white" href="#">2</a>' +
+                        '<a class="btn btn-white" href="#">3</a>' +
+                        '<span class="btn btn-disabled">4</span>' +
+                        '<a class="btn btn-white" href="#">5</a>' +
+                        '</div>'  +
+                        '<span class="bgn-group-spacer">…</span>'  +
+                        '<div class="btn-group">'  +
+                        '<a class="btn btn-white" href="#">20</a>' +
+                        '<a class="btn btn-white" href="#">Next</a>'   +
+                        '</div>'  +
+                        '</div>'  +
+                        '</div>'  +
+                        ''})).appendTo(mnmTable);
 
                     var tableContainer = $('<div />',{class:'row'}),
                         mBody = $('#mixAndMatch .modal-body');

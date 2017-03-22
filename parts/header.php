@@ -45,6 +45,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
+                <p class="mnm-description"></p>
             </div>
             <div class="modal-body"></div>
             <div class="sk-folding-cube">

@@ -739,6 +739,26 @@ a.btn-inverse {
   min-height: 100vh;
   margin: 0;
   padding: 1em;
+  .pagination .count {
+    color: #fff;
+  }
+  .btn-white {
+    color: #3d3d3d;
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+  td {
+    text-align: left;
+  }
+  .flex-table.products td:first-child, .flex-table.products th:first-child {
+    min-width: inherit;
+    max-width: 120px;
+    + * {
+      min-width: 350px;
+      max-width: 400px;
+    }
+  }
   @media(max-width: 991px) {
     width: 100%;
   }
@@ -750,6 +770,7 @@ a.btn-inverse {
   }
   .modal-content {
     min-height: 100px;
+    max-height: 85vh;
     @media (min-width: 768px) {
       max-width: 600px;
       min-width: 600px;
@@ -961,11 +982,32 @@ a.btn-inverse {
       }
     }
   }
+  .mNmSingle {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    max-width: 20px;
+    min-height: 57px;
+    right: -1px;
+    top: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #373737;
+    cursor: pointer;
+    .fa {
+      position: absolute;
+      right: .3rem;
+      top: .5rem;
+      color: white;
+    }
+  }
   .offerWrap {
     background-color: #ff0048;
+    cursor: pointer;
     &.mixNmatch {
       background-color: #373737;
-      cursor:pointer;
     }
     color: #fff;
     position: absolute;
@@ -973,7 +1015,7 @@ a.btn-inverse {
     bottom: 0;
     z-index: 1;
     padding: 0 10px;
-    max-width:20px;
+    max-width: 20px;
     min-height: 57px;
     right: 0;
     top: -1px;
@@ -981,6 +1023,13 @@ a.btn-inverse {
     flex-direction: column;
     justify-content: center;
     transition: max-width .3s cubic-bezier(.4,0,.2,1);
+    .mNm-available {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #373737;
+      padding: .3rem .4rem .3rem 0.2rem;
+    }
     >.fa {
       position: absolute;
       right: .4rem;
@@ -1019,6 +1068,17 @@ a.btn-inverse {
     .offerTag {
       opacity: 1;
     }
+  }
+}
+
+.mixNmatch {
+  padding: 1rem;
+  background-color: #373737;
+  color: white;
+  border-bottom: 1px solid #e3e3e3;
+  cursor: pointer;
+  &:last-child {
+    border-bottom: 0;
   }
 }
 

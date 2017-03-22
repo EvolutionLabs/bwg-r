@@ -829,6 +829,20 @@ a.btn-inverse {
   min-height: 100vh;
   margin: 0;
   padding: 1em; }
+  #mixAndMatch .modal-dialog .pagination .count {
+    color: #fff; }
+  #mixAndMatch .modal-dialog .btn-white {
+    color: #3d3d3d; }
+    #mixAndMatch .modal-dialog .btn-white:hover, #mixAndMatch .modal-dialog .btn-white:focus {
+      color: #fff; }
+  #mixAndMatch .modal-dialog td {
+    text-align: left; }
+  #mixAndMatch .modal-dialog .flex-table.products td:first-child, #mixAndMatch .modal-dialog .flex-table.products th:first-child {
+    min-width: inherit;
+    max-width: 120px; }
+    #mixAndMatch .modal-dialog .flex-table.products td:first-child + *, #mixAndMatch .modal-dialog .flex-table.products th:first-child + * {
+      min-width: 350px;
+      max-width: 400px; }
   @media (max-width: 991px) {
     #mixAndMatch .modal-dialog {
       width: 100%; } }
@@ -839,6 +853,7 @@ a.btn-inverse {
     margin: -16px -15px 0; }
   #mixAndMatch .modal-dialog .modal-content {
     min-height: 100px;
+    max-height: 85vh;
     margin: 0 auto; }
     @media (min-width: 768px) {
       #mixAndMatch .modal-dialog .modal-content {
@@ -989,8 +1004,28 @@ a.btn-inverse {
           transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .flex-table tr.clear.before .rowSpacer, .flex-table tr.clear.after .rowSpacer {
         height: 15px; }
+  .flex-table .mNmSingle {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    max-width: 20px;
+    min-height: 57px;
+    right: -1px;
+    top: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #373737;
+    cursor: pointer; }
+    .flex-table .mNmSingle .fa {
+      position: absolute;
+      right: .3rem;
+      top: .5rem;
+      color: white; }
   .flex-table .offerWrap {
     background-color: #ff0048;
+    cursor: pointer;
     color: #fff;
     position: absolute;
     left: 0;
@@ -1006,8 +1041,13 @@ a.btn-inverse {
     justify-content: center;
     transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .flex-table .offerWrap.mixNmatch {
-      background-color: #373737;
-      cursor: pointer; }
+      background-color: #373737; }
+    .flex-table .offerWrap .mNm-available {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #373737;
+      padding: .3rem .4rem .3rem 0.2rem; }
     .flex-table .offerWrap > .fa {
       position: absolute;
       right: .4rem;
@@ -1038,6 +1078,15 @@ a.btn-inverse {
       width: calc(100% + 85px); }
     .flex-table tr[aria-expanded=false] td:hover .offerWrap .offerTag, .flex-table tr[aria-expanded=true] .offerWrap .offerTag {
       opacity: 1; }
+
+.mixNmatch {
+  padding: 1rem;
+  background-color: #373737;
+  color: white;
+  border-bottom: 1px solid #e3e3e3;
+  cursor: pointer; }
+  .mixNmatch:last-child {
+    border-bottom: 0; }
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
