@@ -234,46 +234,46 @@ global $product;
                         </tr>
                         <tr class="sales_info_row_Chill">
                             <td>4 wk avg</td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_0_88216">111.25*</span>
-                                    <span id="s_4w_val_0_88216">€142.34*</span>
+                                    <span id="s_4w_qty_0_88216">Q: 111.25*</span>
+                                    <span id="s_4w_val_0_88216">P: €142.34*</span>
                                 </div>
                             </td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_1_88216">118.5*</span>
-                                    <span id="s_4w_val_1_88216">€149.82*</span>
+                                    <span id="s_4w_qty_1_88216">Q: 118.5*</span>
+                                    <span id="s_4w_val_1_88216">P: €149.82*</span>
                                 </div>
                             </td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_2_88216">96.5*</span>
-                                    <span id="s_4w_val_2_88216">€122.16*</span>
+                                    <span id="s_4w_qty_2_88216">Q: 96.5*</span>
+                                    <span id="s_4w_val_2_88216">P: €122.16*</span>
                                 </div>
                             </td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_3_88216">97.75*</span>
-                                    <span id="s_4w_val_3_88216">€124.24*</span>
+                                    <span id="s_4w_qty_3_88216">Q: 97.75*</span>
+                                    <span id="s_4w_val_3_88216">P: €124.24*</span>
                                 </div>
                             </td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_4_88216">124*</span>
-                                    <span id="s_4w_val_4_88216">€159.50*</span>
+                                    <span id="s_4w_qty_4_88216">Q: 124*</span>
+                                    <span id="s_4w_val_4_88216">P: €159.50*</span>
                                 </div>
                             </td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_5_88216">146.5*</span>
-                                    <span id="s_4w_val_5_88216">€187.01*</span>
+                                    <span id="s_4w_qty_5_88216">Q: 146.5*</span>
+                                    <span id="s_4w_val_5_88216">P: €187.01*</span>
                                 </div>
                             </td>
-                            <td>
+                            <td class="split">
                                 <div>
-                                    <span id="s_4w_qty_6_88216">150.5*</span>
-                                    <span id="s_4w_val_6_88216">€188.96*</span>
+                                    <span id="s_4w_qty_6_88216">Q: 150.5*</span>
+                                    <span id="s_4w_val_6_88216">P: €188.96*</span>
                                 </div>
                             </td>
                         </tr>

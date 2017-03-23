@@ -2355,6 +2355,9 @@ dl, .dl-horizontal {
     th {
       padding: 8px;
     }
+    td {
+      vertical-align: middle;
+    }
     td:first-of-type {
       background-color: #eee !important;
       white-space: nowrap;
@@ -2372,6 +2375,17 @@ dl, .dl-horizontal {
     }
     td {
       border: 1px solid #eee !important;
+    }
+  }
+  .split {
+    padding: 0 !important;
+    span {
+      display: block;
+      padding: 2px 5px;
+      text-align: left;
+      &:first-child {
+        border-bottom: 1px solid #eee !important;
+      }
     }
   }
 }

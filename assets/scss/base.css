@@ -2118,6 +2118,8 @@ dl, .dl-horizontal {
       margin: 0 auto; }
     .stockcard table.table th {
       padding: 8px; }
+    .stockcard table.table td {
+      vertical-align: middle; }
     .stockcard table.table td:first-of-type {
       background-color: #eee !important;
       white-space: nowrap; }
@@ -2131,6 +2133,14 @@ dl, .dl-horizontal {
         text-align: right; }
     .stockcard table.table td {
       border: 1px solid #eee !important; }
+  .stockcard .split {
+    padding: 0 !important; }
+    .stockcard .split span {
+      display: block;
+      padding: 2px 5px;
+      text-align: left; }
+      .stockcard .split span:first-child {
+        border-bottom: 1px solid #eee !important; }
 
 [data-page="cart"] p.select-line {
   display: flex;
