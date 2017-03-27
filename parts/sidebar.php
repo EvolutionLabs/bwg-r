@@ -24,7 +24,6 @@ $empty = isset($_GET['empty']);
 		<table class="table">
 			<thead>
 			<tr>
-
 				<?php
 				foreach ( $dd as $k => $v ) {
 					echo '<th>' . $k . '</th>';
@@ -54,5 +53,10 @@ $empty = isset($_GET['empty']);
 		</table>
 		<a href="/cart" class="btn btn-block btn-primary">View cart</a>
 	<?php endif; ?>
-
+</div>
+<div class="sidebar-banner">
+    <img src="../assets/image/food-service.jpg" />
+    <div>
+    <a href="#" class="btn btn-default btn-outline">SEE ALL OFFERS</a>
+    </div>
 </div>
