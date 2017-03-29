@@ -843,6 +843,11 @@ a.btn-inverse {
     #mixAndMatch .modal-dialog .flex-table.products td:first-child + *, #mixAndMatch .modal-dialog .flex-table.products th:first-child + * {
       min-width: 350px;
       max-width: 400px; }
+      @media (max-width: 991px) {
+        #mixAndMatch .modal-dialog .flex-table.products td:first-child + *, #mixAndMatch .modal-dialog .flex-table.products th:first-child + * {
+          min-width: inherit;
+          max-width: 300px;
+          width: 300px; } }
   @media (max-width: 991px) {
     #mixAndMatch .modal-dialog {
       width: 100%; } }

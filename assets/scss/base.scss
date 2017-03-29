@@ -757,6 +757,11 @@ a.btn-inverse {
     + * {
       min-width: 350px;
       max-width: 400px;
+      @media (max-width: 991px) {
+        min-width: inherit;
+        max-width: 300px;
+        width: 300px;
+      }
     }
   }
   @media(max-width: 991px) {
