@@ -748,6 +748,10 @@ a.btn-inverse {
       color: #fff;
     }
   }
+  .input-group {
+    min-width: 110px;
+    max-width: 110px;
+  }
   td {
     text-align: left;
   }
@@ -755,13 +759,7 @@ a.btn-inverse {
     min-width: inherit;
     max-width: 120px;
     + * {
-      min-width: 350px;
-      max-width: 400px;
-      @media (max-width: 991px) {
-        min-width: inherit;
-        max-width: 300px;
-        width: 300px;
-      }
+      width: inherit;
     }
   }
   @media(max-width: 991px) {

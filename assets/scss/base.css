@@ -835,19 +835,16 @@ a.btn-inverse {
     color: #3d3d3d; }
     #mixAndMatch .modal-dialog .btn-white:hover, #mixAndMatch .modal-dialog .btn-white:focus {
       color: #fff; }
+  #mixAndMatch .modal-dialog .input-group {
+    min-width: 110px;
+    max-width: 110px; }
   #mixAndMatch .modal-dialog td {
     text-align: left; }
   #mixAndMatch .modal-dialog .flex-table.products td:first-child, #mixAndMatch .modal-dialog .flex-table.products th:first-child {
     min-width: inherit;
     max-width: 120px; }
     #mixAndMatch .modal-dialog .flex-table.products td:first-child + *, #mixAndMatch .modal-dialog .flex-table.products th:first-child + * {
-      min-width: 350px;
-      max-width: 400px; }
-      @media (max-width: 991px) {
-        #mixAndMatch .modal-dialog .flex-table.products td:first-child + *, #mixAndMatch .modal-dialog .flex-table.products th:first-child + * {
-          min-width: inherit;
-          max-width: 300px;
-          width: 300px; } }
+      width: inherit; }
   @media (max-width: 991px) {
     #mixAndMatch .modal-dialog {
       width: 100%; } }
