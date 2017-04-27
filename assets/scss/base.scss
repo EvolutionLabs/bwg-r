@@ -461,6 +461,13 @@ a.btn-inverse {
   @media(min-width: 768px) {
     height: 95px;
   }
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 80px;
+    margin-bottom: 0;
+    + * {
+      margin-top: -15px;
+    }
+  }
   background-color: map_get($colors, 'green');
   display: flex;
   justify-content: space-between;
@@ -469,7 +476,7 @@ a.btn-inverse {
   border: none;
   @media (max-width: 991px) {
     > .container {
-      width: 100%;
+      width: calc(100% - 30px);
     }
   }
   .navbar-nav > .open {
@@ -568,7 +575,7 @@ a.btn-inverse {
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     #navbar {
       display: flex !important;
       align-items: center;
@@ -2632,6 +2639,42 @@ dl, .dl-horizontal {
     display: block;
   }
   @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+.hidden-md-down {
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+}
+
+#search-md-contain {
+  &.open {
+    position: static;
+  }
+  .fa-search.fa-2x {
+    font-size: 1.88em;
+  }
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+#search-md {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  .input-group {
+    max-width: 75%;
+  }
+  .btn-search {
+    color: #fff;
+    background-color: map_get($colors, 'green');
+    max-width: 25%;
+  }
+  @media (min-width: 992px) {
     display: none;
   }
 }

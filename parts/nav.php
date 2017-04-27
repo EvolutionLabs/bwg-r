@@ -12,7 +12,7 @@
 		</div>
 		<?php if ($loggedIn) { ?>
 		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav nav-search">
+			<ul class="nav navbar-nav nav-search hidden-md-down">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search Products">
 					<span class="input-group-addon">
@@ -24,6 +24,25 @@
 				<a href="/search" class="btn btn-search">Custom search</a>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+                <li id="search-md-contain">
+                    <a href="#" title="Search"
+                        class="dropdown-toggle"
+                        id="dropdownSettings"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-search fa-2x"></i></a>
+                    <div class="dropdown-menu nav-search" id="search-md">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Products">
+                            <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="fa fa-search"></span>
+                        </button>
+                            </span>
+                        </div>
+                        <a href="/search" class="btn btn-search">Custom search</a>
+                    </div>
+                </li>
 				<li><a href="#" title="Layout"><i class="fa fa-2x fa-th-large"></i><span class="visible-xs-inline-block">Layout</span></a></li>
 				<li><a href="#" title="Favorites"><i class="fa fa-2x fa-heart"></i><span class="visible-xs-inline-block">Favorites</span></a></li>
 				<li><a href="#" title="Settings"
