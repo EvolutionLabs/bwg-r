@@ -877,9 +877,9 @@ a.btn-inverse {
     padding: 18px 4px;
   }
   >tbody>tr {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity .3s linear, transform .3s cubic-bezier(.4,0,.2,1);
+    opacity: 1;
+    //transform: translateY(20px);
+    //transition: opacity .3s linear, transform .3s cubic-bezier(.4,0,.2,1);
     &.uHoH {
       opacity: 1;
       transform: none;

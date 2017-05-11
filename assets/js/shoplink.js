@@ -24,13 +24,13 @@ $(window).on('load', function () {
             $(e).addClass(i?'before after':'before')
         })
     }
-    var introStaggerStep = -1;
-    $('.flex-table > tbody > tr').each(function (i, e) {
-        setTimeout(function () {
-            introStaggerStep += $(e).hasClass('accordion-toggle') && (e.getBoundingClientRect().top > 0) ? 0 : 1;
-            $(e).addClass('uHoH');
-        }, ((i - introStaggerStep) * 12) + 100);
-    });
+    // var introStaggerStep = -1;
+    // $('.flex-table > tbody > tr').each(function (i, e) {
+    //     setTimeout(function () {
+    //         introStaggerStep += $(e).hasClass('accordion-toggle') && (e.getBoundingClientRect().top > 0) ? 0 : 1;
+    //         $(e).addClass('uHoH');
+    //     }, ((i - introStaggerStep) * 12) + 100);
+    // });
     $('.products').on('click', 'td>.dropdown>.dropdown-menu', function (e) {
         e.stopPropagation();
         $(this).closest('.dropdown-menu').dropdown('toggle');
