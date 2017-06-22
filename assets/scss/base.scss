@@ -697,9 +697,9 @@ a.btn-inverse {
     + .submenu {
       box-shadow: 0 -3px 5px -1px rgba(0,0,0,.2), 0 -6px 10px 0 rgba(0,0,0,.14), 0 -1px 18px 0 rgba(0,0,0,.12);
     }
-    max-height: 500px;
+    max-height: 200px;
     .parallax-scroller {
-      height: 500px;
+      height: 200px;
       @media(max-width: 991px) {
         height: 33.3333vw;
       }
@@ -717,11 +717,12 @@ a.btn-inverse {
           text-transform: uppercase;
         }
         h3 {
-          font-size: 4.5rem;
+          font-size: 3.5rem;
           font-weight: 900;
+          margin-top: 0;
         }
-        div {font-size: 3.5rem; font-weight: 200;}
-        .btn {margin-top: 6rem; padding: 6px 6rem;}
+        div {font-size: 2.5rem; font-weight: 200;}
+        .btn {margin-top: 1rem; padding: 6px 6rem;}
         @media(max-width: 991px) {
           h3 {
             font-size: 4.5vw;
@@ -2625,6 +2626,7 @@ dl, .dl-horizontal {
   overflow: hidden;
   position: relative;
   img {
+    width: 100%;
     + div {
       width: 100%;
       position: absolute;

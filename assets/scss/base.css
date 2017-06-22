@@ -785,11 +785,11 @@ a.btn-inverse {
   .flexWrap .parallax-container {
     overflow: hidden;
     width: 100vw;
-    max-height: 500px; }
+    max-height: 200px; }
     .flexWrap .parallax-container + .submenu {
       box-shadow: 0 -3px 5px -1px rgba(0, 0, 0, 0.2), 0 -6px 10px 0 rgba(0, 0, 0, 0.14), 0 -1px 18px 0 rgba(0, 0, 0, 0.12); }
     .flexWrap .parallax-container .parallax-scroller {
-      height: 500px;
+      height: 200px;
       position: relative;
       box-sizing: content-box;
       outline: none; }
@@ -806,13 +806,14 @@ a.btn-inverse {
         .flexWrap .parallax-container .parallax-scroller .scene h3, .flexWrap .parallax-container .parallax-scroller .scene div {
           text-transform: uppercase; }
         .flexWrap .parallax-container .parallax-scroller .scene h3 {
-          font-size: 4.5rem;
-          font-weight: 900; }
-        .flexWrap .parallax-container .parallax-scroller .scene div {
           font-size: 3.5rem;
+          font-weight: 900;
+          margin-top: 0; }
+        .flexWrap .parallax-container .parallax-scroller .scene div {
+          font-size: 2.5rem;
           font-weight: 200; }
         .flexWrap .parallax-container .parallax-scroller .scene .btn {
-          margin-top: 6rem;
+          margin-top: 1rem;
           padding: 6px 6rem; }
         @media (max-width: 991px) {
           .flexWrap .parallax-container .parallax-scroller .scene h3 {
@@ -2323,13 +2324,15 @@ dl, .dl-horizontal {
   display: block;
   overflow: hidden;
   position: relative; }
-  .sidebar-banner img + div {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 1.5rem; }
+  .sidebar-banner img {
+    width: 100%; }
+    .sidebar-banner img + div {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-bottom: 1.5rem; }
   .sidebar-banner .btn {
     width: 100%;
     display: block; }
